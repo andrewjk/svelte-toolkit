@@ -1,0 +1,13 @@
+TODO
+====
+
+* Support popping up via JS (and add buttons for each in the demo)
+* Support closing
+* Support setting a close icon
+* Support closing after a period of time
+* Support customising where the alert is shown
+* Add styles
+* Add events
+* Add animations
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#alert

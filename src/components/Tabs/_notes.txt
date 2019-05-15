@@ -1,0 +1,10 @@
+TODO
+====
+
+* Do something better than the index hacks
+* Support header slots
+* Add styles
+* Add events
+* Add keyboard navigation
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel

@@ -1,0 +1,8 @@
+TODO
+====
+
+* Support setting icons on either side?
+* Add styles
+* Add events
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#button

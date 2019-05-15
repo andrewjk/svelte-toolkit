@@ -1,0 +1,8 @@
+TODO
+====
+
+* Support setting the content before
+* Don't show aria-current when not set
+* Add styles
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#breadcrumb

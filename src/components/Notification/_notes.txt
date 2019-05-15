@@ -1,0 +1,10 @@
+TODO
+====
+
+* Support closing
+* Support setting a close icon
+* Support closing after a period of time
+* Add styles
+* Add events
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#alert
