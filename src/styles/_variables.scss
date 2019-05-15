@@ -1,0 +1,85 @@
+
+// BREAKPOINTS
+// ========================================================
+
+//$xsmall-screen: 0px;      // And up - the default
+$small-screen: 480px;       // And up
+$medium-screen: 760px;      // And up
+$large-screen: 1040px;      // And up
+$xlarge-screen: 1320px;     // And up
+
+// SPACING AND BORDERS
+// ========================================================
+
+$element-margin: 2rem;
+$element-padding: 2rem;
+
+$border-radius: 2px;
+$border-color: #d2d2d2;
+$light-border-color: #f2f2f2;
+
+// FONTS
+// ========================================================
+
+$font-size: 1.5rem;
+$font-size-small: 1.2rem;
+$font-size-large: 1.8rem;
+
+$line-height: 2.4rem;
+
+// COLORS
+// ========================================================
+
+$body-back-color: #fff;
+$body-text-color: #222;
+
+$light-background-color: #fafafa;
+$middle-background-color: #e5e5e5;
+$dark-background-color: #888;
+
+$contrast-back-color: #0265b7;
+$contrast-text-color: #fff;
+$dark-contrast-back-color: #333;
+$dark-contrast-text-color: #fff; 
+$mark-back-color: #ffff00;
+$mark-color: #222;
+$light-text-color: #aaa;
+$select-color: #3399ff;
+
+$link-color: #0265b7;
+$link-hover-color: #0265b7;
+
+$info-color: #4d90fe;
+$light-info-color: #ebf7fd;
+$success-color: #009e49;
+$light-success-color: #c6f0ce;
+$warning-color: #e28327;
+$light-warning-color: #fffceb;
+$danger-color: #ee2e24;
+$light-danger-color: #ffc8ce;
+$cancel-color: #999;
+$disabled-color: #f2f2f2;
+$disabled-text-color: #a5a5a5;
+$active-color: #ffa500;
+
+// HEADER AND FOOTER
+// ========================================================
+
+$header-line-height: 4rem;
+$footer-line-height: 4rem;
+
+// NAVBAR
+// ========================================================
+
+$nav-bar-item-back-color: transparent;
+$nav-bar-item-text-color: #222;
+$nav-bar-item-hover-back-color: #777;
+$nav-bar-item-hover-text-color: #fff;
+
+// FORMS
+// ========================================================
+
+$input-height: 3.2rem;
+$label-color: #777;
+$label-width: 16rem;
+$input-width: 32rem;

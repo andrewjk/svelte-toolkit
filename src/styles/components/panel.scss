@@ -1,0 +1,21 @@
+@import "../_variables";
+
+// PANEL LAYOUT
+// ========================================================
+
+.border,
+.panel {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin: 0 0 $element-margin;
+    padding: $element-padding;
+}
+
+.border:last-child,
+.panel:last-child {
+    margin-bottom: 0;
+}
+
+.panel {
+    background-color: $light-background-color;
+}

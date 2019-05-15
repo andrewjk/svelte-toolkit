@@ -1,0 +1,391 @@
+@import "../_variables";
+
+// HEADER, MAIN AND FOOTER
+// ========================================================
+
+
+// A container to hold a header, main and footer and ensure that they are at least as tall as the viewarea
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header,
+.footer {
+    background-color: $light-background-color;
+    display: table; // To size to content
+    padding: 0 $element-padding;
+    width: 100%;
+}
+
+.header {
+    border-bottom: 1px solid $border-color;
+    line-height: $header-line-height;
+}
+
+.main {
+    flex: 1 0 auto; // To stretch to the full vertical height
+    overflow: hidden;
+    width: 100%;
+}
+
+.footer {
+    border-top: 1px solid $border-color;
+    line-height: $footer-line-height;
+}
+
+// This can be done with a level?
+// .footer-info-left {
+//     float: left;
+// }
+// 
+// .footer-info-right {
+//     float: right;
+// }
+// 
+// .footer-info-center {
+//     text-align: center;
+// }
+
+// CONTAINER
+// ========================================================
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.container.narrow {
+    max-width: 720px;
+}
+
+.main {
+    .container {
+        padding: $element-padding;
+    }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// GENERAL UTILS
+// ========================================================
+
+.clearfix {
+    overflow: auto;
+}
+
+.loading {
+    border: 1px solid rgba($info-color, 0.3);
+    border-radius: $border-radius;
+    background-color: $light-info-color;
+    color: $info-color;
+    margin: 0 0 $element-margin;
+    padding: $element-padding / 2;
+    text-align: center;
+    width: 100%;
+}
+
+.loading:last-child {
+    margin: $element-margin / 2 0 0;
+}
+
+.loading.error {
+    border: 1px solid rgba($danger-color, 0.3);
+    background-color: $light-danger-color;
+    color: $danger-color;
+}
+
+.inline {
+    display: inline;
+}
+
+// TEXT AND ELEMENT ALIGNMENT
+// ========================================================
+
+.full-width {
+    width: 100%;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.align-left {
+    display: block !important;
+    float: left !important;
+    margin-right: $element-margin !important;
+}
+
+.align-right {
+    display: block !important;
+    float: right !important;
+    margin-left: $element-margin !important;
+}
+
+.align-center {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.vertical-align-top {
+    display: flex !important;
+    align-items: top;
+}
+
+.vertical-align-middle {
+    display: flex !important;
+    align-items: center;
+}
+
+.vertical-align-bottom {
+    display: flex !important;
+    align-items: bottom;
+}
+
+// TEXT SIZES AND COLORS
+// ========================================================
+
+.text-small {
+    font-size: $font-size-small !important;
+}
+
+.text-large {
+    font-size: $font-size-large !important;
+}
+
+.text-contrast {
+    color: $contrast-text-color !important;
+}
+
+// MARGIN AND PADDING
+// ========================================================
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.no-margin-right {
+    margin-right: 0 !important;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.margin {
+    margin: $element-margin !important;
+}
+
+.margin-h {
+    margin: 0 $element-margin !important;
+}
+
+.margin-v {
+    margin: $element-margin 0 !important;
+}
+
+.margin-top {
+    margin-top: $element-margin !important;
+}
+
+.margin-right {
+    margin-right: $element-margin !important;
+}
+
+.margin-bottom {
+    margin-bottom: $element-margin !important;
+}
+
+.margin-left {
+    margin-left: $element-margin !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.padding {
+    padding: $element-padding !important;
+}
+
+.padding-h {
+    padding: 0 $element-padding !important;
+}
+
+.padding-v {
+    padding: $element-padding 0 !important;
+}
+
+.padding-top {
+    padding-top: $element-padding !important;
+}
+
+.padding-right {
+    padding-right: $element-padding !important;
+}
+
+.padding-bottom {
+    padding-bottom: $element-padding !important;
+}
+
+.padding-left {
+    padding-left: $element-padding !important;
+}
+
+// HIDDEN AND VISIBLE
+// ========================================================
+
+// NOTE: We have to be super-explicit about these rules, and cover every conceivable case, because once
+// you have 'display: none' on an element you can't get it back to what it was. Rather, we have to ensure
+// that 'display: none' only gets set when the conditions are right and not set in other cases
+
+@media (max-width: $small-screen - 1) {
+    .visible-small,
+    .visible-medium,
+    .visible-large,
+    .visible-xlarge {
+        display: none !important;
+    }
+}
+
+@media (min-width: $small-screen) and (max-width: $medium-screen - 1) {
+    .hidden-small {
+        display: none !important;
+    }
+
+    .visible-medium:not(.visible-small),
+    .visible-large:not(.visible-small),
+    .visible-xlarge:not(.visible-small) {
+        display: none !important;
+    }
+
+    .visible-small {
+        //display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media (min-width: $medium-screen) and (max-width: $large-screen - 1) {
+    .hidden-small:not(.visible-medium) {
+        display: none !important;
+    }
+
+    .hidden-medium {
+        display: none !important;
+    }
+
+    .visible-large:not(.visible-medium),
+    .visible-xlarge:not(.visible-medium) {
+        display: none !important;
+    }
+
+    .visible-medium,
+    .visible-large,
+    .visible-xlarge {
+        //display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media (min-width: $large-screen) and (max-width: $xlarge-screen - 1) {
+    .hidden-small:not(.visible-large),
+    .hidden-medium:not(.visible-large) {
+        display: none !important;
+    }
+
+    .hidden-large {
+        display: none !important;
+    }
+
+    .visible-xlarge:not(.visible-large) {
+        display: none !important;
+    }
+
+    .visible-large,
+    .visible-xlarge {
+        //display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media (min-width: $xlarge-screen) {
+    .hidden-small:not(.visible-xlarge),
+    .hidden-medium:not(.visible-xlarge),
+    .hidden-large:not(.visible-xlarge) {
+        display: none !important;
+    }
+
+    .hidden-xlarge {
+        display: none !important;
+    }
+
+    .visible-xlarge {
+        //display: block !important;
+        visibility: visible !important;
+    }
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.visible {
+    display: block !important;
+    visibility: visible !important;
+}
+
+// MISC
+// ========================================================
+
+@media print {    
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+}
+
+.background-image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: top;
+}

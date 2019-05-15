@@ -1,0 +1,27 @@
+/* 
+The _variables file contains Sass variables for colors and sizes, among other things, which you
+can use to customize styles
+*/
+@import '_variables';
+
+/*
+The base file contains styles for elements such as text and headings
+*/
+@import 'general/base';
+
+/*
+The layout file contains styles for laying out the page, including styles for headers, mains,
+footers and containers
+*/
+@import 'general/layout';
+
+/*
+The grid file contains styles for a 12-column grid based on flexbox
+*/
+@import 'general/grid';
+
+/*
+Components, each of which should be mostly self-explanatory:
+*/
+@import 'components/button';
+@import 'components/panel';

@@ -1,0 +1,146 @@
+@import "../_variables";
+
+// BUTTON LAYOUT
+// ========================================================
+
+.button {
+    background-color: transparent;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:focus {
+    background-color: $disabled-color !important;
+    color: $disabled-text-color !important;
+}
+
+// BUTTON SIZES
+// ========================================================
+
+.button,
+.button.medium {
+    font-size: 115%;
+    min-width: 96px;
+    padding: 10px 20px;
+}
+
+.button.small {
+    font-size: 85%;
+    min-width: 64px;
+    padding: 8px 10px;
+}
+
+.button.large {
+    font-size: 150%;
+    min-width: 112px;
+    padding: 10px 30px;
+    max-width: 100%;
+}
+
+.button.inline {
+    font-size: inherit;
+    height: $input-height;
+    line-height: $input-height - 4;
+    min-width: auto;
+    padding: 0 12px !important;
+}
+
+// BUTTON COLORS
+// ========================================================
+
+.button.info,
+.button.success,
+.button.warning,
+.button.danger {
+    border: 1px solid transparent;
+}
+
+.button.info {
+    color: white !important;
+    background-color: $info-color;
+}
+
+.button.info:focus {
+    background-color: darken($info-color, 9%);
+}
+
+.button.info:hover {
+    background-color: darken($info-color, 9%);
+}
+
+.button.success {
+    color: white !important;
+    background-color: $success-color;
+}
+
+.button.success:focus {
+    background-color: darken($success-color, 9%);
+}
+
+.button.success:hover {
+    background-color: darken($success-color, 9%);
+}
+
+.button.warning {
+    color: white !important;
+    background-color: $warning-color;
+}
+
+.button.warning:focus {
+    background-color: darken($warning-color, 9%);
+}
+
+.button.warning:hover {
+    background-color: darken($warning-color, 9%);
+}
+
+.button.danger {
+    color: white !important;
+    background-color: $danger-color;
+}
+
+.button.danger:focus {
+    background-color: darken($danger-color, 9%);
+}
+
+.button.danger:hover {
+    background-color: darken($danger-color, 9%);
+}
+
+.button.cancel {
+    color: white !important;
+    background-color: $cancel-color;
+}
+
+.button.cancel:focus {
+    background-color: darken($cancel-color, 9%);
+}
+
+.button.cancel:hover {
+    background-color: darken($cancel-color, 9%);
+}
