@@ -9,20 +9,18 @@
 
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
   // declared in slots
-  onMount(() => {
-    setContext("accordion", {
-      // The registerItem function is called from each AccordionItem to register itself with this
-      // Accordion. They pass us a setExpanded method that we can call, and we pass them their
-      // index in the itemState collection along with a toggleItem method that they can call when
-      // their header is clicked
-      registerItem: setExpanded => {
-        itemState.push({ expanded: false, setExpanded });
-        return {
-          index: itemState.length - 1,
-          toggleItem
-        };
-      }
-    });
+  setContext("accordion", {
+    // The registerItem function is called from each AccordionItem to register itself with this
+    // Accordion. They pass us a setExpanded method that we can call, and we pass them their
+    // index in the itemState collection along with a toggleItem method that they can call when
+    // their header is clicked
+    registerItem: setExpanded => {
+      itemState.push({ expanded: false, setExpanded });
+      return {
+        index: itemState.length - 1,
+        toggleItem
+      };
+    }
   });
 
   beforeUpdate(() => {

@@ -6,11 +6,9 @@
 
   let active;
 
-  onMount(() => {
-    // Register this item with the parent Tabs, which will handle toggling active for all items
-    const { registerItem } = getContext("tabs");
-    registerItem(id, header, setActive);
-  });
+  // Register this item with the parent Tabs, which will handle toggling active for all items
+  const { registerItem } = getContext("tabs");
+  registerItem(id, header, setActive);
 
   // This function is called by the parent Tabs to set this item's active value
   function setActive(value) {
