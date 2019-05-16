@@ -8,7 +8,7 @@ const name = pkg.name
 	.replace(/-\w/g, m => m[1].toUpperCase());
 
 export default {
-	input: 'src/main.js',
+	input: 'main.js',
 	output: [
 		{
 			file: 'build/' + pkg.module,
