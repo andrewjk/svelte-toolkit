@@ -1,6 +1,8 @@
 <script>
   import { onMount, beforeUpdate, setContext } from "svelte";
 
+  export let id = null;
+  export let className = null;
   export let multiple = false;
   export let value = -1;
 
@@ -86,6 +88,6 @@
   }
 </script>
 
-<div class="accordion">
+<div {id} class={['accordion', className].filter(Boolean).join(' ')}>
   <slot />
 </div>

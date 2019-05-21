@@ -1,4 +1,6 @@
 <script>
+  export let id = null;
+  export let className = null;
 </script>
 
 <style>
@@ -9,7 +11,10 @@
   }
 </style>
 
-<nav class="breadcrumb" aria-label="TODO: maybe a property?">
+<nav
+  {id}
+  class={['breadcrumb', className].filter(Boolean).join(' ')}
+  aria-label="TODO: maybe a property?">
   <ol>
     <slot />
   </ol>

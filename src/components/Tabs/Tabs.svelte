@@ -1,6 +1,8 @@
 <script>
   import { onMount, beforeUpdate, setContext } from "svelte";
 
+  export let id = null;
+  export let className = null;
   export let value = 0;
 
   // TODO: Need to be able to fill this with headers from slots
@@ -65,7 +67,7 @@
   }
 </style>
 
-<div class="tabs">
+<div {id} class={['tabs', className].filter(Boolean).join(' ')}>
   <div class="tab-list" role="tablist" aria-label="TODO: maybe a property?">
     {#each tabItems.reverse() as item, index}
       <button

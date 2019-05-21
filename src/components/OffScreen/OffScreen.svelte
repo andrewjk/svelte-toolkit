@@ -1,6 +1,8 @@
 <script>
   import { onMount, beforeUpdate, setContext } from "svelte";
 
+  export let id = null;
+  export let className = null;
   export let visible = "false";
   export let direction = "left";
 
@@ -52,9 +54,13 @@
 </style>
 
 <div
-  class={'off-screen-background ' + (visible ? ' visible' : '')}
+  class={['off-screen-background', visible ? 'visible' : null]
+    .filter(Boolean)
+    .join(' ')}
   on:click={handleBackgroundClick}>
-  <div class={'off-screen ' + direction}>
+  <div
+    {id}
+    class={['off-screen', className, direction].filter(Boolean).join(' ')}>
     <slot />
   </div>
 </div>

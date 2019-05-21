@@ -2,6 +2,7 @@
   import { onMount, getContext } from "svelte";
 
   export let id = null;
+  export let className = null;
   export let header = null;
 
   let expanded = false;
@@ -15,7 +16,7 @@
   // The method on the parent Accordion to call when the header is clicked:
   let toggleItem = result.toggleItem;
 
-  // This function is called by the parent Accordion to set this item"s expanded value
+  // This function is called by the parent Accordion to set this item's expanded value
   function setExpanded(value) {
     expanded = value;
   }
@@ -28,12 +29,7 @@
 </script>
 
 <style>
-  .accordion-item {
-    border-bottom: 1px solid #ddd;
-  }
-
   .accordion-header button {
-    cursor: pointer;
     text-align: left;
     width: 100%;
   }
@@ -50,7 +46,7 @@
 <div class="accordion-item">
   <div
     id={id ? id + '-header' : ''}
-    class={'accordion-header' + (expanded ? ' expanded' : '')}
+    class={['accordion-header', className, expanded ? 'expanded' : null].filter(Boolean).join(' ')}
     aria-expanded={expanded}
     aria-controls={id}>
     <button class="button" on:click={handleClick}>
