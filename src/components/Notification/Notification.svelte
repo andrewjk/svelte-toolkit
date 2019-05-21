@@ -1,6 +1,4 @@
 <script>
-  import { onMount, beforeUpdate, setContext } from "svelte";
-
   export let id = null;
   export let className = null;
   export let type = "info";
@@ -22,6 +20,6 @@
   }
 </style>
 
-<div {id} class={['notification', className, type].filter(Boolean).join(' ')}>
+<div {id} class={['notification', type, className].filter(Boolean).join(' ')}>
   <slot>{message}</slot>
 </div>

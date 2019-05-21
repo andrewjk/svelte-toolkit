@@ -1,5 +1,5 @@
 <script>
-  import { onMount, getContext } from "svelte";
+  import { getContext } from "svelte";
 
   export let id = null;
   export let className = null;
@@ -29,7 +29,7 @@
 
 <div
   {id}
-  class={['tab-item', className, active ? 'active' : ''].filter(Boolean).join(' ')}
+  class={['tab-item', active ? 'active' : '', className].filter(Boolean).join(' ')}
   role="tabpanel"
   aria-labelledby={id ? id + '-tab' : ''}
   tabindex="0">

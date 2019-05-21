@@ -1,5 +1,5 @@
 <script>
-  import { onMount, beforeUpdate, setContext } from "svelte";
+  import { beforeUpdate, setContext } from "svelte";
 
   export let id = null;
   export let className = null;

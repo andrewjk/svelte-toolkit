@@ -1,5 +1,5 @@
 <script>
-  import { onMount, getContext } from "svelte";
+  import { getContext } from "svelte";
 
   export let id = null;
   export let className = null;
@@ -46,7 +46,7 @@
 <div class="accordion-item">
   <div
     id={id ? id + '-header' : ''}
-    class={['accordion-header', className, expanded ? 'expanded' : null].filter(Boolean).join(' ')}
+    class={['accordion-header', expanded ? 'expanded' : null, className].filter(Boolean).join(' ')}
     aria-expanded={expanded}
     aria-controls={id}>
     <button class="button" on:click={handleClick}>

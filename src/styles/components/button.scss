@@ -76,12 +76,8 @@ button::-moz-focus-inner {
 }
 
 .button.info {
-    color: white !important;
+    color: white;
     background-color: $info-color;
-}
-
-.button.info:focus {
-    background-color: darken($info-color, 9%);
 }
 
 .button.info:hover {
@@ -89,12 +85,8 @@ button::-moz-focus-inner {
 }
 
 .button.success {
-    color: white !important;
+    color: white;
     background-color: $success-color;
-}
-
-.button.success:focus {
-    background-color: darken($success-color, 9%);
 }
 
 .button.success:hover {
@@ -102,12 +94,8 @@ button::-moz-focus-inner {
 }
 
 .button.warning {
-    color: white !important;
+    color: white;
     background-color: $warning-color;
-}
-
-.button.warning:focus {
-    background-color: darken($warning-color, 9%);
 }
 
 .button.warning:hover {
@@ -115,12 +103,8 @@ button::-moz-focus-inner {
 }
 
 .button.danger {
-    color: white !important;
+    color: white;
     background-color: $danger-color;
-}
-
-.button.danger:focus {
-    background-color: darken($danger-color, 9%);
 }
 
 .button.danger:hover {
@@ -128,12 +112,8 @@ button::-moz-focus-inner {
 }
 
 .button.cancel {
-    color: white !important;
+    color: white;
     background-color: $cancel-color;
-}
-
-.button.cancel:focus {
-    background-color: darken($cancel-color, 9%);
 }
 
 .button.cancel:hover {
@@ -155,11 +135,11 @@ button::-moz-focus-inner {
 // ========================================================
 
 .button.loading {
-    cursor: default;
     color: transparent !important;
+    cursor: default;
 }
 
-.button.loading::after {
+.button.loading:after {
     @include loading;
     border-left-color: rgba(255, 255, 255, .15);
     border-right-color: rgba(255, 255, 255, .15);
