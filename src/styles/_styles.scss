@@ -21,9 +21,10 @@ The grid file contains styles for a 12-column grid based on flexbox
 @import "general/grid";
 
 /*
-The animations file contains animations
+These files are pretty self-explanatory
 */
-@import "general/animations";
+@import "general/animation";
+@import "general/table";
 
 /*
 Components, each of which should be mostly self-explanatory:

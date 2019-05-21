@@ -1,0 +1,46 @@
+@import "../_variables";
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+        text-align: left;
+        a {
+            color: inherit;
+        }
+    }
+
+    th, td {
+        padding: $element-padding / 4 $element-padding / 2;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+        padding-right: 0;
+    }
+
+    // Elements in a table shouldn't have margins because it makes the table rows too big
+    p,
+    ul,
+    ol,
+    dl,
+    blockquote,
+    pre,
+    address,
+    fieldset,
+    figure {
+        margin: 0;
+    }
+}
+
+.table.line {
+    tr {
+        border-bottom: 1px solid $border-color;
+    }
+}
