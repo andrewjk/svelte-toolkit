@@ -371,3 +371,42 @@
     background-size: cover;
     vertical-align: top;
 }
+
+$close-button-margin: 4px;
+$close-button-width: 3px;
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    height: $close-button-size;
+    position: relative;
+    width: $close-button-size;
+    vertical-align: middle;
+}
+
+.close-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.close-button:before,
+.close-button:after{
+    background-color: white;
+    border-radius: $close-button-width;
+    content: '';
+    height: $close-button-width;
+    position: absolute;
+    width: $close-button-size - 2 * $close-button-margin;
+    top: $close-button-size  / 2 - 2px;
+}
+
+.close-button:before{
+    transform: rotate(45deg);
+    left: $close-button-margin;
+}
+.close-button:after{
+    transform: rotate(-45deg);
+    right: $close-button-margin;
+}
