@@ -1,4 +1,5 @@
 @import "../_variables";
+@import "../general/animations";
 
 // BUTTON LAYOUT
 // ========================================================
@@ -10,11 +11,8 @@
     cursor: pointer;
     display: inline-block;
     font-weight: normal;
+    position: relative;
     text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
@@ -23,6 +21,7 @@
 .button:focus {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    outline: 0;
     text-decoration: none;
 }
 
@@ -32,11 +31,8 @@
     text-decoration: none;
 }
 
-.button:disabled,
-.button:disabled:hover,
-.button:disabled:focus {
-    background-color: $disabled-color !important;
-    color: $disabled-text-color !important;
+button::-moz-focus-inner {
+    border: 0;
 }
 
 // BUTTON SIZES
@@ -46,20 +42,19 @@
 .button.medium {
     font-size: 115%;
     min-width: 96px;
-    padding: 10px 20px;
+    padding: $element-padding / 4 $element-padding;
 }
 
 .button.small {
     font-size: 85%;
     min-width: 64px;
-    padding: 8px 10px;
+    padding: $element-padding / 8 $element-padding / 2;
 }
 
 .button.large {
     font-size: 150%;
     min-width: 112px;
-    padding: 10px 30px;
-    max-width: 100%;
+    padding: $element-padding / 2 $element-padding;
 }
 
 .button.inline {
@@ -143,4 +138,31 @@
 
 .button.cancel:hover {
     background-color: darken($cancel-color, 9%);
+}
+
+// DISABLED
+// ========================================================
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:focus {
+    background-color: $disabled-color !important;
+    color: $disabled-text-color !important;
+    cursor: not-allowed;
+}
+
+// LOADING
+// ========================================================
+
+.button.loading {
+    cursor: default;
+    color: transparent !important;
+}
+
+.button.loading::after {
+    @include loading;
+    border-left-color: rgba(255, 255, 255, .15);
+    border-right-color: rgba(255, 255, 255, .15);
+    border-bottom-color: rgba(255, 255, 255, .15);
+    border-top-color: rgba(255, 255, 255, .8);
 }

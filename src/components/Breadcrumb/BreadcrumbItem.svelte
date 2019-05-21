@@ -10,13 +10,19 @@
     display: inline;
   }
 
-  li+li:before {
-    content: ' / '
+  li + li:before {
+    content: " / ";
   }
 </style>
 
 <li {id} class={['breadcrumb-item', className].filter(Boolean).join(' ')}>
-  <a {href} aria-current={current ? 'page' : ''}>
-    <slot />
-  </a>
+  {#if current}
+    <span>
+      <slot />
+    </span>
+  {:else}
+    <a {href} aria-current={current ? 'page' : ''}>
+      <slot />
+    </a>
+  {/if}
 </li>

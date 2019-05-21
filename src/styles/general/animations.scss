@@ -1,0 +1,28 @@
+@import "../_variables";
+
+// Adapted from http://www.designcouch.com/home/why/2013/05/23/dead-simple-pure-css-loading-spinner/
+@mixin loading {
+    display: block;
+    content: "";
+    height: 1em;
+    width: 1em;
+    margin: 0 auto;
+    position: absolute !important;
+    left: calc(50% - (1em / 2));
+    top: calc(50% - (1em / 2));
+    animation: rotation .6s infinite linear;
+    border-left: 3px solid rgba($body-text-color, .15);
+    border-right: 3px solid rgba($body-text-color, .15);
+    border-bottom: 3px solid rgba($body-text-color, .15);
+    border-top: 3px solid rgba($body-text-color, .8);
+    border-radius: 100%;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}

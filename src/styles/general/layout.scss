@@ -3,7 +3,6 @@
 // HEADER, MAIN AND FOOTER
 // ========================================================
 
-
 // A container to hold a header, main and footer and ensure that they are at least as tall as the viewarea
 .page {
   display: flex;
@@ -48,7 +47,7 @@
 //     text-align: center;
 // }
 
-// CONTAINER
+// CONTAINERS
 // ========================================================
 
 .container {
@@ -67,49 +66,32 @@
     }
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
+.block {
+    margin: 0 0 $element-margin;
+}
+
+.block:last-child {
+    margin-bottom: 0;
 }
 
 // GENERAL UTILS
 // ========================================================
 
-.clearfix {
-    overflow: auto;
+.center {
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.loading {
-    border: 1px solid rgba($info-color, 0.3);
-    border-radius: $border-radius;
-    background-color: $light-info-color;
-    color: $info-color;
-    margin: 0 0 $element-margin;
-    padding: $element-padding / 2;
-    text-align: center;
-    width: 100%;
-}
-
-.loading:last-child {
-    margin: $element-margin / 2 0 0;
-}
-
-.loading.error {
-    border: 1px solid rgba($danger-color, 0.3);
-    background-color: $light-danger-color;
-    color: $danger-color;
-}
-
-.inline {
-    display: inline;
-}
-
-// TEXT AND ELEMENT ALIGNMENT
-// ========================================================
 
 .full-width {
     width: 100%;
 }
+
+.clearfix {
+    overflow: auto;
+}
+
+// TEXT AND ELEMENT ALIGNMENT
+// ========================================================
 
 .text-left {
     text-align: left !important;
