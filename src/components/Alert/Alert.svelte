@@ -1,34 +1,114 @@
 <script>
+  import { onMount, createEventDispatcher } from "svelte";
+  import { fly, fade } from "svelte/transition";
+
   export let id = null;
   export let className = null;
-  export let type = "info";
+  export let type = "default";
   export let message = "";
+  export let direction = "top";
+  export let closable = true;
+  export let duration = 5000;
+
+  const dispatch = createEventDispatcher();
+
+  let visible = true;
+  let alert;
+
+  function transitionArgs() {
+    switch (direction) {
+      case "top-left":
+      case "bottom-left": {
+        return { x: -100, duration: 800 };
+      }
+      case "top": {
+        alert.style.left = window.innerWidth / 2 - alert.offsetWidth / 2 + "px";
+        return { y: -100, duration: 800 };
+      }
+      case "top-right":
+      case "bottom-right": {
+        return {
+          x: window.innerWidth + 100 - alert.offsetWidth,
+          duration: 800
+        };
+      }
+      case "bottom": {
+        alert.style.left = window.innerWidth / 2 - alert.offsetWidth / 2 + "px";
+        return {
+          y: window.innerHeight + 100 - alert.offsetHeight,
+          duration: 800
+        };
+      }
+    }
+  }
+
+  onMount(() => {
+    if (duration > 0) {
+      setTimeout(close, duration);
+    }
+  });
+
+  function close() {
+    visible = false;
+    dispatch('closed');
+  }
 </script>
 
 <style>
   .alert {
+    display: flex;
     position: fixed;
-    top: 50px;
-    left: 50px;
   }
 
-  .alert.info {
-    color: blue;
+  .alert-message {
+    flex: 1 1 auto;
   }
-  .alert.success {
-    color: limegreen;
+
+  .alert-close {
+    flex: 0 0 auto;
   }
-  .alert.warning {
-    color: orange;
+
+  .alert.top-left {
+    left: 20px;
+    top: 20px;
   }
-  .alert.danger {
-    color: red;
+  .alert.top {
+    top: 20px;
+    margin: 0 auto;
+  }
+  .alert.top-right {
+    top: 20px;
+    right: 20px;
+  }
+  .alert.bottom-left {
+    left: 20px;
+    bottom: 20px;
+  }
+  .alert.bottom {
+    bottom: 20px;
+    margin: 0 auto;
+  }
+  .alert.bottom-right {
+    right: 20px;
+    bottom: 20px;
   }
 </style>
 
-<div
-  {id}
-  class={['alert', type, className].filter(Boolean).join(' ')}
-  role="alert">
-  <slot>{message}</slot>
-</div>
+{#if visible}
+  <div
+    {id}
+    class={['alert', type, direction, className].filter(Boolean).join(' ')}
+    role="alert"
+    in:fly={transitionArgs()}
+    out:fade
+    bind:this={alert}>
+    <div class="alert-message">
+      <slot>{message}</slot>
+    </div>
+    {#if closable}
+      <div class="alert-close">
+        <button class="close-button" on:click={close} />
+      </div>
+    {/if}
+  </div>
+{/if}
