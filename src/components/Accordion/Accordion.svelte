@@ -1,5 +1,5 @@
 <script>
-  import { beforeUpdate, setContext, createEventDispatcher } from "svelte";
+  import { onMount, beforeUpdate, setContext, createEventDispatcher } from "svelte";
 
   import { keyCodes } from "../../utils/key-codes";
 
@@ -28,6 +28,11 @@
         handleHeaderKey
       };
     }
+  });
+
+  onMount(() => {
+    // Set the initial expanded item
+    toggleItem(value);
   });
 
   beforeUpdate(() => {
