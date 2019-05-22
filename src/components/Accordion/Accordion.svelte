@@ -1,10 +1,12 @@
 <script>
-  import { beforeUpdate, setContext } from "svelte";
+  import { beforeUpdate, setContext, createEventDispatcher } from "svelte";
 
   export let id = null;
   export let className = null;
   export let multiple = false;
   export let value = -1;
+
+  const dispatch = createEventDispatcher();
 
   // A collection containing the expanded state for each item
   const itemState = [];
@@ -85,6 +87,8 @@
       const index = itemState.findIndex(item => item.expanded);
       value = index !== -1 ? itemState.length - index - 1 : -1;
     }
+
+    dispatch('changed', value);
   }
 </script>
 
