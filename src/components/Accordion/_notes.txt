@@ -1,10 +1,7 @@
 TODO
 ====
 
-* Do something better than the index hacks
 * Support a collapsed/expanded icon in the header
   * You can do this with styles, but it's not that nice
-* Add keyboard navigation
-  * Need to fix indexes so that we know which is the prev/next/first/last
 
 See https://www.w3.org/TR/wai-aria-practices-1.1/#accordion

@@ -9,28 +9,40 @@
   const dispatch = createEventDispatcher();
 
   let expanded = false;
+  let headerButton = null;
 
   // Register this item with the parent Accordion, which will handle toggling expanded for all items
   const { registerItem } = getContext("accordion");
-  const result = registerItem(setExpanded);
+  const result = registerItem(setExpanded, setFocused);
   // The index of this item in the parent Accordion's state collection, which is passed to the parent
   // when the header is clicked:
-  let index = result.index;
+  const index = result.index;
   // The method on the parent Accordion to call when the header is clicked:
-  let toggleItem = result.toggleItem;
+  const toggleItem = result.toggleItem;
+  const handleHeaderKey = result.handleHeaderKey;
 
   // This function is called by the parent Accordion to set this item's expanded value
   function setExpanded(value) {
     if (expanded !== value) {
       expanded = value;
-      dispatch('expandedChanged', value);
+      dispatch("expandedChanged", value);
     }
+  }
+
+  // This function is called by the parent Accordion to focus this item's header button
+  function setFocused() {
+    headerButton.focus();
   }
 
   function handleClick(e) {
     // Pass the index to the toggleItem method in the parent Accordion which will handle toggling
     // the value of expanded for all items (e.g. to close other items if necessary)
     toggleItem(index);
+  }
+
+  function handleKeyDown(e) {
+    // Pass the key press up to the parent Accordion which will handle setting the focused button
+    handleHeaderKey(index, e);
   }
 </script>
 
@@ -48,7 +60,11 @@
     class:expanded
     aria-expanded={expanded}
     aria-controls={id}>
-    <button class="button accordion-header-button" on:click={handleClick}>
+    <button
+      bind:this={headerButton}
+      class="button accordion-header-button"
+      on:click={handleClick}
+      on:keydown={handleKeyDown}>
       <slot name="header">{header}</slot>
     </button>
   </div>
