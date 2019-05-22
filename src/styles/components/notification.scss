@@ -1,0 +1,43 @@
+@import "../_variables";
+
+.notification {
+    background-color: $light-background-color;
+    border: 1px solid rgba($border-color, 0.3);
+    border-radius: $border-radius;
+    margin: 0 0 $element-margin;
+    padding: $element-padding / 2 $element-padding;
+}
+
+.notification:last-child {
+    margin: 0;
+}
+
+.notification-close {
+    margin-left: $element-margin;
+    margin-right: $element-margin / -4;
+}
+
+.notification.default {
+    color: white;
+    background-color: $dark-background-color;
+}
+
+.notification.info {
+    color: white;
+    background-color: $info-color;
+}
+
+.notification.success {
+    color: white;
+    background-color: $success-color;
+}
+
+.notification.warning {
+    color: white;
+    background-color: $warning-color;
+}
+
+.notification.danger {
+    color: white;
+    background-color: $danger-color;
+}
