@@ -1,0 +1,19 @@
+@import "../_variables";
+
+.pagination {
+    text-align: center;
+}
+
+.pagination-button {
+    margin: $element-margin / 4;
+}
+
+.pagination-button.active {
+    color: inherit;
+    font-weight: bold;
+}
+
+a.pagination-button.active:hover {
+    cursor: default;
+    text-decoration: none;
+}
