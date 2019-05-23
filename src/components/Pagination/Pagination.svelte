@@ -1,6 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
+  import { keyCodes } from "../../utils/key-codes";
+
   export let id = null;
   export let className = null;
   export let pageNumber = 1;
@@ -54,6 +56,43 @@
       dispatch('changed', number);
     }
   }
+  
+  function handleKey(e) {
+    switch (e.keyCode) {
+      case keyCodes.left: {
+        const el = e.target.previousElementSibling;
+        if (el) {
+          el.focus();
+          e.preventDefault();
+        }
+        break;
+      }
+      case keyCodes.right: {
+        const el = e.target.nextElementSibling;
+        if (el) {
+          el.focus();
+          e.preventDefault();
+        }
+        break;
+      }
+      case keyCodes.home: {
+        const el = e.target.parentNode.firstElementChild;
+        if (el) {
+          el.focus();
+          e.preventDefault();
+        }
+        break;
+      }
+      case keyCodes.end: {
+        const el = e.target.parentNode.lastElementChild;
+        if (el) {
+          el.focus();
+          e.preventDefault();
+        }
+        break;
+      }
+    }
+  }
 </script>
 
 <style>
@@ -67,34 +106,35 @@
     {id}
     class={['pagination', className].filter(Boolean).join(' ')}
     tabindex="0">
-    {#if pageNumber > 1}
       <button
-        class="button-link pagination-button"
+        class="button pagination-button"
+        disabled={pageNumber <= 1}
         on:click={e => setPageNumber(pageNumber - 1)}
+        on:keydown={e => handleKey(e)}
         aria-label="Previous"
         tabindex="-1">
         &lt;
       </button>
-    {/if}
 
     {#each pageNumbers() as number, index (number)}
       <button
-        class="button-link pagination-button"
+        class="button pagination-button"
         class:active={pageNumber === number}
         on:click={e => setPageNumber(number)}
+        on:keydown={e => handleKey(e)}
         tabindex="-1">
         {number.toString().replace('$', '')}
       </button>
     {/each}
 
-    {#if pageNumber < pageCount}
-      <button
-        class="button-link pagination-button"
-        on:click={e => setPageNumber(pageNumber + 1)}
-        aria-label="Next"
-        tabindex="-1">
-        &gt;
-      </button>
-    {/if}
+    <button
+      class="button pagination-button"
+      disabled={pageNumber >= pageCount}
+      on:click={e => setPageNumber(pageNumber + 1)}
+      on:keydown={e => handleKey(e)}
+      aria-label="Next"
+      tabindex="-1">
+      &gt;
+    </button>
   </div>
 {/if}

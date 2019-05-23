@@ -5,15 +5,22 @@
 }
 
 .pagination-button {
+    font-size: inherit;
     margin: $element-margin / 4;
+    min-width: 0;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+    width: 30px;
 }
 
 .pagination-button.active {
-    color: inherit;
+    background-color: $select-color;
+    border-color: $select-color;
+    color: white;
     font-weight: bold;
 }
 
-a.pagination-button.active:hover {
-    cursor: default;
-    text-decoration: none;
+.pagination-button:disabled {
+    background-color: inherit !important;
 }
