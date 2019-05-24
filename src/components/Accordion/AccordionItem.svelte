@@ -40,7 +40,7 @@
     toggleItem(index);
   }
 
-  function handleKeyDown(e) {
+  function handleKey(e) {
     // Pass the key press up to the parent Accordion which will handle setting the focused button
     handleHeaderKey(index, e);
   }
@@ -63,8 +63,9 @@
     <button
       bind:this={headerButton}
       class="button accordion-header-button"
+      tabindex="-1"
       on:click={handleClick}
-      on:keydown={handleKeyDown}>
+      on:keydown={handleKey}>
       <slot name="header">{header}</slot>
     </button>
   </div>

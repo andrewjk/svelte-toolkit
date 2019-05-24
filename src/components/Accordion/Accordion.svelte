@@ -91,6 +91,14 @@
     dispatch("changed", value);
   }
 
+  function handleFocus(e) {
+    const el = e.target.getElementsByTagName('button')[0];
+    if (el) {
+      el.focus();
+      e.preventDefault();
+    }
+  }
+
   function handleHeaderKey(index, e) {
     switch (e.keyCode) {
       case keyCodes.up: {
@@ -125,6 +133,6 @@
   }
 </script>
 
-<div {id} class={['accordion', className].filter(Boolean).join(' ')}>
+<div {id} class={['accordion', className].filter(Boolean).join(' ')} tabindex="0" on:focus={handleFocus}>
   <slot />
 </div>
