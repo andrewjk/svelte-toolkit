@@ -1,9 +1,11 @@
 <script>
-  import { getContext } from "svelte";
+  import { getContext, createEventDispatcher } from "svelte";
 
   export let id = null;
   export let className = null;
   export let header = null;
+
+  const dispatch = createEventDispatcher();
 
   let active;
 
@@ -13,25 +15,28 @@
 
   // This function is called by the parent Tabs to set this item's active value
   function setActive(value) {
-    active = value;
+    if (active !== value) {
+      active = value;
+      dispatch("activeChanged", value);
+    }
   }
 </script>
 
 <style>
-  .tab-panel {
+  .tab-item {
     display: none;
   }
 
-  .tab-panel.active {
+  .tab-item.active {
     display: block;
   }
 </style>
 
 <div
   {id}
-  class={['tab-item', active ? 'active' : '', className].filter(Boolean).join(' ')}
+  class={['tab-item', className].filter(Boolean).join(' ')}
+  class:active
   role="tabpanel"
-  aria-labelledby={id ? id + '-tab' : ''}
-  tabindex="0">
+  aria-labelledby={id ? id + '-tab' : ''}>
   <slot />
 </div>
