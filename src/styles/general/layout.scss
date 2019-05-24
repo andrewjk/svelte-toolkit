@@ -358,23 +358,6 @@
 // BUTTONS
 // ========================================================
 
-// A button with the styling of a link
-// This should be used when you need a link that calls a Javascript function
-.button-link {
-    background-color: inherit;
-    border: 0;
-    color: $link-color;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button-link:hover,
-.button-link:focus {
-    color: $link-hover-color;
-    outline: 0;
-    text-decoration: underline;
-}
-
 $close-button-margin: 4px;
 $close-button-width: 3px;
 

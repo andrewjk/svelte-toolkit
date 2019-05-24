@@ -11,6 +11,7 @@ import Switcher from './src/components/Switcher/Switcher.svelte';
 import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
 import Tabs from './src/components/Tabs/Tabs.svelte';
 import TabItem from './src/components/Tabs/TabItem.svelte';
+import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
 export {
     Accordion,
@@ -25,5 +26,6 @@ export {
     Switcher,
     SwitcherItem,
     Tabs,
-    TabItem
+    TabItem,
+    WizardNav
 }

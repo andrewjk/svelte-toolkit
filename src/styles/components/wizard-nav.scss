@@ -1,0 +1,25 @@
+@import "../_variables";
+
+.wizard-nav {
+    text-align: right;
+}
+
+.wizard-button {
+    font-size: inherit;
+    margin: $element-margin / 4;
+    min-width: 0;
+    padding: 0 12px;
+    text-align: center;
+    height: 30px;
+}
+
+.wizard-button.finish {
+    background-color: $select-color;
+    border-color: $select-color;
+    color: white;
+    font-weight: bold;
+}
+
+.wizard-button:disabled {
+    background-color: inherit !important;
+}
