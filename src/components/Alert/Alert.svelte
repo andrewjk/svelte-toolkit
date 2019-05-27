@@ -4,8 +4,8 @@
 
   export let id = null;
   export let className = null;
-  export let type = "default";
-  export let message = "";
+  export let type = "";
+  export let content = "";
   export let direction = "top";
   export let closable = true;
   export let duration = 5000;
@@ -60,7 +60,7 @@
     position: fixed;
   }
 
-  .alert-message {
+  .alert-content {
     flex: 1 1 auto;
   }
 
@@ -102,8 +102,8 @@
     in:fly={transitionArgs()}
     out:fade
     bind:this={alert}>
-    <div class="alert-message">
-      <slot>{message}</slot>
+    <div class="alert-content">
+      <slot>{content}</slot>
     </div>
     {#if closable}
       <div class="alert-close">

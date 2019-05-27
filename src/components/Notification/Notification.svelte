@@ -5,7 +5,7 @@
   export let id = null;
   export let className = null;
   export let type = "default";
-  export let message = "";
+  export let content = "";
   export let closable = true;
   export let duration = -1;
 
@@ -30,7 +30,7 @@
     display: inline-flex;
   }
 
-  .notification-message {
+  .notification-content {
     flex: 1 1 auto;
   }
 
@@ -44,8 +44,8 @@
     {id}
     class={['notification', type, className].filter(Boolean).join(' ')}
     out:fade>
-    <div class="notification-message">
-      <slot>{message}</slot>
+    <div class="notification-content">
+      <slot>{content}</slot>
     </div>
     {#if closable}
       <div class="notification-close">
