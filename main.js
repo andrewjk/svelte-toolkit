@@ -1,6 +1,7 @@
 import Accordion from './src/components/Accordion/Accordion.svelte';
 import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
 import Alert from './src/components/Alert/Alert.svelte';
+import Badge from './src/components/Badge/Badge.svelte';
 import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
@@ -14,18 +15,15 @@ import TabItem from './src/components/Tabs/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
 export {
-    Accordion,
-    AccordionItem,
+    Accordion, AccordionItem,
     Alert,
-    Breadcrumb,
-    BreadcrumbItem,
+    Badge,
+    Breadcrumb, BreadcrumbItem,
     Button,
     Notification,
     OffScreen,
     Pagination,
-    Switcher,
-    SwitcherItem,
-    Tabs,
-    TabItem,
+    Switcher, SwitcherItem,
+    Tabs, TabItem,
     WizardNav
 }
