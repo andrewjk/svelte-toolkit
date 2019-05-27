@@ -4,7 +4,7 @@
 
   export let id = null;
   export let className = null;
-  export let type = "default";
+  export let type = "";
   export let content = "";
   export let closable = true;
   export let duration = -1;
