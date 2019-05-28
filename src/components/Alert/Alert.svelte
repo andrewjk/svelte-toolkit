@@ -8,7 +8,7 @@
   export let className = null;
   export let type = "info";
   export let content = "";
-  export let direction = "top";
+  export let position = "top";
   export let closable = true;
   export let duration = 5000;
 
@@ -18,7 +18,7 @@
   let alert;
 
   function transitionArgs() {
-    switch (direction) {
+    switch (position) {
       case "top-left":
       case "bottom-left": {
         return { x: -100, duration: 800 };
@@ -99,7 +99,7 @@
 {#if visible}
   <div
     {id}
-    class={['alert', type, direction, className].filter(Boolean).join(' ')}
+    class={['alert', type, position, className].filter(Boolean).join(' ')}
     role="alert"
     in:fly={transitionArgs()}
     out:fade

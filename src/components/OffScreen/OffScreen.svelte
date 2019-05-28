@@ -2,7 +2,7 @@
   export let id = null;
   export let className = null;
   export let visible = "false";
-  export let direction = "left";
+  export let position = "left";
 
   function handleBackgroundClick(e) {
     visible = false;
@@ -58,7 +58,7 @@
   on:click={handleBackgroundClick}>
   <div
     {id}
-    class={['off-screen', direction, className].filter(Boolean).join(' ')}>
+    class={['off-screen', position, className].filter(Boolean).join(' ')}>
     <slot />
   </div>
 </div>
