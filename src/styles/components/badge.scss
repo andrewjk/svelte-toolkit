@@ -1,21 +1,29 @@
 @import "../_variables";
 
 .badge {
-    background-color: $dark-background-color;
+    background-color: white;
+    border: 1px solid $border-color;
     border-radius: 50%;
-    color: white;
     display: inline-block;
     font-weight: bold;
     font-size: $font-size-small;
     margin: 0 $element-margin / 4;
     padding: 0 $element-padding / 4;
     text-align: center;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
     vertical-align: top;
 }
 
 .badge.boxed {
     border-radius: 4px;
+}
+
+.badge.info,
+.badge.success,
+.badge.warning,
+.badge.danger {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .badge.info {

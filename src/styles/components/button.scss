@@ -5,7 +5,7 @@
 // ========================================================
 
 .button {
-    background-color: transparent;
+    background-color: white;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     cursor: pointer;
@@ -71,13 +71,15 @@ button::-moz-focus-inner {
 .button.info,
 .button.success,
 .button.warning,
-.button.danger {
+.button.danger,
+.button.select,
+.button.cancel {
     border: 1px solid transparent;
+    color: white,
 }
 
 .button.info {
     background-color: $info-color;
-    color: white;
 }
 
 .button.info:hover {
@@ -86,7 +88,6 @@ button::-moz-focus-inner {
 
 .button.success {
     background-color: $success-color;
-    color: white;
 }
 
 .button.success:hover {
@@ -95,7 +96,6 @@ button::-moz-focus-inner {
 
 .button.warning {
     background-color: $warning-color;
-    color: white;
 }
 
 .button.warning:hover {
@@ -104,16 +104,22 @@ button::-moz-focus-inner {
 
 .button.danger {
     background-color: $danger-color;
-    color: white;
 }
 
 .button.danger:hover {
     background-color: darken($danger-color, 9%);
 }
 
+.button.select {
+    background-color: $select-color;
+}
+
+.button.select:hover {
+    background-color: darken($select-color, 9%);
+}
+
 .button.cancel {
     background-color: $cancel-color;
-    color: white;
 }
 
 .button.cancel:hover {

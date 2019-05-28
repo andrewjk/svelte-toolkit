@@ -1,10 +1,9 @@
 @import "../_variables";
 
 .alert {
-    background-color: $dark-background-color;
-    border: 1px solid rgba($border-color, 0.3);
+    background-color: white;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
-    color: white;
     margin: 0 0 $element-margin;
     padding: $element-padding / 2 $element-padding;
 }
@@ -13,9 +12,12 @@
     margin: 0;
 }
 
-.alert-close {
-    margin-left: $element-margin;
-    margin-right: $element-margin / -4;
+.alert.info,
+.alert.success,
+.alert.warning,
+.alert.danger {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: white;
 }
 
 .alert.info {
@@ -32,4 +34,9 @@
 
 .alert.danger {
     background-color: $danger-color;
+}
+
+.alert-close {
+    margin-left: $element-margin;
+    margin-right: $element-margin / -4;
 }

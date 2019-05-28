@@ -6,7 +6,7 @@
 
   export let id = null;
   export let className = null;
-  export let type = "";
+  export let type = "info";
   export let content = "";
   export let closable = true;
   export let duration = -1;
