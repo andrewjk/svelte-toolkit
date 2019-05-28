@@ -2,9 +2,9 @@
   import { createEventDispatcher } from "svelte";
   import { areDatesEqual } from "../../utils/date-utils";
 
-  import CalendarDay from "./CalendarDay.svelte";
-  import ArrowLeft from "../Icons/ArrowLeft.svelte";
-  import ArrowRight from "../Icons/ArrowRight.svelte";
+  import CalendarDay from "./CalendarDay";
+  import ArrowLeft from "../Icons/ArrowLeft";
+  import ArrowRight from "../Icons/ArrowRight";
 
   export let id = null;
   export let className = null;

@@ -2,7 +2,7 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import Cross from "../Icons/Cross.svelte";
+  import Cross from "../Icons/Cross";
 
   export let id = null;
   export let className = null;
