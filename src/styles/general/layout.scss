@@ -366,7 +366,7 @@
     vertical-align: middle;
     width: $icon-size;
 
-    stroke: $body-text-color;
+    stroke: currentColor;
     stroke-width: 10;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -383,13 +383,9 @@
 }
 
 .close-button {
-    color: white;
     height: $close-button-size;
     padding: 0;
     width: $close-button-size;
-    .icon {
-        stroke: white;
-    }
 }
 
 .icon-button {
