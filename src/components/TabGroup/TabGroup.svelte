@@ -21,9 +21,9 @@
 
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
   // declared in slots
-  setContext("tabs", {
+  setContext("tabGroup", {
     // The registerItem function is called from each TabItem to register itself with this
-    // Tabs. They pass us their header, as well as a setActive method that we can call
+    // TabGroup. They pass us their header, as well as a setActive method that we can call
     registerItem: (id, header, setActive) => {
       itemStates = [...itemStates, { active: false, id, header, setActive }];
     }
@@ -132,7 +132,7 @@
   }
 </style>
 
-<div {id} class={['tabs', className].filter(Boolean).join(' ')}>
+<div {id} class={['tab-group', className].filter(Boolean).join(' ')}>
   <div
     class="tab-list"
     class:boxed

@@ -11,8 +11,8 @@ import OffScreen from './src/components/OffScreen/OffScreen.svelte';
 import Pagination from './src/components/Pagination/Pagination.svelte';
 import Switcher from './src/components/Switcher/Switcher.svelte';
 import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
-import Tabs from './src/components/Tabs/Tabs.svelte';
-import TabItem from './src/components/Tabs/TabItem.svelte';
+import TabGroup from './src/components/TabGroup/TabGroup.svelte';
+import TabItem from './src/components/TabGroup/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
 import ArrowUp from './src/components/Icons/ArrowUp.svelte';
@@ -32,7 +32,7 @@ export {
     OffScreen,
     Pagination,
     Switcher, SwitcherItem,
-    Tabs, TabItem,
+    TabGroup, TabItem,
     WizardNav,
 
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Cross

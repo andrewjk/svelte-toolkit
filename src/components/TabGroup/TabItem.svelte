@@ -9,11 +9,11 @@
 
   let active;
 
-  // Register this item with the parent Tabs, which will handle toggling active for all items
-  const { registerItem } = getContext("tabs");
+  // Register this item with the parent TabGroup, which will handle toggling active for all items
+  const { registerItem } = getContext("tabGroup");
   registerItem(id, header, setActive);
 
-  // This function is called by the parent Tabs to set this item's active value
+  // This function is called by the parent TabGroup to set this item's active value
   function setActive(value) {
     if (active !== value) {
       active = value;
