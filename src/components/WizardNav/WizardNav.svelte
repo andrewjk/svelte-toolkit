@@ -1,6 +1,9 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
+  import LeftArrow from "../Icons/ArrowLeft";
+  import RightArrow from "../Icons/ArrowRight";
+
   export let id = null;
   export let className = null;
   export let index = 1;
@@ -11,7 +14,7 @@
   function setIndex(value) {
     if (index !== value) {
       index = value;
-      dispatch('changed', index);
+      dispatch("changed", index);
     }
   }
 </script>
@@ -33,7 +36,8 @@
         on:click={e => setIndex(index - 1)}
         aria-label="Previous"
         tabindex="-1">
-        &lt; Previous
+        <LeftArrow />
+        Previous
       </button>
     {/if}
 
@@ -43,7 +47,8 @@
         on:click={e => setIndex(index + 1)}
         aria-label="Next"
         tabindex="-1">
-        Next &gt;
+        Next
+        <RightArrow />
       </button>
     {/if}
 

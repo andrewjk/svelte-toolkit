@@ -360,8 +360,11 @@
 
 .icon {
     display: inline-block;
-    height: 2rem;
-    width: 2rem;
+    height: $icon-size;
+    /* HACK: Why?? */
+    margin-top: -2px;
+    vertical-align: middle;
+    width: $icon-size;
 
     stroke: $body-text-color;
     stroke-width: 10;
@@ -376,29 +379,22 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    line-height: $close-button-size;
     padding: 2px;
 }
 
 .close-button {
     color: white;
     height: $close-button-size;
-    line-height: $close-button-size;
-    padding: 2px;
+    padding: 0;
     width: $close-button-size;
-
     .icon {
-        height: $close-button-size - 4 * 2;
-        margin: 0 auto;
         stroke: white;
-        width: $close-button-size - 4 * 2;
     }
 }
 
 .icon-button {
     color: inherit;
     height: $input-height;
-    line-height: $input-height;
     padding: 2px;
     width: $input-height;
 

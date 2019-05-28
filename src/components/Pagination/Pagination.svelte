@@ -1,7 +1,9 @@
 <script>
   import { createEventDispatcher } from "svelte";
-
   import { keyCodes } from "../../utils/key-codes";
+
+  import ArrowLeft from "../Icons/ArrowLeft";
+  import ArrowRight from "../Icons/ArrowRight";
 
   export let id = null;
   export let className = null;
@@ -113,7 +115,7 @@
         on:keydown={e => handleKey(e)}
         aria-label="Previous"
         tabindex="-1">
-        &lt;
+        <ArrowLeft/>
       </button>
 
     {#each pageNumbers() as number, index (number)}
@@ -134,7 +136,7 @@
       on:keydown={e => handleKey(e)}
       aria-label="Next"
       tabindex="-1">
-      &gt;
+      <ArrowRight/>
     </button>
   </div>
 {/if}
