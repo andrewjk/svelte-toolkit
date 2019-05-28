@@ -34,7 +34,7 @@
   {:else}{date.getDate()}{/if}
   <ul class="calendar-event-list">
     {#each events as ev}
-      <li class="calendar-event" title={ev.text} />
+      <li class="calendar-event" title={ev.content} />
     {/each}
   </ul>
 </div>

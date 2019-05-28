@@ -11,7 +11,7 @@
   export let startOfWeek = 1;
   export let selectable = false;
   export let value = new Date();
-  // Events can have { date, text, color }
+  // Events can have { date, content, color }
   export let events = [];
 
   let activeDate = new Date();
