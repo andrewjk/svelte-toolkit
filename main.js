@@ -14,6 +14,12 @@ import Tabs from './src/components/Tabs/Tabs.svelte';
 import TabItem from './src/components/Tabs/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
+import ArrowUp from './src/components/Icons/ArrowUp.svelte';
+import ArrowDown from './src/components/Icons/ArrowDown.svelte';
+import ArrowLeft from './src/components/Icons/ArrowLeft.svelte';
+import ArrowRight from './src/components/Icons/ArrowRight.svelte';
+import Cross from './src/components/Icons/Cross.svelte';
+
 export {
     Accordion, AccordionItem,
     Alert,
@@ -25,5 +31,7 @@ export {
     Pagination,
     Switcher, SwitcherItem,
     Tabs, TabItem,
-    WizardNav
+    WizardNav,
+
+    ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Cross
 }
