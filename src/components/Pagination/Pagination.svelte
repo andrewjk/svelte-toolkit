@@ -23,7 +23,12 @@
       allNumbers.push(2, 3, 4, 5);
     }
     if (pageNumber >= pageCount - 2) {
-      allNumbers.push(pageCount - 4, pageCount - 3, pageCount - 2, pageCount - 1);
+      allNumbers.push(
+        pageCount - 4,
+        pageCount - 3,
+        pageCount - 2,
+        pageCount - 1
+      );
     }
     allNumbers.push(pageCount);
     allNumbers.push(pageNumber - 1);
@@ -38,7 +43,7 @@
       if (page >= 1 && page <= pageCount) {
         if (page > 1 && allNumbers.indexOf(page - 1) === -1) {
           // HACK: To get things keyed correctly, we prepend the second ellipses with $
-          numbers.push(numbers.indexOf('…') === -1 ? '…' : '$…');
+          numbers.push(numbers.indexOf("…") === -1 ? "…" : "$…");
         }
         if (numbers.indexOf(page) === -1) {
           numbers.push(page);
@@ -50,15 +55,15 @@
   }
 
   function setPageNumber(number) {
-    if (number === '…' || number === '$…') {
-      number = prompt('Go to page:');
+    if (number === "…" || number === "$…") {
+      number = prompt("Go to page:");
     }
     if (number) {
       pageNumber = number;
-      dispatch('changed', number);
+      dispatch("change", number);
     }
   }
-  
+
   function handleKey(e) {
     switch (e.keyCode) {
       case keyCodes.left: {
@@ -108,15 +113,15 @@
     {id}
     class={['pagination', className].filter(Boolean).join(' ')}
     tabindex="0">
-      <button
-        class="button pagination-button"
-        disabled={pageNumber <= 1}
-        on:click={e => setPageNumber(pageNumber - 1)}
-        on:keydown={e => handleKey(e)}
-        aria-label="Previous"
-        tabindex="-1">
-        <ArrowLeft/>
-      </button>
+    <button
+      class="button pagination-button"
+      disabled={pageNumber <= 1}
+      on:click={e => setPageNumber(pageNumber - 1)}
+      on:keydown={e => handleKey(e)}
+      aria-label="Previous"
+      tabindex="-1">
+      <ArrowLeft />
+    </button>
 
     {#each pageNumbers() as number, index (number)}
       <button
@@ -125,7 +130,7 @@
         on:click={e => setPageNumber(number)}
         on:keydown={e => handleKey(e)}
         tabindex="-1">
-        {number.toString().replace('$', '')}
+         {number.toString().replace('$', '')}
       </button>
     {/each}
 
@@ -136,7 +141,7 @@
       on:keydown={e => handleKey(e)}
       aria-label="Next"
       tabindex="-1">
-      <ArrowRight/>
+      <ArrowRight />
     </button>
   </div>
 {/if}

@@ -65,7 +65,7 @@
     // Set the value to the index of the active item
     index = atIndex;
 
-    dispatch("changed", index);
+    dispatch("change", index);
   }
 </script>
 

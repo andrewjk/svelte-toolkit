@@ -72,7 +72,7 @@
     // Set the value to the index of the active item
     value = index;
 
-    dispatch("changed", value);
+    dispatch("change", value);
   }
 
   function handleFocus(e) {

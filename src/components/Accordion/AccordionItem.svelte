@@ -25,7 +25,7 @@
   function setExpanded(value) {
     if (expanded !== value) {
       expanded = value;
-      dispatch("expandedChanged", value);
+      dispatch("expandedChange", value);
     }
   }
 

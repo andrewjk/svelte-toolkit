@@ -16,7 +16,7 @@
   function setActive(value) {
     if (active !== value) {
       active = value;
-      dispatch("activeChanged", value);
+      dispatch("activeChange", value);
     }
   }
 </script>

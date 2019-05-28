@@ -1,5 +1,10 @@
 <script>
-  import { onMount, beforeUpdate, setContext, createEventDispatcher } from "svelte";
+  import {
+    onMount,
+    beforeUpdate,
+    setContext,
+    createEventDispatcher
+  } from "svelte";
 
   import { keyCodes } from "../../utils/key-codes";
 
@@ -88,11 +93,11 @@
       value = itemStates.findIndex(item => item.expanded);
     }
 
-    dispatch("changed", value);
+    dispatch("change", value);
   }
 
   function handleFocus(e) {
-    const el = e.target.getElementsByTagName('button')[0];
+    const el = e.target.getElementsByTagName("button")[0];
     if (el) {
       el.focus();
       e.preventDefault();
@@ -133,6 +138,10 @@
   }
 </script>
 
-<div {id} class={['accordion', className].filter(Boolean).join(' ')} tabindex="0" on:focus={handleFocus}>
+<div
+  {id}
+  class={['accordion', className].filter(Boolean).join(' ')}
+  tabindex="0"
+  on:focus={handleFocus}>
   <slot />
 </div>

@@ -14,7 +14,7 @@
   function setIndex(value) {
     if (index !== value) {
       index = value;
-      dispatch("changed", index);
+      dispatch("change", index);
     }
   }
 </script>
