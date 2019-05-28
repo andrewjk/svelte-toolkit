@@ -355,46 +355,64 @@
     visibility: visible !important;
 }
 
-// BUTTONS
+// ICONS AND BUTTONS
 // ========================================================
 
-$close-button-margin: 4px;
-$close-button-width: 3px;
+.icon {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
 
-.close-button {
+    stroke: $body-text-color;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: transparent;
+}
+
+.close-button,
+.icon-button {
     background-color: transparent;
     border: none;
     border-radius: 50%;
-    color: white;
     cursor: pointer;
+    line-height: $close-button-size;
+    padding: 2px;
+}
+
+.close-button {
+    color: white;
     height: $close-button-size;
-    position: relative;
+    line-height: $close-button-size;
+    padding: 2px;
     width: $close-button-size;
-    vertical-align: middle;
+
+    .icon {
+        height: $close-button-size - 4 * 2;
+        margin: 0 auto;
+        stroke: white;
+        width: $close-button-size - 4 * 2;
+    }
 }
 
-.close-button:hover {
+.icon-button {
+    color: inherit;
+    height: $input-height;
+    line-height: $input-height;
+    padding: 2px;
+    width: $input-height;
+
+    .icon {
+        height: $input-height - 4 * 2;
+        margin: 0 auto;
+        stroke: $body-text-color;
+        width: $input-height - 4 * 2;
+    }
+}
+
+.close-button:hover,
+.icon-button:hover {
     background-color: rgba(0, 0, 0, 0.1);
-}
-
-.close-button:before,
-.close-button:after{
-    background-color: white;
-    border-radius: $close-button-width;
-    content: '';
-    height: $close-button-width;
-    position: absolute;
-    width: $close-button-size - 2 * $close-button-margin;
-    top: $close-button-size  / 2 - 2px;
-}
-
-.close-button:before{
-    transform: rotate(45deg);
-    left: $close-button-margin;
-}
-.close-button:after{
-    transform: rotate(-45deg);
-    right: $close-button-margin;
 }
 
 // MISC

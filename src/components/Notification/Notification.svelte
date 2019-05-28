@@ -2,6 +2,8 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
+  import Cross from "../Icons/Cross.svelte";
+
   export let id = null;
   export let className = null;
   export let type = "";
@@ -49,7 +51,9 @@
     </div>
     {#if closable}
       <div class="notification-close">
-        <button class="close-button" on:click={close} />
+        <button class="close-button" on:click={close}>
+          <Cross/>
+        </button>
       </div>
     {/if}
   </div>
