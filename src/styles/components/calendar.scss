@@ -1,0 +1,101 @@
+@import "../_variables";
+
+.calendar {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin: 0 0 $element-margin;
+    padding: $element-padding;
+
+    a {
+        color: inherit;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.calendar:last-child {
+    margin: 0;
+}
+
+.calendar-header {
+    padding: 8px 0;
+}
+
+.calendar-body {
+    margin: 0 0 20px;
+}
+
+.calendar-body:last-child {
+    margin: 0;
+}
+
+.calendar-nav {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    width: 14.2857%;
+}
+
+.calendar-title {
+    display: inline-block;
+    text-align: center;
+    width: 71.4285%;
+}
+
+.calendar-day {
+    border-radius: $border-radius;
+    display: inline-block;
+    padding: 8px 0;
+    text-align: center;
+    vertical-align: top;
+    width: 14.2857%;
+}
+
+.calendar-day-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.calendar-day-header {
+    font-weight: bold;
+}
+
+.calendar-day.muted {
+    color: #CCCCCC;
+}
+
+.calendar-day.today {
+    background-color: #0077DD;
+    color: white;
+}
+
+.calendar-day.active {
+    background-color: $select-color;
+    color: white;
+}
+
+ul.calendar-event-list {
+    line-height: 6px;
+    list-style: outside none none;
+    margin: 2px 0 -4px;
+    padding: 0;
+}
+
+li.calendar-event {
+    background-color: $select-color;
+    border-radius: 50%;
+    display: inline-block;
+    height: 6px;
+    margin: 0 2px;
+    padding: 0;
+    width: 6px;
+}
