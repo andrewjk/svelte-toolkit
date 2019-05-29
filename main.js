@@ -6,6 +6,8 @@ import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
+import Dialog from './src/components/Dialog/Dialog.svelte';
+import DialogButton from './src/components/Dialog/DialogButton.svelte';
 import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
 import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
 import NavBar from './src/components/NavBar/NavBar.svelte';
@@ -21,6 +23,8 @@ import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
 import TabGroup from './src/components/TabGroup/TabGroup.svelte';
 import TabItem from './src/components/TabGroup/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
+
+import showDialog from './src/components/Dialog/show-dialog';
 
 import ArrowUp from './src/components/Icons/ArrowUp.svelte';
 import ArrowDown from './src/components/Icons/ArrowDown.svelte';
@@ -40,6 +44,7 @@ export {
     Breadcrumb, BreadcrumbItem,
     Button,
     Calendar,
+    Dialog, DialogButton,
     DropDownMenuItem, DropDownMenuDivider,
     NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
@@ -48,6 +53,8 @@ export {
     Switcher, SwitcherItem,
     TabGroup, TabItem,
     WizardNav,
+
+    showDialog,
 
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
     ChevronUp, ChevronDown, ChevronLeft, ChevronRight,

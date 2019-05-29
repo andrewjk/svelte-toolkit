@@ -1,0 +1,6 @@
+TODO
+====
+
+* Support queuing
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#alert
