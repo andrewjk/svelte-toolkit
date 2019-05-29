@@ -34,7 +34,6 @@ Components, each of which should be mostly self-explanatory:
 @import "components/badge";
 @import "components/button";
 @import "components/calendar";
-@import "components/dialog";
 @import "components/nav-bar";
 @import "components/notification";
 @import "components/pagination";
@@ -44,3 +43,8 @@ Components, each of which should be mostly self-explanatory:
 
 /* NOTE: This needs to come after nav-bar so that it can override nav-menu-item a */
 @import "components/drop-down-menu";
+
+/*
+Dialogs:
+*/
+@import "dialogs/dialog";

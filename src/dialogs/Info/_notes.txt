@@ -1,0 +1,9 @@
+TODO
+====
+
+* Keyboard shortcuts
+* Can we pass slot content better?
+* Allow icons
+* Allow setting this as an alert dialog
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_model

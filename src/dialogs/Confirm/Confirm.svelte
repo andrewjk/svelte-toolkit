@@ -2,11 +2,10 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import DialogButton from "./DialogButton";
+  import DialogButton from "../DialogButton/DialogButton";
 
   export let id = null;
   export let className = null;
-  export let type = "";
   export let header = "";
   export let content = "";
   export let callback = null;
@@ -39,7 +38,7 @@
   <div class="dialog-background" class:visible>
     <div
       {id}
-      class={['dialog', type, className].filter(Boolean).join(' ')}
+      class={['dialog', className].filter(Boolean).join(' ')}
       in:fade={{ duration: 100 }}>
       <div class="dialog-header">
         <slot name="header">{header}</slot>
@@ -49,6 +48,18 @@
       </div>
       <div class="dialog-footer">
         <slot name="footer">
+          {#if !buttons || !buttons.length}
+            <DialogButton
+              confirm={true}
+              on:click={e => handleClick(true, false)}>
+              OK
+            </DialogButton>
+            <DialogButton
+              cancel={true}
+              on:click={e => handleClick(false, true)}>
+              Cancel
+            </DialogButton>
+          {/if}
           {#each buttons as button}
             <DialogButton
               confirm={button.confirm}

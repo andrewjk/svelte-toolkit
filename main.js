@@ -1,3 +1,4 @@
+// Components
 import Accordion from './src/components/Accordion/Accordion.svelte';
 import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
 import Alert from './src/components/Alert/Alert.svelte';
@@ -6,8 +7,6 @@ import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
-import Dialog from './src/components/Dialog/Dialog.svelte';
-import DialogButton from './src/components/Dialog/DialogButton.svelte';
 import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
 import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
 import NavBar from './src/components/NavBar/NavBar.svelte';
@@ -24,9 +23,21 @@ import TabGroup from './src/components/TabGroup/TabGroup.svelte';
 import TabItem from './src/components/TabGroup/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
+// Component methods
 import showAlert from './src/components/Alert/show-alert';
-import showDialog from './src/components/Dialog/show-dialog';
 
+// Dialogs
+import DialogButton from './src/dialogs/DialogButton/DialogButton.svelte';
+import Info from './src/dialogs/Info/Info.svelte';
+import Confirm from './src/dialogs/Confirm/Confirm.svelte';
+import Prompt from './src/dialogs/Prompt/Prompt.svelte';
+
+// Dialog methods
+import showInfo from './src/dialogs/Info/show-info';
+import showConfirm from './src/dialogs/Confirm/show-confirm';
+import showPrompt from './src/dialogs/Prompt/show-prompt';
+
+// Icons
 import ArrowUp from './src/components/Icons/ArrowUp.svelte';
 import ArrowDown from './src/components/Icons/ArrowDown.svelte';
 import ArrowLeft from './src/components/Icons/ArrowLeft.svelte';
@@ -39,13 +50,13 @@ import ChevronRight from './src/components/Icons/ChevronRight.svelte';
 import Cross from './src/components/Icons/Cross.svelte';
 
 export {
+    // Components
     Accordion, AccordionItem,
     Alert,
     Badge,
     Breadcrumb, BreadcrumbItem,
     Button,
     Calendar,
-    Dialog, DialogButton,
     DropDownMenuItem, DropDownMenuDivider,
     NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
@@ -55,9 +66,21 @@ export {
     TabGroup, TabItem,
     WizardNav,
 
+    // Component methods
     showAlert,
-    showDialog,
 
+    // Dialogs
+    DialogButton,
+    Info,
+    Confirm,
+    Prompt,
+
+    // Dialog methods
+    showInfo,
+    showConfirm,
+    showPrompt,
+
+    // Icons
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
     ChevronUp, ChevronDown, ChevronLeft, ChevronRight,
     Bars, Cross

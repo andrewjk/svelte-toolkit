@@ -1,9 +1,9 @@
-import Dialog from './Dialog';
+import Confirm from './Confirm';
 
-export default function showDialog(props) {
+export default function showConfirm(props) {
     return new Promise((resolve) => {
         const propsWithCallback = Object.assign({}, props, { callback: resolve })
-        const dialog = new Dialog({
+        const dialog = new Confirm({
             target: document.body,
             props: propsWithCallback,
             intro: true

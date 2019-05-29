@@ -1,0 +1,8 @@
+TODO
+====
+
+* Keyboard shortcuts
+* Can we pass slot content better?
+* Allow icons
+
+See https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_model
