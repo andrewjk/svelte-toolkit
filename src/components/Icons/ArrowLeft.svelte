@@ -8,6 +8,6 @@
   class={['icon', className].filter(Boolean).join(' ')}
   viewBox="0 0 100 100">
   <g>
-    <path d="M60,20 L30,50 L60,80" />
+    <polygon points="60,30 30,50 60,70" />
   </g>
 </svg>
