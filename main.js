@@ -6,6 +6,13 @@ import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
+import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
+import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
+import NavBar from './src/components/NavBar/NavBar.svelte';
+import NavLogo from './src/components/NavBar/NavLogo.svelte';
+import NavMenu from './src/components/NavBar/NavMenu.svelte';
+import NavMenuItem from './src/components/NavBar/NavMenuItem.svelte';
+import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown.svelte';
 import Notification from './src/components/Notification/Notification.svelte';
 import OffScreen from './src/components/OffScreen/OffScreen.svelte';
 import Pagination from './src/components/Pagination/Pagination.svelte';
@@ -28,6 +35,8 @@ export {
     Breadcrumb, BreadcrumbItem,
     Button,
     Calendar,
+    DropDownMenuItem, DropDownMenuDivider,
+    NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
     OffScreen,
     Pagination,
