@@ -24,6 +24,7 @@ import TabGroup from './src/components/TabGroup/TabGroup.svelte';
 import TabItem from './src/components/TabGroup/TabItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
+import showAlert from './src/components/Alert/show-alert';
 import showDialog from './src/components/Dialog/show-dialog';
 
 import ArrowUp from './src/components/Icons/ArrowUp.svelte';
@@ -54,6 +55,7 @@ export {
     TabGroup, TabItem,
     WizardNav,
 
+    showAlert,
     showDialog,
 
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
