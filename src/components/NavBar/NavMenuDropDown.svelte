@@ -1,5 +1,5 @@
 <script>
-  import ArrowDown from "../Icons/ArrowDown";
+  import ChevronDown from "../Icons/ChevronDown";
 
   export let id = null;
   export let className = null;
@@ -52,7 +52,7 @@
   on:mouseleave={handleMouseLeave}>
   <a href="#" on:mousedown={handleMouseDown} on:touchstart={handleTouchStart}>
     <slot />
-    <ArrowDown />
+    <ChevronDown />
   </a>
   {#if expanded}
     <div class="drop-down-menu">

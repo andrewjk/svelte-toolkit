@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import LeftArrow from "../Icons/ArrowLeft";
-  import RightArrow from "../Icons/ArrowRight";
+  import LeftChevron from "../Icons/ChevronLeft";
+  import RightChevron from "../Icons/ChevronRight";
 
   export let id = null;
   export let className = null;
@@ -36,7 +36,7 @@
         on:click={e => setIndex(index - 1)}
         aria-label="Previous"
         tabindex="-1">
-        <LeftArrow />
+        <LeftChevron />
         Previous
       </button>
     {/if}
@@ -48,7 +48,7 @@
         aria-label="Next"
         tabindex="-1">
         Next
-        <RightArrow />
+        <RightChevron />
       </button>
     {/if}
 

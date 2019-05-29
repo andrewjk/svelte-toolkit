@@ -26,6 +26,10 @@ import ArrowUp from './src/components/Icons/ArrowUp.svelte';
 import ArrowDown from './src/components/Icons/ArrowDown.svelte';
 import ArrowLeft from './src/components/Icons/ArrowLeft.svelte';
 import ArrowRight from './src/components/Icons/ArrowRight.svelte';
+import ChevronUp from './src/components/Icons/ChevronUp.svelte';
+import ChevronDown from './src/components/Icons/ChevronDown.svelte';
+import ChevronLeft from './src/components/Icons/ChevronLeft.svelte';
+import ChevronRight from './src/components/Icons/ChevronRight.svelte';
 import Cross from './src/components/Icons/Cross.svelte';
 
 export {
@@ -44,5 +48,6 @@ export {
     TabGroup, TabItem,
     WizardNav,
 
-    ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Cross
+    ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
+    ChevronUp, ChevronDown, ChevronLeft, ChevronRight,
 }

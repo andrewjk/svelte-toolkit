@@ -3,8 +3,8 @@
   import { areDatesEqual } from "../../utils/date-utils";
 
   import CalendarDay from "./CalendarDay";
-  import ArrowLeft from "../Icons/ArrowLeft";
-  import ArrowRight from "../Icons/ArrowRight";
+  import ChevronLeft from "../Icons/ChevronLeft";
+  import ChevronRight from "../Icons/ChevronRight";
 
   export let id = null;
   export let className = null;
@@ -110,7 +110,7 @@
   <div class="calendar-header">
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handlePrevMonth}>
-        <ArrowLeft />
+        <ChevronLeft />
       </button>
     </span>
     <span class="calendar-title">
@@ -118,7 +118,7 @@
     </span>
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handleNextMonth}>
-        <ArrowRight />
+        <ChevronRight />
       </button>
     </span>
   </div>
