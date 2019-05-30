@@ -8,6 +8,6 @@
   class={['icon', className].filter(Boolean).join(' ')}
   viewBox="0 0 100 100">
   <g>
-    <polygon points="30,60 50,30 70,60" />
+    <polygon points="25,60 50,30 75,60" stroke-linejoin="round" />
   </g>
 </svg>
