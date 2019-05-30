@@ -48,6 +48,7 @@ import ChevronDown from './src/components/Icons/ChevronDown.svelte';
 import ChevronLeft from './src/components/Icons/ChevronLeft.svelte';
 import ChevronRight from './src/components/Icons/ChevronRight.svelte';
 import Cross from './src/components/Icons/Cross.svelte';
+import Check from './src/components/Icons/Check.svelte';
 
 export {
     // Components
@@ -83,5 +84,5 @@ export {
     // Icons
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
     ChevronUp, ChevronDown, ChevronLeft, ChevronRight,
-    Bars, Cross
+    Bars, Cross, Check
 }
