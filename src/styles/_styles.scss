@@ -17,12 +17,10 @@ footers and containers
 
 /*
 The grid file contains styles for a 12-column grid based on flexbox
+The animation file contains styles for animating elements
+The table file contains table styles
 */
 @import "general/grid";
-
-/*
-These files should be mostly self-explanatory:
-*/
 @import "general/animation";
 @import "general/table";
 
@@ -43,6 +41,17 @@ Components, each of which should be mostly self-explanatory:
 
 /* NOTE: This needs to come after nav-bar so that it can override nav-menu-item a */
 @import "components/drop-down-menu";
+
+/*
+The forms base file contains styles for basic form elements
+*/
+@import "forms/base";
+
+/*
+Other form styles, each of which should be mostly self-explanatory:
+*/
+//@import "forms/forms.scss";
+@import "forms/validation.scss";
 
 /*
 Dialogs:

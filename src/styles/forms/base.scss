@@ -1,0 +1,132 @@
+@import "_variables";
+
+// LABELS
+// ========================================================
+
+label {
+    color: $label-color;
+    display: block;
+    line-height: $input-height;
+    padding-left: 1px;
+}
+
+label.inline {
+    line-height: $input-height;
+    margin-right: $element-margin / 2;
+}
+
+// INPUTS
+// ========================================================
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="datetime"],
+input[type="file"],
+input[type="url"] {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    height: $input-height;
+    padding: 0 4px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    line-height: $input-height;
+    margin: 0 5px;
+}
+
+input[type="submit"]::-moz-focus-inner {
+    border: none;
+}
+
+input[readonly],
+input:disabled,
+input[type="submit"]:disabled,
+input[type="submit"]:disabled:hover,
+input[type="submit"]:disabled:focus {
+    background-color: $disabled-color;
+}
+
+input[type="range"] {
+    height: $input-height;
+    width: 100%;
+}
+
+input.small {
+    width: 100px;
+}
+
+input.medium {
+    width: 200px;
+}
+
+input.large {
+    width: 280px;
+    max-width: 100%;
+}
+
+input.inline {
+    line-height: $input-height;
+    margin-right: $element-margin / 2;
+    width: auto;
+}
+
+// SELECTS
+// ========================================================
+
+select {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    height: $input-height;
+    width: 100%;
+}
+
+select::-moz-focus-inner {
+    border: none;
+}
+
+select.inline {
+    line-height: $input-height;
+    margin-right: $element-margin / 2;
+    width: auto;
+}
+
+// TEXTAREA
+// ========================================================
+
+textarea {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: inherit;
+    margin: 0;
+    min-height: 100px;
+    padding: 4px;
+    width: 100%;
+}
+
+textarea[readonly]
+textarea:disabled {
+    background-color: $disabled-color;
+}
+
+// OTHER ELEMENTS
+// ========================================================
+
+fieldset {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: $element-padding;
+}
+
+legend {
+    color: $label-color;
+    padding: 0 $element-padding / 4;
+}

@@ -26,6 +26,13 @@ import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 // Component methods
 import showAlert from './src/components/Alert/show-alert';
 
+// Forms
+import Input from './src/forms/Input/Input';
+import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary';
+
+// Validator class
+import Validator from './src/forms/Validator';
+
 // Dialogs
 import DialogButton from './src/dialogs/DialogButton/DialogButton.svelte';
 import Info from './src/dialogs/Info/Info.svelte';
@@ -69,6 +76,13 @@ export {
 
     // Component methods
     showAlert,
+
+    // Forms
+    Input,
+    ValidationSummary,
+
+    // Validator class
+    Validator,
 
     // Dialogs
     DialogButton,
