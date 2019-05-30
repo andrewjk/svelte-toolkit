@@ -8,7 +8,7 @@
   class={['icon', className].filter(Boolean).join(' ')}
   viewBox="0 0 100 100">
   <g>
-    <path d="M25,25 L75,75" />
-    <path d="M25,75 L75,25" />
+    <path d="M10,10 L90,90" />
+    <path d="M10,90 L90,10" />
   </g>
 </svg>

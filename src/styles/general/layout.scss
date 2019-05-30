@@ -363,11 +363,12 @@
     height: $icon-size;
     /* HACK: Why?? */
     margin-top: -2px;
+    padding: 2px;
     vertical-align: middle;
     width: $icon-size;
 
     stroke: currentColor;
-    stroke-width: 12;
+    stroke-width: 15;
     fill: currentColor;
 }
 
@@ -377,19 +378,17 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    padding: 2px;
+    padding: 0;
 }
 
 .close-button {
     height: $close-button-size;
-    padding: 0;
     width: $close-button-size;
 }
 
 .icon-button {
     color: inherit;
     height: $input-height;
-    padding: 2px;
     width: $input-height;
 
     .icon {
