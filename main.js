@@ -28,7 +28,7 @@ import showAlert from './src/components/Alert/show-alert';
 
 // Forms
 import Field from './src/forms/Field/Field';
-import Input from './src/forms/Input/Input';
+import TextBox from './src/forms/TextBox/TextBox';
 
 // Validation
 import Validator from './src/forms/Validator';
@@ -80,7 +80,7 @@ export {
 
     // Forms
     Field,
-    Input,
+    TextBox,
 
     // Validation
     Validator,
