@@ -130,3 +130,30 @@ legend {
     color: $label-color;
     padding: 0 $element-padding / 4;
 }
+
+// TYPES
+// ========================================================
+
+input.info,
+select.info,
+textarea.info {
+    border-color: $info-color;
+}
+
+input.success,
+select.success,
+textarea.success {
+    border-color: $success-color;
+}
+
+input.warning,
+select.warning,
+textarea.warning {
+    border-color: $warning-color;
+}
+
+input.danger,
+select.danger,
+textarea.danger {
+    border-color: $danger-color;
+}
