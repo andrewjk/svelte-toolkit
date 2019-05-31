@@ -8,19 +8,26 @@
 
   export let validator = null;
 
+  let messages = [];
+
   onMount(() => {
     // Make sure we have a validator
     if (!validator) {
       throw `Validator required for input '${name}'`;
     }
+    validator.setValid = setValid;
   });
+
+  function setValid() {
+    messages = validator.messages;
+  }
 </script>
 
-{#if validator.messages.length}
+{#if messages.length}
   <div {id} class={['validation-summary', className].filter(Boolean).join(' ')}>
     <slot>{content}</slot>
     <ul>
-      {#each validator.messages as message}
+      {#each messages as message}
         <li>{message}</li>
       {/each}
     </ul>

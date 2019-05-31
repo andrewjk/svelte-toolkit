@@ -1,60 +1,89 @@
 <script>
-  import { onMount, createEventDispatcher } from "svelte";
+  import { getContext, createEventDispatcher } from "svelte";
 
   export let id = null;
   export let name = null;
   export let className = null;
-  export let type = "text";
+  export let contentType = "text";
 
+  export let type = "";
   export let value = "";
 
   export let validator = null;
-  export let required = false;
-  export let minlength = 0;
   export let maxlength = 0;
-  export let regex = null;
-  export let compareTo = "";
-  export let friendlyName = "";
 
-  const dispatch =  createEventDispatcher();
+  let originalType = type;
 
-  onMount(() => {
-    // Make sure we have a validator if required
-    if (required || minlength || maxlength) {
-      if (!name) {
-        throw `Name required for input`;
-      }
-      if (!validator) {
-        throw `Validator required for input '${name}'`;
-      }
-    }
-    validator.register(
-      name,
-      getValue,
-      { required, minlength, maxlength, regex, compareTo },
-      friendlyName
-    );
-  });
+  const dispatch = createEventDispatcher();
 
-  function getValue() {
-    return value;
+  // Register this item with the parent Field, which will let us know when we are invalid
+  const {
+    fieldName,
+    fieldValidator,
+    fieldMaxlength,
+    registerInput
+  } = getContext("field");
+  name = fieldName;
+  validator = fieldValidator;
+  maxlength = fieldMaxlength;
+  registerInput(setValid);
+
+  function setValid(valid) {
+    type = valid ? originalType : "danger";
   }
 
-  function handleBlur (e) {
+  function handleBlur(e) {
     if (validator) {
-      console.log('blurring')
       validator.validate();
     }
-    dispatch('onblur', e)
+    dispatch("onblur", e);
   }
 </script>
 
-{#if type === 'text'}
+<!-- HACK: Can't use a dynamic type attribute so we have to make sure these all stay in sync! -->
+{#if contentType === 'text'}
   <input
     {id}
-    class={['', className].filter(Boolean).join(' ')}
+    class={['', type, className].filter(Boolean).join(' ')}
+    {name}
     bind:value
     type="text"
+    maxlength={maxlength > 0 ? maxlength : 50000}
+    on:blur={handleBlur} />
+{:else if contentType === 'password'}
+  <input
+    {id}
+    class={['', type, className].filter(Boolean).join(' ')}
+    {name}
+    bind:value
+    type="password"
+    maxlength={maxlength > 0 ? maxlength : 50000}
+    on:blur={handleBlur} />
+{:else if contentType === 'email'}
+  <input
+    {id}
+    class={['', type, className].filter(Boolean).join(' ')}
+    {name}
+    bind:value
+    type="email"
+    maxlength={maxlength > 0 ? maxlength : 50000}
+    on:blur={handleBlur} />
+{:else if contentType === 'url'}
+  <input
+    {id}
+    class={['', type, className].filter(Boolean).join(' ')}
+    {name}
+    bind:value
+    type="url"
+    maxlength={maxlength > 0 ? maxlength : 50000}
+    on:blur={handleBlur} />
+{:else if contentType === 'tel'}
+  <input
+    {id}
+    class={['', type, className].filter(Boolean).join(' ')}
+    {name}
+    bind:value
+    type="tel"
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:blur={handleBlur} />
 {/if}

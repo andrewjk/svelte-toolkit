@@ -3,25 +3,50 @@ export default class Validator {
 
     constructor(start) {
         this.active = !!start;
+        this.valid = false;
         this.elements = [];
+        this.messageElements = [];
+        this.checks = [
+            this.checkRequired,
+            this.checkLength,
+            this.checkRegex,
+            this.checkCompareTo
+        ];
         this.messages = [];
     }
 
-    register(name, getValue, options, friendlyName) {
-        this.elements.push({ name, getValue, options, friendlyName });
+    register(name, getValue, setValid, options, friendlyName) {
+        this.elements.push({ name, getValue, setValid, options, friendlyName });
     }
 
     validate() {
         if (this.active) {
             this.messages = [];
-            this.elements.forEach((el) => {
+            for (let i = 0; i < this.elements.length; i++) {
+                const el = this.elements[i];
                 const value = el.getValue();
-                // Short circuit checking so that we only get one error message per element
-                this.checkRequired(el, value) &&
-                    this.checkLength(el, value) &&
-                    this.checkRegex(el, value) &&
-                    this.checkCompareTo(el, value);
-            });
+                let valid = true;
+                let message = "";
+                for (let j = 0; j < this.checks.length; j++) {
+                    if (valid) {
+                        const result = this.checks[j].call(this, el, value);
+                        valid = result.valid;
+                        message = result.message;
+                        if (message) {
+                            this.messages.push(message);
+                        }
+                    }
+                }
+                if (el.setValid) {
+                    el.setValid(valid, message);
+                }
+            }
+            this.valid = !this.messages.length;
+
+            // HACK: I feel this should be possible to do with stores or context, but can't figure out how
+            if (this.setValid) {
+                this.setValid();
+            }
         }
     }
 
@@ -30,36 +55,31 @@ export default class Validator {
     checkRequired(el, value) {
         if (el.options.required && !value) {
             const message = `${el.friendlyName || el.name} is required`;
-            this.messages.push(message);
-            return false;
+            return { valid: false, message };
         }
-        return true;
+        return { valid: true };
     }
 
     checkLength(el, value) {
         if (el.options.minlength && !el.options.maxlength && value.length < el.options.minlength) {
             const message = `${el.friendlyName || el.name} must be at least ${el.options.minlength} characters`;
-            this.messages.push(message);
-            return false;
+            return { valid: false, message };
         } else if (el.options.maxlength && !el.options.minlength && value.length > el.options.maxlength) {
             const message = `${el.friendlyName || el.name} cannot be more than ${el.options.minlength} characters`;
-            this.messages.push(message);
-            return false;
+            return { valid: false, message };
         } else if (el.options.minlength && el.options.maxlength && (value.length < el.options.minlength || value.length > el.options.maxlength)) {
             const message = `${el.friendlyName || el.name} must be between ${el.options.minlength} and ${el.options.maxlength} characters`;
-            this.messages.push(message);
-            return false;
+            return { valid: false, message };
         }
-        return true;
+        return { valid: true };
     }
 
     checkRegex(el, value) {
         if (el.options.regex && value && !el.options.regex.test(value)) {
             const message = `${el.friendlyName || el.name} is not valid`;
-            this.messages.push(message);
-            return false;
+            return { valid: false, message };
         }
-        return true;
+        return { valid: true };
     }
 
     checkCompareTo(el, value) {
@@ -67,10 +87,9 @@ export default class Validator {
             const otherEl = this.elements.find((item) => item.name === el.options.compareTo);
             if (value !== otherEl.getValue()) {
                 const message = `${el.friendlyName || el.name} must be the same as ${otherEl.friendlyName || otherEl.name}`;
-                this.messages.push(message);
-                return false;
+                return { valid: false, message };
             }
         }
-        return true;
+        return { valid: true };
     }
 }
