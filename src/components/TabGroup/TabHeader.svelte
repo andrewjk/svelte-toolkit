@@ -3,16 +3,15 @@
 
   export let id = null;
   export let className = null;
-  export let header = null;
+  export let content = "";
+  export let index = -1;
   export let active = false;
 
   const dispatch = createEventDispatcher();
 
-  // let active;
-
   // Register this item with the parent TabGroup, which will handle toggling active for all items
-  const { registerItem } = getContext("tabGroup");
-  registerItem(id, header, setActive);
+  const { registerHeader } = getContext("tabGroup");
+  registerHeader(id, setActive);
 
   // This function is called by the parent TabGroup to set this item's active value
   function setActive(value) {
@@ -23,21 +22,16 @@
   }
 </script>
 
-<style>
-  .tab-item {
-    display: none;
-  }
-
-  .tab-item.active {
-    display: block;
-  }
-</style>
-
-<div
-  {id}
-  class={['tab-item', className].filter(Boolean).join(' ')}
+<button
+  id={id ? id + '-tab' : null}
+  class="button tab-list-button"
   class:active
-  role="tabpanel"
-  aria-labelledby={id ? id + '-tab' : ''}>
-  <slot />
-</div>
+  role="tab"
+  aria-selected={active}
+  tabindex="-1"
+  aria-controls={id}
+  data-index={index}
+  on:click
+  on:keydown>
+  <slot>{content}</slot>
+</button>
