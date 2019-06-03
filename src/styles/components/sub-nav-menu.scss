@@ -1,0 +1,47 @@
+@import "../_variables";
+
+ul.sub-nav-menu {
+    padding: 0;
+    list-style: outside none;
+
+    li {
+        padding: 0 10px;
+        display: inline-block;
+    }
+
+    li:first-child {
+        padding-left: 0;
+    }
+
+    li:last-child {
+        padding-right: 0;
+    }
+}
+
+.sub-nav-menu.line {
+    li {
+        border-right: 1px solid $border-color;
+        margin: 0 $element-margin / 2 0 0;
+        padding: 0 $element-padding / 2 0 0;
+    }
+
+    li:last-child {
+        border-right: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+ul.sub-nav-menu.wc-vertical {
+    li {
+        display: block;
+        padding: $element-padding / 4 0;
+    }
+}
+
+.sub-nav-menu-header {
+    font-size: $font-size;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: $element-margin / 2;
+}

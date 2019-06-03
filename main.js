@@ -18,6 +18,8 @@ import Notification from './src/components/Notification/Notification.svelte';
 import OffScreen from './src/components/OffScreen/OffScreen.svelte';
 import Pagination from './src/components/Pagination/Pagination.svelte';
 import Progress from './src/components/Progress/Progress.svelte';
+import SubNavMenu from './src/components/SubNavMenu/SubNavMenu.svelte';
+import SubNavMenuItem from './src/components/SubNavMenu/SubNavMenuItem.svelte';
 import Switcher from './src/components/Switcher/Switcher.svelte';
 import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
 import TabGroup from './src/components/TabGroup/TabGroup.svelte';
@@ -73,6 +75,7 @@ export {
     OffScreen,
     Pagination,
     Progress,
+    SubNavMenu, SubNavMenuItem,
     Switcher, SwitcherItem,
     TabGroup, TabItem,
     WizardNav,
