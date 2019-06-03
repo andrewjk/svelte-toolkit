@@ -12,7 +12,7 @@
 
 <li
   {id}
-  class={['breadcrumb-item', className].filter(Boolean).join(' ')}
+  class={['sub-nav-menu-item', className].filter(Boolean).join(' ')}
   role="none">
   <a {href} role="menuitem">
     <slot />

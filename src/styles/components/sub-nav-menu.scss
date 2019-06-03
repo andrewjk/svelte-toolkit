@@ -1,11 +1,15 @@
 @import "../_variables";
 
-ul.sub-nav-menu {
-    padding: 0;
-    list-style: outside none;
+.sub-nav-menu {
+    margin: 0 0 $element-margin;
+
+    ul {
+        padding: 0;
+        list-style: outside none;
+    }
 
     li {
-        padding: 0 10px;
+        padding: 0 $element-padding / 2;
         display: inline-block;
     }
 
@@ -16,6 +20,10 @@ ul.sub-nav-menu {
     li:last-child {
         padding-right: 0;
     }
+}
+
+.sub-nav-menu:last-child {
+    margin: 0;
 }
 
 .sub-nav-menu.line {
@@ -32,7 +40,7 @@ ul.sub-nav-menu {
     }
 }
 
-ul.sub-nav-menu.wc-vertical {
+.sub-nav-menu.vertical {
     li {
         display: block;
         padding: $element-padding / 4 0;
