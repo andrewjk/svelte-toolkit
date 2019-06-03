@@ -1,0 +1,61 @@
+/* 
+The _variables file contains Sass variables for colors and sizes, among other things, which you
+can use to customize styles
+*/
+@import "./src/styles/_variables";
+
+/*
+The base file contains styles for elements such as text and headings
+*/
+@import "./src/styles/general/base";
+
+/*
+The layout file contains styles for laying out the page, including styles for headers, mains,
+footers and containers
+*/
+@import "./src/styles/general/layout";
+
+/*
+The grid file contains styles for a 12-column grid based on flexbox
+The animation file contains styles for animating elements
+The table file contains table styles
+*/
+@import "./src/styles/general/grid";
+@import "./src/styles/general/animation";
+@import "./src/styles/general/table";
+
+/*
+Components, each of which should be mostly self-explanatory:
+*/
+@import "./src/styles/components/accordion";
+@import "./src/styles/components/alert";
+@import "./src/styles/components/badge";
+@import "./src/styles/components/button";
+@import "./src/styles/components/calendar";
+@import "./src/styles/components/nav-bar";
+@import "./src/styles/components/notification";
+@import "./src/styles/components/pagination";
+@import "./src/styles/components/panel";
+@import "./src/styles/components/progress";
+@import "./src/styles/components/sub-nav-menu";
+@import "./src/styles/components/tab-group";
+@import "./src/styles/components/wizard-nav";
+
+/* NOTE: This needs to come after nav-bar so that it can override nav-menu-item a */
+@import "./src/styles/components/drop-down-menu";
+
+/*
+The forms base file contains styles for basic form elements
+*/
+@import "./src/styles/forms/base";
+
+/*
+Other form styles, each of which should be mostly self-explanatory:
+*/
+@import "./src/styles/forms/field.scss";
+@import "./src/styles/forms/validation.scss";
+
+/*
+Dialogs:
+*/
+@import "./src/styles/dialogs/dialog";
