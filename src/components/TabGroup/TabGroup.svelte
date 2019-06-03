@@ -11,6 +11,7 @@
 
   export let id = null;
   export let className = null;
+  export let ariaLabel = "";
   export let value = 0;
   export let boxed = false;
 
@@ -145,7 +146,7 @@
     class="tab-list"
     class:boxed
     role="tablist"
-    aria-label="TODO: maybe a property?"
+    aria-label={ariaLabel}
     tabindex="0"
     on:focus={handleFocus}>
     {#each itemStates as item, index}
