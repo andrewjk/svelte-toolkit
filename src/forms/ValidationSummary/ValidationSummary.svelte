@@ -13,9 +13,10 @@
   onMount(() => {
     // Make sure we have a validator
     if (!validator) {
-      throw `Validator required for input '${name}'`;
+      throw `Validator required for summary '${name}'`;
     }
     validator.setValid = setValid;
+    messages = validator.messages;
   });
 
   function setValid() {
