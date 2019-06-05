@@ -16,17 +16,14 @@
 
   const dispatch = createEventDispatcher();
 
-  // Register this item with the parent Field, which will let us know when we are invalid
-  const {
-    fieldName,
-    fieldValidator,
-    fieldMaxlength,
-    registerInput
-  } = getContext("field");
-  name = fieldName;
-  validator = fieldValidator;
-  maxlength = fieldMaxlength;
-  registerInput(setValid);
+  // Register this item with the parent Field (if applicable), which will let us know when we are invalid
+  const context = getContext("field");
+  if (context) {
+    name = context.fieldName;
+    validator = context.fieldValidator;
+    maxlength = context.fieldMaxlength;
+    context.registerInput(setValid);
+  }
 
   function setValid(valid) {
     type = valid ? originalType : "danger";
@@ -44,7 +41,7 @@
 {#if contentType === 'text'}
   <input
     {id}
-    class={['', type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:value
     type="text"
@@ -53,7 +50,7 @@
 {:else if contentType === 'password'}
   <input
     {id}
-    class={['', type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:value
     type="password"
@@ -62,7 +59,7 @@
 {:else if contentType === 'email'}
   <input
     {id}
-    class={['', type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:value
     type="email"
@@ -71,7 +68,7 @@
 {:else if contentType === 'url'}
   <input
     {id}
-    class={['', type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:value
     type="url"
@@ -80,7 +77,7 @@
 {:else if contentType === 'tel'}
   <input
     {id}
-    class={['', type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:value
     type="tel"
