@@ -45,8 +45,6 @@
       if (!validator) {
         throw `Validator required for input '${name}'`;
       }
-    }
-    if (validator) {
       validator.register(
         name,
         getValue,
@@ -67,7 +65,7 @@
   }
 </script>
 
-<div class="field">
+<div {id} class={['field', className].filter(Boolean).join(' ')}>
   <slot name="label">
     <label for={name}>{label}</label>
   </slot>
