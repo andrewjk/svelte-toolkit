@@ -1,8 +1,7 @@
 TODO
 ====
 
-* Keyboard shortcuts
-* Focus the input on load
+* Keyboard shortcuts - need to take the input into account when focusing
 * Can we pass slot content better?
 * Allow icons
 

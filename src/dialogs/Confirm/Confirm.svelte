@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
 
   import DialogButton from "../DialogButton/DialogButton";
+  import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
   export let className = null;
@@ -15,6 +16,24 @@
   const dispatch = createEventDispatcher();
 
   let visible = true;
+  let footer = null;
+
+  onMount(() => {
+    // Focus the first button in the footer
+    const buttonElements = footer.getElementsByTagName("button");
+    if (buttonElements.length) {
+      buttonElements[0].focus();
+    }
+  });
+
+  function handleKey(e) {
+    switch (e.keyCode) {
+      case keyCodes.esc: {
+        close(false);
+        break;
+      }
+    }
+  }
 
   function handleClick(confirm, cancel, result) {
     const dialogResult = confirm
@@ -22,31 +41,37 @@
       : cancel
       ? result || false
       : result;
-    if (callback) {
-      callback(dialogResult);
-    }
     close(dialogResult);
   }
 
   function close(result) {
     visible = false;
+    if (callback) {
+      callback(result);
+    }
     dispatch("closed", result);
   }
 </script>
 
 {#if visible}
-  <div class="dialog-background" class:visible>
+  <div
+    class="dialog-background"
+    class:visible
+    tabindex="-1"
+    on:keydown={handleKey}>
     <div
       {id}
       class={['dialog', className].filter(Boolean).join(' ')}
-      in:fade={{ duration: 100 }}>
+      tabindex="0"
+      in:fade={{ duration: 200 }}
+      out:fade={{ duration: 200 }}>
       <div class="dialog-header">
         <slot name="header">{header}</slot>
       </div>
       <div class="dialog-body">
         <slot name="body">{content}</slot>
       </div>
-      <div class="dialog-footer">
+      <div class="dialog-footer" bind:this={footer}>
         <slot name="footer">
           {#if !buttons || !buttons.length}
             <DialogButton
@@ -60,7 +85,7 @@
               Cancel
             </DialogButton>
           {/if}
-          {#each buttons as button}
+          {#each buttons as button, index}
             <DialogButton
               confirm={button.confirm}
               cancel={button.cancel}
