@@ -1,4 +1,4 @@
-import Info from './Info';
+import Info from './Info.svelte';
 
 export default function showInfo(props) {
     return new Promise((resolve) => {

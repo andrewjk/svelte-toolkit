@@ -2,8 +2,8 @@
   import { createEventDispatcher } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import ChevronLeft from "../Icons/ChevronLeft";
-  import ChevronRight from "../Icons/ChevronRight";
+  import ChevronLeft from "../Icons/ChevronLeft.svelte";
+  import ChevronRight from "../Icons/ChevronRight.svelte";
 
   export let id = null;
   export let className = null;

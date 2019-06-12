@@ -6,7 +6,7 @@
     createEventDispatcher
   } from "svelte";
 
-  import TabHeader from "./TabHeader";
+  import TabHeader from "./TabHeader.svelte";
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;

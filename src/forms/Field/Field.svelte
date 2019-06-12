@@ -1,6 +1,6 @@
 <script>
   import { onMount, setContext, createEventDispatcher } from "svelte";
-  import FieldMessage from "./FieldMessage";
+  import FieldMessage from "./FieldMessage.svelte";
 
   export let id = null;
   export let name = null;

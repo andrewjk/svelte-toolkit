@@ -1,4 +1,4 @@
-import Prompt from './Prompt';
+import Prompt from './Prompt.svelte';
 
 export default function showPrompt(props) {
     return new Promise((resolve) => {

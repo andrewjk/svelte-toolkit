@@ -1,4 +1,4 @@
-import Confirm from './Confirm';
+import Confirm from './Confirm.svelte';
 
 export default function showConfirm(props) {
     return new Promise((resolve) => {

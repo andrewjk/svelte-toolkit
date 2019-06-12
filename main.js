@@ -31,12 +31,12 @@ import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 import showAlert from './src/components/Alert/show-alert';
 
 // Forms
-import Field from './src/forms/Field/Field';
-import TextBox from './src/forms/TextBox/TextBox';
+import Field from './src/forms/Field/Field.svelte';
+import TextBox from './src/forms/TextBox/TextBox.svelte';
 
 // Validation
 import Validator from './src/forms/Validator';
-import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary';
+import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary.svelte';
 
 // Dialogs
 import DialogButton from './src/dialogs/DialogButton/DialogButton.svelte';
