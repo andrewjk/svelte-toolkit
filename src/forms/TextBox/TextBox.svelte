@@ -3,7 +3,8 @@
 
   export let id = null;
   export let name = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let contentType = "text";
 
   export let type = "";

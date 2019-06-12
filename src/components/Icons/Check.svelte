@@ -1,6 +1,7 @@
 <script>
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
 </script>
 
 <svg

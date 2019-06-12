@@ -2,7 +2,8 @@
   import { getContext, createEventDispatcher } from "svelte";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
 
   const dispatch = createEventDispatcher();
 

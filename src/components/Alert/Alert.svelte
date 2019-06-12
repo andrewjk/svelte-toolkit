@@ -5,7 +5,8 @@
   import Cross from "../Icons/Cross.svelte";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let type = "info";
   export let content = "";
   export let position = "top";

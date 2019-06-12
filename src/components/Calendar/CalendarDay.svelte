@@ -3,7 +3,8 @@
   import { areDatesEqual } from "../../utils/date-utils";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let date = new Date();
   export let selectable = false;
   export let muted = false;

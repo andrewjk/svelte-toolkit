@@ -6,7 +6,8 @@
   import ChevronRight from "../Icons/ChevronRight.svelte";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let pageNumber = 1;
   export let pageSize = 10;
   export let itemCount = 0;

@@ -10,7 +10,8 @@
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let ariaLabel = "";
   export let value = 0;
   export let boxed = false;

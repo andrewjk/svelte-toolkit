@@ -6,7 +6,8 @@
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let header = "";
   export let content = "";
   export let value = "";

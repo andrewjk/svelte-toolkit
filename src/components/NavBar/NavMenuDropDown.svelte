@@ -2,7 +2,8 @@
   import ChevronDown from "../Icons/ChevronDown.svelte";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let active = false;
   export let expanded = false;
 

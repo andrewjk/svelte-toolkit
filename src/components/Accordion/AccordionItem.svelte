@@ -3,7 +3,8 @@
   import { slide } from "svelte/transition";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let header = null;
 
   const dispatch = createEventDispatcher();

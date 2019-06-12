@@ -7,7 +7,8 @@
   import ChevronRight from "../Icons/ChevronRight.svelte";
 
   export let id = null;
-  export let className = null;
+  let className = null;
+  export { className as class };
   export let startOfWeek = 1;
   export let selectable = false;
   export let value = new Date();
