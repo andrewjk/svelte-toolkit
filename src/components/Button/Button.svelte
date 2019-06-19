@@ -14,7 +14,7 @@
 <button
   {id}
   class={['button', type, size, loading ? 'loading' : null, className].filter(Boolean).join(' ')}
-  type={submit ? 'submit' : reset ? 'resut' : 'button'}
+  type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {disabled}
   on:click>
   <slot>{content}</slot>
