@@ -5,6 +5,8 @@
   export let type = "info";
   export let size = "";
   export let loading = false;
+  export let submit = false;
+  export let reset = false;
   export let disabled = false;
   export let content = "";
 </script>
@@ -12,6 +14,7 @@
 <button
   {id}
   class={['button', type, size, loading ? 'loading' : null, className].filter(Boolean).join(' ')}
+  type={submit ? 'submit' : reset ? 'resut' : 'button'}
   {disabled}
   on:click>
   <slot>{content}</slot>
