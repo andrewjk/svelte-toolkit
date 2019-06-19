@@ -85,8 +85,11 @@ input.inline {
 select {
     border: 1px solid $border-color;
     border-radius: $border-radius;
-    height: $input-height;
     width: 100%;
+}
+
+select:not([multiple]) {
+    height: $input-height;
 }
 
 select::-moz-focus-inner {
