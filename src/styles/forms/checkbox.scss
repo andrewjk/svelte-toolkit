@@ -46,24 +46,40 @@ input[type=checkbox]:focus + span:before {
 }
 
 .checkbox.info {
+  input[type=checkbox] + span:before {
+    border-color: $info-color;
+  }
+
   input[type=checkbox]:checked + span:before {
     background-color: $info-color;
   }
 }
 
 .checkbox.success {
+  input[type=checkbox] + span:before {
+    border-color: $success-color;
+  }
+
   input[type=checkbox]:checked + span:before {
     background-color: $success-color;
   }
 }
 
 .checkbox.warning {
+  input[type=checkbox] + span:before {
+    border-color: $warning-color;
+  }
+
   input[type=checkbox]:checked + span:before {
     background-color: $warning-color;
   }
 }
 
 .checkbox.danger {
+  input[type=checkbox] + span:before {
+    border-color: $danger-color;
+  }
+
   input[type=checkbox]:checked + span:before {
     background-color: $danger-color;
   }
