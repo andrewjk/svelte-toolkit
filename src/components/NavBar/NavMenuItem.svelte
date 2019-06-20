@@ -5,10 +5,10 @@
   export let active = false;
 </script>
 
-<div
+<li
+  role="menuitem"
   {id}
   class={['nav-menu-item', className].filter(Boolean).join(' ')}
-  class:active
-  role="menuitem">
-  <slot/>
-</div>
+  class:active>
+  <slot />
+</li>

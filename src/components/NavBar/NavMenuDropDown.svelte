@@ -7,6 +7,9 @@
   export let active = false;
   export let expanded = false;
 
+  // HACK: To avoid an accessibility warning - but I think it's fine to use an anchor with href="#" on a drop-down?
+  const href = "#";
+
   function showDropDown() {
     expanded = true;
   }
@@ -43,15 +46,20 @@
 
 </style>
 
-<div
+<li
   {id}
-  class={['nav-menu-item', 'nav-menu-drop-down', className].filter(Boolean).join(' ')}
+  class={['nav-menu-item', 'nav-menu-drop-down', className]
+    .filter(Boolean)
+    .join(' ')}
   class:active
   role="menuitem"
-  aria-haspopup="true"
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}>
-  <a href="#" on:mousedown={handleMouseDown} on:touchstart={handleTouchStart}>
+  <a
+    {href}
+    aria-haspopup="true"
+    on:mousedown={handleMouseDown}
+    on:touchstart={handleTouchStart}>
     <slot />
     <ChevronDown />
   </a>
@@ -60,4 +68,4 @@
       <slot name="menu" />
     </div>
   {/if}
-</div>
+</li>
