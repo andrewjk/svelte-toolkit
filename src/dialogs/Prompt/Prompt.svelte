@@ -65,8 +65,7 @@
     <div
       {id}
       class={['dialog', className].filter(Boolean).join(' ')}
-      in:fade={{ duration: 200 }}
-      out:fade={{ duration: 200 }}>
+      transition:fade={{ duration: 200 }}>
       <div class="dialog-header">
         <slot name="header">{header}</slot>
       </div>
