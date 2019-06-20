@@ -32,6 +32,7 @@ import showAlert from './src/components/Alert/show-alert';
 
 // Forms
 import Field from './src/forms/Field/Field.svelte';
+import CheckBox from './src/forms/CheckBox/CheckBox.svelte';
 import TextBox from './src/forms/TextBox/TextBox.svelte';
 
 // Validation
@@ -86,6 +87,7 @@ export {
 
     // Forms
     Field,
+    CheckBox,
     TextBox,
 
     // Validation

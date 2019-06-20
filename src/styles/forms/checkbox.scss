@@ -1,0 +1,70 @@
+@import "../_variables";
+
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+input[type=checkbox] + span:before {
+  background-color: white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  color: $light-text-color;
+  content: "\00a0";
+  display: inline-block;
+  line-height: 1.5rem;
+  margin-right: 0.6rem;
+  padding: 0 1px;
+  width: 1.5rem;
+}
+
+input[type=checkbox]:checked + span:before {
+  // TODO: Maybe extract icons into svg files that I can just include here?
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,55 L35,80 L90,25" fill="none" stroke="currentColor" stroke-width="15" /></g></svg>');
+}
+
+label:hover {
+  input[type=checkbox] + span:before{
+    border-color: $select-color;
+  }
+}
+
+input[type=checkbox]:focus + span:before {
+  border-color: $select-color;
+}
+
+.checkbox.info,
+.checkbox.success,
+.checkbox.warning,
+.checkbox.danger {
+  input[type=checkbox]:checked + span:before {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,55 L35,80 L90,25" fill="none" stroke="white" stroke-width="15" /></g></svg>');
+  }
+}
+
+.checkbox.info {
+  input[type=checkbox]:checked + span:before {
+    background-color: $info-color;
+  }
+}
+
+.checkbox.success {
+  input[type=checkbox]:checked + span:before {
+    background-color: $success-color;
+  }
+}
+
+.checkbox.warning {
+  input[type=checkbox]:checked + span:before {
+    background-color: $warning-color;
+  }
+}
+
+.checkbox.danger {
+  input[type=checkbox]:checked + span:before {
+    background-color: $danger-color;
+  }
+}

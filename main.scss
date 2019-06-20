@@ -52,8 +52,9 @@ The forms base file contains styles for basic form elements
 /*
 Other form styles, each of which should be mostly self-explanatory:
 */
-@import "./src/styles/forms/field.scss";
-@import "./src/styles/forms/validation.scss";
+@import "./src/styles/forms/field";
+@import "./src/styles/forms/checkbox";
+@import "./src/styles/forms/validation";
 
 /*
 Dialogs:
