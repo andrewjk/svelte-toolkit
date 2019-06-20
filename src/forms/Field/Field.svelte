@@ -3,11 +3,11 @@
   import FieldMessage from "./FieldMessage.svelte";
 
   export let id = null;
-  export let name = null;
   let className = null;
   export { className as class };
 
   export let label = "";
+  export let name = null;
   export let value = "";
 
   export let validator = null;
@@ -25,6 +25,7 @@
 
   // HACK: This seems like bad code, but I don't know how to pass props to items in slots
   setContext("field", {
+    fieldSetValue: setValue,
     fieldName: name,
     fieldValidator: validator,
     fieldRequired: required,
@@ -55,6 +56,10 @@
       );
     }
   });
+
+  function setValue(inputValue) {
+    value = inputValue;
+  }
 
   function setValid(valid, message) {
     errorMessage = message;
