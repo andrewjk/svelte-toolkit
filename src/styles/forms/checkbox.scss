@@ -1,38 +1,42 @@
 @import "../_variables";
 
-input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
+.checkbox {
+  input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
 
-input[type=checkbox] + span:before {
-  background-color: white;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  color: $light-text-color;
-  content: "\00a0";
-  display: inline-block;
-  line-height: 1.5rem;
-  margin-right: 0.6rem;
-  padding: 0 1px;
-  width: 1.5rem;
-}
+  input[type=checkbox] + span:before {
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    color: $light-text-color;
+    content: "\00a0";
+    display: inline-block;
+    line-height: 1.5rem;
+    margin-right: 0.6rem;
+    padding: 0 1px;
+    width: 1.5rem;
+  }
 
-input[type=checkbox]:checked + span:before {
-  // TODO: Maybe extract icons into svg files that I can just include here?
-  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,55 L35,80 L90,25" fill="none" stroke="currentColor" stroke-width="15" /></g></svg>');
-}
+  input[type=checkbox]:checked + span:before {
+    // TODO: Maybe extract icons into svg files that I can just include here?
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,55 L35,80 L90,25" fill="none" stroke="currentColor" stroke-width="15" /></g></svg>');
+  }
 
-label:hover {
-  input[type=checkbox] + span:before{
-    border-color: $select-color;
+
+  input[type=checkbox]:focus + span:before {
+    border-color: lighten($select-color, 18%);
+    box-shadow: 0px 0px 1px $select-color;
   }
 }
 
-input[type=checkbox]:focus + span:before {
-  border-color: $select-color;
+.checkbox:hover {
+  input[type=checkbox] + span:before {
+    border-color: $select-color;
+  }
 }
 
 .checkbox.info,
@@ -55,6 +59,12 @@ input[type=checkbox]:focus + span:before {
   }
 }
 
+.checkbox.info {
+  input[type=checkbox]:focus + span:before {
+    box-shadow: 0px 0px 2px $info-color;
+  }
+}
+
 .checkbox.success {
   input[type=checkbox] + span:before {
     border-color: $success-color;
@@ -62,6 +72,12 @@ input[type=checkbox]:focus + span:before {
 
   input[type=checkbox]:checked + span:before {
     background-color: $success-color;
+  }
+}
+
+.checkbox.success {
+  input[type=checkbox]:focus + span:before {
+    box-shadow: 0px 0px 2px $success-color;
   }
 }
 
@@ -75,6 +91,12 @@ input[type=checkbox]:focus + span:before {
   }
 }
 
+.checkbox.warning {
+  input[type=checkbox]:focus + span:before {
+    box-shadow: 0px 0px 2px $warning-color;
+  }
+}
+
 .checkbox.danger {
   input[type=checkbox] + span:before {
     border-color: $danger-color;
@@ -82,5 +104,11 @@ input[type=checkbox]:focus + span:before {
 
   input[type=checkbox]:checked + span:before {
     background-color: $danger-color;
+  }
+}
+
+.checkbox.danger {
+  input[type=checkbox]:focus + span:before {
+    box-shadow: 0px 0px 2px $danger-color;
   }
 }

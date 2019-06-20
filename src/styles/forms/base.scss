@@ -92,8 +92,15 @@ select:not([multiple]) {
     height: $input-height;
 }
 
-select::-moz-focus-inner {
-    border: none;
+/* Remove the black dotted focus border in Firefox
+   per https://stackoverflow.com/a/27510551 */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $body-text-color;
+}
+select:-moz-focusring * {
+    color: $body-text-color;
+    text-shadow: none;
 }
 
 select.inline {
@@ -134,6 +141,17 @@ legend {
     padding: 0 $element-padding / 4;
 }
 
+// FOCUS
+// ========================================================
+
+input:focus,
+select:focus,
+textarea:focus {
+    border: 1px solid lighten($select-color, 18%);
+    box-shadow: 0px 0px 1px $select-color;
+    outline: none;
+}
+
 // TYPES
 // ========================================================
 
@@ -143,10 +161,22 @@ textarea.info {
     border-color: $info-color;
 }
 
+input.info:focus,
+select.info:focus,
+textarea.info:focus {
+    box-shadow: 0px 0px 2px $info-color;
+}
+
 input.success,
 select.success,
 textarea.success {
     border-color: $success-color;
+}
+
+input.success:focus,
+select.success:focus,
+textarea.success:focus {
+    box-shadow: 0px 0px 2px $success-color;
 }
 
 input.warning,
@@ -155,8 +185,20 @@ textarea.warning {
     border-color: $warning-color;
 }
 
+input.warning:focus,
+select.warning:focus,
+textarea.warning:focus {
+    box-shadow: 0px 0px 2px $warning-color;
+}
+
 input.danger,
 select.danger,
 textarea.danger {
     border-color: $danger-color;
+}
+
+input.danger:focus,
+select.danger:focus,
+textarea.danger:focus {
+    box-shadow: 0px 0px 2px $danger-color;
 }
