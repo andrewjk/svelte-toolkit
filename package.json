@@ -1,6 +1,8 @@
 {
   "name": "svelte-toolkit",
-  "svelte": "src/index.svelte",
+  "description": "A collection of UI components for Svelte",
+  "version": "0.0.1",
+  "svelte": "build/index.mjs",
   "module": "index.mjs",
   "main": "index.js",
   "scripts": {
@@ -13,10 +15,10 @@
     "raf": "^3.4.1",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
-    "rollup": "^1.15.6",
-    "rollup-plugin-node-resolve": "^5.0.3",
+    "rollup": "^1.16.2",
+    "rollup-plugin-node-resolve": "^5.1.0",
     "rollup-plugin-svelte": "^5.1.0",
-    "svelte": "^3.5.3"
+    "svelte": "^3.6.1"
   },
   "keywords": [
     "svelte"
