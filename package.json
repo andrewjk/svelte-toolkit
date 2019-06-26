@@ -1,7 +1,7 @@
 {
   "name": "svelte-toolkit",
   "description": "A collection of UI components for Svelte",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "svelte": "build/index.mjs",
   "module": "index.mjs",
   "main": "index.js",
