@@ -3,8 +3,8 @@
   "description": "A collection of UI components for Svelte",
   "version": "0.0.3",
   "svelte": "build/index.mjs",
-  "module": "index.mjs",
-  "main": "index.js",
+  "module": "main.mjs",
+  "main": "main.js",
   "scripts": {
     "build": "rollup -c",
     "test": "ava"
@@ -25,8 +25,8 @@
   ],
   "files": [
     "src",
-    "index.mjs",
-    "index.js"
+    "main.mjs",
+    "main.js"
   ],
   "ava": {
     "require": [
