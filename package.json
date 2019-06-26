@@ -2,9 +2,9 @@
   "name": "svelte-toolkit",
   "description": "A collection of UI components for Svelte",
   "version": "0.0.4",
-  "svelte": "build/index.mjs",
-  "module": "main.mjs",
-  "main": "main.js",
+  "svelte": "main.js",
+  "module": "index.mjs",
+  "main": "index.js",
   "scripts": {
     "build": "rollup -c",
     "test": "ava"
@@ -24,9 +24,10 @@
     "svelte"
   ],
   "files": [
+    "build",
     "src",
-    "main.mjs",
-    "main.js"
+    "main.js",
+    "main.scss"
   ],
   "ava": {
     "require": [
