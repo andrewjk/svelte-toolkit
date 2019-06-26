@@ -6,6 +6,8 @@
   export let title = "";
   export let src = "";
   export let alt = "";
+  export let height = undefined;
+  export let width = undefined;
 </script>
 
 <a
@@ -13,5 +15,5 @@
   class={['nav-logo', className].filter(Boolean).join(' ')}
   {href}
   {title}>
-  <img class="nav-logo-image" {src} {alt} />
+  <img class="nav-logo-image" {src} {alt} {height} {width} />
 </a>

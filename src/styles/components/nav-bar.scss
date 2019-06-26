@@ -3,10 +3,14 @@
 .nav-bar {
     display: flex;
     align-items: center;
+
+    ul {
+        padding: 0;
+    }
 }
 
 .nav-logo {
-    height: 100%;
+    margin-right: $element-margin / 2;
 }
 
 .nav-menu {
@@ -65,12 +69,8 @@
     }
 }
 
-.nav-menu-divider {
-}
-
 .nav-menu-item-header {
     color: $nav-bar-item-text-color;
-    //font-size: 14px;
     overflow: visible;
     padding: 0 $element-padding;
 }
@@ -84,10 +84,6 @@
 
 .nav-menu-drop-down {
     position: relative;
-    //font-size: 10px;
-    //margin: 0 $element-margin / 2 * -1 0 $element-margin / 2;
-    //position: relative;
-    //top: -1px;
 }
 
 .nav-menu.left {
