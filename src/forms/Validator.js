@@ -28,13 +28,14 @@ export default class Validator {
                 let valid = true;
                 let message = "";
                 for (let j = 0; j < this.checks.length; j++) {
-                    if (valid) {
-                        const result = this.checks[j].call(this, el, value);
-                        valid = result.valid;
-                        message = result.message;
-                        if (message) {
-                            this.messages.push(message);
-                        }
+                    const result = this.checks[j].call(this, el, value);
+                    valid = result.valid;
+                    message = result.message;
+                    if (message) {
+                        this.messages.push(message);
+                    }
+                    if (!valid) {
+                        break;
                     }
                 }
                 if (el.setValid) {
@@ -81,7 +82,7 @@ export default class Validator {
     }
 
     checkRegex(el, value) {
-        if (el.options.regex && value && !el.options.regex.test(value)) {
+        if (el.options.regex && !el.options.regex.test(value)) {
             const message = `${el.friendlyName || el.name} is not valid`;
             return { valid: false, message };
         }

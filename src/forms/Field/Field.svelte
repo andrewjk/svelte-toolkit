@@ -40,13 +40,17 @@
 
   onMount(() => {
     // Make sure we have a validator if required
-    if (required || minlength || maxlength) {
+    const validate = required || minlength || maxlength || regex || compareTo;
+    if (validate) {
       if (!name) {
         throw `Name required for input`;
       }
       if (!validator) {
         throw `Validator required for input '${name}'`;
       }
+    }
+    // Register all fields with the validator (to handle e.g. when they are being used to compare)
+    if (validator) {
       validator.register(
         name,
         getValue,
