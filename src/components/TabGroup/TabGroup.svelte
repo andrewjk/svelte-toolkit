@@ -13,7 +13,7 @@
   let className = null;
   export { className as class };
   export let ariaLabel = "";
-  export let value = 0;
+  export let index = 0;
   export let boxed = false;
 
   const dispatch = createEventDispatcher();
@@ -38,20 +38,20 @@
 
   onMount(() => {
     // Set the initial active item
-    toggleItem(value);
+    toggleItem(index);
   });
 
   beforeUpdate(() => {
     // Update active items, in case the value property has been changed externally
-    toggleItem(value);
+    toggleItem(index);
   });
 
-  function toggleItem(index) {
+  function toggleItem(atIndex) {
     if (!itemStates.length) {
       return;
     }
 
-    let sanitizedValue = index;
+    let sanitizedValue = atIndex;
 
     // Make sure the value isn't outside the bounds of the items
     if (sanitizedValue < 0) {
@@ -74,9 +74,9 @@
     });
 
     // Set the value to the index of the active item
-    value = index;
+    index = atIndex;
 
-    dispatch("change", value);
+    dispatch("change", index);
   }
 
   function handleClick(e) {
