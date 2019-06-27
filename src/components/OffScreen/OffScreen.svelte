@@ -1,35 +1,49 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  import { fly } from "svelte/transition";
+
   export let id = null;
   let className = null;
   export { className as class };
-  export let visible = "false";
+  export let visible = false;
   export let position = "left";
 
-  function handleBackgroundClick(e) {
+  const dispatch = createEventDispatcher();
+
+  let offscreen;
+
+  function transitionArgs() {
+    switch (position) {
+      case "left": {
+        return { x: -1 * offscreen.offsetWidth, duration: 600, opacity: 1 };
+      }
+      case "top": {
+        return { y: -1 * offscreen.offsetHeight, duration: 600, opacity: 1 };
+      }
+      case "right": {
+        return {
+          x: window.innerWidth,
+          duration: 600,
+          opacity: 1
+        };
+      }
+      case "bottom": {
+        return {
+          y: window.innerHeight,
+          duration: 600,
+          opacity: 1
+        };
+      }
+    }
+  }
+
+  function close() {
     visible = false;
+    dispatch("closed");
   }
 </script>
 
 <style>
-  .off-screen-background {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .off-screen-background.visible {
-    display: block;
-  }
-
-  .off-screen {
-    background: white;
-    position: fixed;
-  }
-
   .off-screen.left {
     left: 0;
     top: 0;
@@ -52,14 +66,14 @@
   }
 </style>
 
-<div
-  class={['off-screen-background', visible ? 'visible' : null]
-    .filter(Boolean)
-    .join(' ')}
-  on:click={handleBackgroundClick}>
-  <div
-    {id}
-    class={['off-screen', position, className].filter(Boolean).join(' ')}>
-    <slot />
+{#if visible}
+  <div class="off-screen-background" on:click={close}>
+    <div
+      {id}
+      class={['off-screen', position, className].filter(Boolean).join(' ')}
+      transition:fly={transitionArgs()}
+      bind:this={offscreen}>
+      <slot />
+    </div>
   </div>
-</div>
+{/if}
