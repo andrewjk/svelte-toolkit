@@ -6,7 +6,8 @@ test('offscreen creation', t => {
     const app = new OffScreen({
         target,
         props: {
-            id: 'offscreen'
+            id: 'offscreen',
+            visible: true
         },
     });
 
