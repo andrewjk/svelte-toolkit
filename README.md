@@ -1,6 +1,6 @@
-# Svelt Toolkit
+# Svelte Toolkit
 
-A collection of UI components for Svelte.
+A collection of UI components for [`Svelte`](https://svelte.dev/).
 
 ## Getting Started
 
