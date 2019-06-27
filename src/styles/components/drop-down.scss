@@ -1,0 +1,66 @@
+﻿@import "../_variables.scss";
+
+.drop-down-input-container {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    display: flex;
+}
+
+input.drop-down-input {
+    border: 0;
+    height: $input-height;
+    margin: 0;
+    padding: 0 4px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+.drop-down-preview {
+    border-radius: $border-radius;
+    cursor: default;
+    line-height: $input-height;
+    text-align: center;
+    min-width: 2.4rem;
+    margin: 2px;
+    padding: 2px 0;
+}
+
+.drop-down-button {
+    color: $label-color;
+    cursor: pointer;
+    line-height: $input-height;
+    text-align: center;
+    width: 2.4rem;
+}
+
+.drop-down-list {
+    background-color: white;
+    border: 1px solid $border-color;
+    max-height: 24.4rem;
+    overflow: auto;
+    position: absolute;
+    z-index: 10000;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.drop-down-list-item {
+    cursor: default;
+    margin: 0;
+    padding: 2px 6px;
+    width: 100%;
+}
+
+.drop-down-list-item:hover {
+    background-color: $select-color;
+    color: white;
+}
+
+.drop-down-list-item.active {
+    background-color: $select-color;
+    color: white;
+}

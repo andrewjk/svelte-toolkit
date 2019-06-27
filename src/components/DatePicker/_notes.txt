@@ -1,0 +1,7 @@
+TODO
+====
+
+* Focus in the 
+* Better keyboard shortcuts (ctrl + arrows to move left & right?)
+* Support showing and setting time as well as date
+* Support custom formats

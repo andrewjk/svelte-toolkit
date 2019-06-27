@@ -8,7 +8,7 @@ export function areDatesEqual(date1, date2) {
         date1.getDate() === date2.getDate()
 }
 
-export function parseDateTime(text, includeDate, includeTime) {
+export function parseDateTime(text, includeDate = true, includeTime = false) {
     const parts = text.toString().toLowerCase().split(/[.,/ :-]/)
 
     const today = new Date()
@@ -24,7 +24,7 @@ export function parseDateTime(text, includeDate, includeTime) {
     let yearPart = -1
     let hourPart = -1
 
-    if (includeDate === undefined || includeDate) {
+    if (includeDate) {
         // Try to get the month if it's been supplied as a word
         const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
         for (let i = 0; i < parts.length; i++) {
@@ -77,7 +77,7 @@ export function parseDateTime(text, includeDate, includeTime) {
         }
     }
 
-    if (includeTime === undefined || includeTime) {
+    if (includeTime) {
         // Hour part is the first part that isn't a date part
         for (let i = 0; i < parts.length; i++) {
             if (i !== yearPart && i !== monthPart && i !== dayPart) {
@@ -116,7 +116,11 @@ export function parseDateTime(text, includeDate, includeTime) {
     return new Date(year, month, day, hour, minute)
 }
 
-export function dateToString(value, includeDate, includeTime) {
+export function dateToString(value, includeDate = true, includeTime = false) {
+    if (!value) {
+        return '';
+    }
+
     const date = new Date(value)
 
     // Build the text that will be displayed

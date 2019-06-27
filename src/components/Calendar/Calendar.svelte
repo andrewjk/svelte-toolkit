@@ -101,9 +101,8 @@
   }
 
   function handleDayClick(date) {
-    // TODO: Something's not right here!
     value = date.detail;
-    dispatch("change", date);
+    dispatch("change", value);
   }
 </script>
 

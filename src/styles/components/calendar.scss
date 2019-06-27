@@ -51,10 +51,14 @@
 .calendar-day {
     border-radius: $border-radius;
     display: inline-block;
-    padding: 0.8rem 0;
     text-align: center;
     vertical-align: top;
     width: 14.2857%;
+}
+
+.calendar-day-text {
+    display: inline-block;
+    padding: 0.8rem 0;
 }
 
 .calendar-day-button {
@@ -64,6 +68,7 @@
     font-size: inherit;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .calendar-day-header {
@@ -96,4 +101,14 @@ li.calendar-event {
     display: inline-block;
     height: 0.6rem;
     width: 0.6rem;
+}
+
+.drop-down {
+    .drop-down-list {
+        max-height: initial;
+
+        .calendar {
+            border: 0;
+        }
+    }
 }

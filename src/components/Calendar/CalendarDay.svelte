@@ -31,8 +31,12 @@
   class:today={isToday()}
   on:click>
   {#if selectable}
-    <button class="button calendar-day-button" on:click={handleClick}>{date.getDate()}</button>
-  {:else}{date.getDate()}{/if}
+    <button class="button calendar-day-button" on:click={handleClick}>
+      <span class="calendar-day-text">{date.getDate()}</span>
+    </button>
+  {:else}
+    <span class="calendar-day-text">{date.getDate()}</span>
+  {/if}
   <ul class="calendar-event-list">
     {#each events as ev}
       <li class="calendar-event" title={ev.content} />
