@@ -2,6 +2,8 @@
 
 A collection of UI components for [`Svelte`](https://svelte.dev/).
 
+[View the documentation.](https://andrewjk.github.io/svelte-toolkit-docs/index.html)
+
 ## Getting Started
 
 The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
