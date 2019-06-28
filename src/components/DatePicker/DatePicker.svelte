@@ -4,7 +4,7 @@
   import ChevronDown from "../Icons/ChevronDown.svelte";
   import Calendar from "../Calendar/Calendar.svelte";
 
-  import { parseDateTime, dateToString } from "../../utils/date-utils";
+  import { parseDateTime, formatDate } from "../../utils/date-utils";
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
@@ -91,7 +91,7 @@
 
   function handleInputBlur(e) {
     const input = e.target.value;
-    setValue(parseDateTime(input));
+    setValue(parseDateTime(input, dateOrder));
   }
 
   function setValue(date) {
@@ -110,7 +110,7 @@
   <div bind:this={container} class="drop-down-input-container">
     <input
       class="drop-down-input"
-      value={dateToString(value)}
+      value={formatDate(value, dateFormat)}
       on:keydown={handleInputKey}
       on:blur={handleInputBlur} />
     <div class="drop-down-button" on:click={handleButtonClick}>
