@@ -1,6 +1,0 @@
-TODO
-====
-
-* Shortcut keys (arrows to move around etc)
-
-See https://www.w3.org/TR/wai-aria-practices-1.1/#alert

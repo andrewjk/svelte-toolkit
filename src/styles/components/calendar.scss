@@ -49,7 +49,6 @@
 }
 
 .calendar-day {
-    border-radius: $border-radius;
     display: inline-block;
     text-align: center;
     vertical-align: top;
@@ -57,6 +56,24 @@
 }
 
 .calendar-day-text {
+    border-radius: $border-radius;
+}
+
+.calendar-day-text.muted {
+    color: #CCCCCC;
+}
+
+.calendar-day-text.today {
+    background-color: #0077DD;
+    color: white;
+}
+
+.calendar-day-text.active {
+    background-color: $select-color;
+    color: white;
+}
+
+.calendar-number {
     display: inline-block;
     padding: 0.8rem 0;
 }
@@ -71,27 +88,18 @@
     width: 100%;
 }
 
+.calendar-day-button:focus {
+    background-color: transparent;
+}
+
 .calendar-day-header {
     font-weight: bold;
-}
-
-.calendar-day.muted {
-    color: #CCCCCC;
-}
-
-.calendar-day.today {
-    background-color: #0077DD;
-    color: white;
-}
-
-.calendar-day.active {
-    background-color: $select-color;
-    color: white;
+    padding: 0.8rem 0;
 }
 
 ul.calendar-event-list {
     line-height: 0.6rem;
-    margin: 2px 0 -4px;
+    margin: -2px 0 2px;
     padding: 0;
 }
 

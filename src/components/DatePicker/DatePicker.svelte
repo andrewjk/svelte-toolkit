@@ -18,13 +18,17 @@
   export let dateOrder = "mdy";
 
   let container;
+  let input;
   let list;
 
   async function toggleList() {
     expanded = !expanded;
     await tick();
-    if (list) {
+    if (expanded) {
       list.style.width = container.offsetWidth + "px";
+      list.childNodes[0].focus();
+    } else {
+      input.focus();
     }
   }
 
@@ -32,66 +36,40 @@
     toggleList();
   }
 
-  // TODO: If expanded, need to change the selected date
   function handleInputKey(e) {
     switch (e.keyCode) {
-      case keyCodes.enter: {
-        if (expanded) {
-          // Don't submit the form
-          e.preventDefault();
-          expanded = false;
-        }
-      }
-      case keyCodes.esc: {
+      case keyCodes.esc:
+      case keyCodes.up: {
+        e.preventDefault();
         // Hide the drop-down list
         if (expanded) {
-          expanded = false;
-        }
-      }
-      case keyCodes.left: {
-        if (expanded) {
-          // Move to the date one day before
-          const newValue = value ? new Date(value) : new Date();
-          setValue(
-            new Date(newValue.setTime(newValue.getTime() - 1 * 86400000))
-          );
-        }
-      }
-      case keyCodes.up: {
-        if (expanded) {
-          // Move to the date seven days before
-          const newValue = value ? new Date(value) : new Date();
-          setValue(
-            new Date(newValue.setTime(newValue.getTime() - 7 * 86400000))
-          );
-        }
-      }
-      case keyCodes.right: {
-        if (expanded) {
-          // Move to the date one day after
-          const newValue = value ? new Date(value) : new Date();
-          setValue(
-            new Date(newValue.setTime(newValue.getTime() + 1 * 86400000))
-          );
+          toggleList();
         }
       }
       case keyCodes.down: {
-        if (expanded) {
-          // Move to the date seven days after
-          const newValue = value ? new Date(value) : new Date();
-          setValue(
-            new Date(newValue.setTime(newValue.getTime() + 7 * 86400000))
-          );
-        } else {
+        e.preventDefault();
+        if (!expanded) {
           toggleList();
         }
       }
     }
   }
 
+  function handleInputFocus(e) {
+    if (expanded) {
+      toggleList();
+    }
+  }
+
   function handleInputBlur(e) {
-    const input = e.target.value;
-    setValue(parseDateTime(input, dateOrder));
+    if (!expanded) {
+      const input = e.target.value;
+      if (input) {
+        setValue(parseDateTime(input, dateOrder));
+      } else {
+        setValue(null);
+      }
+    }
   }
 
   function setValue(date) {
@@ -100,7 +78,9 @@
 
   function dateSelected(date) {
     value = date.detail;
-    expanded = false;
+    if (expanded) {
+      toggleList();
+    }
   }
 </script>
 
@@ -111,7 +91,9 @@
     <input
       class="drop-down-input"
       value={formatDate(value, dateFormat)}
+      bind:this={input}
       on:keydown={handleInputKey}
+      on:focus={handleInputFocus}
       on:blur={handleInputBlur} />
     <div class="drop-down-button" on:click={handleButtonClick}>
       <ChevronDown />
@@ -119,7 +101,11 @@
   </div>
   {#if expanded}
     <div bind:this={list} class="drop-down-list">
-      <Calendar selectable={true} {startOfWeek} on:change={dateSelected} />
+      <Calendar
+        selectable={true}
+        {startOfWeek}
+        on:change={dateSelected}
+        on:close={toggleList} />
     </div>
   {/if}
 </div>

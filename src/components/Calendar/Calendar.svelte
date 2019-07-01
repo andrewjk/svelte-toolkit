@@ -1,6 +1,7 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { setContext, afterUpdate, createEventDispatcher } from "svelte";
   import { areDatesEqual } from "../../utils/date-utils";
+  import { keyCodes } from "../../utils/key-codes";
 
   import CalendarDay from "./CalendarDay.svelte";
   import ChevronLeft from "../Icons/ChevronLeft.svelte";
@@ -15,7 +16,14 @@
   // Events can have { date, content, color }
   export let events = [];
 
-  let activeDate = new Date();
+  let activeDate = value;
+  let visibleDate = value;
+  let visibleStartDate = value;
+  let visibleEndDate = value;
+  let container = null;
+  let refocus = false;
+
+  $: days = buildDays(visibleDate, startOfWeek);
 
   const weekdays = [
     "Sunday",
@@ -43,70 +51,187 @@
 
   const dispatch = createEventDispatcher();
 
-  function getDays() {
-    const days = [];
+  setContext("calendar", {
+    // The registerItem function is called from each CalendarDay to register itself with this
+    // Calendar. They pass us a setActive method that we can call
+    registerDay: (date, setActive) => {
+      days.find(day => areDatesEqual(day.date, date)).setActive = setActive;
+    }
+  });
+
+  afterUpdate(() => {
+    if (refocus) {
+      refocus = false;
+      const el = container.getElementsByClassName("active")[0];
+      if (el) {
+        el.childNodes[0].focus();
+      }
+    }
+  });
+
+  function buildDays(date, start) {
+    const newDays = [];
 
     // Set the first day to the start of the week before the first day of the month (e.g. Monday the
     // 28th of the previous month)
-    const startOfMonth = new Date();
-    startOfMonth.setFullYear(
-      activeDate.getFullYear(),
-      activeDate.getMonth(),
-      1
-    );
-    startOfMonth.setDate(
-      startOfMonth.getDate() - ((startOfMonth.getDay() + 7 - startOfWeek) % 7)
+    visibleStartDate = new Date();
+    visibleStartDate.setFullYear(date.getFullYear(), date.getMonth(), 1);
+    visibleStartDate.setDate(
+      visibleStartDate.getDate() - ((visibleStartDate.getDay() + 7 - start) % 7)
     );
 
     // Set the last day to the end of the week after the last day of the month (e.g. Sunday the 6th
     // of the next month)
-    const endOfMonth = new Date();
-    endOfMonth.setFullYear(
-      activeDate.getFullYear(),
-      activeDate.getMonth() + 1,
-      0
-    );
-    endOfMonth.setDate(
-      endOfMonth.getDate() + ((startOfWeek - 1 - endOfMonth.getDay() + 7) % 7)
+    visibleEndDate = new Date();
+    visibleEndDate.setFullYear(date.getFullYear(), date.getMonth() + 1, 0);
+    visibleEndDate.setDate(
+      visibleEndDate.getDate() + ((start - 1 - visibleEndDate.getDay() + 7) % 7)
     );
 
     const dayDiff =
-      Math.round((endOfMonth - startOfMonth) / (1000 * 60 * 60 * 24)) + 1;
+      Math.round((visibleEndDate - visibleStartDate) / (1000 * 60 * 60 * 24)) +
+      1;
 
     for (let i = 0; i < dayDiff; i++) {
-      const date = new Date();
-      date.setFullYear(
-        startOfMonth.getFullYear(),
-        startOfMonth.getMonth(),
-        startOfMonth.getDate() + i
+      const dayDate = new Date();
+      dayDate.setFullYear(
+        visibleStartDate.getFullYear(),
+        visibleStartDate.getMonth(),
+        visibleStartDate.getDate() + i
       );
-      date.setHours(9);
-      date.setMinutes(0);
-      date.setSeconds(0);
-      date.setMilliseconds(0);
-      days.push(date);
+      dayDate.setHours(9);
+      dayDate.setMinutes(0);
+      dayDate.setSeconds(0);
+      dayDate.setMilliseconds(0);
+      newDays.push({
+        date: dayDate,
+        muted: dayDate.getMonth() !== date.getMonth(),
+        active: areDatesEqual(dayDate, new Date(activeDate))
+      });
     }
 
-    return days;
+    return newDays;
+  }
+
+  function setValue(date) {
+    value = date;
+
+    // If the selected date is outside the visible date range, move the date range
+    if (value < visibleStartDate || value > visibleEndDate) {
+      refocus = true;
+      visibleDate = value;
+    }
+
+    //days.forEach(day =>
+    //  day.setActive(areDatesEqual(day.date, new Date(value)))
+    //);
+
+    dispatch("change", value);
+  }
+
+  function setActiveDate(date) {
+    activeDate = date;
+
+    // If the selected date is outside the visible date range, move the date range
+    if (activeDate < visibleStartDate || activeDate > visibleEndDate) {
+      refocus = true;
+      visibleDate = activeDate;
+    }
+
+    days.forEach(day =>
+      day.setActive(areDatesEqual(day.date, new Date(activeDate)))
+    );
+  }
+
+  function handleFocus(e) {
+    const el = e.target.getElementsByClassName("active")[0];
+    if (el) {
+      el.childNodes[0].focus();
+      e.preventDefault();
+    }
   }
 
   function handlePrevMonth(e) {
     e.preventDefault();
-    activeDate = new Date(activeDate.setMonth(activeDate.getMonth() - 1));
+    visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() - 1));
   }
 
   function handleNextMonth(e) {
     e.preventDefault();
-    activeDate = new Date(activeDate.setMonth(activeDate.getMonth() + 1));
+    visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() + 1));
   }
 
-  function handleDayClick(date) {
-    value = date.detail;
-    dispatch("change", value);
+  async function handleDayClick(date) {
+    if (!selectable) {
+      return;
+    }
+
+    setValue(date.detail);
+    setActiveDate(date.detail);
+  }
+
+  function handleKey(e) {
+    if (!selectable) {
+      return;
+    }
+
+    switch (e.keyCode) {
+      case keyCodes.enter: {
+        e.preventDefault();
+        setValue(activeDate);
+        break;
+      }
+      case keyCodes.esc: {
+        e.preventDefault();
+        dispatch("close");
+        break;
+      }
+      case keyCodes.left: {
+        e.preventDefault();
+        // Move to the date one day before
+        const newDate = activeDate ? new Date(activeDate) : new Date();
+        setActiveDate(
+          new Date(newDate.setTime(newDate.getTime() - 1 * 86400000))
+        );
+        break;
+      }
+      case keyCodes.up: {
+        e.preventDefault();
+        // Move to the date seven days before
+        const newDate = activeDate ? new Date(activeDate) : new Date();
+        setActiveDate(
+          new Date(newDate.setTime(newDate.getTime() - 7 * 86400000))
+        );
+        break;
+      }
+      case keyCodes.right: {
+        e.preventDefault();
+        // Move to the date one day after
+        const newDate = activeDate ? new Date(activeDate) : new Date();
+        setActiveDate(
+          new Date(newDate.setTime(newDate.getTime() + 1 * 86400000))
+        );
+        break;
+      }
+      case keyCodes.down: {
+        e.preventDefault();
+        // Move to the date seven days after
+        const newDate = activeDate ? new Date(activeDate) : new Date();
+        setActiveDate(
+          new Date(newDate.setTime(newDate.getTime() + 7 * 86400000))
+        );
+        break;
+      }
+    }
   }
 </script>
 
-<div {id} class={['calendar', className].filter(Boolean).join(' ')}>
+<div
+  {id}
+  class={['calendar', className].filter(Boolean).join(' ')}
+  bind:this={container}
+  tabindex={selectable ? '0' : '-1'}
+  on:focus={handleFocus}>
   <div class="calendar-header">
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handlePrevMonth}>
@@ -114,7 +239,7 @@
       </button>
     </span>
     <span class="calendar-title">
-       {months[activeDate.getMonth()] + ' ' + activeDate.getFullYear()}
+       {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
     </span>
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handleNextMonth}>
@@ -128,14 +253,15 @@
          {weekdays[(Math.abs(startOfWeek) + index) % 7].substring(0, 2)}
       </span>
     {/each}
-    {#each getDays() as day (day)}
+    {#each days as day, index (day.date)}
       <CalendarDay
-        muted={day.getMonth() !== activeDate.getMonth()}
-        date={day}
-        active={selectable && areDatesEqual(day, new Date(value))}
+        date={day.date}
+        muted={day.muted}
+        active={day.active}
         {selectable}
-        events={events.filter(ev => areDatesEqual(new Date(ev.date), day))}
-        on:click={handleDayClick} />
+        events={events.filter(ev => areDatesEqual(new Date(ev.date), day.date))}
+        on:click={handleDayClick}
+        on:keydown={handleKey} />
     {/each}
   </div>
 </div>
