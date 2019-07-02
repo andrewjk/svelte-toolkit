@@ -7,44 +7,50 @@
   export let value = 0;
   export let color = "";
 
-  let size = 0;
+  let x = 0;
+  let y = 0;
   let radius = 0;
   let startAngle = 0;
   let endAngle = 0;
 
-  $: path = buildPath(size, radius, startAngle, endAngle);
+  $: path = buildPath(x, y, radius, startAngle, endAngle);
 
   // Register this item with the parent PieChart, which will set our angles and default color
   const { registerItem } = getContext("piechart");
   registerItem(value, setInfo);
 
-  function setInfo(newSize, newRadius, newStartAngle, newEndAngle, newFill) {
-    size = newSize;
+  function setInfo(
+    newx,
+    newy,
+    newRadius,
+    newStartAngle,
+    newEndAngle,
+    newColor
+  ) {
+    x = newx;
+    y = newy;
     radius = newRadius;
     startAngle = newStartAngle;
     endAngle = newEndAngle;
     if (!color) {
-      color = newFill;
+      color = newColor;
     }
   }
 
-  function buildPath(pathSize, pathRadius, pathStartAngle, pathEndAngle) {
+  function buildPath(newx, newy, newRadius, newStartAngle, newEndAngle) {
     // HACK: Drawing an arc of 360 degrees doesn't work
-    if (pathStartAngle === 0 && pathEndAngle === 360) {
-      pathEndAngle = 359.9999;
+    if (newStartAngle === 0 && newEndAngle === 360) {
+      newEndAngle = 359.9999;
     }
 
-    const x = pathSize / 2;
-    const y = pathSize / 2;
-
     // Use some trig to find the points on the circumference at the start and end angles
-    const startx = x + pathRadius * Math.sin((Math.PI * pathStartAngle) / 180);
-    const starty = y + pathRadius * Math.cos((Math.PI * pathStartAngle) / 180);
+    const startx = newx + newRadius * Math.sin((Math.PI * newStartAngle) / 180);
+    const starty = newx + newRadius * Math.cos((Math.PI * newStartAngle) / 180);
 
-    const endx = x + pathRadius * Math.sin((Math.PI * pathEndAngle) / 180);
-    const endy = y + pathRadius * Math.cos((Math.PI * pathEndAngle) / 180);
+    const endx = newx + newRadius * Math.sin((Math.PI * newEndAngle) / 180);
+    const endy = newy + newRadius * Math.cos((Math.PI * newEndAngle) / 180);
 
-    const largeArc = pathEndAngle - pathStartAngle > 180 ? 1 : 0;
+    const largeArc = newEndAngle - newStartAngle > 180 ? 1 : 0;
 
     // Build the path - move to the origin, line to the start angle on the circumference,
     // arc to the end angle on the circumference, and then close back to the start
