@@ -1,0 +1,5 @@
+TODO:
+=====
+
+* Fix reactivity on value and color
+* Add labels on hover

@@ -52,6 +52,8 @@ import showConfirm from './src/dialogs/Confirm/show-confirm';
 import showPrompt from './src/dialogs/Prompt/show-prompt';
 
 // Charts
+import BarChart from './src/charts/BarChart/BarChart.svelte';
+import BarChartItem from './src/charts/BarChart/BarChartItem.svelte';
 import PieChart from './src/charts/PieChart/PieChart.svelte';
 import PieChartItem from './src/charts/PieChart/PieChartItem.svelte';
 
@@ -112,6 +114,8 @@ export {
     showPrompt,
 
     // Charts
+    BarChart,
+    BarChartItem,
     PieChart,
     PieChartItem,
 
