@@ -1,12 +1,13 @@
 @import "../_variables";
 
 .pagination {
+    padding: $element-padding / 2 0;
     text-align: center;
 }
 
 .pagination-button {
     font-size: inherit;
-    margin: $element-margin / 4;
+    margin: 0 $element-margin / 4;
     min-width: 0;
     padding: 0;
     text-align: center;
