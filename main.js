@@ -51,6 +51,10 @@ import showInfo from './src/dialogs/Info/show-info';
 import showConfirm from './src/dialogs/Confirm/show-confirm';
 import showPrompt from './src/dialogs/Prompt/show-prompt';
 
+// Charts
+import PieChart from './src/charts/PieChart/PieChart.svelte';
+import PieChartItem from './src/charts/PieChart/PieChartItem.svelte';
+
 // Icons
 import ArrowUp from './src/components/Icons/ArrowUp.svelte';
 import ArrowDown from './src/components/Icons/ArrowDown.svelte';
@@ -106,6 +110,10 @@ export {
     showInfo,
     showConfirm,
     showPrompt,
+
+    // Charts
+    PieChart,
+    PieChartItem,
 
     // Icons
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
