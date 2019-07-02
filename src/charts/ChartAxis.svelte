@@ -6,8 +6,9 @@
   export let x2 = 0;
   export let y1 = 0;
   export let y2 = 0;
-  export let step = 20;
+  export let itemWidth = 0;
   export let labels = [];
+  export let type = "bar";
 </script>
 
 <line
@@ -18,5 +19,10 @@
   {x2}
   {y2} />
 {#each labels as label, index}
-  <text text-anchor="middle" x={x1 + step * index + step / 2} y={y1 + 20}>{label}</text>
+  <text
+    text-anchor="middle"
+    x={x1 + itemWidth * index + (type === 'bar' ? itemWidth / 2 : 0)}
+    y={y1 + 20}>
+    {label}
+  </text>
 {/each}

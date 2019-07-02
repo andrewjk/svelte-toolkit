@@ -69,7 +69,8 @@
         y1={height - haxisBuffer}
         x2={width}
         y2={height - haxisBuffer}
-        step={itemWidth * 2} />
+        itemWidth={itemWidth * 2}
+        type="bar" />
       <ChartAxis
         x1={vaxisBuffer}
         y1={height - haxisBuffer}
