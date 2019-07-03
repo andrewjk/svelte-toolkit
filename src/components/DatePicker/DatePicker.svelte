@@ -10,6 +10,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let value = null;
   export let expanded = false;
 
@@ -86,7 +87,7 @@
 
 <div
   {id}
-  class={['date-picker', 'drop-down', className].filter(Boolean).join(' ')}>
+  class={['date-picker', 'drop-down', className].concat(classNames).filter(Boolean).join(' ')}>
   <div bind:this={container} class="drop-down-input-container">
     <input
       class="drop-down-input"

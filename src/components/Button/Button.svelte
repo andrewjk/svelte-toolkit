@@ -2,6 +2,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let type = "info";
   export let size = "";
   export let loading = false;
@@ -13,7 +14,7 @@
 
 <button
   {id}
-  class={['button', type, size, loading ? 'loading' : null, className].filter(Boolean).join(' ')}
+  class={['button', type, size, loading ? 'loading' : null, className].concat(classNames).filter(Boolean).join(' ')}
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {disabled}
   on:click>

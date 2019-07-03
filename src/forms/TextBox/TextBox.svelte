@@ -5,6 +5,7 @@
   export let name = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let contentType = "text";
 
   export let type = "";
@@ -62,7 +63,7 @@
 {#if contentType === 'text'}
   <input
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -73,7 +74,7 @@
 {:else if contentType === 'password'}
   <input
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -84,7 +85,7 @@
 {:else if contentType === 'email'}
   <input
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -95,7 +96,7 @@
 {:else if contentType === 'url'}
   <input
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -106,7 +107,7 @@
 {:else if contentType === 'tel'}
   <input
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value

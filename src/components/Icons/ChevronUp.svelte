@@ -2,11 +2,12 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
 </script>
 
 <svg
   {id}
-  class={['icon', className].filter(Boolean).join(' ')}
+  class={['icon', className].concat(classNames).filter(Boolean).join(' ')}
   viewBox="0 0 100 100">
   <g>
     <path d="M10,70 L50,30 L90,70" fill="none" />

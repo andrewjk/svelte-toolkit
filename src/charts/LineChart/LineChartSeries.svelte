@@ -4,6 +4,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let values = [];
   export let labels = [];
   export let color = "";
@@ -52,7 +53,7 @@
 
 <polyline
   {id}
-  class={['chart-line', className].filter(Boolean).join(' ')}
+  class={['chart-line', className].concat(classNames).filter(Boolean).join(' ')}
   {points}
   stroke={color}
   fill="none" />

@@ -4,6 +4,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
 
   const dispatch = createEventDispatcher();
 
@@ -34,7 +35,7 @@
 
 <div
   {id}
-  class={['switcher-item', className].filter(Boolean).join(' ')}
+  class={['switcher-item', className].concat(classNames).filter(Boolean).join(' ')}
   class:active
   tabindex="0">
   <slot />

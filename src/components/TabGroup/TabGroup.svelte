@@ -12,6 +12,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let ariaLabel = "";
   export let index = 0;
   export let boxed = false;
@@ -142,7 +143,7 @@
   }
 </style>
 
-<div {id} class={['tab-group', className].filter(Boolean).join(' ')}>
+<div {id} class={['tab-group', className].concat(classNames).filter(Boolean).join(' ')}>
   <div
     class="tab-list"
     class:boxed

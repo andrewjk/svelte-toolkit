@@ -5,6 +5,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let date = new Date();
   export let selectable = false;
   export let muted = false;
@@ -37,7 +38,7 @@
 
 <div
   {id}
-  class={['calendar-day', className].filter(Boolean).join(' ')}>
+  class={['calendar-day', className].concat(classNames).filter(Boolean).join(' ')}>
   <div
     class="calendar-day-text"
     class:muted

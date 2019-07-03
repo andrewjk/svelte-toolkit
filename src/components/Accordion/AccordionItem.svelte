@@ -5,6 +5,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let header = null;
 
   const dispatch = createEventDispatcher();
@@ -54,7 +55,7 @@
   }
 </style>
 
-<div class={['accordion-item', className].filter(Boolean).join(' ')}>
+<div class={['accordion-item', className].concat(classNames).filter(Boolean).join(' ')}>
   <div
     id={id ? id + '-header' : ''}
     class="accordion-header"

@@ -4,6 +4,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let value = 0;
   export let label = "";
   export let color = "";
@@ -30,7 +31,10 @@
 
 <rect
   {id}
-  class={['chart-bar', className].filter(Boolean).join(' ')}
+  class={['chart-bar', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   {x}
   y={y - height}
   {width}

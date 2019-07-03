@@ -8,6 +8,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let pageNumber = 1;
   export let pageSize = 10;
   export let itemCount = 0;
@@ -112,7 +113,7 @@
 {#if pageCount > 1}
   <div
     {id}
-    class={['pagination', className].filter(Boolean).join(' ')}
+    class={['pagination', className].concat(classNames).filter(Boolean).join(' ')}
     tabindex="0">
     <button
       class="button pagination-button"

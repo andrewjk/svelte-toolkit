@@ -5,6 +5,7 @@
   export let name = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
 
   export let label = "";
   export let type = "";
@@ -44,7 +45,7 @@
   }
 </script>
 
-<label {id} class={['checkbox', type, className].filter(Boolean).join(' ')}>
+<label {id} class={['checkbox', type, className].concat(classNames).filter(Boolean).join(' ')}>
   <input {name} bind:checked type="checkbox" on:change={handleChange} on:blur={handleBlur} />
   <span>{label}</span>
 </label>

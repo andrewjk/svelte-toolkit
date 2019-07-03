@@ -8,6 +8,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let header = "";
   export let content = "";
   export let callback = null;
@@ -62,7 +63,7 @@
     on:keydown={handleKey}>
     <div
       {id}
-      class={['dialog', className].filter(Boolean).join(' ')}
+      class={['dialog', className].concat(classNames).filter(Boolean).join(' ')}
       tabindex="0"
       transition:fade={{ duration: 200 }}>
       <div class="dialog-header">

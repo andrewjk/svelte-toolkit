@@ -2,6 +2,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
   export let href;
   export let current = null;
 </script>
@@ -16,7 +17,7 @@
   }
 </style>
 
-<li {id} class={['breadcrumb-item', className].filter(Boolean).join(' ')}>
+<li {id} class={['breadcrumb-item', className].concat(classNames).filter(Boolean).join(' ')}>
   {#if current}
     <span>
       <slot />

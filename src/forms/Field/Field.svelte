@@ -5,6 +5,7 @@
   export let id = null;
   let className = null;
   export { className as class };
+  export let classNames = [];
 
   export let label = "";
   export let name = null;
@@ -75,7 +76,7 @@
   }
 </script>
 
-<div {id} class={['field', className].filter(Boolean).join(' ')}>
+<div {id} class={['field', className].concat(classNames).filter(Boolean).join(' ')}>
   <slot name="label">
     <label for={name}>{label}</label>
   </slot>
