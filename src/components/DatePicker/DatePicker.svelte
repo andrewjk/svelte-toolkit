@@ -11,13 +11,13 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let value = null;
-  export let expanded = false;
 
+  export let value = null;
   export let startOfWeek = 1;
   export let dateFormat = "d MMM yyyy";
   export let dateOrder = "mdy";
 
+  let expanded = false;
   let container;
   let input;
   let list;
@@ -42,7 +42,6 @@
       case keyCodes.esc:
       case keyCodes.up: {
         e.preventDefault();
-        // Hide the drop-down list
         if (expanded) {
           toggleList();
         }
