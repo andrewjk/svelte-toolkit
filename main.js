@@ -2,6 +2,8 @@
 import Accordion from './src/components/Accordion/Accordion.svelte';
 import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
 import Alert from './src/components/Alert/Alert.svelte';
+import AutoComplete from './src/components/AutoComplete/AutoComplete.svelte';
+import AutoCompleteItem from './src/components/AutoComplete/AutoCompleteItem.svelte';
 import Badge from './src/components/Badge/Badge.svelte';
 import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
@@ -76,6 +78,7 @@ export {
     // Components
     Accordion, AccordionItem,
     Alert,
+    AutoComplete, AutoCompleteItem,
     Badge,
     Breadcrumb, BreadcrumbItem,
     Button,

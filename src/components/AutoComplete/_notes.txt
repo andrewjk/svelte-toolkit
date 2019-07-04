@@ -1,0 +1,6 @@
+TODO
+====
+
+* Allow loading items from network
+* Allow setting value to different from text
+* Allow restricting the value to items in the list
