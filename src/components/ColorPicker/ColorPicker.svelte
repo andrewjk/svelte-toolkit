@@ -77,7 +77,9 @@
     .filter(Boolean)
     .join(' ')}>
   <div bind:this={container} class="drop-down-input-container">
-    <div class="color-picker-preview" style={`background-color: ${value}`} />
+    {#if value}
+      <div class="color-picker-preview" style={`background-color: ${value}`} />
+    {/if}
     <input
       class="drop-down-input"
       bind:value
