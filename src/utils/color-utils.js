@@ -4,15 +4,15 @@
  */
 
 // From http://stackoverflow.com/a/5624139
-export function rgbToHex (r, g, b) {
-  if (!r || !g || !b) {
+export function rgbToHex(r, g, b) {
+  if (r === null || r === undefined || g === null || g === undefined || b == null || b === undefined) {
     return null
   }
   return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
 }
 
 // From http://stackoverflow.com/a/5624139
-export function hexToRgb (hex) {
+export function hexToRgb(hex) {
   if (!hex) {
     return null
   }
@@ -40,8 +40,8 @@ export function hexToRgb (hex) {
  * @param   {number}  l       The lightness
  * @return  {Array}           The RGB representation
  */
-export function hslToRgb (h, s, l) {
-  if (!h || !s || !l) {
+export function hslToRgb(h, s, l) {
+  if (h === null || h === undefined || s === null || s === undefined || l == null || l === undefined) {
     return null
   }
 
@@ -52,7 +52,7 @@ export function hslToRgb (h, s, l) {
   if (s === 0) {
     r = g = b = l // achromatic
   } else {
-    const hue2rgb = function hue2rgb (p, q, t) {
+    const hue2rgb = function hue2rgb(p, q, t) {
       if (t < 0) t += 1
       if (t > 1) t -= 1
       if (t < 1 / 6) return p + (q - p) * 6 * t
@@ -84,7 +84,11 @@ export function hslToRgb (h, s, l) {
  * @param   {number}  b       The blue color value
  * @return  {Array}           The HSL representation
  */
-export function rgbToHsl (r, g, b) {
+export function rgbToHsl(r, g, b) {
+  if (r === null || r === undefined || g === null || g === undefined || b == null || b === undefined) {
+    return null
+  }
+
   r /= 255
   g /= 255
   b /= 255
