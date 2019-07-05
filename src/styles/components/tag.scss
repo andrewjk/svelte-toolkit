@@ -6,11 +6,12 @@
     border-radius: 4px;
     display: inline-block;
     font-weight: bold;
-    font-size: $font-size-small;
-    margin: 0 $element-margin / 4;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-right: $element-margin / 4;
     padding: 0 $element-padding / 4;
     text-align: center;
-    vertical-align: top;
+    white-space: nowrap;
 }
 
 .tag.info,
