@@ -14,6 +14,7 @@
   export let value = null;
 
   let expanded = false;
+  let focus = false;
   let container;
   let input;
   let list;
@@ -54,12 +55,14 @@
   }
 
   function handleInputFocus(e) {
+    focus = true;
     if (expanded) {
       toggleList();
     }
   }
 
   function handleInputBlur(e) {
+    focus = false;
     //if (expanded) {
     //  toggleList();
     //}
@@ -76,7 +79,7 @@
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}>
-  <div bind:this={container} class="drop-down-input-container">
+  <div bind:this={container} class="drop-down-input-container" class:focus>
     {#if value}
       <div class="color-picker-preview" style={`background-color: ${value}`} />
     {/if}

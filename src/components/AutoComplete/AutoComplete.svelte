@@ -16,6 +16,7 @@
   export let minChars = 1;
 
   let expanded = false;
+  let focus = false;
   let index = 0;
   let container;
   let input;
@@ -108,12 +109,14 @@
   }
 
   function handleInputFocus(e) {
+    focus = true;
     if (expanded) {
       toggleList();
     }
   }
 
   function handleInputBlur(e) {
+    focus = false;
     if (!expanded) {
       const text = e.target.value;
       if (text) {
@@ -215,7 +218,7 @@
     .filter(Boolean)
     .join(' ')}
   role="combobox">
-  <div bind:this={container} class="drop-down-input-container">
+  <div bind:this={container} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
       bind:value

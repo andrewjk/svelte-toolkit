@@ -18,6 +18,7 @@
   export let dateOrder = "mdy";
 
   let expanded = false;
+  let focus = false;
   let container;
   let input;
   let list;
@@ -56,12 +57,14 @@
   }
 
   function handleInputFocus(e) {
+    focus = true;
     if (expanded) {
       toggleList();
     }
   }
 
   function handleInputBlur(e) {
+    focus = false;
     if (!expanded) {
       const input = e.target.value;
       if (input) {
@@ -87,7 +90,7 @@
 <div
   {id}
   class={['date-picker', 'drop-down', className].concat(classNames).filter(Boolean).join(' ')}>
-  <div bind:this={container} class="drop-down-input-container">
+  <div bind:this={container} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
       value={formatDate(value, dateFormat)}
