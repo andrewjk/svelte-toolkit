@@ -31,6 +31,8 @@ import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
 import TabGroup from './src/components/TabGroup/TabGroup.svelte';
 import TabItem from './src/components/TabGroup/TabItem.svelte';
 import Tag from './src/components/Tag/Tag.svelte';
+import TagInput from './src/components/TagInput/TagInput.svelte';
+import TagInputItem from './src/components/TagInput/TagInputItem.svelte';
 import WizardNav from './src/components/WizardNav/WizardNav.svelte';
 
 // Component methods
@@ -99,6 +101,7 @@ export {
     Switcher, SwitcherItem,
     TabGroup, TabItem,
     Tag,
+    TagInput, TagInputItem,
     WizardNav,
 
     // Component methods

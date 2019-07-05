@@ -1,0 +1,9 @@
+TODO
+====
+
+* Allow loading items from network
+* Allow setting value to different from text
+* Allow restricting the value to items in the list
+* Merge duplicate code with AutoComplete (into a DropDown & DropDownList, probably)
+* Backspace should remove the last tag
+* Space (or a user-defined key) should create a tag
