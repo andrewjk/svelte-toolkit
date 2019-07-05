@@ -1,0 +1,7 @@
+TODO:
+=====
+
+* Keyboard navigation
+* Should probably make it more like the Corel one?
+    http://product.corel.com/help/PaintShop-Pro/540214299/Main/EN/Doc/wwhelp/wwhimpl/common/html/wwhelp.htm#href=Corel-PaintShop-Pro-Using-the-Color-Picker.html&single=true
+* Allow entering RGB, HSL etc

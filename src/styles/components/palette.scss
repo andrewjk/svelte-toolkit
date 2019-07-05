@@ -1,0 +1,57 @@
+@import "../_variables";
+
+.palette {
+    margin: 0 0 $element-margin;
+}
+
+.palette:last-child {
+    margin: 0;
+}
+
+.palette-container {
+    display: inline-block;
+}
+
+.palette-colors {
+    display: flex;
+}
+
+.palette-hs {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin-right: $element-margin / 2;
+}
+
+.palette-l {
+    display: inline-block;
+    height: 200px;
+    width: 25px;
+    margin-right: $element-margin / 2;
+}
+
+// TODO: Why does vertical-align need to be set here?
+.palette-standard-colors {
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 40px;
+    vertical-align: top;
+}
+
+.palette-color {
+    flex: 0 0 50%;
+    max-width: 50%;
+    border: 1px solid #FFFFFF;
+}
+
+.palette-spacer {
+    display: inline-block;
+    width: 100%;
+}
+
+.palette-preview {
+    height: 25px;
+    width: 100%;
+    margin: $element-margin / 2 0 0 0;
+}
