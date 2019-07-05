@@ -1,0 +1,11 @@
+@import "../_variables";
+
+.date-picker {
+    .drop-down-list {
+        max-height: initial;
+        .calendar {
+            border: 0;
+            // TODO: padding: $element-padding / 4;
+        }
+    }
+}
