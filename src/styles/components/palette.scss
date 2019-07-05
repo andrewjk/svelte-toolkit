@@ -55,3 +55,16 @@
     width: 100%;
     margin: $element-margin / 2 0 0 0;
 }
+
+.palette-canvas-container {
+    position: relative;
+}
+
+.palette-selector {
+    border: 2px solid $body-text-color;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    pointer-events: none;
+    position: absolute;
+}

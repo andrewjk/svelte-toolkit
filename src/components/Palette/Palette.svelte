@@ -44,14 +44,15 @@
   ];
 
   let oldValue = "";
+  let skipRedraw = false;
   let rgbValue = [0, 0, 0];
   let previewCanvas = null;
   let hsCanvas = null;
   let hsImageData = null;
-  let hsSelectorLocation = [0, 0];
+  let hsSelectorLocation = [-99, -99];
   let lCanvas = null;
   let lImageData = null;
-  let lSelectorLocation = [0, 0];
+  let lSelectorLocation = [-99, -99];
   let dragging = false;
 
   const dispatch = createEventDispatcher();
@@ -65,10 +66,14 @@
 
   beforeUpdate(() => {
     if (previewCanvas && hsCanvas && lCanvas) {
-      // Redraw if the value has changed to reset the selector locations, except when dragging
-      if (oldValue !== value && !dragging) {
-        hsImageData = null;
-        lImageData = null;
+      // Redraw if the value has changed to reset the selector locations, except when dragging or clicking
+      if (oldValue !== value) {
+        if (skipRedraw) {
+          skipRedraw = false;
+        } else {
+          hsImageData = null;
+          lImageData = null;
+        }
       }
       oldValue = value;
       drawPreviewCanvas();
@@ -87,8 +92,7 @@
 
     context.fillStyle = value;
     context.fillRect(0, 0, width, height);
-    const rgb = context.getImageData(0, 0, 1, 1).data;
-    rgbValue = [rgb[0], rgb[1], rgb[2]];
+    rgbValue = context.getImageData(0, 0, 1, 1).data;
   }
 
   // A function for directly setting a pixel's data
@@ -101,6 +105,10 @@
   }
 
   function drawHSCanvas(e) {
+    if (hsImageData) {
+      return;
+    }
+
     const context = hsCanvas.getContext("2d");
 
     // This is how you do a color wheel
@@ -127,100 +135,70 @@
     const width = hsCanvas.width;
     const height = hsCanvas.height;
 
-    const redraw = !hsImageData;
+    // Create a new batch of pixels with the same dimensions as the image
+    hsImageData = context.createImageData(width, height);
 
-    if (redraw) {
-      // Create a new batch of pixels with the same dimensions as the image
-      hsImageData = context.createImageData(width, height);
+    const hsl = rgbToHsl(rgbValue[0], rgbValue[1], rgbValue[2]);
 
-      const hsl = rgbToHsl(rgbValue[0], rgbValue[1], rgbValue[2]);
-
-      // Get the HS canvas's pixel values
-      hsSelectorLocation = [0, 0];
-      for (let x = 0; x < width; x++) {
-        for (let y = 0; y < height; y++) {
-          const h = x / width;
-          const s = 1 - y / height;
-          if (
-            Math.round(h * 10) / 10 === Math.round(hsl[0] * 10) / 10 &&
-            Math.round(s * 10) / 10 === Math.round(hsl[1] * 10) / 10
-          ) {
-            hsSelectorLocation = [x, y];
-          }
-          let rgb = hslToRgb(h, s, 0.5);
-          if (!rgb) {
-            rgb = [255, 255, 255];
-          }
-          setPixel(hsImageData, x, y, rgb[0], rgb[1], rgb[2], 255);
+    // Get the HS canvas's pixel values
+    hsSelectorLocation = [0, 0];
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        const h = x / width;
+        const s = 1 - y / height;
+        if (
+          Math.round(h * 10) / 10 === Math.round(hsl[0] * 10) / 10 &&
+          Math.round(s * 10) / 10 === Math.round(hsl[1] * 10) / 10
+        ) {
+          hsSelectorLocation = [x, y];
         }
+        let rgb = hslToRgb(h, s, 0.5);
+        if (!rgb) {
+          rgb = [255, 255, 255];
+        }
+        setPixel(hsImageData, x, y, rgb[0], rgb[1], rgb[2], 255);
       }
     }
 
-    // Copy the image data back onto the canvas
+    // Copy the image data onto the canvas
     context.putImageData(hsImageData, 0, 0);
-
-    // Draw the value indicator
-    context.beginPath();
-    context.arc(
-      hsSelectorLocation[0],
-      hsSelectorLocation[1],
-      4,
-      0,
-      2 * Math.PI,
-      false
-    );
-    context.lineWidth = 1;
-    context.stroke();
   }
 
   function drawLCanvas(e) {
+    if (lImageData) {
+      return;
+    }
+
     const context = lCanvas.getContext("2d");
 
     const width = lCanvas.width;
     const height = lCanvas.height;
 
-    const redraw = !lImageData;
+    // Create a new batch of pixels with the same dimensions as the image
+    lImageData = context.createImageData(width, height);
 
-    if (redraw) {
-      // Create a new batch of pixels with the same dimensions as the image
-      lImageData = context.createImageData(width, height);
+    const hsl = rgbToHsl(rgbValue[0], rgbValue[1], rgbValue[2]);
 
-      const hsl = rgbToHsl(rgbValue[0], rgbValue[1], rgbValue[2]);
-
-      // Get the L canvas's pixel values
-      lSelectorLocation = [0, 0];
-      for (let y = 0; y < height; y++) {
-        const h = hsl[0];
-        const s = hsl[1];
-        const l = 1 - y / height;
-        if (Math.round(l * 10) / 10 === Math.round(hsl[2] * 10) / 10) {
-          lSelectorLocation = [width / 2, y];
-        }
-        let rgb = hslToRgb(h, s, l);
-        if (!rgb) {
-          rgb = [255, 255, 255];
-        }
-        for (let x = 0; x < width; x++) {
-          setPixel(lImageData, x, y, rgb[0], rgb[1], rgb[2], 255);
-        }
+    // Get the L canvas's pixel values
+    lSelectorLocation = [0, 0];
+    for (let y = 0; y < height; y++) {
+      const h = hsl[0];
+      const s = hsl[1];
+      const l = 1 - y / height;
+      if (Math.round(l * 10) / 10 === Math.round(hsl[2] * 10) / 10) {
+        lSelectorLocation = [width / 2, y];
+      }
+      let rgb = hslToRgb(h, s, l);
+      if (!rgb) {
+        rgb = [255, 255, 255];
+      }
+      for (let x = 0; x < width; x++) {
+        setPixel(lImageData, x, y, rgb[0], rgb[1], rgb[2], 255);
       }
     }
 
-    // Copy the image data back onto the canvas
+    // Copy the image data onto the canvas
     context.putImageData(lImageData, 0, 0);
-
-    // Draw the value indicator
-    context.beginPath();
-    context.arc(
-      lSelectorLocation[0],
-      lSelectorLocation[1],
-      4,
-      0,
-      2 * Math.PI,
-      false
-    );
-    context.lineWidth = 1;
-    context.stroke();
   }
 
   function handleHsCanvasMouseDown(e) {
@@ -279,7 +257,10 @@
 
     // Force the l image to be redrawn with the new color
     lImageData = null;
-}
+
+    // Don't redraw with the value change - we know where everything should be
+    skipRedraw = true;
+  }
 
   function handleLCanvasMouseDown(e) {
     const rect = lCanvas.getBoundingClientRect();
@@ -323,6 +304,9 @@
 
     lSelectorLocation = [lSelectorLocation[0], y];
     value = hex;
+
+    // Don't redraw with the value change - we know where everything should be
+    skipRedraw = true;
   }
 
   function handleStandardColorClick(e) {
@@ -351,22 +335,36 @@
   <div class="palette-container">
     <div class="palette-colors">
       <!-- HACK: Need to specify dimensions because it's not initially shown and thus has scrollWidth/Height = 0 -->
-      <canvas
-        class="palette-hs"
-        bind:this={hsCanvas}
-        width={200}
-        height={200}
-        on:mousedown={handleHsCanvasMouseDown}
-        on:mousemove={handleHsCanvasMouseMove}
-        on:mouseup={handleHsCanvasMouseUp} />
-      <canvas
-        class="palette-l"
-        bind:this={lCanvas}
-        width={25}
-        height={200}
-        on:mousedown={handleLCanvasMouseDown}
-        on:mousemove={handleLCanvasMouseMove}
-        on:mouseup={handleLCanvasMouseUp} />
+      <div class="palette-canvas-container">
+        <canvas
+          class="palette-hs"
+          bind:this={hsCanvas}
+          width={200}
+          height={200}
+          on:mousedown={handleHsCanvasMouseDown}
+          on:mousemove={handleHsCanvasMouseMove}
+          on:mouseup={handleHsCanvasMouseUp} />
+        {#if hsSelectorLocation[0] >= 0}
+          <div
+            class="palette-selector"
+            style={`left: ${hsSelectorLocation[0] - 5}px; top: ${hsSelectorLocation[1] - 5}px`} />
+        {/if}
+      </div>
+      <div class="palette-canvas-container">
+        <canvas
+          class="palette-l"
+          bind:this={lCanvas}
+          width={25}
+          height={200}
+          on:mousedown={handleLCanvasMouseDown}
+          on:mousemove={handleLCanvasMouseMove}
+          on:mouseup={handleLCanvasMouseUp} />
+        {#if lSelectorLocation[0] >= 0}
+          <div
+            class="palette-selector"
+            style={`left: ${lSelectorLocation[0] - 5}px; top: ${lSelectorLocation[1] - 5}px`} />
+        {/if}
+      </div>
       <div class="palette-standard-colors">
         {#each standardColors as color}
           <div
