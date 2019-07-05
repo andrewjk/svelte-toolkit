@@ -43,6 +43,7 @@
     "#FF0066" // Whatever this is
   ];
 
+  let oldValue = "";
   let rgbValue = [0, 0, 0];
   let previewCanvas = null;
   let hsCanvas = null;
@@ -64,6 +65,12 @@
 
   beforeUpdate(() => {
     if (previewCanvas && hsCanvas && lCanvas) {
+      // Redraw if the value has changed to reset the selector locations, except when dragging
+      if (oldValue !== value && !dragging) {
+        hsImageData = null;
+        lImageData = null;
+      }
+      oldValue = value;
       drawPreviewCanvas();
       drawHSCanvas();
       drawLCanvas();
@@ -268,12 +275,11 @@
     const hex = rgbToHex(newRgb[0], newRgb[1], newRgb[2]);
 
     hsSelectorLocation = [x, y];
+    value = hex;
 
     // Force the l image to be redrawn with the new color
     lImageData = null;
-
-    value = hex;
-  }
+}
 
   function handleLCanvasMouseDown(e) {
     const rect = lCanvas.getBoundingClientRect();
