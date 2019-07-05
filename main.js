@@ -9,6 +9,7 @@ import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
+import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
 import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
 import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
@@ -84,6 +85,7 @@ export {
     Breadcrumb, BreadcrumbItem,
     Button,
     Calendar,
+    ColorPicker,
     DatePicker,
     DropDownMenuItem, DropDownMenuDivider,
     NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,

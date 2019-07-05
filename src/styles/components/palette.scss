@@ -9,7 +9,10 @@
 }
 
 .palette-container {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
     display: inline-block;
+    padding: $element-padding;
 }
 
 .palette-colors {

@@ -1,0 +1,17 @@
+@import "../_variables";
+
+.color-picker {
+    .drop-down-list {
+        max-height: initial;
+        .palette-container {
+            border: 0;
+            padding: $element-padding / 4;
+        }
+    }
+}
+
+.color-picker-preview {
+    border-radius: 2px;
+    margin: 4px;
+    width: 2.4rem;
+}
