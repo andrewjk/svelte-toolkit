@@ -1,0 +1,34 @@
+@import "../_variables";
+
+.dot-nav {
+    padding: $element-padding / 2 0;
+    text-align: center;
+}
+
+.dot-button {
+    background-color: $middle-background-color;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    min-width: 0;
+    width: 15px;
+    margin: 0 $element-margin / 2;
+    padding: 0;
+}
+
+.dot-button.active {
+    background-color: $dark-background-color;
+}
+
+.dot-button:focus {
+    box-shadow: revert;
+}
+
+.dot-nav.vertical {
+    .dot-button {
+        display: block;
+        margin: $element-margin / 2;
+    }
+}
