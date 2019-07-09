@@ -61,7 +61,6 @@ button::-moz-focus-inner {
 .button.inline {
     font-size: inherit;
     height: $input-height;
-    line-height: $input-height - 4;
     min-width: auto;
     padding: 0 12px !important;
 }
