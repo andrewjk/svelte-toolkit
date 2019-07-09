@@ -44,7 +44,7 @@
     type = valid ? originalType : "danger";
   }
 
-  function handleChange(e) {
+  function handleInput(e) {
     if (setValue) {
       setValue(value);
     }
@@ -69,7 +69,7 @@
     bind:value
     type="text"
     maxlength={maxlength > 0 ? maxlength : 50000}
-    on:change={handleChange}
+    on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'password'}
   <input
@@ -80,7 +80,7 @@
     bind:value
     type="password"
     maxlength={maxlength > 0 ? maxlength : 50000}
-    on:change={handleChange}
+    on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'email'}
   <input
@@ -91,7 +91,7 @@
     bind:value
     type="email"
     maxlength={maxlength > 0 ? maxlength : 50000}
-    on:change={handleChange}
+    on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'url'}
   <input
@@ -102,7 +102,7 @@
     bind:value
     type="url"
     maxlength={maxlength > 0 ? maxlength : 50000}
-    on:change={handleChange}
+    on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'tel'}
   <input
@@ -113,6 +113,6 @@
     bind:value
     type="tel"
     maxlength={maxlength > 0 ? maxlength : 50000}
-    on:change={handleChange}
+    on:input={handleInput}
     on:blur={handleBlur} />
 {/if}
