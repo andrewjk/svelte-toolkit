@@ -8,7 +8,7 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let index = 1;
+  export let index = 0;
   export let itemCount = 0;
 
   const dispatch = createEventDispatcher();
