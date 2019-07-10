@@ -1,0 +1,31 @@
+@import "../_variables";
+
+.slider {
+    height: $input-height;
+    position: relative;
+}
+
+.slider-background {
+    background-color: $light-background-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    height: 4px;
+    position: absolute;
+    top: 14px;
+    width: 100%;
+}
+
+.slider-handle {
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    height: 1.6rem;
+    width: 1.6rem;
+    position: absolute;
+    top: $input-height / 2 - 1.6rem / 2;
+}
+
+.slider-handle:hover,
+.slider-handle:focus {
+    border: 1px solid $select-color;
+}
