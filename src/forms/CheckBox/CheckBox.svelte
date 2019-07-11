@@ -34,7 +34,7 @@
     if (setValue) {
       setValue(value);
     }
-    dispatch("change", e);
+    dispatch("change", e.target.checked);
   }
 
   function handleBlur(e) {
