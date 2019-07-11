@@ -10,6 +10,7 @@
 
   export let type = "";
   export let value = "";
+  export let placeholder = "";
   export let autofocus = false;
 
   export let validator = null;
@@ -68,6 +69,7 @@
     bind:this={input}
     bind:value
     type="text"
+    {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:input={handleInput}
     on:blur={handleBlur} />
@@ -79,6 +81,7 @@
     bind:this={input}
     bind:value
     type="password"
+    {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:input={handleInput}
     on:blur={handleBlur} />
@@ -90,6 +93,7 @@
     bind:this={input}
     bind:value
     type="email"
+    {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:input={handleInput}
     on:blur={handleBlur} />
@@ -101,6 +105,7 @@
     bind:this={input}
     bind:value
     type="url"
+    {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:input={handleInput}
     on:blur={handleBlur} />
@@ -112,6 +117,7 @@
     bind:this={input}
     bind:value
     type="tel"
+    {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:input={handleInput}
     on:blur={handleBlur} />

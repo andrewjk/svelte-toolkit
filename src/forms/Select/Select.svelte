@@ -9,6 +9,7 @@
 
   export let type = "";
   export let value = "";
+  export let placeholder = "";
   export let autofocus = false;
 
   export let validator = null;
@@ -66,6 +67,7 @@
   {name}
   bind:this={input}
   bind:value
+  {placeholder}
   on:change={handleChange}
   on:blur={handleBlur}>
   <slot />
