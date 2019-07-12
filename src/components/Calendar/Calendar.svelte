@@ -11,11 +11,17 @@
   let className = null;
   export { className as class };
   export let classNames = [];
+
   export let startOfWeek = 1;
   export let selectable = false;
   export let value = new Date();
   // Events can have { date, content, color }
   export let events = [];
+
+  // A note on dates:
+  // * value is the selected value
+  // * activeDate is the date that is active when the user is navigating via keyboard
+  // * visibleDate is the date that is currently being displayed in the calendar (really only the month part is important here)
 
   let activeDate = value;
   let visibleDate = value;
@@ -121,11 +127,8 @@
     if (value < visibleStartDate || value > visibleEndDate) {
       refocus = true;
       visibleDate = value;
+      dispatch("changedate", visibleDate);
     }
-
-    //days.forEach(day =>
-    //  day.setActive(areDatesEqual(day.date, new Date(value)))
-    //);
 
     dispatch("change", value);
   }
@@ -137,6 +140,7 @@
     if (activeDate < visibleStartDate || activeDate > visibleEndDate) {
       refocus = true;
       visibleDate = activeDate;
+      dispatch("changedate", visibleDate)
     }
 
     days.forEach(day =>
@@ -155,11 +159,13 @@
   function handlePrevMonth(e) {
     e.preventDefault();
     visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() - 1));
+    dispatch("changedate", visibleDate)
   }
 
   function handleNextMonth(e) {
     e.preventDefault();
     visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() + 1));
+    dispatch("changedate", visibleDate)
   }
 
   async function handleDayClick(date) {
