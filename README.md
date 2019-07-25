@@ -14,13 +14,13 @@ yarn add -D svelte-toolkit
 
 ## Consuming from Sapper
 
-In client.js:
+Import the SCSS styles in client.js:
 
 ```javascript
 import 'svelte-toolkit/main.scss';
 ```
 
-In your svelte component:
+Import toolkit components in your svelte component:
 
 ```javascript
 import { Button } from "svelte-toolkit";
@@ -36,13 +36,13 @@ import { Button } from "svelte-toolkit/main.js";
 
 ## Consuming from Electron
 
-In your renderer.js or renderer/index.js:
+Import the SCSS styles in your renderer.js or renderer/index.js:
 
 ```javascript
 require('svelte-toolkit/main.scss')
 ```
 
-In your svelte component:
+Import toolkit components in your svelte component:
 
 ```javascript
 import { Button } from "svelte-toolkit";
