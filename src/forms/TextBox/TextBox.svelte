@@ -64,61 +64,91 @@
 {#if contentType === 'text'}
   <input
     {id}
-    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     {name}
     bind:this={input}
     bind:value
     type="text"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
     on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'password'}
   <input
     {id}
-    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     {name}
     bind:this={input}
     bind:value
     type="password"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
     on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'email'}
   <input
     {id}
-    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     {name}
     bind:this={input}
     bind:value
     type="email"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
     on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'url'}
   <input
     {id}
-    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     {name}
     bind:this={input}
     bind:value
     type="url"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
     on:input={handleInput}
     on:blur={handleBlur} />
 {:else if contentType === 'tel'}
   <input
     {id}
-    class={[type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     {name}
     bind:this={input}
     bind:value
     type="tel"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
     on:input={handleInput}
     on:blur={handleBlur} />
 {/if}
