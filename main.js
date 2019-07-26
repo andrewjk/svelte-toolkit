@@ -25,6 +25,7 @@ import Pagination from './src/components/Pagination/Pagination.svelte';
 import Palette from './src/components/Palette/Palette.svelte';
 import Progress from './src/components/Progress/Progress.svelte';
 import Slider from './src/components/Slider/Slider.svelte';
+import StoryNav from './src/components/StoryNav/StoryNav.svelte';
 import SubNavMenu from './src/components/SubNavMenu/SubNavMenu.svelte';
 import SubNavMenuItem from './src/components/SubNavMenu/SubNavMenuItem.svelte';
 import SubNavMenuHeader from './src/components/SubNavMenu/SubNavMenuHeader.svelte';
@@ -102,6 +103,7 @@ export {
     Palette,
     Progress,
     Slider,
+    StoryNav,
     SubNavMenu, SubNavMenuItem, SubNavMenuHeader,
     Switcher, SwitcherItem,
     TabGroup, TabItem,
