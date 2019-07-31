@@ -50,6 +50,7 @@
       setValue(value);
     }
     dispatch("change", e.target.value);
+    dispatch("input", e);
   }
 
   function handleBlur(e) {
@@ -63,6 +64,7 @@
 <!-- HACK: Can't use a dynamic type attribute so we have to make sure these all stay in sync! -->
 {#if contentType === 'text'}
   <input
+    type="text"
     {id}
     class={[type, className]
       .concat(classNames)
@@ -71,16 +73,17 @@
     {name}
     bind:this={input}
     bind:value
-    type="text"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
     on:keypress
     on:input={handleInput}
+    on:focus
     on:blur={handleBlur} />
 {:else if contentType === 'password'}
   <input
+    type="password"
     {id}
     class={[type, className]
       .concat(classNames)
@@ -89,16 +92,17 @@
     {name}
     bind:this={input}
     bind:value
-    type="password"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
     on:keypress
     on:input={handleInput}
+    on:focus
     on:blur={handleBlur} />
 {:else if contentType === 'email'}
   <input
+    type="email"
     {id}
     class={[type, className]
       .concat(classNames)
@@ -107,16 +111,17 @@
     {name}
     bind:this={input}
     bind:value
-    type="email"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
     on:keypress
     on:input={handleInput}
+    on:focus
     on:blur={handleBlur} />
 {:else if contentType === 'url'}
   <input
+    type="url"
     {id}
     class={[type, className]
       .concat(classNames)
@@ -125,16 +130,17 @@
     {name}
     bind:this={input}
     bind:value
-    type="url"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
     on:keypress
     on:input={handleInput}
+    on:focus
     on:blur={handleBlur} />
 {:else if contentType === 'tel'}
   <input
+    type="tel"
     {id}
     class={[type, className]
       .concat(classNames)
@@ -143,12 +149,12 @@
     {name}
     bind:this={input}
     bind:value
-    type="tel"
     {placeholder}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
     on:keypress
     on:input={handleInput}
+    on:focus
     on:blur={handleBlur} />
 {/if}
