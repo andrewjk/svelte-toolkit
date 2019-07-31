@@ -46,6 +46,7 @@ import Field from './src/forms/Field/Field.svelte';
 import CheckBox from './src/forms/CheckBox/CheckBox.svelte';
 import Select from './src/forms/Select/Select.svelte';
 import TextBox from './src/forms/TextBox/TextBox.svelte';
+import TextArea from './src/forms/TextArea/TextArea.svelte';
 
 // Validation
 import Validator from './src/forms/Validator';
@@ -119,6 +120,7 @@ export {
     CheckBox,
     Select,
     TextBox,
+    TextArea,
 
     // Validation
     Validator,
