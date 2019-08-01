@@ -12,6 +12,7 @@
 
   export let text = "";
   export let values = [];
+  export let placeholder = "";
   export let source = [];
   export let items = [];
   export let delay = 300;
@@ -255,6 +256,7 @@
       class="drop-down-input"
       bind:value={text}
       bind:this={input}
+      {placeholder}
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur}

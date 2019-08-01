@@ -13,6 +13,7 @@
   export let classNames = [];
 
   export let value = null;
+  export let placeholder = "";
   export let startOfWeek = 1;
   export let dateFormat = "d MMM yyyy";
   export let dateOrder = "mdy";
@@ -95,6 +96,7 @@
       class="drop-down-input"
       value={formatDate(value, dateFormat)}
       bind:this={input}
+      {placeholder}
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur} />

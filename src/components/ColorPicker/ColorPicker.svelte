@@ -12,6 +12,7 @@
   export let classNames = [];
 
   export let value = null;
+  export let placeholder = "";
 
   let expanded = false;
   let focus = false;
@@ -87,6 +88,7 @@
       class="drop-down-input"
       bind:value
       bind:this={input}
+      {placeholder}
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur} />

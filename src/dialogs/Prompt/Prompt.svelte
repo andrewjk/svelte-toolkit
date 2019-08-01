@@ -14,6 +14,7 @@
   export let value = "";
   export let callback = null;
   export let buttonContent = "OK";
+  export let placeholder = "";
 
   const dispatch = createEventDispatcher();
 
@@ -79,6 +80,7 @@
             type="text"
             bind:value
             bind:this={input}
+            {placeholder}
             on:keydown={handleInputKey} />
         </div>
       </div>
