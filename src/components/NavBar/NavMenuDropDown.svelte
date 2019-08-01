@@ -51,6 +51,7 @@
 <li
   {id}
   class={['nav-menu-item', 'nav-menu-drop-down', className]
+    .concat(classNames)
     .filter(Boolean)
     .join(' ')}
   class:active

@@ -12,6 +12,7 @@ import Calendar from './src/components/Calendar/Calendar.svelte';
 import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
 import DotNav from './src/components/DotNav/DotNav.svelte';
+import DropDown from './src/components/DropDown/DropDown.svelte';
 import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
 import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
 import NavBar from './src/components/NavBar/NavBar.svelte';
@@ -96,6 +97,7 @@ export {
     ColorPicker,
     DatePicker,
     DotNav,
+    DropDown,
     DropDownMenuItem, DropDownMenuDivider,
     NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
