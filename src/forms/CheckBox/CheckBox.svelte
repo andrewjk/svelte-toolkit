@@ -22,7 +22,10 @@
   // Register this item with the parent Field (if applicable), which will let us know when we are invalid
   const context = getContext("field");
   if (context) {
+    value = context.fieldValue;
     setValue = context.fieldSetValue;
+    checked = context.fieldChecked;
+    group = context.fieldGroup;
     name = context.fieldName;
     validator = context.fieldValidator;
     context.registerInput(setValid);

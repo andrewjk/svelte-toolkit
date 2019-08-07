@@ -10,6 +10,8 @@
   export let label = "";
   export let name = null;
   export let value = "";
+  export let checked = false;
+  export let group = null;
 
   export let validator = null;
   export let required = false;
@@ -26,7 +28,10 @@
 
   // HACK: This seems like bad code, but I don't know how to pass props to items in slots
   setContext("field", {
+    fieldValue: value,
     fieldSetValue: setValue,
+    fieldChecked: checked,
+    fieldGroup: group,
     fieldName: name,
     fieldValidator: validator,
     fieldRequired: required,
