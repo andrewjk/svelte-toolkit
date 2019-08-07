@@ -54,7 +54,7 @@
 
   function close() {
     visible = false;
-    dispatch('closed');
+    dispatch("closed");
   }
 </script>
 
@@ -101,7 +101,10 @@
 {#if visible}
   <div
     {id}
-    class={['alert', type, position, className].concat(classNames).filter(Boolean).join(' ')}
+    class={['alert', type, position, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     role="alert"
     in:fly={transitionArgs()}
     out:fade
@@ -111,8 +114,8 @@
     </div>
     {#if closable}
       <div class="alert-close">
-        <button class="close-button" on:click={close}>
-          <Cross/>
+        <button class="close-button" type="button" on:click={close}>
+          <Cross />
         </button>
       </div>
     {/if}

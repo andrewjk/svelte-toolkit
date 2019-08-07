@@ -25,7 +25,7 @@
       dispatch("activeChange", value);
     }
   }
-  
+
   function isToday() {
     const today = new Date();
     return areDatesEqual(date, today);
@@ -38,7 +38,10 @@
 
 <div
   {id}
-  class={['calendar-day', className].concat(classNames).filter(Boolean).join(' ')}>
+  class={['calendar-day', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <div
     class="calendar-day-text"
     class:muted
@@ -47,6 +50,7 @@
     {#if selectable}
       <button
         class="button calendar-day-button"
+        type="button"
         tabindex="-1"
         on:click={handleClick}
         on:keydown>

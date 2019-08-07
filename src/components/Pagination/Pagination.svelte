@@ -113,10 +113,14 @@
 {#if pageCount > 1}
   <div
     {id}
-    class={['pagination', className].concat(classNames).filter(Boolean).join(' ')}
+    class={['pagination', className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     tabindex="0">
     <button
       class="button pagination-button"
+      type="button"
       disabled={pageNumber <= 1}
       on:click={e => setPageNumber(pageNumber - 1)}
       on:keydown={e => handleKey(e)}
@@ -128,17 +132,19 @@
     {#each pageNumbers() as number, index (number)}
       <button
         class="button pagination-button"
+        type="button"
         class:active={pageNumber === number}
         on:click={e => setPageNumber(number)}
         on:keydown={e => handleKey(e)}
         tabindex="-1">
-         {number.toString().replace('$', '')}
+        {number.toString().replace('$', '')}
       </button>
     {/each}
 
     <button
       class="button pagination-button"
       disabled={pageNumber >= pageCount}
+      type="button"
       on:click={e => setPageNumber(pageNumber + 1)}
       on:keydown={e => handleKey(e)}
       aria-label="Next"

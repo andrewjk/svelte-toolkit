@@ -28,6 +28,7 @@
   id={id ? id + '-tab' : null}
   class="button tab-list-button"
   class:active
+  type="button"
   role="tab"
   aria-selected={active}
   tabindex="-1"

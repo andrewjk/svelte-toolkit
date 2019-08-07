@@ -30,14 +30,18 @@
 {#if itemCount > 0}
   <div
     {id}
-    class={['wizard-nav', className].concat(classNames).filter(Boolean).join(' ')}
+    class={['wizard-nav', className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     tabindex="0">
     {#if index > 0}
       <button
         class="button wizard-button"
-        on:click={e => setIndex(index - 1)}
+        type="button"
         aria-label="Previous"
-        tabindex="-1">
+        tabindex="-1"
+        on:click={e => setIndex(index - 1)}>
         <LeftChevron />
         Previous
       </button>
@@ -46,9 +50,10 @@
     {#if index < itemCount - 1}
       <button
         class="button wizard-button"
-        on:click={e => setIndex(index + 1)}
+        type="button"
         aria-label="Next"
-        tabindex="-1">
+        tabindex="-1"
+        on:click={e => setIndex(index + 1)}>
         Next
         <RightChevron />
       </button>
@@ -57,9 +62,10 @@
     {#if index === itemCount - 1}
       <button
         class="button wizard-button finish"
-        on:click={e => dispatch('finished')}
+        type="button"
         aria-label="Finish"
-        tabindex="-1">
+        tabindex="-1"
+        on:click={e => dispatch('finished')}>
         Finish
       </button>
     {/if}

@@ -26,7 +26,7 @@
 
   function close() {
     visible = false;
-    dispatch('closed');
+    dispatch("closed");
   }
 </script>
 
@@ -47,15 +47,18 @@
 {#if visible}
   <div
     {id}
-    class={['notification', type, solid ? 'solid' : null, className].concat(classNames).filter(Boolean).join(' ')}
+    class={['notification', type, solid ? 'solid' : null, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
     out:fade>
     <div class="notification-content">
       <slot>{content}</slot>
     </div>
     {#if closable}
       <div class="notification-close">
-        <button class="close-button" on:click={close}>
-          <Cross/>
+        <button class="close-button" type="button" on:click={close}>
+          <Cross />
         </button>
       </div>
     {/if}

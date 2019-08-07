@@ -55,7 +55,11 @@
   }
 </style>
 
-<div class={['accordion-item', className].concat(classNames).filter(Boolean).join(' ')}>
+<div
+  class={['accordion-item', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <div
     id={id ? id + '-header' : ''}
     class="accordion-header"
@@ -65,6 +69,7 @@
     <button
       bind:this={headerButton}
       class="button accordion-header-button"
+      type="button"
       tabindex="-1"
       on:click={handleClick}
       on:keydown={handleKey}>

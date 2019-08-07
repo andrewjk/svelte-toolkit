@@ -31,7 +31,7 @@
       .join(' ')}>
     <slot>{content}</slot>
     {#if closable}
-      <button class="close-button" on:click={close}>
+      <button class="close-button" type="button" on:click={close}>
         <Cross />
       </button>
     {/if}

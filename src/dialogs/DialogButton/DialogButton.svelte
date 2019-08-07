@@ -37,6 +37,7 @@
   class={['button', 'dialog-button', confirm ? 'select' : 'cancel', className]
     .filter(Boolean)
     .join(' ')}
+  type="button"
   on:keydown={handleKey}
   on:click>
   <slot>{content}</slot>

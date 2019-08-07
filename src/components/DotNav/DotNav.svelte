@@ -66,6 +66,7 @@
       <button
         class="button dot-button"
         class:active={idx === index}
+        type="button"
         on:click={e => setIndex(idx)}
         tabindex="-1" />
     {/each}

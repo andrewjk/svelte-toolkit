@@ -24,6 +24,7 @@
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}
+  type="button"
   aria-haspopup="true"
   on:click={toggleDropDown}>
   <slot />
