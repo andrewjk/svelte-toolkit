@@ -15,6 +15,7 @@
 
   export let validator = null;
 
+  let originalType = type;
   let setValue = null;
 
   const dispatch = createEventDispatcher();
@@ -32,7 +33,7 @@
   }
 
   function setValid(valid) {
-    type = valid ? "" : "danger";
+    type = valid ? originalType : "danger";
   }
 
   function handleChange(e) {
