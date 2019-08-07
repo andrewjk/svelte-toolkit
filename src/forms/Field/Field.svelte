@@ -17,7 +17,7 @@
   export let maxlength = 0;
   export let regex = null;
   export let compareTo = "";
-  export let friendlyName = "";
+  export let friendlyName = label || name;
 
   let errorMessage = false;
   let setInputValid = null;

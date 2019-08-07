@@ -61,7 +61,7 @@ export default class Validator {
     // TODO: Custom error messages
     checkRequired(el, value) {
         if (el.options.required && !value) {
-            const message = `${el.friendlyName || el.name} is required`;
+            const message = `${el.friendlyName} is required`;
             return { valid: false, message };
         }
         return { valid: true };
@@ -69,13 +69,13 @@ export default class Validator {
 
     checkLength(el, value) {
         if (el.options.minlength && !el.options.maxlength && value.length < el.options.minlength) {
-            const message = `${el.friendlyName || el.name} must be at least ${el.options.minlength} characters`;
+            const message = `${el.friendlyName} must be at least ${el.options.minlength} characters`;
             return { valid: false, message };
         } else if (el.options.maxlength && !el.options.minlength && value.length > el.options.maxlength) {
-            const message = `${el.friendlyName || el.name} cannot be more than ${el.options.minlength} characters`;
+            const message = `${el.friendlyName} cannot be more than ${el.options.minlength} characters`;
             return { valid: false, message };
         } else if (el.options.minlength && el.options.maxlength && (value.length < el.options.minlength || value.length > el.options.maxlength)) {
-            const message = `${el.friendlyName || el.name} must be between ${el.options.minlength} and ${el.options.maxlength} characters`;
+            const message = `${el.friendlyName} must be between ${el.options.minlength} and ${el.options.maxlength} characters`;
             return { valid: false, message };
         }
         return { valid: true };
@@ -83,7 +83,7 @@ export default class Validator {
 
     checkRegex(el, value) {
         if (el.options.regex && !el.options.regex.test(value)) {
-            const message = `${el.friendlyName || el.name} is not valid`;
+            const message = `${el.friendlyName} is not valid`;
             return { valid: false, message };
         }
         return { valid: true };
@@ -93,7 +93,7 @@ export default class Validator {
         if (el.options.compareTo) {
             const otherEl = this.elements.find((item) => item.name === el.options.compareTo);
             if (value !== otherEl.getValue()) {
-                const message = `${el.friendlyName || el.name} must be the same as ${otherEl.friendlyName || otherEl.name}`;
+                const message = `${el.friendlyName} must be the same as ${otherEl.friendlyName}`;
                 return { valid: false, message };
             }
         }
