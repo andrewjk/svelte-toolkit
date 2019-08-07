@@ -10,6 +10,8 @@
   export let label = "";
   export let type = "";
   export let checked = false;
+  export let value = true;
+  export let group = null;
 
   export let validator = null;
 
@@ -46,6 +48,6 @@
 </script>
 
 <label {id} class={['checkbox', type, className].concat(classNames).filter(Boolean).join(' ')}>
-  <input {name} bind:checked type="checkbox" on:change={handleChange} on:blur={handleBlur} />
+  <input {name} type="checkbox" {value} bind:group bind:checked on:change={handleChange} on:blur={handleBlur} />
   <span>{label}</span>
 </label>
