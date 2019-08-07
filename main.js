@@ -45,6 +45,7 @@ import showAlert from './src/components/Alert/show-alert';
 // Forms
 import Field from './src/forms/Field/Field.svelte';
 import CheckBox from './src/forms/CheckBox/CheckBox.svelte';
+import Radio from './src/forms/Radio/Radio.svelte';
 import Select from './src/forms/Select/Select.svelte';
 import TextBox from './src/forms/TextBox/TextBox.svelte';
 import TextArea from './src/forms/TextArea/TextArea.svelte';
@@ -120,6 +121,7 @@ export {
     // Forms
     Field,
     CheckBox,
+    Radio,
     Select,
     TextBox,
     TextArea,

@@ -1,0 +1,52 @@
+<script>
+  import { getContext, createEventDispatcher } from "svelte";
+
+  export let id = null;
+  export let name = null;
+  let className = null;
+  export { className as class };
+  export let classNames = [];
+
+  export let label = "";
+  export let type = "";
+  export let value = "";
+  export let group = null;
+
+  export let validator = null;
+
+  let setValue = null;
+
+  const dispatch = createEventDispatcher();
+
+  // Register this item with the parent Field (if applicable), which will let us know when we are invalid
+  const context = getContext("field");
+  if (context) {
+    setValue = context.fieldSetValue;
+    name = context.fieldName;
+    validator = context.fieldValidator;
+    context.registerInput(setValid);
+  }
+
+  function setValid(valid) {
+    type = valid ? "" : "danger";
+  }
+
+  function handleChange(e) {
+    if (setValue) {
+      setValue(value);
+    }
+    dispatch("change", e.target.checked);
+  }
+
+  function handleBlur(e) {
+    if (validator) {
+      validator.validate();
+    }
+    dispatch("onblur", e);
+  }
+</script>
+
+<label {id} class={['radio', type, className].concat(classNames).filter(Boolean).join(' ')}>
+  <input {name} type="radio" {value} bind:group on:change={handleChange} on:blur={handleBlur} />
+  <span>{label}</span>
+</label>
