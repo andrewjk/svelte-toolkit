@@ -12,6 +12,7 @@
   export let value = "";
   export let placeholder = "";
   export let autofocus = false;
+  export let readonly = false;
 
   export let validator = null;
   export let maxlength = 0;
@@ -74,6 +75,7 @@
     bind:this={input}
     bind:value
     {placeholder}
+    {readonly}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
@@ -93,6 +95,7 @@
     bind:this={input}
     bind:value
     {placeholder}
+    {readonly}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
@@ -112,6 +115,7 @@
     bind:this={input}
     bind:value
     {placeholder}
+    {readonly}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
@@ -131,6 +135,7 @@
     bind:this={input}
     bind:value
     {placeholder}
+    {readonly}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup
@@ -150,6 +155,7 @@
     bind:this={input}
     bind:value
     {placeholder}
+    {readonly}
     maxlength={maxlength > 0 ? maxlength : 50000}
     on:keydown
     on:keyup

@@ -12,6 +12,7 @@
   export let rows = 4;
   export let placeholder = "";
   export let autofocus = false;
+  export let readonly = false;
 
   export let validator = null;
   export let maxlength = 0;
@@ -72,6 +73,7 @@
   bind:value
   {rows}
   {placeholder}
+  {readonly}
   maxlength={maxlength > 0 ? maxlength : 50000}
   on:keydown
   on:keyup
