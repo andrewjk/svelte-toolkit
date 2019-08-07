@@ -10,8 +10,9 @@
   export let classNames = [];
   export let type = "info";
   export let content = "";
-  export let closable = true;
+  export let closable = false;
   export let duration = -1;
+  export let solid = false;
 
   const dispatch = createEventDispatcher();
 
@@ -46,7 +47,7 @@
 {#if visible}
   <div
     {id}
-    class={['notification', type, className].concat(classNames).filter(Boolean).join(' ')}
+    class={['notification', type, solid ? 'solid' : null, className].concat(classNames).filter(Boolean).join(' ')}
     out:fade>
     <div class="notification-content">
       <slot>{content}</slot>
