@@ -1,5 +1,5 @@
 <script>
-  import { getContext, createEventDispatcher } from "svelte";
+  import { onMount, getContext, createEventDispatcher } from "svelte";
 
   export let id = null;
   export let name = null;
@@ -12,13 +12,24 @@
   export let checked = false;
   export let value = true;
   export let group = null;
+  export let autofocus = false;
 
   export let validator = null;
 
+  let input = null;
   let originalType = type;
   let setValue = null;
 
   const dispatch = createEventDispatcher();
+
+  onMount(() => {
+    // We're manually focussing in onMount for two reasons:
+    // 1. to avoid an overly-broad accessibility warning (there are instances where autofocus is desirable)
+    // 2. to enable autofocus when an item is dynamically added to a page (e.g. adding a new item at the bottom of a list)
+    if (autofocus) {
+      input.focus();
+    }
+  });
 
   // Register this item with the parent Field (if applicable), which will let us know when we are invalid
   const context = getContext("field");
@@ -51,7 +62,22 @@
   }
 </script>
 
-<label {id} class={['checkbox', type, className].concat(classNames).filter(Boolean).join(' ')}>
-  <input {name} type="checkbox" {value} bind:group bind:checked on:change={handleChange} on:blur={handleBlur} />
-  <span>{label}</span>
+<label
+  {id}
+  class={['checkbox', type, className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
+  <input
+    {name}
+    type="checkbox"
+    {value}
+    bind:group
+    bind:checked
+    bind:this={input}
+    on:change={handleChange}
+    on:blur={handleBlur} />
+  <span>
+    <slot>{label}</slot>
+  </span>
 </label>
