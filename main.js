@@ -10,6 +10,7 @@ import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
 import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
+import CoverImage from './src/components/CoverImage/CoverImage.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
 import DotNav from './src/components/DotNav/DotNav.svelte';
 import DropDown from './src/components/DropDown/DropDown.svelte';
@@ -99,6 +100,7 @@ export {
     Button,
     Calendar,
     ColorPicker,
+    CoverImage,
     DatePicker,
     DotNav,
     DropDown,
