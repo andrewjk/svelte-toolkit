@@ -141,6 +141,10 @@
 // TEXT SIZES AND COLORS
 // ========================================================
 
+small {
+    font-size: $font-size-small !important;
+}
+
 .text-small {
     font-size: $font-size-small !important;
 }
