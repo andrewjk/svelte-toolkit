@@ -78,12 +78,12 @@
     switch (e.keyCode) {
       case keyCodes.up: {
         e.preventDefault();
-        handleChange(-1);
+        handleChange(1);
         break;
       }
       case keyCodes.down: {
         e.preventDefault();
-        handleChange(1);
+        handleChange(-1);
         break;
       }
     }
