@@ -1,5 +1,5 @@
 import test from 'ava';
-import ArrowDown from '../../src/components/Icons/ArrowDown.svelte';
+import ArrowDown from '../../src/icons/ArrowDown.svelte';
 
 test('icon: arrow down creation', t => {
     const target = document.createElement('div');

@@ -4,8 +4,8 @@
   import { keyCodes } from "../../utils/key-codes";
 
   import CalendarDay from "./CalendarDay.svelte";
-  import ChevronLeft from "../Icons/ChevronLeft.svelte";
-  import ChevronRight from "../Icons/ChevronRight.svelte";
+  import ChevronLeft from "../../icons/ChevronLeft.svelte";
+  import ChevronRight from "../../icons/ChevronRight.svelte";
 
   export let id = null;
   let className = null;

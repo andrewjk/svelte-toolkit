@@ -75,19 +75,19 @@ import PieChart from './src/charts/PieChart/PieChart.svelte';
 import PieChartItem from './src/charts/PieChart/PieChartItem.svelte';
 
 // Icons
-import ArrowUp from './src/components/Icons/ArrowUp.svelte';
-import ArrowDown from './src/components/Icons/ArrowDown.svelte';
-import ArrowLeft from './src/components/Icons/ArrowLeft.svelte';
-import ArrowRight from './src/components/Icons/ArrowRight.svelte';
-import Bars from './src/components/Icons/Bars.svelte';
-import ChevronUp from './src/components/Icons/ChevronUp.svelte';
-import ChevronDown from './src/components/Icons/ChevronDown.svelte';
-import ChevronLeft from './src/components/Icons/ChevronLeft.svelte';
-import ChevronRight from './src/components/Icons/ChevronRight.svelte';
-import Cross from './src/components/Icons/Cross.svelte';
-import Check from './src/components/Icons/Check.svelte';
-import Plus from './src/components/Icons/Plus.svelte';
-import Minus from './src/components/Icons/Minus.svelte';
+import ArrowUp from './src/icons/ArrowUp.svelte';
+import ArrowDown from './src/icons/ArrowDown.svelte';
+import ArrowLeft from './src/icons/ArrowLeft.svelte';
+import ArrowRight from './src/icons/ArrowRight.svelte';
+import Bars from './src/icons/Bars.svelte';
+import ChevronUp from './src/icons/ChevronUp.svelte';
+import ChevronDown from './src/icons/ChevronDown.svelte';
+import ChevronLeft from './src/icons/ChevronLeft.svelte';
+import ChevronRight from './src/icons/ChevronRight.svelte';
+import Cross from './src/icons/Cross.svelte';
+import Check from './src/icons/Check.svelte';
+import Plus from './src/icons/Plus.svelte';
+import Minus from './src/icons/Minus.svelte';
 
 export {
     // Components

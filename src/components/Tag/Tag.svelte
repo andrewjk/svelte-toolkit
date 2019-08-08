@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import Cross from "../Icons/Cross.svelte";
+  import Cross from "../../icons/Cross.svelte";
 
   export let id = null;
   let className = null;

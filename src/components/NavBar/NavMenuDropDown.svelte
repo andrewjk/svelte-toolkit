@@ -1,5 +1,5 @@
 <script>
-  import ChevronDown from "../Icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
 
   export let id = null;
   let className = null;
