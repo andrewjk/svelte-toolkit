@@ -38,7 +38,7 @@
     group = context.fieldGroup;
     name = context.fieldName;
     validator = context.fieldValidator;
-    context.registerInput(setValid);
+    context.registerInput(setValid, "group");
   }
 
   function setValid(valid) {
@@ -46,10 +46,11 @@
   }
 
   function handleChange(e) {
+    // For a radio, the value (which is used for validation, etc) is the value of its group
     if (setValue) {
-      setValue(value);
+      setValue(group);
     }
-    dispatch("change", e.target.checked);
+    dispatch("change", group);
   }
 
   function handleBlur(e) {

@@ -23,15 +23,16 @@
 
   let errorMessage = false;
   let setInputValid = null;
+  let inputValueProp = null;
 
   const dispatch = createEventDispatcher();
 
   // HACK: This seems like bad code, but I don't know how to pass props to items in slots
   setContext("field", {
     fieldValue: value,
-    fieldSetValue: setValue,
     fieldChecked: checked,
     fieldGroup: group,
+    fieldSetValue: setValue,
     fieldName: name,
     fieldValidator: validator,
     fieldRequired: required,
@@ -39,8 +40,9 @@
     fieldMaxlength: maxlength,
     fieldRegex: regex,
     fieldCompareTo: compareTo,
-    registerInput: setValid => {
+    registerInput: (setValid, valueProp) => {
       setInputValid = setValid;
+      inputValueProp = valueProp;
     }
   });
 
@@ -68,16 +70,42 @@
   });
 
   function setValue(inputValue) {
-    value = inputValue;
+    switch (inputValueProp) {
+      case "checked": {
+        checked = inputValue;
+        break;
+      }
+      case "group": {
+        group = inputValue;
+        break;
+      }
+      default: {
+        value = inputValue;
+        break;
+      }
+    }
+  }
+
+  function getValue() {
+    switch (inputValueProp) {
+      case "checked": {
+        return checked;
+        break;
+      }
+      case "group": {
+        return group;
+        break;
+      }
+      default: {
+        return value;
+        break;
+      }
+    }
   }
 
   function setValid(valid, message) {
     errorMessage = message;
     setInputValid(valid);
-  }
-
-  function getValue() {
-    return value;
   }
 </script>
 

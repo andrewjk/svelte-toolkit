@@ -40,7 +40,7 @@
     group = context.fieldGroup;
     name = context.fieldName;
     validator = context.fieldValidator;
-    context.registerInput(setValid);
+    context.registerInput(setValid, "checked");
   }
 
   function setValid(valid) {
@@ -48,10 +48,11 @@
   }
 
   function handleChange(e) {
+    // For a checkbox, the value (which is used for validation, etc) is whether it's checked or not
     if (setValue) {
-      setValue(value);
+      setValue(checked);
     }
-    dispatch("change", e.target.checked);
+    dispatch("change", checked);
   }
 
   function handleBlur(e) {
