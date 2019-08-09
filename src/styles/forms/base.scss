@@ -90,9 +90,24 @@ select {
     width: 100%;
 }
 
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,30 L50,70 L90,30" fill="none" stroke="%23777" stroke-width="15" /></g></svg>');
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.6rem top 50%, 0 0;
+    background-size: 1.1rem auto, 100%;
+}
+
 select:not([multiple]) {
     height: $input-height;
 }
+
+// NOTE: This might be needed - test on IE
+//select::-ms-expand {
+//    display: none;
+//}
 
 /* Remove the black dotted focus border in Firefox
    per https://stackoverflow.com/a/27510551 */
