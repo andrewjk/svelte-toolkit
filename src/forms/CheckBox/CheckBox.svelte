@@ -69,15 +69,27 @@
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}>
-  <input
-    {name}
-    type="checkbox"
-    {value}
-    bind:group
-    bind:checked
-    bind:this={input}
-    on:change={handleChange}
-    on:blur={handleBlur} />
+  {#if group}
+    <input
+      class="checkbox-input"
+      {name}
+      type="checkbox"
+      {value}
+      bind:group
+      bind:this={input}
+      on:change={handleChange}
+      on:blur={handleBlur} />
+  {:else}
+    <input
+      class="checkbox-input"
+      {name}
+      type="checkbox"
+      {value}
+      bind:checked
+      bind:this={input}
+      on:change={handleChange}
+      on:blur={handleBlur} />
+  {/if}
   <span>
     <slot>{label}</slot>
   </span>

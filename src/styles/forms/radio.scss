@@ -1,41 +1,39 @@
 @import "../_variables";
 
-.radio {
-    input[type=radio] {
-        position: absolute;
-        opacity: 0;
-        height: 0;
-        width: 0;
-    }
-
-    input[type=radio] + span:before {
-        background-color: white;
-        border: 1px solid $light-text-color;
-        border-radius: 50%;
-        content: "\00a0";
-        display: inline-block;
-        height: 1.5rem;
-        line-height: 1.5rem;
-        margin-right: 0.6rem;
-        padding: 0 1px;
-        width: 1.5rem;
-    }
-
-    input[type=radio]:checked + span:before {
-        // TODO: Maybe extract icons into svg files that I can just include here?
-        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><circle cx="50" cy="45" r="30" fill="%23222" /></g></svg>');
-    }
-
-    input[type=radio]:focus + span:before {
-        border-color: lighten($select-color, 18%);
-        box-shadow: 0px 0px 1px $select-color;
-    }
-}
-
 .radio:hover {
     input[type=radio] + span:before {
         border-color: $select-color;
     }
+}
+
+input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+input[type=radio] + span:before {
+    background-color: white;
+    border: 1px solid $light-text-color;
+    border-radius: 50%;
+    content: "\00a0";
+    display: inline-block;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-right: 0.6rem;
+    padding: 0 1px;
+    width: 1.5rem;
+}
+
+input[type=radio]:checked + span:before {
+    // TODO: Maybe extract icons into svg files that I can just include here?
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><circle cx="50" cy="45" r="30" fill="%23222" /></g></svg>');
+}
+
+input[type=radio]:focus + span:before {
+    border-color: lighten($select-color, 18%);
+    box-shadow: 0px 0px 1px $select-color;
 }
 
 .radio.info,
@@ -50,6 +48,8 @@
 }
 
 .radio.info {
+    color: $info-color;
+
     input[type=radio] + span:before {
         border-color: $info-color;
     }
@@ -57,15 +57,15 @@
     input[type=radio]:checked + span:before {
         background-color: $info-color;
     }
-}
 
-.radio.info {
     input[type=radio]:focus + span:before {
         box-shadow: 0px 0px 2px $info-color;
     }
 }
 
 .radio.success {
+    color: $success-color;
+
     input[type=radio] + span:before {
         border-color: $success-color;
     }
@@ -73,15 +73,15 @@
     input[type=radio]:checked + span:before {
         background-color: $success-color;
     }
-}
 
-.radio.success {
     input[type=radio]:focus + span:before {
         box-shadow: 0px 0px 2px $success-color;
     }
 }
 
 .radio.warning {
+    color: $warning-color;
+
     input[type=radio] + span:before {
         border-color: $warning-color;
     }
@@ -89,15 +89,15 @@
     input[type=radio]:checked + span:before {
         background-color: $warning-color;
     }
-}
 
-.radio.warning {
     input[type=radio]:focus + span:before {
         box-shadow: 0px 0px 2px $warning-color;
     }
 }
 
 .radio.danger {
+    color: $danger-color;
+
     input[type=radio] + span:before {
         border-color: $danger-color;
     }
@@ -105,9 +105,7 @@
     input[type=radio]:checked + span:before {
         background-color: $danger-color;
     }
-}
 
-.radio.danger {
     input[type=radio]:focus + span:before {
         box-shadow: 0px 0px 2px $danger-color;
     }

@@ -68,6 +68,7 @@
     .filter(Boolean)
     .join(' ')}>
   <input
+    class="radio-input"
     {name}
     type="radio"
     {value}
