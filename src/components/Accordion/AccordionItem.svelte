@@ -2,7 +2,7 @@
   import { getContext, createEventDispatcher } from "svelte";
   import { slide } from "svelte/transition";
 
-  export let id = null;
+  export let id;
   let className = null;
   export { className as class };
   export let classNames = [];
@@ -61,7 +61,7 @@
     .filter(Boolean)
     .join(' ')}>
   <div
-    id={id ? id + '-header' : ''}
+    id={`${id}-header`}
     class="accordion-header"
     class:expanded
     aria-expanded={expanded}
@@ -82,7 +82,7 @@
       class="accordion-panel"
       class:expanded
       role="region"
-      aria-labelledby={id ? id + '-header' : ''}
+      aria-labelledby={`${id}-header`}
       transition:slide>
       <slot />
     </div>
