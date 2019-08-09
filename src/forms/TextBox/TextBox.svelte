@@ -164,4 +164,24 @@
     on:input={handleInput}
     on:focus
     on:blur={handleBlur} />
+{:else if contentType === 'file'}
+  <input
+    type="file"
+    {id}
+    class={[type, className]
+      .concat(classNames)
+      .filter(Boolean)
+      .join(' ')}
+    {name}
+    bind:this={input}
+    bind:value
+    {placeholder}
+    {readonly}
+    maxlength={maxlength > 0 ? maxlength : 50000}
+    on:keydown
+    on:keyup
+    on:keypress
+    on:input={handleInput}
+    on:focus
+    on:blur={handleBlur} />
 {/if}
