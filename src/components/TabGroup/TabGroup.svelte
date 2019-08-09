@@ -82,7 +82,8 @@
 
   function handleClick(e) {
     // HACK: Is there a better way to get the index?
-    const index = parseInt(e.target.dataset.index);
+    const el = e.target.closest('.tab-list-button');
+    const index = parseInt(el.dataset.index);
     toggleItem(index);
   }
 
