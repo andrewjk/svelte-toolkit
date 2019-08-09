@@ -52,7 +52,6 @@ import Radio from './src/forms/Radio/Radio.svelte';
 import Select from './src/forms/Select/Select.svelte';
 import TextBox from './src/forms/TextBox/TextBox.svelte';
 import TextArea from './src/forms/TextArea/TextArea.svelte';
-import Upload from './src/forms/Upload/Upload.svelte';
 
 // Validation
 import Validator from './src/forms/Validator';
@@ -134,7 +133,6 @@ export {
     Select,
     TextBox,
     TextArea,
-    Upload,
 
     // Validation
     Validator,
