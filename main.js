@@ -46,11 +46,13 @@ import showAlert from './src/components/Alert/show-alert';
 // Forms
 import Field from './src/forms/Field/Field.svelte';
 import CheckBox from './src/forms/CheckBox/CheckBox.svelte';
+import File from './src/forms/File/File.svelte';
 import Number from './src/forms/Number/Number.svelte';
 import Radio from './src/forms/Radio/Radio.svelte';
 import Select from './src/forms/Select/Select.svelte';
 import TextBox from './src/forms/TextBox/TextBox.svelte';
 import TextArea from './src/forms/TextArea/TextArea.svelte';
+import Upload from './src/forms/Upload/Upload.svelte';
 
 // Validation
 import Validator from './src/forms/Validator';
@@ -126,11 +128,13 @@ export {
     // Forms
     Field,
     CheckBox,
+    File,
     Number,
     Radio,
     Select,
     TextBox,
     TextArea,
+    Upload,
 
     // Validation
     Validator,

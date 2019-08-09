@@ -64,8 +64,10 @@ Other form styles, each of which should be mostly self-explanatory:
 */
 @import "./src/styles/forms/field";
 @import "./src/styles/forms/checkbox";
+@import "./src/styles/forms/file";
 @import "./src/styles/forms/number";
 @import "./src/styles/forms/radio";
+@import "./src/styles/forms/upload";
 @import "./src/styles/forms/validation";
 
 /*
