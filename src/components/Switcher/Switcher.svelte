@@ -37,12 +37,6 @@
     toggleItem(index);
   });
 
-  function handleClick(e) {
-    // HACK: Is there a better way to get the index?
-    const clickedIndex = parseInt(e.target.dataset.index);
-    toggleItem(clickedIndex);
-  }
-
   function toggleItem(atIndex) {
     if (!itemStates.length) {
       return;
