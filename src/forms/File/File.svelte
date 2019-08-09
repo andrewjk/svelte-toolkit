@@ -13,7 +13,6 @@
   export let accept = "";
 
   export let validator = null;
-  export let maxsize = 0;
 
   let originalType = type;
   let setValue = null;

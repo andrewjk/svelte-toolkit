@@ -10,7 +10,8 @@ export default class Validator {
             this.checkRequired,
             this.checkLength,
             this.checkRegex,
-            this.checkCompareTo
+            this.checkCompareTo,
+            this.checkSize
         ];
         this.messages = [];
     }
@@ -72,7 +73,7 @@ export default class Validator {
             const message = `${el.friendlyName} must be at least ${el.options.minlength} characters`;
             return { valid: false, message };
         } else if (el.options.maxlength && !el.options.minlength && value.length > el.options.maxlength) {
-            const message = `${el.friendlyName} cannot be more than ${el.options.minlength} characters`;
+            const message = `${el.friendlyName} cannot be more than ${el.options.maxlength} characters`;
             return { valid: false, message };
         } else if (el.options.minlength && el.options.maxlength && (value.length < el.options.minlength || value.length > el.options.maxlength)) {
             const message = `${el.friendlyName} must be between ${el.options.minlength} and ${el.options.maxlength} characters`;
@@ -96,6 +97,15 @@ export default class Validator {
                 const message = `${el.friendlyName} must be the same as ${otherEl.friendlyName}`;
                 return { valid: false, message };
             }
+        }
+        return { valid: true };
+    }
+
+    // HACK: Everything about this is a bit dodgy, and would probably be better done as a plugin to the validator
+    checkSize(el, value) {
+        if (el.options.maxsize && !el.options.minsize && value.size > el.options.maxsize) {
+            const message = `${el.friendlyName} cannot be larger than ${Math.floor(el.options.maxsize / 1024 / 1024)} MB`;
+            return { valid: false, message };
         }
         return { valid: true };
     }

@@ -19,6 +19,7 @@
   export let maxlength = 0;
   export let regex = null;
   export let compareTo = "";
+  export let maxsize = 0;
   export let friendlyName = label || name;
 
   let errorMessage = false;
@@ -38,6 +39,7 @@
     fieldRequired: required,
     fieldMinlength: minlength,
     fieldMaxlength: maxlength,
+    fieldMaxSize: maxlength,
     fieldRegex: regex,
     fieldCompareTo: compareTo,
     registerInput: (setValid, valueProp) => {
@@ -48,7 +50,7 @@
 
   onMount(() => {
     // Make sure we have a validator if required
-    const validate = required || minlength || maxlength || regex || compareTo;
+    const validate = required || minlength || maxlength || regex || compareTo || maxsize;
     if (validate) {
       if (!name) {
         throw `Name required for input`;
@@ -63,7 +65,7 @@
         name,
         getValue,
         setValid,
-        { required, minlength, maxlength, regex, compareTo },
+        { required, minlength, maxlength, regex, compareTo, maxsize },
         friendlyName
       );
     }
