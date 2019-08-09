@@ -1,64 +1,64 @@
 @import "../_variables";
 
 .file {
-  background-color: $light-background-color;
-  border: 1px dashed $border-color;
-  border-radius: $border-radius;
-  min-height: $input-height;
-  padding: 0 4px;
+    background-color: $light-background-color;
+    border: 1px dashed $border-color;
+    border-radius: $border-radius;
+    min-height: $input-height;
+    padding: 0 4px;
 }
 
 .file:hover {
-  cursor: pointer;
-  text-decoration: underline;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .file.info,
 .file.success,
 .file.warning,
 .file.danger {
-  a {
-    color: $info-color;
-    text-decoration: underline;
-  }
+    a {
+        color: $info-color;
+        text-decoration: underline;
+    }
 }
 
 .file.info {
-  color: $info-color;
-  border: 1px dashed rgba($info-color, 0.3);
-  background-color: $light-info-color;
+    color: $info-color;
+    border: 1px dashed rgba($info-color, 0.3);
+    background-color: $light-info-color;
 }
 
 .file.success {
-  color: $success-color;
-  border: 1px dashed rgba($success-color, 0.3);
-  background-color: $light-success-color;
+    color: $success-color;
+    border: 1px dashed rgba($success-color, 0.3);
+    background-color: $light-success-color;
 }
 
 .file.warning {
-  color: $warning-color;
-  border: 1px dashed rgba($warning-color, 0.3);
-  background-color: $light-warning-color;
+    color: $warning-color;
+    border: 1px dashed rgba($warning-color, 0.3);
+    background-color: $light-warning-color;
 }
 
 .file.danger {
-  color: $danger-color;
-  border: 1px dashed rgba($danger-color, 0.3);
-  background-color: $light-danger-color;
+    color: $danger-color;
+    border: 1px dashed rgba($danger-color, 0.3);
+    background-color: $light-danger-color;
 }
 
 // NOTE: This is basically the visually-hidden class from HTML Bootstrap - is it worth making this a generic style?
 .file-input {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  white-space: nowrap;
-  width: 1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
 }
 
 .file-input:focus + span {
-  text-decoration: underline;
+    text-decoration: underline;
 }
