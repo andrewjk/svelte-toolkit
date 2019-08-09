@@ -1,7 +1,8 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
 
-  export let id = null;
+  export let id;
+  export let itemId;
   let className = null;
   export { className as class };
   export let classNames = [];
@@ -25,16 +26,16 @@
 </script>
 
 <button
-  id={id ? id + '-tab' : null}
+  {id}
   class="button tab-list-button"
   class:active
   type="button"
   role="tab"
   aria-selected={active}
   tabindex="-1"
-  aria-controls={id}
+  aria-controls={itemId}
   data-index={index}
   on:click
   on:keydown>
-  <slot>{content}</slot>
+  <!-- The contents of the header will be moved from the TabItem -->
 </button>

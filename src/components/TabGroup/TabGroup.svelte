@@ -143,7 +143,12 @@
   }
 </style>
 
-<div {id} class={['tab-group', className].concat(classNames).filter(Boolean).join(' ')}>
+<div
+  {id}
+  class={['tab-group', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <div
     class="tab-list"
     class:boxed
@@ -153,7 +158,8 @@
     on:focus={handleFocus}>
     {#each itemStates as item, index}
       <TabHeader
-        id={item.id}
+        id={`${item.id}-header`}
+        itemId={item.id}
         content={item.header}
         {index}
         active={item.active}
