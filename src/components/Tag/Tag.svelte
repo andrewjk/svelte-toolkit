@@ -32,7 +32,9 @@
     <slot>{content}</slot>
     {#if closable}
       <button class="close-button" type="button" on:click={close}>
-        <Cross />
+        <slot name="button">
+          <Cross />
+        </slot>
       </button>
     {/if}
   </span>

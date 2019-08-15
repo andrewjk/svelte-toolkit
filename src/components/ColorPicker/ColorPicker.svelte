@@ -93,7 +93,9 @@
       on:focus={handleInputFocus}
       on:blur={handleInputBlur} />
     <div class="drop-down-button" on:click={handleButtonClick}>
-      <ChevronDown />
+      <slot name="button">
+        <ChevronDown />
+      </slot>
     </div>
   </div>
   {#if expanded}

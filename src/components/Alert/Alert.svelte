@@ -115,7 +115,9 @@
     {#if closable}
       <div class="alert-close">
         <button class="close-button" type="button" on:click={close}>
-          <Cross />
+          <slot name="button">
+            <Cross />
+          </slot>
         </button>
       </div>
     {/if}

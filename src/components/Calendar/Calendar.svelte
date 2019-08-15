@@ -140,7 +140,7 @@
     if (activeDate < visibleStartDate || activeDate > visibleEndDate) {
       refocus = true;
       visibleDate = activeDate;
-      dispatch("changedate", visibleDate)
+      dispatch("changedate", visibleDate);
     }
 
     days.forEach(day =>
@@ -159,13 +159,13 @@
   function handlePrevMonth(e) {
     e.preventDefault();
     visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() - 1));
-    dispatch("changedate", visibleDate)
+    dispatch("changedate", visibleDate);
   }
 
   function handleNextMonth(e) {
     e.preventDefault();
     visibleDate = new Date(visibleDate.setMonth(visibleDate.getMonth() + 1));
-    dispatch("changedate", visibleDate)
+    dispatch("changedate", visibleDate);
   }
 
   async function handleDayClick(date) {
@@ -235,29 +235,36 @@
 
 <div
   {id}
-  class={['calendar', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['calendar', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   bind:this={container}
   tabindex={selectable ? '0' : '-1'}
   on:focus={handleFocus}>
   <div class="calendar-header">
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handlePrevMonth}>
-        <ChevronLeft />
+        <slot name="prev-button">
+          <ChevronLeft />
+        </slot>
       </button>
     </span>
     <span class="calendar-title">
-       {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
+      {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
     </span>
     <span class="calendar-nav">
       <button type="button" class="icon-button" on:click={handleNextMonth}>
-        <ChevronRight />
+        <slot name="next-button">
+          <ChevronRight />
+        </slot>
       </button>
     </span>
   </div>
   <div class="calendar-body">
     {#each [0, 1, 2, 3, 4, 5, 6] as index}
       <span class="calendar-day calendar-day-header">
-         {weekdays[(Math.abs(startOfWeek) + index) % 7].substring(0, 2)}
+        {weekdays[(Math.abs(startOfWeek) + index) % 7].substring(0, 2)}
       </span>
     {/each}
     {#each days as day, index (day.date)}

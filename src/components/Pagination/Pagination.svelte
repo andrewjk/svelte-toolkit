@@ -126,7 +126,9 @@
       on:keydown={e => handleKey(e)}
       aria-label="Previous"
       tabindex="-1">
-      <ChevronLeft />
+      <slot name="prev-button">
+        <ChevronLeft />
+      </slot>
     </button>
 
     {#each pageNumbers() as number, index (number)}
@@ -149,7 +151,9 @@
       on:keydown={e => handleKey(e)}
       aria-label="Next"
       tabindex="-1">
-      <ChevronRight />
+      <slot name="next-button">
+        <ChevronRight />
+      </slot>
     </button>
   </div>
 {/if}

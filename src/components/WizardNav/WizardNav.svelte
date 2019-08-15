@@ -42,7 +42,9 @@
         aria-label="Previous"
         tabindex="-1"
         on:click={e => setIndex(index - 1)}>
-        <LeftChevron />
+        <slot name="prev-button">
+          <LeftChevron />
+        </slot>
         Previous
       </button>
     {/if}
@@ -55,7 +57,9 @@
         tabindex="-1"
         on:click={e => setIndex(index + 1)}>
         Next
-        <RightChevron />
+        <slot name="next-button">
+          <RightChevron />
+        </slot>
       </button>
     {/if}
 

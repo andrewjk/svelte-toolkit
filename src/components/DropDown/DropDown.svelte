@@ -28,7 +28,9 @@
   aria-haspopup="true"
   on:click={toggleDropDown}>
   <slot />
-  <ChevronDown />
+  <slot name="button">
+    <ChevronDown />
+  </slot>
 </button>
 {#if expanded}
   <div class="drop-down-menu">

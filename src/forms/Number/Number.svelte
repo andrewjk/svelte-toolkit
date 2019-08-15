@@ -112,10 +112,14 @@
     on:blur={handleInputBlur} />
   {#if !readonly}
     <div class="number-button" on:click={e => handleChange(-1)}>
-      <Minus />
+      <slot name="down-button">
+        <Minus />
+      </slot>
     </div>
     <div class="number-button" on:click={e => handleChange(1)}>
-      <Plus />
+      <slot name="up-button">
+        <Plus />
+      </slot>
     </div>
   {/if}
 </div>

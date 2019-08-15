@@ -6,7 +6,7 @@
   export { className as class };
   export let classNames = [];
   export let active = false;
-  
+
   let expanded = false;
 
   // HACK: To avoid an accessibility warning - but I think it's fine to use an anchor with href="#" on a drop-down?
@@ -64,7 +64,9 @@
     on:mousedown={handleMouseDown}
     on:touchstart={handleTouchStart}>
     <slot />
-    <ChevronDown />
+    <slot name="button">
+      <ChevronDown />
+    </slot>
   </a>
   {#if expanded}
     <div class="drop-down-menu">

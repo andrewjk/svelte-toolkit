@@ -90,7 +90,10 @@
 
 <div
   {id}
-  class={['date-picker', 'drop-down', className].concat(classNames).filter(Boolean).join(' ')}>
+  class={['date-picker', 'drop-down', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <div bind:this={container} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
@@ -101,7 +104,9 @@
       on:focus={handleInputFocus}
       on:blur={handleInputBlur} />
     <div class="drop-down-button" on:click={handleButtonClick}>
-      <ChevronDown />
+      <slot name="button">
+        <ChevronDown />
+      </slot>
     </div>
   </div>
   {#if expanded}
