@@ -20,12 +20,12 @@
 }
 
 .panel.light {
-    background-color: $light-background-color;
+    background-color: $light-back-color;
 }
 
 .panel.dark {
-    background-color: $dark-background-color;
-    border-color: $dark-background-color;
+    background-color: $dark-back-color;
+    border-color: $dark-back-color;
     color: white;
 }
 

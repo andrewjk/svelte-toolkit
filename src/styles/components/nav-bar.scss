@@ -39,14 +39,14 @@
 }
 
 .nav-menu-header {
-    font-size: 1.6rem;
+    font-size: $font-size-title;
     padding: 0;
     position: relative;
 }
 
 .nav-menu-item {
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: $font-size-title;
     padding: 0;
     position: relative;
     vertical-align: top;
@@ -67,7 +67,7 @@
     }
 
     button {
-        font-size: 1.6rem;
+        font-size: $font-size-title;
     }
 }
 

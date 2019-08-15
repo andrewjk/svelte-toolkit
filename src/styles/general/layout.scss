@@ -12,7 +12,7 @@
 
 .header,
 .footer {
-    background-color: $light-background-color;
+    background-color: $light-back-color;
     display: table; // To size to content
     padding: 0 $element-padding;
     width: 100%;
@@ -398,7 +398,7 @@ small {
     .icon {
         height: $input-height - 4 * 2;
         margin: 0 auto;
-        stroke: $body-text-color;
+        stroke: $text-color;
         width: $input-height - 4 * 2;
     }
 }

@@ -6,7 +6,7 @@
 }
 
 .dot-button {
-    background-color: $middle-background-color;
+    background-color: $middle-back-color;
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -19,7 +19,7 @@
 }
 
 .dot-button.active {
-    background-color: $dark-background-color;
+    background-color: $dark-back-color;
 }
 
 .dot-button:focus {

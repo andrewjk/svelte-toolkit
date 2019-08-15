@@ -20,8 +20,9 @@
 }
 
 .accordion-header-button {
+    font-size: $font-size-title;
     margin: 0 0 $element-margin / 4;
-    padding: $element-padding / 2;
+    padding: $element-padding / 4 $element-padding / 2 !important;
 }
 
 .accordion-panel {

@@ -11,10 +11,10 @@
     left: calc(50% - (1em / 2));
     top: calc(50% - (1em / 2));
     animation: rotation .6s infinite linear;
-    border-left: 3px solid rgba($body-text-color, .15);
-    border-right: 3px solid rgba($body-text-color, .15);
-    border-bottom: 3px solid rgba($body-text-color, .15);
-    border-top: 3px solid rgba($body-text-color, .8);
+    border-left: 3px solid rgba($text-color, .15);
+    border-right: 3px solid rgba($text-color, .15);
+    border-bottom: 3px solid rgba($text-color, .15);
+    border-top: 3px solid rgba($text-color, .8);
     border-radius: 100%;
 }
 
