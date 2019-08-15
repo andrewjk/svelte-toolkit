@@ -35,6 +35,9 @@ import Switcher from './src/components/Switcher/Switcher.svelte';
 import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
 import TabGroup from './src/components/TabGroup/TabGroup.svelte';
 import TabItem from './src/components/TabGroup/TabItem.svelte';
+import Table from './src/components/Table/Table.svelte';
+import TableColumn from './src/components/Table/TableColumn.svelte';
+import TableHeader from './src/components/Table/TableHeader.svelte';
 import Tag from './src/components/Tag/Tag.svelte';
 import TagInput from './src/components/TagInput/TagInput.svelte';
 import TagInputItem from './src/components/TagInput/TagInputItem.svelte';
@@ -117,6 +120,7 @@ export {
     SubNavMenu, SubNavMenuItem, SubNavMenuHeader,
     Switcher, SwitcherItem,
     TabGroup, TabItem,
+    Table, TableColumn, TableHeader,
     Tag,
     TagInput, TagInputItem,
     WizardNav,

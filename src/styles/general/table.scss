@@ -2,6 +2,7 @@
 
 .table {
     border-collapse: collapse;
+    margin: 0 0 $element-margin;
     width: 100%;
 
     th {
@@ -12,7 +13,7 @@
     }
 
     th, td {
-        padding: $element-padding / 4 $element-padding / 2;
+        padding: $element-padding / 2;
     }
 
     th:first-child,
@@ -39,8 +40,24 @@
     }
 }
 
+.table:last-child {
+    margin: 0;
+}
+
 .table.line {
     tr {
         border-bottom: 1px solid $border-color;
     }
+}
+
+.table-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.table-button:hover,
+.table-button:active {
+    text-decoration: underline;
 }
