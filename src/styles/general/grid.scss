@@ -15,7 +15,7 @@
 }
 
 .grid.spaced {
-    margin: (-$element-padding / 2) (-$element-padding / 2) $element-padding;
+    margin: (-$element-padding / 2) (-$element-padding / 2) ($element-margin - $element-padding / 2);
 
     > [class*='width-'] {
         padding: $element-padding / 2;
