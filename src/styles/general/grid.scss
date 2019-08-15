@@ -26,6 +26,10 @@
     margin: (-$element-padding / 2);
 }
 
+.grid.nowrap {
+    flex-wrap: nowrap;
+}
+
 // THE COLUMNS
 // ========================================================
 
@@ -298,6 +302,10 @@
 
 @media (min-width: $small-screen) {
 
+    .grid.nowrap-small {
+        flex-wrap: nowrap;
+    }
+    
     .width-small-auto {
         flex: 0 0 auto;
     }
@@ -563,6 +571,10 @@
 
 @media (min-width: $medium-screen) {
 
+    .grid.nowrap-medium {
+        flex-wrap: nowrap;
+    }
+    
     .width-medium-auto {
         flex: 0 0 auto;
     }
@@ -828,6 +840,10 @@
 
 @media (min-width: $large-screen) {
 
+    .grid.nowrap-large {
+        flex-wrap: nowrap;
+    }
+    
     .width-large-auto {
         flex: 0 0 auto;
     }
@@ -1093,6 +1109,10 @@
 
 @media (min-width: $xlarge-screen) {
 
+    .grid.nowrap-xlarge {
+        flex-wrap: nowrap;
+    }
+    
     .width-xlarge-auto {
         flex: 0 0 auto;
     }
