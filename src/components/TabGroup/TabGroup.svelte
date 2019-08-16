@@ -1,10 +1,5 @@
 <script>
-  import {
-    onMount,
-    beforeUpdate,
-    setContext,
-    createEventDispatcher
-  } from "svelte";
+  import { beforeUpdate, setContext, createEventDispatcher } from "svelte";
 
   import TabHeader from "./TabHeader.svelte";
   import { keyCodes } from "../../utils/key-codes";
@@ -30,16 +25,21 @@
     // The registerItem function is called from each TabItem to register itself with this
     // TabGroup. They pass us their header, as well as a setActive method that we can call
     registerItem: (id, header, setActive) => {
-      itemStates = [...itemStates, { active: false, id, header, setActive }];
+      const active = itemStates.length === index;
+      if (active) {
+        setActive(active);
+      }
+      itemStates = [...itemStates, { active, id, header, setActive }];
     },
     registerHeader: (id, setActive) => {
-      headerStates = [...headerStates, { active: false, id, setActive }];
-    }
-  });
-
-  onMount(() => {
-    // Set the initial active item
-    toggleItem(index);
+      const active = headerStates.length === index;
+      if (active) {
+        setActive(active);
+      }
+      headerStates = [...headerStates, { active, id, setActive }];
+    },
+    toggleItemId,
+    handleKey
   });
 
   beforeUpdate(() => {
@@ -80,10 +80,8 @@
     dispatch("change", index);
   }
 
-  function handleClick(e) {
-    // HACK: Is there a better way to get the index?
-    const el = e.target.closest('.tab-list-button');
-    const index = parseInt(el.dataset.index);
+  function toggleItemId(itemId) {
+    const index = itemStates.findIndex(x => x.id === itemId);
     toggleItem(index);
   }
 
@@ -157,16 +155,13 @@
     aria-label={ariaLabel}
     tabindex="0"
     on:focus={handleFocus}>
-    {#each itemStates as item, index}
-      <TabHeader
-        id={`${item.id}-header`}
-        itemId={item.id}
-        content={item.header}
-        {index}
-        active={item.active}
-        on:click={handleClick}
-        on:keydown={handleKey} />
-    {/each}
+    <slot name="header">
+      {#each itemStates as item, index}
+        <TabHeader itemId={item.id} active={item.active}>
+          {item.header}
+        </TabHeader>
+      {/each}
+    </slot>
   </div>
   <slot />
 </div>

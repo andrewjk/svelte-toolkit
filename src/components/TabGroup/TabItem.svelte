@@ -14,19 +14,6 @@
   const { registerItem } = getContext("tabGroup");
   registerItem(id, header, setActive);
 
-  // Move this item's header into the right div
-  onMount(() => {
-    const headerEl = document.getElementById(`${id}-header`);
-    const tempEl = document.getElementById(`${id}-temp`);
-    if (!headerEl || !tempEl) {
-      throw "a tab item was created without an id and its header could not be found";
-    }
-    while (tempEl.firstChild) {
-      headerEl.appendChild(tempEl.firstChild);
-    }
-    tempEl.parentNode.removeChild(tempEl);
-  });
-
   // This function is called by the parent TabGroup to set this item's active value
   function setActive(value) {
     if (active !== value) {
@@ -56,9 +43,4 @@
   role="tabpanel"
   aria-labelledby={`${id}-header`}>
   <slot />
-</div>
-
-<!-- The contents of this div will be moved into the TabHeader in onMount -->
-<div id={`${id}-temp`} style="display: none">
-  <slot name="header">{header}</slot>
 </div>

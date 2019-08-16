@@ -1,19 +1,19 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
 
-  export let id;
   export let itemId;
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let content = "";
-  export let index = -1;
   export let active = false;
+
+  // ID in this case is a special prop that can't be set by the user because it's used for aria fields
+  let id = `${itemId}-header`;
 
   const dispatch = createEventDispatcher();
 
   // Register this item with the parent TabGroup, which will handle toggling active for all items
-  const { registerHeader } = getContext("tabGroup");
+  const { registerHeader, toggleItemId, handleKey } = getContext("tabGroup");
   registerHeader(id, setActive);
 
   // This function is called by the parent TabGroup to set this item's active value
@@ -22,6 +22,10 @@
       active = value;
       dispatch("activeChange", value);
     }
+  }
+
+  function handleClick() {
+    toggleItemId(itemId);
   }
 </script>
 
@@ -34,8 +38,7 @@
   aria-selected={active}
   tabindex="-1"
   aria-controls={itemId}
-  data-index={index}
-  on:click
-  on:keydown>
-  <!-- The contents of the header will be moved from the TabItem -->
+  on:click={handleClick}
+  on:keydown={handleKey}>
+  <slot />
 </button>
