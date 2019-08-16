@@ -58,7 +58,7 @@
 
   function setPageNumber(number) {
     if (number === "…" || number === "$…") {
-      number = prompt("Go to page:");
+      number = parseInt(prompt("Go to page:"));
     }
     if (number) {
       pageNumber = number;
