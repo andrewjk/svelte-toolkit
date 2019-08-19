@@ -1,5 +1,5 @@
 <script>
-  import { setContext, onMount, createEventDispatcher } from "svelte";
+  import { setContext, createEventDispatcher } from "svelte";
 
   import TableHeader from "./TableHeader.svelte";
   import Pagination from "../Pagination/Pagination.svelte";
@@ -21,7 +21,7 @@
 
   export let type = "";
 
-  let view = buildView();
+  $: view = buildView(items, data, columns, pageNumber, pageSize);
 
   const dispatch = createEventDispatcher();
 
@@ -49,14 +49,14 @@
     for (let i = 0; i < columns.length; i++) {
       if (columns[i].field === field) {
         if (columns[i].sortDirection === "asc") {
-          pageNumber = 1;
           columns[i].sortDirection = "desc";
           columns[i].setSortDirection("desc");
+          pageNumber = 1;
           dispatch("sort", { sort: field, sortDirection: "desc" });
         } else {
-          pageNumber = 1;
           columns[i].sortDirection = "asc";
           columns[i].setSortDirection("asc");
+          pageNumber = 1;
           dispatch("sort", { sort: field, sortDirection: "asc" });
         }
       } else {
@@ -64,39 +64,37 @@
         columns[i].setSortDirection("");
       }
     }
-    view = buildView();
   }
 
   function handlePage(e) {
     pageNumber = e.detail;
-    view = buildView();
     dispatch("page", pageNumber);
   }
 
-  function buildView() {
-    if (items) {
-      itemCount = items.length;
+  function buildView(newItems, newData, newColumns, newPageNumber, newPageSize) {
+    if (newItems) {
+      itemCount = newItems.length;
 
-      let newView = items.slice(0, items.length);
+      let newView = newItems.slice(0, newItems.length);
 
       // Sort the items
-      for (let i = 0; i < columns.length; i++) {
-        if (columns[i].sortDirection) {
+      for (let i = 0; i < newColumns.length; i++) {
+        if (newColumns[i].sortDirection) {
           newView.sort(
-            compare(columns[i].field, columns[i].sortDirection === "desc")
+            compare(newColumns[i].field, newColumns[i].sortDirection === "desc")
           );
         }
       }
 
       // Page the items
-      const start = (pageNumber - 1) * pageSize;
-      const end = start + pageSize;
+      const start = (newPageNumber - 1) * newPageSize;
+      const end = start + newPageSize;
       newView = newView.slice(start, end);
 
       return newView;
-    } else if (data) {
+    } else if (newData) {
       // The user should have passed us the sorted, paged data
-      return data;
+      return newData;
     }
   }
 
@@ -139,7 +137,7 @@
       {/each}
     </tbody>
   </table>
+  <Pagination {pageNumber} {pageSize} {itemCount} on:change={handlePage} />
 {:else}
   <slot name="empty" />
 {/if}
-<Pagination {pageNumber} {pageSize} {itemCount} on:change={handlePage} />
