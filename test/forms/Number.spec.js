@@ -1,5 +1,5 @@
 import test from 'ava';
-import Number from '../../src/components/Number/Number.svelte';
+import Number from '../../src/forms/Number/Number.svelte';
 
 test('number creation', t => {
     const target = document.createElement('div');

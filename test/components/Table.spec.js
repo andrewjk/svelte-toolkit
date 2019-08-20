@@ -7,7 +7,12 @@ test('table creation', t => {
     const app = new Table({
         target,
         props: {
-            id: 'table'
+            id: 'table',
+            items: [
+                { name: 'a' },
+                { name: 'b' },
+                { name: 'c' }
+            ]
         },
     });
 

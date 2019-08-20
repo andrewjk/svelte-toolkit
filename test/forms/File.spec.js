@@ -1,5 +1,5 @@
 import test from 'ava';
-import File from '../../src/components/File/File.svelte';
+import File from '../../src/forms/File/File.svelte';
 
 test('file creation', t => {
     const target = document.createElement('div');
