@@ -10,15 +10,8 @@ const name = pkg.name
 export default {
 	input: 'main.js',
 	output: [
-		{
-			file: 'build/' + pkg.module,
-			'format': 'es'
-		},
-		{
-			file: 'build/' + pkg.main,
-			'format': 'umd',
-			name
-		}
+		{ file: 'build/' + pkg.module, format: 'es' },
+		{ file: 'build/' + pkg.main, format: 'umd', name }
 	],
 	plugins: [
 		svelte(),
