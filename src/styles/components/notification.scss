@@ -1,7 +1,7 @@
 @import "../_variables";
 
 .notification {
-    background-color: white;
+    background-color: $light-back-color;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     margin: 0 0 $element-margin;
@@ -28,7 +28,6 @@
 .notification.warning.solid,
 .notification.danger.solid {
     border: 1px solid rgba(0, 0, 0, 0.06);
-    color: white;
 
     a {
         color: inherit;
@@ -37,43 +36,47 @@
 }
 
 .notification.info {
-    color: $info-color;
+    color: $light-info-text-color;
     border: 1px solid rgba($info-color, 0.3);
     background-color: $light-info-color;
 }
 
 .notification.info.solid {
     background-color: $info-color;
+    color: $info-text-color;
 }
 
 .notification.success {
-    color: $success-color;
+    color: $light-success-text-color;
     border: 1px solid rgba($success-color, 0.3);
     background-color: $light-success-color;
 }
 
 .notification.success.solid {
     background-color: $success-color;
+    color: $success-text-color;
 }
 
 .notification.warning {
-    color: $warning-color;
+    color: $light-warning-text-color;
     border: 1px solid rgba($warning-color, 0.3);
     background-color: $light-warning-color;
 }
 
 .notification.warning.solid {
     background-color: $warning-color;
+    color: $warning-text-color;
 }
 
 .notification.danger {
-    color: $danger-color;
+    color: $light-danger-text-color;
     border: 1px solid rgba($danger-color, 0.3);
     background-color: $light-danger-color;
 }
 
 .notification.danger.solid {
     background-color: $danger-color;
+    color: $danger-text-color;
 }
 
 .notification-close {

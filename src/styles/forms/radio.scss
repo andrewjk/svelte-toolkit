@@ -15,7 +15,7 @@ input[type=radio] {
 
 input[type=radio] + span:before {
     background-color: white;
-    border: 1px solid $light-text-color;
+    border: 1px solid $light-border-color;
     border-radius: 50%;
     content: "\00a0";
     display: inline-block;

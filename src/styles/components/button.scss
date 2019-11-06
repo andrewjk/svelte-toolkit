@@ -19,15 +19,14 @@
 }
 
 .button:focus {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: $middle-back-color;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     outline: 0;
     text-decoration: none;
 }
 
 .button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: $middle-back-color;
     text-decoration: none;
 }
 
@@ -80,34 +79,38 @@ button::-moz-focus-inner {
 
 .button.info {
     background-color: $info-color;
+    color: $info-text-color;
 }
 
 .button.info:hover {
-    background-color: darken($info-color, 9%);
+    background-color: scale-color($info-color, $lightness: -25%);
 }
 
 .button.success {
     background-color: $success-color;
+    color: $success-text-color;
 }
 
 .button.success:hover {
-    background-color: darken($success-color, 9%);
+    background-color: scale-color($success-color, $lightness: -25%);
 }
 
 .button.warning {
     background-color: $warning-color;
+    color: $warning-text-color;
 }
 
 .button.warning:hover {
-    background-color: darken($warning-color, 9%);
+    background-color: scale-color($warning-color, $lightness: -25%);
 }
 
 .button.danger {
     background-color: $danger-color;
+    color: $danger-text-color;
 }
 
 .button.danger:hover {
-    background-color: darken($danger-color, 9%);
+    background-color: scale-color($danger-color, $lightness: -25%);
 }
 
 .button.select {
@@ -115,7 +118,7 @@ button::-moz-focus-inner {
 }
 
 .button.select:hover {
-    background-color: darken($select-color, 9%);
+    background-color: scale-color($select-color, $lightness: -25%);
 }
 
 .button.cancel {
@@ -123,7 +126,7 @@ button::-moz-focus-inner {
 }
 
 .button.cancel:hover {
-    background-color: darken($cancel-color, 9%);
+    background-color: scale-color($cancel-color, $lightness: -25%);
 }
 
 // DISABLED

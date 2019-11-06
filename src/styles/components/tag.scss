@@ -1,7 +1,7 @@
 @import "../_variables";
 
 .tag {
-    background-color: white;
+    background-color: $light-back-color;
     border: 1px solid $border-color;
     border-radius: 4px;
     display: inline-block;
@@ -19,24 +19,27 @@
 .tag.warning,
 .tag.danger {
     border: 1px solid rgba(0, 0, 0, 0.06);
-    color: white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .tag.info {
     background-color: $info-color;
+    color: $info-text-color;
 }
 
 .tag.success {
     background-color: $success-color;
+    color: $success-text-color;
 }
 
 .tag.warning {
     background-color: $warning-color;
+    color: $warning-text-color;
 }
 
 .tag.danger {
     background-color: $danger-color;
+    color: $danger-text-color;
 }
 
 .tag.cancel {

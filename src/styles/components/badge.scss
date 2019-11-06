@@ -1,7 +1,7 @@
 @import "../_variables";
 
 .badge {
-    background-color: white;
+    background-color: $light-back-color;
     border: 1px solid $border-color;
     border-radius: 20px;
     display: inline-block;
@@ -28,18 +28,22 @@
 
 .badge.info {
     background-color: $info-color;
+    color: $info-text-color;
 }
 
 .badge.success {
     background-color: $success-color;
+    color: $success-text-color;
 }
 
 .badge.warning {
     background-color: $warning-color;
+    color: $warning-text-color;
 }
 
 .badge.danger {
     background-color: $danger-color;
+    color: $danger-text-color;
 }
 
 .badge.cancel {

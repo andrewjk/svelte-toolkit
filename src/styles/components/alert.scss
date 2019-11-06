@@ -1,7 +1,7 @@
 @import "../_variables";
 
 .alert {
-    background-color: white;
+    background-color: $light-back-color;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     margin: 0 0 $element-margin;
@@ -22,18 +22,22 @@
 
 .alert.info {
     background-color: $info-color;
+    color: $info-text-color;
 }
 
 .alert.success {
     background-color: $success-color;
+    color: $success-text-color;
 }
 
 .alert.warning {
     background-color: $warning-color;
+    color: $warning-text-color;
 }
 
 .alert.danger {
     background-color: $danger-color;
+    color: $danger-text-color;
 }
 
 .alert-close {

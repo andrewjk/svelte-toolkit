@@ -18,8 +18,7 @@
 }
 
 .progress-bar {
-    background-color: rgba(0,0,0,0.3);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
     float: left;
     font-size: 1.2rem;
     height: 100%;
@@ -50,23 +49,27 @@
 .progress.info {
     .progress-bar {
         background-color: $info-color;
+        color: $info-text-color;
     }
 }
 
 .progress.success {
     .progress-bar {
         background-color: $success-color;
+        color: $success-text-color;
     }
 }
 
 .progress.warning {
     .progress-bar {
         background-color: $warning-color;
+        color: $warning-text-color;
     }
 }
 
 .progress.danger {
     .progress-bar {
         background-color: $danger-color;
+        color: $danger-text-color;
     }
 }
