@@ -8,6 +8,7 @@
   export let loading = false;
   export let submit = false;
   export let reset = false;
+  export let title = "";
   export let disabled = false;
   export let content = "";
 </script>
@@ -16,6 +17,7 @@
   {id}
   class={['button', type, size, loading ? 'loading' : null, className].concat(classNames).filter(Boolean).join(' ')}
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
+  {title}
   {disabled}
   on:click>
   <slot>{content}</slot>
