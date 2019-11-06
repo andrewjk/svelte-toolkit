@@ -56,8 +56,20 @@
     width: 100%;
 }
 
-.container.narrow {
-    max-width: 720px;
+.container.small {
+    max-width: $small-screen;
+}
+
+.container.medium {
+    max-width: $medium-screen;
+}
+
+.container.large {
+    max-width: $large-screen;
+}
+
+.container.xlarge {
+    max-width: $xlarge-screen;
 }
 
 .main {
