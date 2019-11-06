@@ -31,7 +31,8 @@
     li {
         border-right: 1px solid $border-color;
         margin: 0 $element-margin / 2 0 0;
-        padding: 0 $element-padding / 2 0 0;
+        // Use $element-margin to ensure that there is the same distance on either side of the line:
+        padding: 0 $element-margin / 2 0 0;
     }
 
     li:last-child {
