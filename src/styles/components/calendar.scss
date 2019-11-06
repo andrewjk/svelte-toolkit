@@ -23,10 +23,19 @@
 .calendar-header {
     padding: 0.8rem 0;
     white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .calendar-body {
     margin: 0 0 $element-margin;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
 }
 
 .calendar-body:last-child {
@@ -101,7 +110,8 @@
 
 ul.calendar-event-list {
     line-height: 0.6rem;
-    margin: -2px 0 2px;
+    min-height: 0.6rem;
+    margin: -4px 0 2px;
     padding: 0;
 }
 
@@ -109,6 +119,7 @@ li.calendar-event {
     background-color: $select-color;
     border-radius: 50%;
     display: inline-block;
+    margin: 0;
     height: 0.6rem;
     width: 0.6rem;
 }

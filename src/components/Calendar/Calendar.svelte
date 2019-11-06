@@ -17,6 +17,7 @@
   export let value = new Date();
   // Events can have { date, content, color }
   export let events = [];
+  export let showEvents = true;
 
   // A note on dates:
   // * value is the selected value

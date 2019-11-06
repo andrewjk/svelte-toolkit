@@ -114,6 +114,7 @@
       <Calendar
         selectable={true}
         {startOfWeek}
+        showEvents={false}
         on:change={dateSelected}
         on:close={toggleList} />
     </div>
