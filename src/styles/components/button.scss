@@ -41,19 +41,19 @@ button::-moz-focus-inner {
 .button,
 .button.medium {
     font-size: 1.75rem;
-    min-width: 96px;
+    min-width: 9.6rem;
     padding: $element-padding / 4 $element-padding;
 }
 
 .button.small {
     font-size: 1.3rem;
-    min-width: 64px;
+    min-width: 6.4rem;
     padding: $element-padding / 8 $element-padding / 2;
 }
 
 .button.large {
-    font-size: 2.25rem;
-    min-width: 112px;
+    font-size: 2.30rem;
+    min-width: 11.2rem;
     padding: $element-padding / 2 $element-padding;
 }
 
