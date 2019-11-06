@@ -2,7 +2,10 @@
 
 .pagination {
     padding: $element-padding / 2 0;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pagination-button {
@@ -10,7 +13,6 @@
     height: 3rem;
     margin: 0 $element-margin / 4;
     padding: 0 $element-padding / 2;
-    text-align: center;
     min-width: 3rem;
 }
 

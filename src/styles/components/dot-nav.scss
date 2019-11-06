@@ -2,7 +2,10 @@
 
 .dot-nav {
     padding: $element-padding / 2 0;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dot-button {

@@ -9,13 +9,14 @@
     border: 1px solid $border-color;
     border-radius: $border-radius;
     cursor: pointer;
-    display: inline-block;
     font-weight: normal;
     position: relative;
-    text-align: center;
     user-select: none;
-    vertical-align: middle;
     white-space: nowrap;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:focus {

@@ -50,7 +50,6 @@
 
 <style>
   .accordion-header-button {
-    text-align: left;
     width: 100%;
   }
 </style>

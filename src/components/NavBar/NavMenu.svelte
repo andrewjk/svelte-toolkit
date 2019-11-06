@@ -3,7 +3,7 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let position = "left";
+  export let position = "start";
   export let ariaLabel = "";
 </script>
 
@@ -11,7 +11,7 @@
   {id}
   class={['nav-menu', position, className].concat(classNames).filter(Boolean).join(' ')}
   aria-label={ariaLabel}>
-  <ul role="menubar">
+  <ul class="nav-menu-bar" role="menubar">
     <slot />
   </ul>
 </nav>

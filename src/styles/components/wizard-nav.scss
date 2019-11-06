@@ -2,15 +2,17 @@
 
 .wizard-nav {
     padding: $element-padding / 2 0;
-    text-align: right;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .wizard-button {
     font-size: inherit;
     margin-left: $element-margin / 2;
     min-width: 0;
-    padding: 0 12px;
-    text-align: center;
+    padding: 0 $element-padding / 2;
     height: 3rem;
 }
 
