@@ -1,0 +1,16 @@
+
+.input-button {
+    color: $label-color;
+    cursor: pointer;
+    line-height: $input-height;
+    width: 2.6rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-button:hover {
+    // On white, this is #e5e5e5 (i.e. $middle-back-color) but it will adapt itself to other colors
+    background-color: rgba(0, 0, 0, 0.1);
+}

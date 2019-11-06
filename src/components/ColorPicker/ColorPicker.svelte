@@ -92,7 +92,7 @@
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur} />
-    <div class="drop-down-button" on:click={handleButtonClick}>
+    <div class="input-button" on:click={handleButtonClick}>
       <slot name="button">
         <ChevronDown />
       </slot>

@@ -111,12 +111,12 @@
     on:focus={handleInputFocus}
     on:blur={handleInputBlur} />
   {#if !readonly}
-    <div class="number-button" on:click={e => handleChange(-1)}>
+    <div class="input-button" on:click={e => handleChange(-1)}>
       <slot name="down-button">
         <Minus />
       </slot>
     </div>
-    <div class="number-button" on:click={e => handleChange(1)}>
+    <div class="input-button" on:click={e => handleChange(1)}>
       <slot name="up-button">
         <Plus />
       </slot>
