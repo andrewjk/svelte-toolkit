@@ -377,15 +377,19 @@ small {
 .icon {
     display: inline-block;
     height: $icon-size;
-    /* HACK: Why?? */
-    margin-top: -2px;
-    padding: 2px;
-    vertical-align: middle;
     width: $icon-size;
 
     stroke: currentColor;
     stroke-width: 15;
     fill: currentColor;
+}
+
+span + .icon {
+    margin-left: 0.5rem;
+}
+
+.icon + span {
+    margin-left: 0.5rem;
 }
 
 .close-button,
