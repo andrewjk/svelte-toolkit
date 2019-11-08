@@ -245,7 +245,7 @@
   on:focus={handleFocus}>
   <div class="calendar-header">
     <span class="calendar-nav">
-      <button type="button" class="icon-button" on:click={handlePrevMonth}>
+      <button class="button image" type="button" on:click={handlePrevMonth}>
         <slot name="prev-button">
           <ChevronLeft />
         </slot>
@@ -255,7 +255,7 @@
       {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
     </span>
     <span class="calendar-nav">
-      <button type="button" class="icon-button" on:click={handleNextMonth}>
+      <button class="button image" type="button" on:click={handleNextMonth}>
         <slot name="next-button">
           <ChevronRight />
         </slot>

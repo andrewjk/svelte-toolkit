@@ -113,13 +113,14 @@
       <slot>{content}</slot>
     </div>
     {#if closable}
-      <div class="alert-close">
-        <button class="close-button" type="button" on:click={close}>
-          <slot name="button">
-            <Cross />
-          </slot>
-        </button>
-      </div>
+      <button
+        class="button small image alert-close"
+        type="button"
+        on:click={close}>
+        <slot name="button">
+          <Cross />
+        </slot>
+      </button>
     {/if}
   </div>
 {/if}
