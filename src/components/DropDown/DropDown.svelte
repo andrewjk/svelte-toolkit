@@ -5,7 +5,9 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let type = "info";
+  export let buttonType = "info";
+  export let buttonSize = "medium";
+  export let buttonImage = false;
 
   let expanded = false;
 
@@ -20,7 +22,7 @@
 
 <button
   {id}
-  class={['drop-down', 'button', 'inline', type, className]
+  class={['drop-down', 'button', buttonType, buttonSize, buttonImage ? 'image' : null, className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}
@@ -28,9 +30,11 @@
   aria-haspopup="true"
   on:click={toggleDropDown}>
   <slot />
-  <slot name="button">
-    <ChevronDown />
-  </slot>
+  {#if !buttonImage}
+    <slot name="button">
+      <ChevronDown />
+    </slot>
+  {/if}
 </button>
 {#if expanded}
   <div class="drop-down-menu">
