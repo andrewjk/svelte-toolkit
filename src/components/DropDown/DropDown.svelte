@@ -18,7 +18,7 @@
   let menu;
 
   function toggleDropDown(e) {
-  function toggleDropDown() {
+    if (e) e.preventDefault();
     expanded = !expanded;
     if (expanded) {
       positionList();
