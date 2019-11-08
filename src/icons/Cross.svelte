@@ -14,7 +14,7 @@
   viewBox="0 0 100 100"
   stroke-width="12">
   <g>
-    <path d="M10,10 L90,90" />
-    <path d="M10,90 L90,10" />
+    <path d="M15,15 L85,85" />
+    <path d="M15,85 L85,15" />
   </g>
 </svg>
