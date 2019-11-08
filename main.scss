@@ -17,10 +17,12 @@ footers and containers
 
 /*
 The grid file contains styles for a 12-column grid based on flexbox
+The icon file contains icon styles
 The level file contains styles for a horizontal level
 The table file contains table styles
 */
 @import "./src/styles/general/grid";
+@import "./src/styles/general/icon";
 @import "./src/styles/general/level";
 @import "./src/styles/general/table";
 

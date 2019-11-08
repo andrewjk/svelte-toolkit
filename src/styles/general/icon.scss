@@ -1,0 +1,18 @@
+@import "../_variables";
+
+.icon {
+    display: inline-block;
+    height: $icon-size;
+    width: $icon-size;
+
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+span + .icon {
+    margin-left: 0.5rem;
+}
+
+.icon + span {
+    margin-left: 0.5rem;
+}

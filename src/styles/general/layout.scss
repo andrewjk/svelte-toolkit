@@ -371,59 +371,6 @@ small {
     visibility: visible !important;
 }
 
-// ICONS AND BUTTONS
-// ========================================================
-
-.icon {
-    display: inline-block;
-    height: $icon-size;
-    width: $icon-size;
-
-    stroke: currentColor;
-    stroke-width: 15;
-    fill: currentColor;
-}
-
-span + .icon {
-    margin-left: 0.5rem;
-}
-
-.icon + span {
-    margin-left: 0.5rem;
-}
-
-.close-button,
-.icon-button {
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0;
-}
-
-.close-button {
-    height: $close-button-size;
-    width: $close-button-size;
-}
-
-.icon-button {
-    color: inherit;
-    height: $input-height;
-    width: $input-height;
-
-    .icon {
-        height: $input-height - 4 * 2;
-        margin: 0 auto;
-        stroke: $text-color;
-        width: $input-height - 4 * 2;
-    }
-}
-
-.close-button:hover,
-.icon-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
 // MISC
 // ========================================================
 
