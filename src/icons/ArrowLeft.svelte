@@ -7,9 +7,14 @@
 
 <svg
   {id}
-  class={['icon', className].concat(classNames).filter(Boolean).join(' ')}
-  viewBox="0 0 100 100">
+  class={['icon', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
+  viewBox="0 0 100 100"
+  stroke-linejoin="round"
+  stroke-width="12">
   <g>
-    <polygon points="60,25 30,50 60,75" stroke-linejoin="round" />
+    <polygon points="60,25 30,50 60,75" />
   </g>
 </svg>

@@ -7,11 +7,15 @@
 
 <svg
   {id}
-  class={['icon', className].concat(classNames).filter(Boolean).join(' ')}
-  viewBox="0 0 100 100">
+  class={['icon', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
+  viewBox="0 0 100 100"
+  stroke-width="12">
   <g>
-    <path d="M10,20 L90,20" />
+    <path d="M10,25 L90,25" />
     <path d="M10,50 L90,50" />
-    <path d="M10,80 L90,80" />
+    <path d="M10,75 L90,75" />
   </g>
 </svg>

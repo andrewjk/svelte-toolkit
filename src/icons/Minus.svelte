@@ -7,8 +7,12 @@
 
 <svg
   {id}
-  class={['icon', className].concat(classNames).filter(Boolean).join(' ')}
-  viewBox="0 0 100 100">
+  class={['icon', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
+  viewBox="0 0 100 100"
+  stroke-width="12">
   <g>
     <path d="M10,50 L90,50" />
   </g>
