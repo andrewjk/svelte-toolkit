@@ -142,7 +142,7 @@ button::-moz-focus-inner {
 .button:disabled:focus {
     background-color: $disabled-color !important;
     color: $disabled-text-color !important;
-    cursor: not-allowed;
+    cursor: default;
 }
 
 // LOADING
