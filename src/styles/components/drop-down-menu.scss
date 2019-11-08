@@ -18,7 +18,8 @@
 }
 
 .drop-down-menu-item {
-    a {
+    a,
+    button.link {
         color: $text-color;
         display: block;
         padding: $element-padding / 4 $element-padding;
@@ -26,7 +27,9 @@
     }
 
     a:hover,
-    a:focus {
+    a:focus,
+    button.link:hover,
+    button.link:focus {
         background-color: $select-color;
         color: white;
         text-decoration: none;
