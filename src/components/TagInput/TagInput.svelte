@@ -22,6 +22,7 @@
   let focus = false;
   let index = 0;
   let container;
+  let inputContainer;
   let input;
   let list;
   let timeout = -1;
@@ -69,12 +70,20 @@
     expanded = !expanded;
     await tick();
     if (expanded) {
-      list.style.width = container.offsetWidth + "px";
+      list.style.width = inputContainer.offsetWidth + "px";
       if (focus) {
         list.childNodes[0].focus();
       }
+      document.addEventListener("click", handleCloseClick);
     } else {
       input.focus();
+      document.removeEventListener("click", handleCloseClick);
+    }
+  }
+
+  function handleCloseClick(e) {
+    if (!container.contains(e.target)) {
+      toggleList();
     }
   }
 
@@ -245,8 +254,9 @@
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}
+  bind:this={container}
   role="combobox">
-  <div bind:this={container} class="drop-down-input-container" class:focus>
+  <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <div class="tag-input-value-list">
       {#each values as value, index (value)}
         <TagInputValue {index} on:close={handleClose}>{value}</TagInputValue>

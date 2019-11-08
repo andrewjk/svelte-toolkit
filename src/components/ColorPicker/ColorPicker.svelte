@@ -17,6 +17,7 @@
   let expanded = false;
   let focus = false;
   let container;
+  let inputContainer;
   let input;
   let list;
 
@@ -24,10 +25,18 @@
     expanded = !expanded;
     await tick();
     if (expanded) {
-      list.style.width = container.offsetWidth + "px";
+      list.style.width = inputContainer.offsetWidth + "px";
       list.childNodes[0].focus();
+      document.addEventListener("click", handleCloseClick);
     } else {
       input.focus();
+      document.removeEventListener("click", handleCloseClick);
+    }
+  }
+
+  function handleCloseClick(e) {
+    if (!container.contains(e.target)) {
+      toggleList();
     }
   }
 
@@ -79,8 +88,12 @@
   class={['color-picker', 'drop-down', className]
     .concat(classNames)
     .filter(Boolean)
-    .join(' ')}>
-  <div bind:this={container} class="drop-down-input-container" class:focus>
+    .join(' ')}
+  bind:this={container}>
+  <div
+    bind:this={inputContainer}
+    class="drop-down-input-container"
+    class:focus>
     {#if value}
       <div class="color-picker-preview" style={`background-color: ${value}`} />
     {/if}
