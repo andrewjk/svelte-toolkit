@@ -115,6 +115,21 @@ textarea {
     line-height: inherit;
 }
 
+// Allow styling a button as a link
+button.link {
+    background-color: transparent;
+    border: none;
+    color: $link-color;
+    cursor: pointer;
+    text-align: left;
+}
+
+button.link:hover,
+button.link:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+}
+
 // HEADINGS
 // ========================================================
 
