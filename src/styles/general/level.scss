@@ -1,0 +1,26 @@
+@import "../_variables";
+
+.level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level-item {
+    flex: 1 1 auto;
+    margin: 0 !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-item.start {
+    flex: 0 0 auto;
+    justify-content: start;
+}
+
+.level-item.end {
+    flex: 0 0 auto;
+    justify-content: end;
+}
