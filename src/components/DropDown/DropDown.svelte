@@ -1,4 +1,5 @@
 <script>
+  import { tick } from "svelte";
   import ChevronDown from "../../icons/ChevronDown.svelte";
 
   export let id = null;
@@ -8,6 +9,8 @@
   export let buttonType = "info";
   export let buttonSize = "medium";
   export let buttonImage = false;
+  export let position = "below";
+  export let alignment = "left";
 
   let expanded = false;
   let container;
@@ -18,6 +21,7 @@
   function toggleDropDown() {
     expanded = !expanded;
     if (expanded) {
+      positionList();
       document.addEventListener("click", handleCloseClick);
     } else {
       document.removeEventListener("click", handleCloseClick);
@@ -30,7 +34,31 @@
     }
   }
 
-</style>
+  async function positionList() {
+    await tick();
+    // TODO: Take into account window width in case the menu would be outside the bounds
+    var rect = button.getBoundingClientRect();
+    var menuRect = menu.getBoundingClientRect();
+    switch (position) {
+      case "above":
+        menu.style.bottom = rect.height + "px";
+        break;
+      case "below":
+        menu.style.top = rect.height + "px";
+        break;
+    }
+    switch (alignment) {
+      case "left":
+        menu.style.left = "0px";
+        break;
+      case "center":
+        menu.style.left = rect.width / 2 - menuRect.width / 2 + "px";
+        break;
+      case "right":
+        menu.style.left = rect.width - menuRect.width + "px";
+        break;
+    }
+  }
 </script>
 
 <div class="drop-down" bind:this={container}>
