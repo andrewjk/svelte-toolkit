@@ -3,7 +3,7 @@
 
 .tag-input {
     .tag {
-        line-height: $input-height - 1;
+        line-height: calc(var(--input-height, $input-height) - 1px);
         margin: 4px 0 4px 4px;
     }
 }
@@ -14,10 +14,10 @@
 
 /*
 .wc-multi-select-value-item {
-    background-color: $default-color;
-    border-radius: $border-radius;
+    background-color: var(--default-color, $default-color);
+    border-radius: var(--border-radius, $border-radius);
     color: #FFFFFF;
-    line-height: calc($input-height - 2px);
+    line-height: calc(var(--input-height, $input-height) - 2px);
     margin-left: 6px;
     padding: 2px 6px;
     white-space: nowrap;

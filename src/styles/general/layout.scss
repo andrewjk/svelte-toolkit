@@ -12,15 +12,15 @@
 
 .header,
 .footer {
-    background-color: $light-back-color;
+    background-color: var(--light-back-color, $light-back-color);
     display: table; // To size to content
-    padding: 0 $element-padding;
+    padding: 0 var(--element-padding, $element-padding);
     width: 100%;
 }
 
 .header {
-    border-bottom: 1px solid $border-color;
-    line-height: $header-line-height;
+    border-bottom: 1px solid var(--border-color, $border-color);
+    line-height: var(--header-line-height, $header-line-height);
 }
 
 .main {
@@ -30,8 +30,8 @@
 }
 
 .footer {
-    border-top: 1px solid $border-color;
-    line-height: $footer-line-height;
+    border-top: 1px solid var(--border-color, $border-color);
+    line-height: var(--footer-line-height, $footer-line-height);
 }
 
 // This can be done with a level?
@@ -74,12 +74,12 @@
 
 .main {
     .container {
-        padding: $element-padding;
+        padding: var(--element-padding, $element-padding);
     }
 }
 
 .block {
-    margin: 0 0 $element-margin;
+    margin: 0 0 var(--element-margin, $element-margin);
 }
 
 .block:last-child {
@@ -120,13 +120,13 @@
 .align-left {
     display: block !important;
     float: left !important;
-    margin-right: $element-margin !important;
+    margin-right: var(--element-margin, $element-margin) !important;
 }
 
 .align-right {
     display: block !important;
     float: right !important;
-    margin-left: $element-margin !important;
+    margin-left: var(--element-margin, $element-margin) !important;
 }
 
 .align-center {
@@ -154,19 +154,19 @@
 // ========================================================
 
 small {
-    font-size: $font-size-small !important;
+    font-size: var(--font-size-small, $font-size-small) !important;
 }
 
 .text-small {
-    font-size: $font-size-small !important;
+    font-size: var(--font-size-small, $font-size-small) !important;
 }
 
 .text-large {
-    font-size: $font-size-large !important;
+    font-size: var(--font-size-large, $font-size-large) !important;
 }
 
 .text-contrast {
-    color: $contrast-text-color !important;
+    color: var(--contrast-text-color, $contrast-text-color) !important;
 }
 
 // MARGIN AND PADDING
@@ -193,31 +193,31 @@ small {
 }
 
 .margin {
-    margin: $element-margin !important;
+    margin: var(--element-margin, $element-margin) !important;
 }
 
 .margin-h {
-    margin: 0 $element-margin !important;
+    margin: 0 var(--element-margin, $element-margin) !important;
 }
 
 .margin-v {
-    margin: $element-margin 0 !important;
+    margin: var(--element-margin, $element-margin) 0 !important;
 }
 
 .margin-top {
-    margin-top: $element-margin !important;
+    margin-top: var(--element-margin, $element-margin) !important;
 }
 
 .margin-right {
-    margin-right: $element-margin !important;
+    margin-right: var(--element-margin, $element-margin) !important;
 }
 
 .margin-bottom {
-    margin-bottom: $element-margin !important;
+    margin-bottom: var(--element-margin, $element-margin) !important;
 }
 
 .margin-left {
-    margin-left: $element-margin !important;
+    margin-left: var(--element-margin, $element-margin) !important;
 }
 
 .no-padding {
@@ -241,31 +241,31 @@ small {
 }
 
 .padding {
-    padding: $element-padding !important;
+    padding: var(--element-padding, $element-padding) !important;
 }
 
 .padding-h {
-    padding: 0 $element-padding !important;
+    padding: 0 var(--element-padding, $element-padding) !important;
 }
 
 .padding-v {
-    padding: $element-padding 0 !important;
+    padding: var(--element-padding, $element-padding) 0 !important;
 }
 
 .padding-top {
-    padding-top: $element-padding !important;
+    padding-top: var(--element-padding, $element-padding) !important;
 }
 
 .padding-right {
-    padding-right: $element-padding !important;
+    padding-right: var(--element-padding, $element-padding) !important;
 }
 
 .padding-bottom {
-    padding-bottom: $element-padding !important;
+    padding-bottom: var(--element-padding, $element-padding) !important;
 }
 
 .padding-left {
-    padding-left: $element-padding !important;
+    padding-left: var(--element-padding, $element-padding) !important;
 }
 
 // HIDDEN AND VISIBLE

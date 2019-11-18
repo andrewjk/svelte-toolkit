@@ -2,19 +2,23 @@
 
 .button {
     background-color: white;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     cursor: pointer;
+    font-weight: normal;
+    position: relative;
+    user-select: none;
+    white-space: nowrap;
 }
 
 .button:focus {
-    background-color: $middle-back-color;
+    background-color: var(--middle-back-color, $middle-back-color);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     outline: 0;
 }
 
 .button:hover {
-    background-color: $middle-back-color;
+    background-color: var(--middle-back-color, $middle-back-color);
 }
 
 /* Remove the black dotted focus border in Firefox */

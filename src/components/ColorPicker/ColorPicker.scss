@@ -7,7 +7,7 @@
         max-height: initial;
         .palette-container {
             border: 0;
-            padding: $element-padding / 4;
+            padding: calc(var(--element-padding, #{$element-padding}) / 4);
         }
     }
 }

@@ -47,32 +47,42 @@ $dark-contrast-text-color: #fff;
 $mark-back-color: #ffff00;
 $mark-color: #222;
 $select-color: #3396ff;
+$focus-color: lighten($select-color, 18%);
+$active-color: #ffa500;
 
 $link-color: #0265b7;
 $link-hover-color: #0265b7;
 
 $info-color: #4d90fe;
 $info-text-color: #fff;
+$info-hover-color: scale-color($info-color, $lightness: -25%);
 $success-color: #00a852;
 $success-text-color: #fff;
+$success-hover-color: scale-color($success-color, $lightness: -25%);
 $warning-color: #F3C42E;
 $warning-text-color: rgba(0, 0, 0, 0.7);
+$warning-hover-color: scale-color($warning-color, $lightness: -25%);
 $danger-color: #ee2e24;
 $danger-text-color: #fff;
+$danger-hover-color: scale-color($danger-color, $lightness: -25%);
 $cancel-color: #949494;
 $cancel-text-color: #fff;
+$cancel-hover-color: scale-color($cancel-color, $lightness: -25%);
 $disabled-color: #f2f2f2;
 $disabled-text-color: #a5a5a5;
-$active-color: #ffa500;
 
 $light-info-color: scale-color($info-color, $lightness: 95%);
 $light-info-text-color: scale-color($info-color, $lightness: -20%);
+$light-info-border-color: $info-color;
 $light-success-color: scale-color($success-color, $lightness: 95%);
 $light-success-text-color: scale-color($success-color, $lightness: -20%);
+$light-success-border-color: $success-color;
 $light-warning-color: scale-color($warning-color, $lightness: 95%);
 $light-warning-text-color: scale-color($warning-color, $lightness: -35%);
+$light-warning-border-color: $warning-color;
 $light-danger-color: scale-color($danger-color, $lightness: 95%);
 $light-danger-text-color: scale-color($danger-color, $lightness: -20%);
+$light-danger-border-color: $danger-color;
 
 // HEADER AND FOOTER
 // ========================================================

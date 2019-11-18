@@ -4,15 +4,15 @@
 // ========================================================
 
 label {
-    color: $label-color;
+    color: var(--label-color, $label-color);
     display: block;
-    line-height: $input-height;
+    line-height: var(--input-height, $input-height);
     padding-left: 1px;
 }
 
 label.inline {
-    line-height: $input-height;
-    margin-right: $element-margin / 2;
+    line-height: var(--input-height, $input-height);
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
 }
 
 // INPUTS
@@ -25,9 +25,9 @@ input[type="number"],
 input[type="datetime"],
 input[type="file"],
 input[type="url"] {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    height: $input-height;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
+    height: var(--input-height, $input-height);
     padding: 0 4px;
     width: 100%;
     -webkit-appearance: none;
@@ -39,7 +39,7 @@ input[type="file"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    line-height: $input-height;
+    line-height: var(--input-height, $input-height);
     margin: 0 5px;
 }
 
@@ -54,11 +54,11 @@ textarea:disabled,
 input[type="submit"]:disabled,
 input[type="submit"]:disabled:hover,
 input[type="submit"]:disabled:focus {
-    background-color: $disabled-color;
+    background-color: var(--disabled-color, $disabled-color);
 }
 
 input[type="range"] {
-    height: $input-height;
+    height: var(--input-height, $input-height);
     width: 100%;
 }
 
@@ -76,8 +76,8 @@ input.large {
 }
 
 input.inline {
-    line-height: $input-height;
-    margin-right: $element-margin / 2;
+    line-height: var(--input-height, $input-height);
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
     width: auto;
 }
 
@@ -85,8 +85,8 @@ input.inline {
 // ========================================================
 
 select {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     width: 100%;
 }
 
@@ -101,7 +101,7 @@ select {
 }
 
 select:not([multiple]) {
-    height: $input-height;
+    height: var(--input-height, $input-height);
 }
 
 // NOTE: This might be needed - test on IE
@@ -113,16 +113,16 @@ select:not([multiple]) {
    per https://stackoverflow.com/a/27510551 */
 select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $text-color;
+    text-shadow: 0 0 0 var(--text-color, $text-color);
 }
 select:-moz-focusring * {
-    color: $text-color;
+    color: var(--text-color, $text-color);
     text-shadow: none;
 }
 
 select.inline {
-    line-height: $input-height;
-    margin-right: $element-margin / 2;
+    line-height: var(--input-height, $input-height);
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
     width: auto;
 }
 
@@ -130,8 +130,8 @@ select.inline {
 // ========================================================
 
 textarea {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     font-size: inherit;
     margin: 0;
     /* Roughly enough for two rows at default sizing: */
@@ -142,21 +142,21 @@ textarea {
 
 textarea[readonly]
 textarea:disabled {
-    background-color: $disabled-color;
+    background-color: var(--disabled-color, $disabled-color);
 }
 
 // OTHER ELEMENTS
 // ========================================================
 
 fieldset {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    padding: $element-padding;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
+    padding: var(--element-padding, $element-padding);
 }
 
 legend {
-    color: $label-color;
-    padding: 0 $element-padding / 4;
+    color: var(--label-color, $label-color);
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
 }
 
 // FOCUS
@@ -165,8 +165,8 @@ legend {
 input:focus,
 select:focus,
 textarea:focus {
-    border: 1px solid lighten($select-color, 18%);
-    box-shadow: 0px 0px 1px $select-color;
+    border: 1px solid var(--focus-color, $focus-color);
+    box-shadow: 0px 0px 1px var(--select-color, $select-color);
     outline: none;
 }
 
@@ -174,8 +174,8 @@ input[readonly]:focus,
 input:disabled:focus,
 textarea[readonly]:focus,
 textarea:disabled:focus {
-    border: 1px solid $border-color;
-    box-shadow: 0px 0px 1px $border-color;
+    border: 1px solid var(--border-color, $border-color);
+    box-shadow: 0px 0px 1px var(--border-color, $border-color);
 }
 
 // TYPES
@@ -184,47 +184,47 @@ textarea:disabled:focus {
 input.info,
 select.info,
 textarea.info {
-    border-color: $info-color;
+    border-color: var(--info-color, $info-color);
 }
 
 input.info:focus,
 select.info:focus,
 textarea.info:focus {
-    box-shadow: 0px 0px 2px $info-color;
+    box-shadow: 0px 0px 2px var(--info-color, $info-color);
 }
 
 input.success,
 select.success,
 textarea.success {
-    border-color: $success-color;
+    border-color: var(--success-color, $success-color);
 }
 
 input.success:focus,
 select.success:focus,
 textarea.success:focus {
-    box-shadow: 0px 0px 2px $success-color;
+    box-shadow: 0px 0px 2px var(--success-color, $success-color);
 }
 
 input.warning,
 select.warning,
 textarea.warning {
-    border-color: $warning-color;
+    border-color: var(--warning-color, $warning-color);
 }
 
 input.warning:focus,
 select.warning:focus,
 textarea.warning:focus {
-    box-shadow: 0px 0px 2px $warning-color;
+    box-shadow: 0px 0px 2px var(--warning-color, $warning-color);
 }
 
 input.danger,
 select.danger,
 textarea.danger {
-    border-color: $danger-color;
+    border-color: var(--danger-color, $danger-color);
 }
 
 input.danger:focus,
 select.danger:focus,
 textarea.danger:focus {
-    box-shadow: 0px 0px 2px $danger-color;
+    box-shadow: 0px 0px 2px var(--danger-color, $danger-color);
 }

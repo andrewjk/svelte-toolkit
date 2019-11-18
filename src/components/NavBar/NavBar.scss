@@ -13,7 +13,7 @@
 }
 
 .nav-logo {
-    margin-right: $element-margin / 2;
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
 
     img {
         vertical-align: middle;
@@ -45,14 +45,14 @@
 }
 
 .nav-menu-header {
-    font-size: $font-size-title;
+    font-size: var(--font-size-title, $font-size-title);
     padding: 0;
     position: relative;
 }
 
 .nav-menu-item {
     display: inline-block;
-    font-size: $font-size-title;
+    font-size: var(--font-size-title, $font-size-title);
     padding: 0;
     position: relative;
     vertical-align: top;
@@ -60,9 +60,9 @@
 
     a,
     > span {
-        background-color: $nav-bar-item-back-color;
-        color: $nav-bar-item-text-color;
-        padding: $element-padding / 4 $element-padding;
+        background-color: var(--nav-bar-item-back-color, $nav-bar-item-back-color);
+        color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
+        padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -70,17 +70,17 @@
     
     a:hover,
     a:focus {
-        background-color: $nav-bar-item-hover-back-color;
-        color: $nav-bar-item-hover-text-color;
+        background-color: var(--nav-bar-item-hover-back-color, $nav-bar-item-hover-back-color);
+        color: var(--nav-bar-item-hover-text-color, $nav-bar-item-hover-text-color);
     }
 
     button {
-        font-size: $font-size-title;
+        font-size: var(--font-size-title, $font-size-title);
     }
 }
 
 .nav-menu-item.active:after {
-    background-color: $active-color;
+    background-color: var(--active-color, $active-color);
     background-color: #ffa500;
     content: " ";
     display: block;
@@ -92,15 +92,15 @@
 }
 
 .nav-menu-item-header {
-    color: $nav-bar-item-text-color;
+    color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
     overflow: visible;
-    padding: 0 $element-padding;
+    padding: 0 var(--element-padding, $element-padding);
 }
 
 .nav-right {
     .nav-menu
     {
-        margin-left: $element-margin;
+        margin-left: var(--element-margin, $element-margin);
     }
 }
 
@@ -110,7 +110,7 @@
 
 .start {
     .off-screen-link {
-        margin: 0 $element-margin 0 0;
+        margin: 0 var(--element-margin, $element-margin) 0 0;
     }
     
     .drop-down-menu {
@@ -121,7 +121,7 @@
 
 .end {
     .off-screen-link {
-        margin: 0 0 0 $element-margin;
+        margin: 0 0 0 var(--element-margin, $element-margin);
     }
     
     .drop-down-menu {

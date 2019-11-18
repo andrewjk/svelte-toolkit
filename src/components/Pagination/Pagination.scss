@@ -2,7 +2,7 @@
 @import "../../styles/general/button";
 
 .pagination {
-    padding: $element-padding / 2 0;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
 
     display: flex;
     justify-content: center;
@@ -12,14 +12,14 @@
 .pagination-button {
     font-size: inherit;
     height: 3rem;
-    margin: 0 $element-margin / 4;
-    padding: 0 $element-padding / 2;
+    margin: 0 calc(var(--element-margin, #{$element-margin}) / 4);
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
     min-width: 3rem;
 }
 
 .pagination-button.active {
-    background-color: $select-color;
-    border-color: $select-color;
+    background-color: var(--select-color, $select-color);
+    border-color: var(--select-color, $select-color);
     color: white;
     font-weight: bold;
 }

@@ -1,10 +1,10 @@
 @import "../../styles/_variables";
 
 .file {
-    background-color: $light-back-color;
-    border: 1px dashed $border-color;
-    border-radius: $border-radius;
-    min-height: $input-height * 2;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px dashed var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
+    min-height: calc(var(--input-height, $input-height) * 2);
     padding: 0 4px;
 
     display: flex;
@@ -21,33 +21,33 @@
 .file.warning,
 .file.danger {
     a {
-        color: $info-color;
+        color: var(--info-color, $info-color);
         text-decoration: underline;
     }
 }
 
 .file.info {
-    color: $light-info-text-color;
-    border: 1px dashed rgba($info-color, 0.3);
-    background-color: $light-info-color;
+    color: var(--light-info-text-color, $light-info-text-color);
+    border: 1px dashed var(--light-info-border-color, $light-info-border-color);
+    background-color: var(--light-info-color, $light-info-color);
 }
 
 .file.success {
-    color: $light-success-text-color;
-    border: 1px dashed rgba($success-color, 0.3);
-    background-color: $light-success-color;
+    color: var(--light-success-text-color, $light-success-text-color);
+    border: 1px dashed var(--light-success-border-color, $light-success-border-color);
+    background-color: var(--light-success-color, $light-success-color);
 }
 
 .file.warning {
-    color: $light-warning-text-color;
-    border: 1px dashed rgba($warning-color, 0.3);
-    background-color: $light-warning-color;
+    color: var(--light-warning-text-color, $light-warning-text-color);
+    border: 1px dashed var(--light-warning-border-color, $light-warning-border-color);
+    background-color: var(--light-warning-color, $light-warning-color);
 }
 
 .file.danger {
-    color: $light-danger-text-color;
-    border: 1px dashed rgba($danger-color, 0.3);
-    background-color: $light-danger-color;
+    color: var(--light-danger-text-color, $light-danger-text-color);
+    border: 1px dashed var(--light-danger-border-color, $light-danger-border-color);
+    background-color: var(--light-danger-color, $light-danger-color);
 }
 
 // NOTE: This is basically the visually-hidden class from HTML Bootstrap - is it worth making this a generic style?

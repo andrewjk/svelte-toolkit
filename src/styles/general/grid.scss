@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: auto;
-    margin: 0 0 $element-padding;
+    margin: 0 0 var(--element-padding, $element-padding);
 }
 
 .grid:last-child {
@@ -15,15 +15,15 @@
 }
 
 .grid.spaced {
-    margin: (-$element-padding / 2) (-$element-padding / 2) ($element-margin - $element-padding / 2);
+    margin: (-calc(var(--element-padding, #{$element-padding}) / 2)) (-calc(var(--element-padding, #{$element-padding}) / 2)) (calc(var(--element-margin, #{$element-margin}) - var(--element-padding, $element-padding) / 2));
 
     > [class*='width-'] {
-        padding: $element-padding / 2;
+        padding: calc(var(--element-padding, #{$element-padding}) / 2);
     }
 }
 
 .grid.spaced:last-child {
-    margin: (-$element-padding / 2);
+    margin: (-calc(var(--element-padding, #{$element-padding}) / 2));
 }
 
 .grid.nowrap {

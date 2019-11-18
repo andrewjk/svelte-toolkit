@@ -2,51 +2,51 @@
 @import "../../styles/general/input-button";
 
 .number-input-container {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     display: flex;
 }
 
 .number-input-container.focus {
-    border: 1px solid lighten($select-color, 18%);
-    box-shadow: 0px 0px 1px $select-color;
+    border: 1px solid var(--focus-color, $focus-color);
+    box-shadow: 0px 0px 1px var(--select-color, $select-color);
 }
 
 .number-input-container.info {
-    border-color: $info-color;
+    border-color: var(--info-color, $info-color);
 }
 
 .number-input-container.info.focus {
-    box-shadow: 0px 0px 2px $info-color;
+    box-shadow: 0px 0px 2px var(--info-color, $info-color);
 }
 
 .number-input-container.success {
-    border-color: $success-color;
+    border-color: var(--success-color, $success-color);
 }
 
 .number-input-container.success.focus {
-    box-shadow: 0px 0px 2px $success-color;
+    box-shadow: 0px 0px 2px var(--success-color, $success-color);
 }
 
 .number-input-container.warning {
-    border-color: $warning-color;
+    border-color: var(--warning-color, $warning-color);
 }
 
 .number-input-container.warning.focus {
-    box-shadow: 0px 0px 2px $warning-color;
+    box-shadow: 0px 0px 2px var(--warning-color, $warning-color);
 }
 
 .number-input-container.danger {
-    border-color: $danger-color;
+    border-color: var(--danger-color, $danger-color);
 }
 
 .number-input-container.danger.focus {
-    box-shadow: 0px 0px 2px $danger-color;
+    box-shadow: 0px 0px 2px var(--danger-color, $danger-color);
 }
 
 input.number-input {
     border: 0;
-    height: $input-height;
+    height: var(--input-height, $input-height);
     margin: 0;
     padding: 0 4px;
     width: 100%;

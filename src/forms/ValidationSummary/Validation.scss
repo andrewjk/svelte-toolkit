@@ -4,15 +4,15 @@
 // ========================================================
 
 .validation-summary {
-    background-color: $light-danger-color;
-    border: 1px solid $danger-color;
-    border-radius: $border-radius;
-    color: $danger-color;
-    margin: 0 0 $element-margin;
-    padding: $element-padding / 2;
+    background-color: var(--light-danger-color, $light-danger-color);
+    border: 1px solid var(--danger-color, $danger-color);
+    border-radius: var(--border-radius, $border-radius);
+    color: var(--danger-color, $danger-color);
+    margin: 0 0 var(--element-margin, $element-margin);
+    padding: calc(var(--element-padding, #{$element-padding}) / 2);
 
     p {
-        margin: 0 0 $element-margin / 2;
+        margin: 0 0 calc(var(--element-margin, #{$element-margin}) / 2);
     }
 
     ul {

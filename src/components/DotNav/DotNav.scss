@@ -2,7 +2,7 @@
 @import "../../styles/general/button";
 
 .dot-nav {
-    padding: $element-padding / 2 0;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
 
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 .dot-button {
-    background-color: $middle-back-color;
+    background-color: var(--middle-back-color, $middle-back-color);
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -18,12 +18,12 @@
     height: 1.5rem;
     min-width: 0;
     width: 1.5rem;
-    margin: 0 $element-margin / 2;
+    margin: 0 calc(var(--element-margin, #{$element-margin}) / 2);
     padding: 0;
 }
 
 .dot-button.active {
-    background-color: $dark-back-color;
+    background-color: var(--dark-back-color, $dark-back-color);
 }
 
 .dot-button:focus {
@@ -33,6 +33,6 @@
 .dot-nav.vertical {
     .dot-button {
         display: block;
-        margin: $element-margin / 2;
+        margin: calc(var(--element-margin, #{$element-margin}) / 2);
     }
 }

@@ -2,13 +2,13 @@
 @import "../../styles/general/button";
 
 .tabs {
-    margin: 0 0 $element-margin;
+    margin: 0 0 var(--element-margin, $element-margin);
 }
 
 .tabs:last-child {
     margin: 0;
     .tab-item {
-        padding: $element-padding 0 0;
+        padding: var(--element-padding, $element-padding) 0 0;
     }
 }
 
@@ -20,10 +20,10 @@
 .tab-list-button {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid $border-color;
-    font-size: $font-size-title;
+    border-bottom: 1px solid var(--border-color, $border-color);
+    font-size: var(--font-size-title, $font-size-title);
     margin-bottom: -1px;
-    padding: $element-padding / 2 $element-padding;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) var(--element-padding, $element-padding);
 }
 
 .tab-list-button:hover,
@@ -32,11 +32,11 @@
 }
 
 .tab-list-button.active {
-    border-bottom: 1px solid $active-color;
+    border-bottom: 1px solid var(--active-color, $active-color);
 }
 
 .tab-item {
-    padding: $element-padding 0;
+    padding: var(--element-padding, $element-padding) 0;
 }
 
 // BOXED
@@ -45,12 +45,12 @@
 .tab-list.boxed {
     .tab-list-button {
         border: 1px solid transparent;
-        border-radius: $border-radius $border-radius 0 0;
+        border-radius: var(--border-radius, $border-radius) var(--border-radius, $border-radius) 0 0;
         z-index: 500;
     }
 
     .tab-list-button.active {
-        border: 1px solid $border-color;
+        border: 1px solid var(--border-color, $border-color);
         border-bottom-color: white;
     }
 }

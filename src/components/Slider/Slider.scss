@@ -1,14 +1,16 @@
 @import "../../styles/_variables";
 
+$slider-size: 1.6rem;
+
 .slider {
-    height: $input-height;
+    height: var(--input-height, $input-height);
     position: relative;
 }
 
 .slider-background {
-    background-color: $light-back-color;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     height: 4px;
     position: absolute;
     top: 14px;
@@ -17,15 +19,15 @@
 
 .slider-handle {
     background-color: white;
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color, $border-color);
     border-radius: 50%;
-    height: 1.6rem;
-    width: 1.6rem;
+    height: $slider-size;
+    width: $slider-size;
     position: absolute;
-    top: $input-height / 2 - 1.6rem / 2;
+    top: calc(var(--input-height, $input-height) / 2) - $slider-size / 2;
 }
 
 .slider-handle:hover,
 .slider-handle:focus {
-    border: 1px solid $select-color;
+    border: 1px solid var(--select-color, $select-color);
 }

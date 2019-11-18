@@ -2,12 +2,12 @@
 @import "../../styles/general/button";
 
 .story-nav {
-    padding: $element-padding / 2 0;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
     display: flex;
 }
 
 .story-button {
-    background-color: $dark-back-color;
+    background-color: var(--dark-back-color, $dark-back-color);
     border: 0;
     cursor: pointer;
     display: inline-block;
@@ -32,7 +32,7 @@
 
     .story-button {
         display: block;
-        margin: $element-margin / 2 0;
+        margin: calc(var(--element-margin, #{$element-margin}) / 2) 0;
         width: 100%;
     }
 }

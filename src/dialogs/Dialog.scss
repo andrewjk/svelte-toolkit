@@ -3,7 +3,7 @@
 
 .dialog {
     background-color: white;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius, $border-radius);
     max-height: 32rem;
     min-height: 14rem;
     max-width: 48rem;
@@ -35,22 +35,22 @@
     font-weight: bold;
     line-height: 2.4rem;
     margin: 0;
-    padding: $element-padding $element-padding 0;
+    padding: var(--element-padding, $element-padding) var(--element-padding, $element-padding) 0;
     flex: 0 0 auto;
 }
 
 .dialog-body {
-    padding: $element-padding;
+    padding: var(--element-padding, $element-padding);
     flex: 1 1 auto;
 }
 
 .dialog-footer {
-    background-color: $middle-back-color;
-    padding: $element-padding / 4 * 3;
+    background-color: var(--middle-back-color, $middle-back-color);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4 * 3);
     text-align: right;
     flex: 0 0 auto;
 
     .button {
-        margin-left: $element-margin / 4 * 3;
+        margin-left: calc(var(--element-margin, #{$element-margin}) / 4 * 3);
     }
 }

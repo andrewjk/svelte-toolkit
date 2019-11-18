@@ -2,12 +2,12 @@
 @import "../../styles/general/button-image.scss";
 
 .alert {
-    background-color: $light-back-color;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     display: flex;
-    margin: 0 0 $element-margin;
-    padding: $element-padding / 2 $element-padding;
+    margin: 0 0 var(--element-margin, $element-margin);
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) var(--element-padding, $element-padding);
     position: fixed;
 }
 
@@ -21,7 +21,7 @@
 
 .alert-close {
     flex: 0 0 auto;
-    margin-left: $element-margin;
+    margin-left: var(--element-margin, $element-margin);
 }
 
 .alert.top-left {
@@ -63,21 +63,21 @@
 }
 
 .alert.info {
-    background-color: $info-color;
-    color: $info-text-color;
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
 }
 
 .alert.success {
-    background-color: $success-color;
-    color: $success-text-color;
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
 }
 
 .alert.warning {
-    background-color: $warning-color;
-    color: $warning-text-color;
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
 }
 
 .alert.danger {
-    background-color: $danger-color;
-    color: $danger-text-color;
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
 }

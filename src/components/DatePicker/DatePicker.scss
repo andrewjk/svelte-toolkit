@@ -7,7 +7,7 @@
         max-height: initial;
         .calendar {
             border: 0;
-            // TODO: padding: $element-padding / 4;
+            // TODO: padding: calc(var(--element-padding, #{$element-padding}) / 4);
         }
     }
 }

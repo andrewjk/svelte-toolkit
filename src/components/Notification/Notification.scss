@@ -2,12 +2,12 @@
 @import "../../styles/general/button-image";
 
 .notification {
-    background-color: $light-back-color;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     display: inline-flex;
-    margin: 0 0 $element-margin;
-    padding: $element-padding / 2 $element-padding;
+    margin: 0 0 var(--element-margin, $element-margin);
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) var(--element-padding, $element-padding);
     width: 100%;
 }
 
@@ -21,7 +21,7 @@
 
 .notification-close {
     flex: 0 0 auto;
-    margin-left: $element-margin;
+    margin-left: var(--element-margin, $element-margin);
 }
 
 .notification.info,
@@ -29,7 +29,7 @@
 .notification.warning,
 .notification.danger {
     a {
-        color: $info-color;
+        color: var(--info-color, $info-color);
         text-decoration: underline;
     }
 }
@@ -47,45 +47,45 @@
 }
 
 .notification.info {
-    color: $light-info-text-color;
-    border: 1px solid rgba($info-color, 0.3);
-    background-color: $light-info-color;
+    color: var(--light-info-text-color, $light-info-text-color);
+    border: 1px solid var(--light-info-border-color, $light-info-border-color);
+    background-color: var(--light-info-color, $light-info-color);
 }
 
 .notification.info.solid {
-    background-color: $info-color;
-    color: $info-text-color;
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
 }
 
 .notification.success {
-    color: $light-success-text-color;
-    border: 1px solid rgba($success-color, 0.3);
-    background-color: $light-success-color;
+    color: var(--light-success-text-color, $light-success-text-color);
+    border: 1px solid var(--light-success-border-color, $light-success-border-color);
+    background-color: var(--light-success-color, $light-success-color);
 }
 
 .notification.success.solid {
-    background-color: $success-color;
-    color: $success-text-color;
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
 }
 
 .notification.warning {
-    color: $light-warning-text-color;
-    border: 1px solid rgba($warning-color, 0.3);
-    background-color: $light-warning-color;
+    color: var(--light-warning-text-color, $light-warning-text-color);
+    border: 1px solid var(--light-warning-border-color, $light-warning-border-color);
+    background-color: var(--light-warning-color, $light-warning-color);
 }
 
 .notification.warning.solid {
-    background-color: $warning-color;
-    color: $warning-text-color;
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
 }
 
 .notification.danger {
-    color: $light-danger-text-color;
-    border: 1px solid rgba($danger-color, 0.3);
-    background-color: $light-danger-color;
+    color: var(--light-danger-text-color, $light-danger-text-color);
+    border: 1px solid var(--light-danger-border-color, $light-danger-border-color);
+    background-color: var(--light-danger-color, $light-danger-color);
 }
 
 .notification.danger.solid {
-    background-color: $danger-color;
-    color: $danger-text-color;
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
 }

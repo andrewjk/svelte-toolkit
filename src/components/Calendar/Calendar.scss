@@ -2,10 +2,10 @@
 @import "../../styles/general/button-image";
 
 .calendar {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    margin: 0 0 $element-margin;
-    padding: $element-padding;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
+    margin: 0 0 var(--element-margin, $element-margin);
+    padding: var(--element-padding, $element-padding);
 
     a {
         color: inherit;
@@ -31,7 +31,7 @@
 }
 
 .calendar-body {
-    margin: 0 0 $element-margin;
+    margin: 0 0 var(--element-margin, $element-margin);
 
     display: flex;
     flex-wrap: wrap;
@@ -54,7 +54,7 @@
 
 .calendar-title {
     display: inline-block;
-    font-size: $font-size-title;
+    font-size: var(--font-size-title, $font-size-title);
     text-align: center;
     width: 71.4285%;
 }
@@ -67,7 +67,7 @@
 }
 
 .calendar-day-text {
-    border-radius: $border-radius;
+    border-radius: var(--border-radius, $border-radius);
 }
 
 .calendar-day-text.muted {
@@ -80,7 +80,7 @@
 }
 
 .calendar-day-text.active {
-    background-color: $select-color;
+    background-color: var(--select-color, $select-color);
     color: white;
 }
 
@@ -117,7 +117,7 @@ ul.calendar-event-list {
 }
 
 li.calendar-event {
-    background-color: $select-color;
+    background-color: var(--select-color, $select-color);
     border-radius: 50%;
     display: inline-block;
     margin: 0;

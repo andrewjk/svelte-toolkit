@@ -4,7 +4,7 @@
 // ========================================================
 
 .field {
-    margin: 0 0 $element-margin;
+    margin: 0 0 var(--element-margin, $element-margin);
 }
 
 .field:last-child {
@@ -12,23 +12,23 @@
 }
 
 .field-message {
-    color: $label-color;
+    color: var(--label-color, $label-color);
     font-size: 1.3rem;
-    margin: $element-margin / 4 0 0;
+    margin: calc(var(--element-margin, #{$element-margin}) / 4) 0 0;
 }
 
 .field-message.info {
-    color: $info-color;
+    color: var(--info-color, $info-color);
 }
 
 .field-message.success {
-    color: $success-color;
+    color: var(--success-color, $success-color);
 }
 
 .field-message.warning {
-    color: $warning-color;
+    color: var(--warning-color, $warning-color);
 }
 
 .field-message.danger {
-    color: $danger-color;
+    color: var(--danger-color, $danger-color);
 }

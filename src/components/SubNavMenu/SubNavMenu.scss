@@ -1,7 +1,7 @@
 @import "../../styles/_variables";
 
 .sub-nav-menu {
-    margin: 0 0 $element-margin;
+    margin: 0 0 var(--element-margin, $element-margin);
 
     ul {
         list-style: outside none;
@@ -12,7 +12,7 @@
     li {
         display: inline-block;
         margin: 0;
-        padding: 0 $element-padding / 2;
+        padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
     }
 
     li:first-child {
@@ -30,10 +30,10 @@
 
 .sub-nav-menu.line {
     li {
-        border-right: 1px solid $border-color;
-        margin: 0 $element-margin / 2 0 0;
-        // Use $element-margin to ensure that there is the same distance on either side of the line:
-        padding: 0 $element-margin / 2 0 0;
+        border-right: 1px solid var(--border-color, $border-color);
+        margin: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
+        // Use var(--element-margin, $element-margin) to ensure that there is the same distance on either side of the line:
+        padding: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
     }
 
     li:last-child {
@@ -46,7 +46,7 @@
 .sub-nav-menu.vertical {
     li {
         display: block;
-        padding: $element-padding / 4 0;
+        padding: calc(var(--element-padding, #{$element-padding}) / 4) 0;
     }
 
     li:first-child {
@@ -59,8 +59,8 @@
 }
 
 .sub-nav-menu-header {
-    font-size: $font-size;
+    font-size: var(--font-size, $font-size);
     line-height: 2rem;
     text-transform: uppercase;
-    margin-bottom: $element-margin / 2;
+    margin-bottom: calc(var(--element-margin, #{$element-margin}) / 2);
 }

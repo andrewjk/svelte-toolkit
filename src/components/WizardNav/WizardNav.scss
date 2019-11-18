@@ -2,7 +2,7 @@
 @import "../../styles/general/button";
 
 .wizard-nav {
-    padding: $element-padding / 2 0;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
 
     display: flex;
     justify-content: end;
@@ -11,9 +11,9 @@
 
 .wizard-button {
     font-size: inherit;
-    margin-left: $element-margin / 2;
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
     min-width: 0;
-    padding: 0 $element-padding / 2;
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
     height: 3rem;
 }
 
@@ -22,8 +22,8 @@
 }
 
 .wizard-button.finish {
-    background-color: $select-color;
-    border-color: $select-color;
+    background-color: var(--select-color, $select-color);
+    border-color: var(--select-color, $select-color);
     color: white;
     font-weight: bold;
 }

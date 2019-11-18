@@ -2,7 +2,7 @@
 
 .radio:hover {
     input[type=radio] + span:before {
-        border-color: $select-color;
+        border-color: var(--select-color, $select-color);
     }
 }
 
@@ -15,7 +15,7 @@ input[type=radio] {
 
 input[type=radio] + span:before {
     background-color: white;
-    border: 1px solid $light-border-color;
+    border: 1px solid var(--light-border-color, $light-border-color);
     border-radius: 50%;
     content: "\00a0";
     display: inline-block;
@@ -32,8 +32,8 @@ input[type=radio]:checked + span:before {
 }
 
 input[type=radio]:focus + span:before {
-    border-color: lighten($select-color, 18%);
-    box-shadow: 0px 0px 1px $select-color;
+    border-color: var(--focus-color, $focus-color);
+    box-shadow: 0px 0px 1px var(--select-color, $select-color);
 }
 
 .radio.info,
@@ -48,65 +48,65 @@ input[type=radio]:focus + span:before {
 }
 
 .radio.info {
-    color: $info-color;
+    color: var(--info-color, $info-color);
 
     input[type=radio] + span:before {
-        border-color: $info-color;
+        border-color: var(--info-color, $info-color);
     }
 
     input[type=radio]:checked + span:before {
-        background-color: $info-color;
+        background-color: var(--info-color, $info-color);
     }
 
     input[type=radio]:focus + span:before {
-        box-shadow: 0px 0px 2px $info-color;
+        box-shadow: 0px 0px 2px var(--info-color, $info-color);
     }
 }
 
 .radio.success {
-    color: $success-color;
+    color: var(--success-color, $success-color);
 
     input[type=radio] + span:before {
-        border-color: $success-color;
+        border-color: var(--success-color, $success-color);
     }
 
     input[type=radio]:checked + span:before {
-        background-color: $success-color;
+        background-color: var(--success-color, $success-color);
     }
 
     input[type=radio]:focus + span:before {
-        box-shadow: 0px 0px 2px $success-color;
+        box-shadow: 0px 0px 2px var(--success-color, $success-color);
     }
 }
 
 .radio.warning {
-    color: $warning-color;
+    color: var(--warning-color, $warning-color);
 
     input[type=radio] + span:before {
-        border-color: $warning-color;
+        border-color: var(--warning-color, $warning-color);
     }
 
     input[type=radio]:checked + span:before {
-        background-color: $warning-color;
+        background-color: var(--warning-color, $warning-color);
     }
 
     input[type=radio]:focus + span:before {
-        box-shadow: 0px 0px 2px $warning-color;
+        box-shadow: 0px 0px 2px var(--warning-color, $warning-color);
     }
 }
 
 .radio.danger {
-    color: $danger-color;
+    color: var(--danger-color, $danger-color);
 
     input[type=radio] + span:before {
-        border-color: $danger-color;
+        border-color: var(--danger-color, $danger-color);
     }
 
     input[type=radio]:checked + span:before {
-        background-color: $danger-color;
+        background-color: var(--danger-color, $danger-color);
     }
 
     input[type=radio]:focus + span:before {
-        box-shadow: 0px 0px 2px $danger-color;
+        box-shadow: 0px 0px 2px var(--danger-color, $danger-color);
     }
 }

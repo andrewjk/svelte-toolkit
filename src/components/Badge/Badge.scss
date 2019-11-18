@@ -1,14 +1,14 @@
 @import "../../styles/_variables";
 
 .badge {
-    background-color: $light-back-color;
-    border: 1px solid $border-color;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px solid var(--border-color, $border-color);
     border-radius: 2rem;
     display: inline-block;
     font-weight: bold;
-    font-size: $font-size-small;
-    margin: 0 $element-margin / 4;
-    padding: 0 $element-padding / 4;
+    font-size: var(--font-size-small, $font-size-small);
+    margin: 0 calc(var(--element-margin, #{$element-margin}) / 4);
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
     text-align: center;
     vertical-align: top;
 }
@@ -27,25 +27,25 @@
 }
 
 .badge.info {
-    background-color: $info-color;
-    color: $info-text-color;
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
 }
 
 .badge.success {
-    background-color: $success-color;
-    color: $success-text-color;
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
 }
 
 .badge.warning {
-    background-color: $warning-color;
-    color: $warning-text-color;
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
 }
 
 .badge.danger {
-    background-color: $danger-color;
-    color: $danger-text-color;
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
 }
 
 .badge.cancel {
-    background-color: $cancel-color;
+    background-color: var(--cancel-color, $cancel-color);
 }

@@ -2,14 +2,14 @@
 @import "../../styles/general/button-image";
 
 .tag {
-    background-color: $light-back-color;
-    border: 1px solid $border-color;
+    background-color: var(--light-back-color, $light-back-color);
+    border: 1px solid var(--border-color, $border-color);
     border-radius: 4px;
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 1.6;
-    margin-right: $element-margin / 4;
-    padding: 0 $element-padding / 4;
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 4);
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
     white-space: nowrap;
 
     display: inline-flex;
@@ -26,29 +26,29 @@
 }
 
 .tag.info {
-    background-color: $info-color;
-    color: $info-text-color;
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
 }
 
 .tag.success {
-    background-color: $success-color;
-    color: $success-text-color;
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
 }
 
 .tag.warning {
-    background-color: $warning-color;
-    color: $warning-text-color;
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
 }
 
 .tag.danger {
-    background-color: $danger-color;
-    color: $danger-text-color;
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
 }
 
 .tag.cancel {
-    background-color: $cancel-color;
+    background-color: var(--cancel-color, $cancel-color);
 }
 
 .tag-close {
-    margin-left: $element-margin / 4;
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 4);
 }
