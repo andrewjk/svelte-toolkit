@@ -58,44 +58,8 @@
   }
 </script>
 
-<style>
-  .alert {
-    display: flex;
-    position: fixed;
-  }
+<style src="Alert.scss" global>
 
-  .alert-content {
-    flex: 1 1 auto;
-  }
-
-  .alert-close {
-    flex: 0 0 auto;
-  }
-
-  .alert.top-left {
-    left: 20px;
-    top: 20px;
-  }
-  .alert.top {
-    top: 20px;
-    margin: 0 auto;
-  }
-  .alert.top-right {
-    top: 20px;
-    right: 20px;
-  }
-  .alert.bottom-left {
-    left: 20px;
-    bottom: 20px;
-  }
-  .alert.bottom {
-    bottom: 20px;
-    margin: 0 auto;
-  }
-  .alert.bottom-right {
-    right: 20px;
-    bottom: 20px;
-  }
 </style>
 
 {#if visible}

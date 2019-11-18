@@ -1,0 +1,83 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-image.scss";
+
+.alert {
+    background-color: $light-back-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    display: flex;
+    margin: 0 0 $element-margin;
+    padding: $element-padding / 2 $element-padding;
+    position: fixed;
+}
+
+.alert:last-child {
+    margin: 0;
+}
+
+.alert-content {
+    flex: 1 1 auto;
+}
+
+.alert-close {
+    flex: 0 0 auto;
+    margin-left: $element-margin;
+}
+
+.alert.top-left {
+    left: 20px;
+    top: 20px;
+}
+
+.alert.top {
+    top: 20px;
+    margin: 0 auto;
+}
+
+.alert.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.alert.bottom-left {
+    left: 20px;
+    bottom: 20px;
+}
+
+.alert.bottom {
+    bottom: 20px;
+    margin: 0 auto;
+}
+
+.alert.bottom-right {
+    right: 20px;
+    bottom: 20px;
+}
+
+.alert.info,
+.alert.success,
+.alert.warning,
+.alert.danger {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: white;
+}
+
+.alert.info {
+    background-color: $info-color;
+    color: $info-text-color;
+}
+
+.alert.success {
+    background-color: $success-color;
+    color: $success-text-color;
+}
+
+.alert.warning {
+    background-color: $warning-color;
+    color: $warning-text-color;
+}
+
+.alert.danger {
+    background-color: $danger-color;
+    color: $danger-text-color;
+}

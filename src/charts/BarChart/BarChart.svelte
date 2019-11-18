@@ -1,6 +1,6 @@
 <script>
   import { setContext, onMount, beforeUpdate } from "svelte";
-  import ChartAxis from "../ChartAxis.svelte";
+  import ChartAxis from "../ChartAxis/ChartAxis.svelte";
   import { chartColors } from "../../utils/chart-colors";
 
   export let id = null;
@@ -55,6 +55,10 @@
     }
   }
 </script>
+
+<style src="BarChart.scss" global>
+
+</style>
 
 <svg
   {id}

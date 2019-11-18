@@ -326,6 +326,10 @@
   }
 </script>
 
+<style src="Palette.scss" global>
+
+</style>
+
 <div
   {id}
   class={['palette', className]

@@ -140,6 +140,10 @@
   }
 </script>
 
+<style src="Accordion.scss" global>
+
+</style>
+
 <div
   {id}
   class={['accordion', className].concat(classNames).filter(Boolean).join(' ')}

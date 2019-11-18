@@ -31,7 +31,10 @@
 
 <button
   {id}
-  class="button tab-list-button"
+  class={['button', 'tab-list-button', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   class:active
   type="button"
   role="tab"

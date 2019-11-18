@@ -1,3 +1,6 @@
+// Base
+import Toolkit from './src/base/Toolkit/Toolkit.svelte';
+
 // Components
 import Accordion from './src/components/Accordion/Accordion.svelte';
 import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
@@ -96,6 +99,9 @@ import Plus from './src/icons/Plus.svelte';
 import Minus from './src/icons/Minus.svelte';
 
 export {
+    // Base
+    Toolkit,
+
     // Components
     Accordion, AccordionItem,
     Alert,

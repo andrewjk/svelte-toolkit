@@ -5,6 +5,10 @@
   export let classNames = [];
 </script>
 
+<style src="Icon.scss" global>
+
+</style>
+
 <svg
   {id}
   class={['icon', className]

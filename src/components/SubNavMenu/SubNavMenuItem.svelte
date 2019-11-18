@@ -3,17 +3,15 @@
   let className = null;
   export { className as class };
   export let classNames = [];
+  export let type = "";
 </script>
-
-<style>
-  li {
-    display: inline;
-  }
-</style>
 
 <li
   {id}
-  class={['sub-nav-menu-item', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['sub-nav-menu-item', type, className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   role="menuitem">
   <slot />
 </li>

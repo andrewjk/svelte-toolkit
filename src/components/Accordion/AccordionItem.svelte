@@ -48,10 +48,8 @@
   }
 </script>
 
-<style>
-  .accordion-header-button {
-    width: 100%;
-  }
+<style src="AccordionItem.scss" global>
+
 </style>
 
 <div

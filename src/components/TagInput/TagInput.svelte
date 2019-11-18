@@ -248,6 +248,10 @@
   }
 </script>
 
+<style src="TagInput.scss" global>
+
+</style>
+
 <div
   {id}
   class={['tag-input', 'drop-down', className]

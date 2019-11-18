@@ -104,10 +104,8 @@
   }
 </script>
 
-<style>
-  .pagination-button.active {
-    font-weight: bold;
-  }
+<style src="Pagination.scss" global>
+
 </style>
 
 {#if pageCount > 1}

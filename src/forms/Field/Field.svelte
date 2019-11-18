@@ -111,6 +111,10 @@
   }
 </script>
 
+<style src="Field.scss" global>
+
+</style>
+
 <div {id} class={['field', className].concat(classNames).filter(Boolean).join(' ')}>
   <slot name="label">
     <label for={name}>{label}</label>

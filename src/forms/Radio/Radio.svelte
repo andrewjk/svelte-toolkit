@@ -61,6 +61,10 @@
   }
 </script>
 
+<style src="Radio.scss" global>
+
+</style>
+
 <label
   {id}
   class={['radio', type, className]

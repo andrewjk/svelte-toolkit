@@ -1,0 +1,56 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button";
+
+.tabs {
+    margin: 0 0 $element-margin;
+}
+
+.tabs:last-child {
+    margin: 0;
+    .tab-item {
+        padding: $element-padding 0 0;
+    }
+}
+
+.tab-list {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.tab-list-button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $border-color;
+    font-size: $font-size-title;
+    margin-bottom: -1px;
+    padding: $element-padding / 2 $element-padding;
+}
+
+.tab-list-button:hover,
+.tab-list-button:focus {
+    box-shadow: none;
+}
+
+.tab-list-button.active {
+    border-bottom: 1px solid $active-color;
+}
+
+.tab-item {
+    padding: $element-padding 0;
+}
+
+// BOXED
+// ========================================================
+
+.tab-list.boxed {
+    .tab-list-button {
+        border: 1px solid transparent;
+        border-radius: $border-radius $border-radius 0 0;
+        z-index: 500;
+    }
+
+    .tab-list-button.active {
+        border: 1px solid $border-color;
+        border-bottom-color: white;
+    }
+}

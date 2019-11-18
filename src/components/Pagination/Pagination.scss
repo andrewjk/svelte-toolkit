@@ -1,0 +1,29 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button";
+
+.pagination {
+    padding: $element-padding / 2 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-button {
+    font-size: inherit;
+    height: 3rem;
+    margin: 0 $element-margin / 4;
+    padding: 0 $element-padding / 2;
+    min-width: 3rem;
+}
+
+.pagination-button.active {
+    background-color: $select-color;
+    border-color: $select-color;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination-button:disabled {
+    background-color: inherit !important;
+}

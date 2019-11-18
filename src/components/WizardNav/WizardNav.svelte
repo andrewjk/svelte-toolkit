@@ -21,10 +21,8 @@
   }
 </script>
 
-<style>
-  .wizard-button.active {
-    font-weight: bold;
-  }
+<style src="WizardNav.scss" global>
+
 </style>
 
 {#if itemCount > 0}

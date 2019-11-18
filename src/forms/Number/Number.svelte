@@ -90,6 +90,10 @@
   }
 </script>
 
+<style src="Number.scss" global>
+
+</style>
+
 <div
   {id}
   class={['number-input-container', type, className]

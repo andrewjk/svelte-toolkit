@@ -1,0 +1,126 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-image";
+
+.calendar {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin: 0 0 $element-margin;
+    padding: $element-padding;
+
+    a {
+        color: inherit;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.calendar:last-child {
+    margin: 0;
+}
+
+.calendar-header {
+    padding: 0.8rem 0;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-body {
+    margin: 0 0 $element-margin;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
+}
+
+.calendar-body:last-child {
+    margin: 0;
+}
+
+.calendar-nav {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    text-align: center;
+    width: 14.2857%;
+}
+
+.calendar-title {
+    display: inline-block;
+    font-size: $font-size-title;
+    text-align: center;
+    width: 71.4285%;
+}
+
+.calendar-day {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 14.2857%;
+}
+
+.calendar-day-text {
+    border-radius: $border-radius;
+}
+
+.calendar-day-text.muted {
+    color: #CCCCCC;
+}
+
+.calendar-day-text.today {
+    background-color: #0077DD;
+    color: white;
+}
+
+.calendar-day-text.active {
+    background-color: $select-color;
+    color: white;
+}
+
+.calendar-number {
+    display: inline-block;
+    padding: 0.8rem 0;
+}
+
+.calendar-day-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.calendar-day-button:focus {
+    background-color: transparent;
+}
+
+.calendar-day-header {
+    font-weight: bold;
+    padding: 0.8rem 0;
+}
+
+ul.calendar-event-list {
+    line-height: 0.6rem;
+    min-height: 0.6rem;
+    margin: -4px 0 2px;
+    padding: 0;
+}
+
+li.calendar-event {
+    background-color: $select-color;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+    height: 0.6rem;
+    width: 0.6rem;
+}

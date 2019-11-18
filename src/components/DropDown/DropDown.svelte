@@ -61,6 +61,10 @@
   }
 </script>
 
+<style src="DropDown.scss" global>
+
+</style>
+
 <div class="drop-down" bind:this={container}>
   <button
     {id}

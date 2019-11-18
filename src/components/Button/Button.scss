@@ -1,0 +1,163 @@
+@import "../../styles/_variables";
+@import "../../styles/general/animation";
+@import "../../styles/general/button-image";
+
+// BUTTON LAYOUT
+// ========================================================
+
+.button {
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-weight: normal;
+    position: relative;
+    user-select: none;
+    white-space: nowrap;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:focus {
+    background-color: $middle-back-color;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    outline: 0;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: $middle-back-color;
+    text-decoration: none;
+}
+
+/* Remove the black dotted focus border in Firefox */
+button::-moz-focus-inner {
+    border: 0;
+}
+
+// BUTTON SIZES
+// ========================================================
+
+.button {
+    font-size: 1.75rem;
+    padding: $element-padding / 4;
+}
+
+.button.medium {
+    font-size: 1.75rem;
+    min-width: 9.6rem;
+    padding: $element-padding / 4 $element-padding;
+}
+
+.button.small {
+    font-size: 1.4rem;
+    min-width: 6.4rem;
+    padding: $element-padding / 8 $element-padding / 2;
+}
+
+.button.large {
+    font-size: 2.30rem;
+    min-width: 11.2rem;
+    padding: $element-padding / 2 $element-padding;
+}
+
+.button.inline {
+    font-size: inherit;
+    height: $input-height;
+    min-width: auto;
+    padding: 0 12px !important;
+}
+
+// BUTTON COLORS
+// ========================================================
+
+.button.info,
+.button.success,
+.button.warning,
+.button.danger,
+.button.select,
+.button.cancel {
+    border: 1px solid transparent;
+    color: white,
+}
+
+.button.info {
+    background-color: $info-color;
+    color: $info-text-color;
+}
+
+.button.info:hover {
+    background-color: scale-color($info-color, $lightness: -25%);
+}
+
+.button.success {
+    background-color: $success-color;
+    color: $success-text-color;
+}
+
+.button.success:hover {
+    background-color: scale-color($success-color, $lightness: -25%);
+}
+
+.button.warning {
+    background-color: $warning-color;
+    color: $warning-text-color;
+}
+
+.button.warning:hover {
+    background-color: scale-color($warning-color, $lightness: -25%);
+}
+
+.button.danger {
+    background-color: $danger-color;
+    color: $danger-text-color;
+}
+
+.button.danger:hover {
+    background-color: scale-color($danger-color, $lightness: -25%);
+}
+
+.button.select {
+    background-color: $select-color;
+}
+
+.button.select:hover {
+    background-color: scale-color($select-color, $lightness: -25%);
+}
+
+.button.cancel {
+    background-color: $cancel-color;
+}
+
+.button.cancel:hover {
+    background-color: scale-color($cancel-color, $lightness: -25%);
+}
+
+// DISABLED
+// ========================================================
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:focus {
+    background-color: $disabled-color !important;
+    color: $disabled-text-color !important;
+    cursor: default;
+}
+
+// LOADING
+// ========================================================
+
+.button.loading {
+    color: transparent !important;
+    cursor: default;
+}
+
+.button.loading:after {
+    @include loading;
+    border-left-color: rgba(255, 255, 255, .15);
+    border-right-color: rgba(255, 255, 255, .15);
+    border-bottom-color: rgba(255, 255, 255, .15);
+    border-top-color: rgba(255, 255, 255, .8);
+}

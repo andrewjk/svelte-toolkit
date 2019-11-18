@@ -1,0 +1,75 @@
+@import "../../styles/_variables";
+
+// PROGRESS LAYOUT
+// ========================================================
+
+.progress {
+    background-color: $light-back-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0 0 $element-margin;
+    overflow: hidden;
+}
+
+.progress:last-child {
+    margin: 0;
+}
+
+.progress-bar {
+    background-color: rgba(0, 0, 0, 0.3);
+    float: left;
+    font-size: 1.2rem;
+    height: 100%;
+    line-height: 1.5rem;
+    text-align: center;
+    transition: width 0.4s ease;
+    width: 0;
+}
+
+// PROGRESS SIZES
+// ========================================================
+
+.progress.small {
+    height: 0.8rem;
+}
+
+.progress.medium {
+    height: 1.5rem;
+}
+
+.progress.large {
+    height: 2.2rem;
+}
+
+// PROGRESS COLORS
+// ========================================================
+
+.progress.info {
+    .progress-bar {
+        background-color: $info-color;
+        color: $info-text-color;
+    }
+}
+
+.progress.success {
+    .progress-bar {
+        background-color: $success-color;
+        color: $success-text-color;
+    }
+}
+
+.progress.warning {
+    .progress-bar {
+        background-color: $warning-color;
+        color: $warning-text-color;
+    }
+}
+
+.progress.danger {
+    .progress-bar {
+        background-color: $danger-color;
+        color: $danger-text-color;
+    }
+}

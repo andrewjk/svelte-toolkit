@@ -63,6 +63,10 @@
   }
 </script>
 
+<style src="CheckBox.scss" global>
+
+</style>
+
 <label
   {id}
   class={['checkbox', type, className]

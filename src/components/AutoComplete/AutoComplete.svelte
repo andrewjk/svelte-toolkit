@@ -221,6 +221,10 @@
   }
 </script>
 
+<style src="AutoComplete.scss" global>
+
+</style>
+
 <div
   {id}
   class={['auto-complete', 'drop-down', className]

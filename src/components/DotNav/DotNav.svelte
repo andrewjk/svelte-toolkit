@@ -52,6 +52,10 @@
   }
 </script>
 
+<style src="DotNav.scss" global>
+
+</style>
+
 {#if itemCount > 0}
   <div
     {id}

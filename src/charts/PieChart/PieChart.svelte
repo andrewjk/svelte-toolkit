@@ -52,6 +52,10 @@
   }
 </script>
 
+<style src="PieChart.scss" global>
+
+</style>
+
 <svg
   {id}
   class={['chart', className].concat(classNames).filter(Boolean).join(' ')}

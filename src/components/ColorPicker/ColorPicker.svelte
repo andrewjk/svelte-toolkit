@@ -83,6 +83,10 @@
   }
 </script>
 
+<style src="ColorPicker.scss" global>
+
+</style>
+
 <div
   {id}
   class={['color-picker', 'drop-down', className]

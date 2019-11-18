@@ -1,0 +1,91 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-image";
+
+.notification {
+    background-color: $light-back-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    display: inline-flex;
+    margin: 0 0 $element-margin;
+    padding: $element-padding / 2 $element-padding;
+    width: 100%;
+}
+
+.notification:last-child {
+    margin: 0;
+}
+
+.notification-content {
+    flex: 1 1 auto;
+}
+
+.notification-close {
+    flex: 0 0 auto;
+    margin-left: $element-margin;
+}
+
+.notification.info,
+.notification.success,
+.notification.warning,
+.notification.danger {
+    a {
+        color: $info-color;
+        text-decoration: underline;
+    }
+}
+
+.notification.info.solid,
+.notification.success.solid,
+.notification.warning.solid,
+.notification.danger.solid {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.notification.info {
+    color: $light-info-text-color;
+    border: 1px solid rgba($info-color, 0.3);
+    background-color: $light-info-color;
+}
+
+.notification.info.solid {
+    background-color: $info-color;
+    color: $info-text-color;
+}
+
+.notification.success {
+    color: $light-success-text-color;
+    border: 1px solid rgba($success-color, 0.3);
+    background-color: $light-success-color;
+}
+
+.notification.success.solid {
+    background-color: $success-color;
+    color: $success-text-color;
+}
+
+.notification.warning {
+    color: $light-warning-text-color;
+    border: 1px solid rgba($warning-color, 0.3);
+    background-color: $light-warning-color;
+}
+
+.notification.warning.solid {
+    background-color: $warning-color;
+    color: $warning-text-color;
+}
+
+.notification.danger {
+    color: $light-danger-text-color;
+    border: 1px solid rgba($danger-color, 0.3);
+    background-color: $light-danger-color;
+}
+
+.notification.danger.solid {
+    background-color: $danger-color;
+    color: $danger-text-color;
+}

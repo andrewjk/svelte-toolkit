@@ -77,6 +77,10 @@
   }
 </script>
 
+<style src="Slider.scss" global>
+
+</style>
+
 <div
   {id}
   class={['slider', className]

@@ -131,15 +131,8 @@
   }
 </script>
 
-<style>
-  .tab-list {
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-  }
+<style src="TabGroup.scss" global>
 
-  .tab-list-button.active {
-    font-weight: bold;
-  }
 </style>
 
 <div

@@ -97,6 +97,10 @@
   }
 </script>
 
+<style src="DatePicker.scss" global>
+
+</style>
+
 <div
   {id}
   class={['date-picker', 'drop-down', className]

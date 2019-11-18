@@ -22,6 +22,10 @@
   }
 </script>
 
+<style src="Tag.scss" global>
+
+</style>
+
 {#if visible}
   <span
     {id}

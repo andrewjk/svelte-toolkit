@@ -54,6 +54,10 @@
   }
 </script>
 
+<style src="File.scss" global>
+
+</style>
+
 <label
   {id}
   class={['file', type, className]

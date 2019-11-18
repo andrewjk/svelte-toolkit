@@ -14,6 +14,10 @@
   export let content = "";
 </script>
 
+<style src="Button.scss" global>
+
+</style>
+
 <button
   {id}
   class={['button', type, size, loading ? 'loading' : null, image ? 'image' : null, className]
@@ -23,6 +27,11 @@
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {title}
   {disabled}
-  on:click>
+  on:click
+  on:keydown
+  on:keypress
+  on:keyup
+  on:mousedown
+  on:mouseup>
   <slot>{content}</slot>
 </button>

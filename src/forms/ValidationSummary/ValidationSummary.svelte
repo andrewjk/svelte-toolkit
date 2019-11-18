@@ -26,6 +26,10 @@
   }
 </script>
 
+<style src="Validation.scss" global>
+
+</style>
+
 {#if messages.length}
   <div {id} class={['validation-summary', className].concat(classNames).filter(Boolean).join(' ')}>
     <slot>{content}</slot>

@@ -7,6 +7,10 @@
   export let content = "";
 </script>
 
+<style src="Badge.scss" global>
+
+</style>
+
 <span {id} class={['badge', type, className].concat(classNames).filter(Boolean).join(' ')}>
   <slot>{content}</slot>
 </span>

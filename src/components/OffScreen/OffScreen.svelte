@@ -44,27 +44,8 @@
   }
 </script>
 
-<style>
-  .off-screen.left {
-    left: 0;
-    top: 0;
-    bottom: 0;
-  }
-  .off-screen.right {
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .off-screen.top {
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-  .off-screen.bottom {
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+<style src="OffScreen.scss" global>
+
 </style>
 
 {#if visible}

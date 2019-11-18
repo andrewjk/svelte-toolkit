@@ -11,6 +11,10 @@
   $: percent = Math.min(value / total * 100, 100)
 </script>
 
+<style src="Progress.scss" global>
+
+</style>
+
 <div {id} class={['progress', type, size, className].concat(classNames).filter(Boolean).join(' ')}>
   <div class="progress-bar" style={`width: ${percent}%`}/>
 </div>

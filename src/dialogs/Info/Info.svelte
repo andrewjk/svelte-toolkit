@@ -39,6 +39,10 @@
   }
 </script>
 
+<style src="../Dialog.scss" global>
+
+</style>
+
 {#if visible}
   <div class="dialog-background" class:visible tabindex="-1">
     <div

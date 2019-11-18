@@ -1,0 +1,131 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-image";
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.nav-logo {
+    margin-right: $element-margin / 2;
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+.nav-menu {
+    flex-grow: 1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+
+.nav-menu-bar {
+    display: flex;
+    align-items: center;
+}
+
+.start {
+    .nav-menu-bar {
+        justify-content: start;
+    }
+}
+
+.end {
+    .nav-menu-bar {
+        justify-content: end;
+    }
+}
+
+.nav-menu-header {
+    font-size: $font-size-title;
+    padding: 0;
+    position: relative;
+}
+
+.nav-menu-item {
+    display: inline-block;
+    font-size: $font-size-title;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+
+    a,
+    > span {
+        background-color: $nav-bar-item-back-color;
+        color: $nav-bar-item-text-color;
+        padding: $element-padding / 4 $element-padding;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    a:hover,
+    a:focus {
+        background-color: $nav-bar-item-hover-back-color;
+        color: $nav-bar-item-hover-text-color;
+    }
+
+    button {
+        font-size: $font-size-title;
+    }
+}
+
+.nav-menu-item.active:after {
+    background-color: $active-color;
+    background-color: #ffa500;
+    content: " ";
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.nav-menu-item-header {
+    color: $nav-bar-item-text-color;
+    overflow: visible;
+    padding: 0 $element-padding;
+}
+
+.nav-right {
+    .nav-menu
+    {
+        margin-left: $element-margin;
+    }
+}
+
+.nav-menu-drop-down {
+    position: relative;
+}
+
+.start {
+    .off-screen-link {
+        margin: 0 $element-margin 0 0;
+    }
+    
+    .drop-down-menu {
+        left: 0;
+        right: auto;
+    }
+}
+
+.end {
+    .off-screen-link {
+        margin: 0 0 0 $element-margin;
+    }
+    
+    .drop-down-menu {
+        left: auto;
+        right: 0;
+    }
+}

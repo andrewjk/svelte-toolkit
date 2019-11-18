@@ -30,18 +30,8 @@
   }
 </script>
 
-<style>
-  .notification {
-    display: inline-flex;
-  }
+<style src="Notification.scss" global>
 
-  .notification-content {
-    flex: 1 1 auto;
-  }
-
-  .notification-close {
-    flex: 0 0 auto;
-  }
 </style>
 
 {#if visible}

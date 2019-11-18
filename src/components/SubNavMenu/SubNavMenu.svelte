@@ -7,17 +7,16 @@
   export let ariaLabel = "";
 </script>
 
-<style>
-  .sub-nav-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+<style src="SubNavMenu.scss" global>
+
 </style>
 
 <nav
   {id}
-  class={['sub-nav-menu', type, className].concat(classNames).filter(Boolean).join(' ')}
+  class={['sub-nav-menu', type, className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   aria-label={ariaLabel}>
   <ul role="menubar">
     <slot />

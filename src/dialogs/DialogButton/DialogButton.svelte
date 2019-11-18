@@ -34,7 +34,8 @@
 
 <button
   {id}
-  class={['button', 'dialog-button', confirm ? 'select' : 'cancel', className]
+  class={['button', 'dialog-button', confirm ? 'select' : null, cancel ? 'cancel' : null, className]
+    .concat(classNames)
     .filter(Boolean)
     .join(' ')}
   type="button"
