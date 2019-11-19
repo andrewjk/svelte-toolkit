@@ -1,18 +1,12 @@
 @import "../../styles/_variables";
 
 .palette {
+    display: inline-block;
     margin: 0 0 var(--element-margin, $element-margin);
 }
 
 .palette:last-child {
     margin: 0;
-}
-
-.palette-container {
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    display: inline-block;
-    padding: var(--element-padding, $element-padding);
 }
 
 .palette-colors {

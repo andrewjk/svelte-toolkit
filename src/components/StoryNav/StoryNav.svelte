@@ -52,7 +52,7 @@
   }
 </script>
 
-<style src="StoryNav.scss" global>
+<style src="StoryNav.scss">
 
 </style>
 

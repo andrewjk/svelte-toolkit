@@ -24,7 +24,7 @@ $slider-size: 1.6rem;
     height: $slider-size;
     width: $slider-size;
     position: absolute;
-    top: calc(var(--input-height, $input-height) / 2) - $slider-size / 2;
+    top: calc(var(--input-height, #{$input-height}) / 2 - #{$slider-size} / 2);
 }
 
 .slider-handle:hover,

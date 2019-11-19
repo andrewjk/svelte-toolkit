@@ -4,6 +4,7 @@
   import { keyCodes } from "../../utils/key-codes";
 
   import CalendarDay from "./CalendarDay.svelte";
+  import ImageButton from "../ImageButton/ImageButton";
   import ChevronLeft from "../../icons/ChevronLeft.svelte";
   import ChevronRight from "../../icons/ChevronRight.svelte";
 
@@ -233,7 +234,7 @@
   }
 </script>
 
-<style src="Calendar.scss" global>
+<style src="Calendar.scss">
 
 </style>
 
@@ -248,26 +249,26 @@
   on:focus={handleFocus}>
   <div class="calendar-header">
     <span class="calendar-nav">
-      <button class="button image" type="button" on:click={handlePrevMonth}>
+      <ImageButton on:click={handlePrevMonth}>
         <slot name="prev-button">
           <ChevronLeft />
         </slot>
-      </button>
+      </ImageButton>
     </span>
     <span class="calendar-title">
       {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
     </span>
     <span class="calendar-nav">
-      <button class="button image" type="button" on:click={handleNextMonth}>
+      <ImageButton on:click={handleNextMonth}>
         <slot name="next-button">
           <ChevronRight />
         </slot>
-      </button>
+      </ImageButton>
     </span>
   </div>
   <div class="calendar-body">
     {#each [0, 1, 2, 3, 4, 5, 6] as index}
-      <span class="calendar-day calendar-day-header">
+      <span class="calendar-day-header">
         {weekdays[(Math.abs(startOfWeek) + index) % 7].substring(0, 2)}
       </span>
     {/each}

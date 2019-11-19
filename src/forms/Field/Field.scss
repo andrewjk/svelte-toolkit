@@ -1,34 +1,9 @@
 @import "../../styles/_variables";
 
-// VALIDATION HELPERS
-// ========================================================
-
 .field {
     margin: 0 0 var(--element-margin, $element-margin);
 }
 
 .field:last-child {
     margin: 0;
-}
-
-.field-message {
-    color: var(--label-color, $label-color);
-    font-size: 1.3rem;
-    margin: calc(var(--element-margin, #{$element-margin}) / 4) 0 0;
-}
-
-.field-message.info {
-    color: var(--info-color, $info-color);
-}
-
-.field-message.success {
-    color: var(--success-color, $success-color);
-}
-
-.field-message.warning {
-    color: var(--warning-color, $warning-color);
-}
-
-.field-message.danger {
-    color: var(--danger-color, $danger-color);
 }

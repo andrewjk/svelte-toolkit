@@ -2,7 +2,8 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import Cross from "../../icons/Cross.svelte";
+  import ImageButton from '../ImageButton/ImageButton'
+  import Cross from "../../icons/Cross";
 
   export let id = null;
   let className = null;
@@ -30,7 +31,7 @@
   }
 </script>
 
-<style src="Notification.scss" global>
+<style src="Notification.scss">
 
 </style>
 
@@ -46,14 +47,14 @@
       <slot>{content}</slot>
     </div>
     {#if closable}
-      <button
-        class="button small image notification-close"
-        type="button"
+      <ImageButton
+        class="notification-close"
+        size="small"
         on:click={close}>
         <slot name="button">
           <Cross />
         </slot>
-      </button>
+      </ImageButton>
     {/if}
   </div>
 {/if}

@@ -1,5 +1,4 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button";
 
 .dialog {
     background-color: white;
@@ -49,8 +48,4 @@
     padding: calc(var(--element-padding, #{$element-padding}) / 4 * 3);
     text-align: right;
     flex: 0 0 auto;
-
-    .button {
-        margin-left: calc(var(--element-margin, #{$element-margin}) / 4 * 3);
-    }
 }

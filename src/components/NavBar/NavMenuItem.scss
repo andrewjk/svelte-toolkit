@@ -1,0 +1,22 @@
+@import "../../styles/_variables";
+
+.nav-menu-item {
+    display: inline-block;
+    font-size: var(--font-size-title, $font-size-title);
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.nav-menu-item.active:after {
+    background-color: var(--active-color, $active-color);
+    background-color: #ffa500;
+    content: " ";
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}

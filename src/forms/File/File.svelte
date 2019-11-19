@@ -54,7 +54,7 @@
   }
 </script>
 
-<style src="File.scss" global>
+<style src="File.scss">
 
 </style>
 

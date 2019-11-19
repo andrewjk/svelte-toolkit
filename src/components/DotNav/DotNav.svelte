@@ -52,7 +52,7 @@
   }
 </script>
 
-<style src="DotNav.scss" global>
+<style src="DotNav.scss">
 
 </style>
 

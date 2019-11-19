@@ -1,5 +1,4 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-image";
 
 .notification {
     background-color: var(--light-back-color, $light-back-color);
@@ -22,28 +21,25 @@
 .notification-close {
     flex: 0 0 auto;
     margin-left: var(--element-margin, $element-margin);
+    margin-right: calc(var(--element-margin, #{$element-margin}) * -1 / 2);
 }
 
-.notification.info,
-.notification.success,
-.notification.warning,
-.notification.danger {
-    a {
-        color: var(--info-color, $info-color);
-        text-decoration: underline;
-    }
-}
+// TODO:
+//.notification.info,
+//.notification.success,
+//.notification.warning,
+//.notification.danger {
+//    a {
+//        color: inherit;
+//        text-decoration: underline;
+//    }
+//}
 
 .notification.info.solid,
 .notification.success.solid,
 .notification.warning.solid,
 .notification.danger.solid {
     border: 1px solid rgba(0, 0, 0, 0.06);
-
-    a {
-        color: inherit;
-        text-decoration: underline;
-    }
 }
 
 .notification.info {

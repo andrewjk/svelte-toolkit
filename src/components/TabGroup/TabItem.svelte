@@ -23,14 +23,8 @@
   }
 </script>
 
-<style>
-  .tab-item {
-    display: none;
-  }
+<style src="TabItem.scss">
 
-  .tab-item.active {
-    display: block;
-  }
 </style>
 
 <div

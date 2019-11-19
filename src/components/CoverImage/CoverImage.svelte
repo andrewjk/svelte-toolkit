@@ -35,6 +35,10 @@
   }
 </script>
 
+<style src="CoverImage.scss">
+
+</style>
+
 <div
   {id}
   class={['cover-image', className]

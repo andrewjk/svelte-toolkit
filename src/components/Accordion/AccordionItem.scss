@@ -1,8 +1,16 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button";
+@import "../../styles/general/button-reset";
 
 .accordion-header-button {
+    font-size: var(--font-size-title, $font-size-title);
+    margin: 0 0 calc(var(--element-margin, #{$element-margin}) / 4);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) calc(var(--element-padding, #{$element-padding}) / 2) !important;
+    justify-content: start;
     width: 100%;
+}
+
+.accordion-panel {
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
 }
 
 .accordion-item {

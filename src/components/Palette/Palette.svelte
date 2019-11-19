@@ -326,7 +326,7 @@
   }
 </script>
 
-<style src="Palette.scss" global>
+<style src="Palette.scss">
 
 </style>
 
@@ -336,48 +336,46 @@
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}>
-  <div class="palette-container">
-    <div class="palette-colors">
-      <!-- HACK: Need to specify dimensions because it's not initially shown and thus has scrollWidth/Height = 0 -->
-      <div class="palette-canvas-container">
-        <canvas
-          class="palette-hs"
-          bind:this={hsCanvas}
-          width={200}
-          height={200}
-          on:mousedown={handleHsCanvasMouseDown}
-          on:mousemove={handleHsCanvasMouseMove}
-          on:mouseup={handleHsCanvasMouseUp} />
-        {#if hsSelectorLocation[0] >= 0}
-          <div
-            class="palette-selector"
-            style={`left: ${hsSelectorLocation[0] - 5}px; top: ${hsSelectorLocation[1] - 5}px`} />
-        {/if}
-      </div>
-      <div class="palette-canvas-container">
-        <canvas
-          class="palette-l"
-          bind:this={lCanvas}
-          width={25}
-          height={200}
-          on:mousedown={handleLCanvasMouseDown}
-          on:mousemove={handleLCanvasMouseMove}
-          on:mouseup={handleLCanvasMouseUp} />
-        {#if lSelectorLocation[0] >= 0}
-          <div
-            class="palette-selector"
-            style={`left: ${lSelectorLocation[0] - 5}px; top: ${lSelectorLocation[1] - 5}px`} />
-        {/if}
-      </div>
-      <div class="palette-standard-colors">
-        {#each standardColors as color}
-          <div
-            class="palette-color"
-            style={`background-color: ${color}`}
-            on:click={handleStandardColorClick} />
-        {/each}
-      </div>
+  <div class="palette-colors">
+    <!-- HACK: Need to specify dimensions because it's not initially shown and thus has scrollWidth/Height = 0 -->
+    <div class="palette-canvas-container">
+      <canvas
+        class="palette-hs"
+        bind:this={hsCanvas}
+        width={200}
+        height={200}
+        on:mousedown={handleHsCanvasMouseDown}
+        on:mousemove={handleHsCanvasMouseMove}
+        on:mouseup={handleHsCanvasMouseUp} />
+      {#if hsSelectorLocation[0] >= 0}
+        <div
+          class="palette-selector"
+          style={`left: ${hsSelectorLocation[0] - 5}px; top: ${hsSelectorLocation[1] - 5}px`} />
+      {/if}
     </div>
-    <canvas class="palette-preview" bind:this={previewCanvas} />
+    <div class="palette-canvas-container">
+      <canvas
+        class="palette-l"
+        bind:this={lCanvas}
+        width={25}
+        height={200}
+        on:mousedown={handleLCanvasMouseDown}
+        on:mousemove={handleLCanvasMouseMove}
+        on:mouseup={handleLCanvasMouseUp} />
+      {#if lSelectorLocation[0] >= 0}
+        <div
+          class="palette-selector"
+          style={`left: ${lSelectorLocation[0] - 5}px; top: ${lSelectorLocation[1] - 5}px`} />
+      {/if}
+    </div>
+    <div class="palette-standard-colors">
+      {#each standardColors as color}
+        <div
+          class="palette-color"
+          style={`background-color: ${color}`}
+          on:click={handleStandardColorClick} />
+      {/each}
+    </div>
   </div>
+  <canvas class="palette-preview" bind:this={previewCanvas} />
 </div>

@@ -2,17 +2,22 @@
 
 .icon {
     display: inline-block;
-    height: var(--icon-size, $icon-size);
-    width: var(--icon-size, $icon-size);
+    max-width: 1em;
+    width: 100%;
 
     stroke: currentColor;
     fill: currentColor;
 }
 
-span + .icon {
-    margin-left: 0.5rem;
+.icon.rotate {
+    animation: rotation .6s infinite linear;
 }
 
-.icon + span {
-    margin-left: 0.5rem;
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }

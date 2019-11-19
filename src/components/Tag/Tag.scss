@@ -1,5 +1,4 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-image";
 
 .tag {
     background-color: var(--light-back-color, $light-back-color);
@@ -51,4 +50,5 @@
 
 .tag-close {
     margin-left: calc(var(--element-margin, #{$element-margin}) / 4);
+    margin-right: calc(var(--element-margin, #{$element-margin}) * -1 / 4);
 }

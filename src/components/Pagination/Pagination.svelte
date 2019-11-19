@@ -104,7 +104,7 @@
   }
 </script>
 
-<style src="Pagination.scss" global>
+<style src="Pagination.scss">
 
 </style>
 

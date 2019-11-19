@@ -1,0 +1,6 @@
+@import "../../styles/_variables";
+
+.drop-down-menu-divider {
+    margin: calc(var(--element-margin, #{$element-margin}) / 4) var(--element-margin, $element-margin);
+    border-bottom: 1px solid var(--border-color, $border-color);
+}

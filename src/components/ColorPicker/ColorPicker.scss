@@ -2,14 +2,8 @@
 @import "../../styles/general/drop-down";
 @import "../../styles/general/input-button";
 
-.color-picker {
-    .drop-down-list {
-        max-height: initial;
-        .palette-container {
-            border: 0;
-            padding: calc(var(--element-padding, #{$element-padding}) / 4);
-        }
-    }
+.drop-down-list {
+    max-height: initial;
 }
 
 .color-picker-preview {

@@ -1,0 +1,41 @@
+@import "../../styles/_variables";
+
+.sub-nav-menu-item {
+    display: inline-block;
+    margin: 0;
+    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
+}
+
+.sub-nav-menu-item:first-child {
+    padding-left: 0;
+}
+
+.sub-nav-menu-item:last-child {
+    padding-right: 0;
+}
+
+.sub-nav-menu-item.line {
+    border-right: 1px solid var(--border-color, $border-color);
+    margin: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
+    // Use $element-margin to ensure that there is the same distance on either side of the line:
+    padding: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
+}
+
+.sub-nav-menu-item.line:last-child {
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.sub-nav-menu-item.vertical {
+    display: block;
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) 0;
+}
+
+.sub-nav-menu-item.vertical:first-child {
+    padding-top: 0;
+}
+
+.sub-nav-menu-item.vertical:last-child {
+    padding-bottom: 0;
+}

@@ -48,7 +48,7 @@
   }
 </script>
 
-<style src="AccordionItem.scss" global>
+<style src="AccordionItem.scss">
 
 </style>
 

@@ -44,7 +44,7 @@
   }
 </script>
 
-<style src="OffScreen.scss" global>
+<style src="OffScreen.scss">
 
 </style>
 

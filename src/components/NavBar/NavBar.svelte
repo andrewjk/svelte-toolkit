@@ -6,7 +6,7 @@
   export let position = "";
 </script>
 
-<style src="NavBar.scss" global>
+<style src="NavBar.scss">
 
 </style>
 

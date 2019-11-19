@@ -221,7 +221,7 @@
   }
 </script>
 
-<style src="AutoComplete.scss" global>
+<style src="AutoComplete.scss">
 
 </style>
 

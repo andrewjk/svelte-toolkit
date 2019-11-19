@@ -97,7 +97,7 @@
   }
 </script>
 
-<style src="DatePicker.scss" global>
+<style src="DatePicker.scss">
 
 </style>
 

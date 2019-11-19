@@ -26,7 +26,7 @@
   }
 </script>
 
-<style src="Validation.scss" global>
+<style src="ValidationSummary.scss">
 
 </style>
 

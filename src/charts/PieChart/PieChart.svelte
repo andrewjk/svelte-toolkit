@@ -52,7 +52,7 @@
   }
 </script>
 
-<style src="PieChart.scss" global>
+<style src="PieChart.scss">
 
 </style>
 

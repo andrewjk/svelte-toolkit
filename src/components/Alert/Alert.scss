@@ -1,5 +1,4 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-image.scss";
 
 .alert {
     background-color: var(--light-back-color, $light-back-color);
@@ -22,6 +21,7 @@
 .alert-close {
     flex: 0 0 auto;
     margin-left: var(--element-margin, $element-margin);
+    margin-right: calc(var(--element-margin, #{$element-margin}) * -1 / 2);
 }
 
 .alert.top-left {

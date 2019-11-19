@@ -56,7 +56,7 @@
   }
 </script>
 
-<style src="BarChart.scss" global>
+<style src="BarChart.scss">
 
 </style>
 

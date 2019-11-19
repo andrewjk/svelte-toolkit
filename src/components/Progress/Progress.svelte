@@ -11,7 +11,7 @@
   $: percent = Math.min(value / total * 100, 100)
 </script>
 
-<style src="Progress.scss" global>
+<style src="Progress.scss">
 
 </style>
 

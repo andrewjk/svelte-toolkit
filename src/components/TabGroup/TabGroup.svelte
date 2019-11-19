@@ -22,6 +22,7 @@
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
   // declared in slots
   setContext("tabGroup", {
+    boxed,
     // The registerItem function is called from each TabItem to register itself with this
     // TabGroup. They pass us their header, as well as a setActive method that we can call
     registerItem: (id, header, setActive) => {
@@ -131,7 +132,7 @@
   }
 </script>
 
-<style src="TabGroup.scss" global>
+<style src="TabGroup.scss">
 
 </style>
 

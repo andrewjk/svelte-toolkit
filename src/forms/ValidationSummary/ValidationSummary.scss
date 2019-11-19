@@ -11,10 +11,6 @@
     margin: 0 0 var(--element-margin, $element-margin);
     padding: calc(var(--element-padding, #{$element-padding}) / 2);
 
-    p {
-        margin: 0 0 calc(var(--element-margin, #{$element-margin}) / 2);
-    }
-
     ul {
         margin: 0;
     }

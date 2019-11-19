@@ -1,41 +1,5 @@
 @import "../../styles/_variables";
-@import "../../styles/general/animation";
-@import "../../styles/general/button-image";
-
-// BUTTON LAYOUT
-// ========================================================
-
-.button {
-    background-color: white;
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    cursor: pointer;
-    font-weight: normal;
-    position: relative;
-    user-select: none;
-    white-space: nowrap;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button:focus {
-    background-color: var(--middle-back-color, $middle-back-color);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-    outline: 0;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: var(--middle-back-color, $middle-back-color);
-    text-decoration: none;
-}
-
-/* Remove the black dotted focus border in Firefox */
-button::-moz-focus-inner {
-    border: 0;
-}
+@import "../../styles/general/button-reset";
 
 // BUTTON SIZES
 // ========================================================
@@ -88,7 +52,7 @@ button::-moz-focus-inner {
     color: var(--info-text-color, $info-text-color);
 }
 
-.button.info:hover {
+.button.info:hover:not(.loading) {
     background-color: var(--info-hover-color, $info-hover-color);
 }
 
@@ -97,7 +61,7 @@ button::-moz-focus-inner {
     color: var(--success-text-color, $success-text-color);
 }
 
-.button.success:hover {
+.button.success:hover:not(.loading) {
     background-color: var(--success-hover-color, $success-hover-color);
 }
 
@@ -106,7 +70,7 @@ button::-moz-focus-inner {
     color: var(--warning-text-color, $warning-text-color);
 }
 
-.button.warning:hover {
+.button.warning:hover:not(.loading) {
     background-color: var(--warning-hover-color, $warning-hover-color);
 }
 
@@ -115,7 +79,7 @@ button::-moz-focus-inner {
     color: var(--danger-text-color, $danger-text-color);
 }
 
-.button.danger:hover {
+.button.danger:hover:not(.loading) {
     background-color: var(--danger-hover-color, $danger-hover-color);
 }
 
@@ -123,7 +87,7 @@ button::-moz-focus-inner {
     background-color: var(--cancel-color, $cancel-color);
 }
 
-.button.cancel:hover {
+.button.cancel:hover:not(.loading) {
     background-color: var(--cancel-hover-color, $cancel-hover-color);
 }
 
@@ -133,8 +97,8 @@ button::-moz-focus-inner {
 .button:disabled,
 .button:disabled:hover,
 .button:disabled:focus {
-    background-color: var(--disabled-color, $disabled-color) !important;
-    color: var(--disabled-text-color, $disabled-text-color) !important;
+    background-color: var(--disabled-color, $disabled-color);
+    color: var(--disabled-text-color, $disabled-text-color);
     cursor: default;
 }
 
@@ -142,14 +106,18 @@ button::-moz-focus-inner {
 // ========================================================
 
 .button.loading {
-    color: transparent !important;
     cursor: default;
 }
 
-.button.loading:after {
-    @include loading;
-    border-left-color: rgba(255, 255, 255, .15);
-    border-right-color: rgba(255, 255, 255, .15);
-    border-bottom-color: rgba(255, 255, 255, .15);
-    border-top-color: rgba(255, 255, 255, .8);
+.loading-background {
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }

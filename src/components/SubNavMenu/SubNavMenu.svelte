@@ -1,13 +1,19 @@
 <script>
+  import { setContext } from "svelte";
+
   export let id = null;
   let className = null;
   export { className as class };
   export let classNames = [];
   export let type = "";
   export let ariaLabel = "";
+
+  setContext("subnavmenu", {
+    type
+  });
 </script>
 
-<style src="SubNavMenu.scss" global>
+<style src="SubNavMenu.scss">
 
 </style>
 

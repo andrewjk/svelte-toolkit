@@ -66,7 +66,7 @@
   }
 </script>
 
-<style src="LineChart.scss" global>
+<style src="LineChart.scss">
 
 </style>
 

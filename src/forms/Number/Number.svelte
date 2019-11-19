@@ -90,7 +90,7 @@
   }
 </script>
 
-<style src="Number.scss" global>
+<style src="Number.scss">
 
 </style>
 

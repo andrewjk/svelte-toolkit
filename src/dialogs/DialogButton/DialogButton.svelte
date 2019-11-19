@@ -32,6 +32,10 @@
   }
 </script>
 
+<style src="DialogButton.scss">
+
+</style>
+
 <button
   {id}
   class={['button', 'dialog-button', confirm ? 'select' : null, cancel ? 'cancel' : null, className]

@@ -63,7 +63,7 @@
   }
 </script>
 
-<style src="CheckBox.scss" global>
+<style src="CheckBox.scss">
 
 </style>
 

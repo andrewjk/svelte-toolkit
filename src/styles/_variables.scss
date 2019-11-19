@@ -47,6 +47,7 @@ $dark-contrast-text-color: #fff;
 $mark-back-color: #ffff00;
 $mark-color: #222;
 $select-color: #3396ff;
+$select-hover-color: scale-color($select-color, $lightness: -25%);
 $focus-color: lighten($select-color, 18%);
 $active-color: #ffa500;
 

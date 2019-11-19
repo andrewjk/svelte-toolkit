@@ -1,23 +1,8 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-image";
 
 .nav-bar {
     display: flex;
     align-items: center;
-
-    ul,
-    li {
-        margin: 0;
-        padding: 0;
-    }
-}
-
-.nav-logo {
-    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
-
-    img {
-        vertical-align: middle;
-    }
 }
 
 .nav-menu {
@@ -30,102 +15,4 @@
 .nav-menu-bar {
     display: flex;
     align-items: center;
-}
-
-.start {
-    .nav-menu-bar {
-        justify-content: start;
-    }
-}
-
-.end {
-    .nav-menu-bar {
-        justify-content: end;
-    }
-}
-
-.nav-menu-header {
-    font-size: var(--font-size-title, $font-size-title);
-    padding: 0;
-    position: relative;
-}
-
-.nav-menu-item {
-    display: inline-block;
-    font-size: var(--font-size-title, $font-size-title);
-    padding: 0;
-    position: relative;
-    vertical-align: top;
-    white-space: nowrap;
-
-    a,
-    > span {
-        background-color: var(--nav-bar-item-back-color, $nav-bar-item-back-color);
-        color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
-        padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
-    
-    a:hover,
-    a:focus {
-        background-color: var(--nav-bar-item-hover-back-color, $nav-bar-item-hover-back-color);
-        color: var(--nav-bar-item-hover-text-color, $nav-bar-item-hover-text-color);
-    }
-
-    button {
-        font-size: var(--font-size-title, $font-size-title);
-    }
-}
-
-.nav-menu-item.active:after {
-    background-color: var(--active-color, $active-color);
-    background-color: #ffa500;
-    content: " ";
-    display: block;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-}
-
-.nav-menu-item-header {
-    color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
-    overflow: visible;
-    padding: 0 var(--element-padding, $element-padding);
-}
-
-.nav-right {
-    .nav-menu
-    {
-        margin-left: var(--element-margin, $element-margin);
-    }
-}
-
-.nav-menu-drop-down {
-    position: relative;
-}
-
-.start {
-    .off-screen-link {
-        margin: 0 var(--element-margin, $element-margin) 0 0;
-    }
-    
-    .drop-down-menu {
-        left: 0;
-        right: auto;
-    }
-}
-
-.end {
-    .off-screen-link {
-        margin: 0 0 0 var(--element-margin, $element-margin);
-    }
-    
-    .drop-down-menu {
-        left: auto;
-        right: 0;
-    }
 }

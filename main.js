@@ -17,11 +17,16 @@ import CoverImage from './src/components/CoverImage/CoverImage.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
 import DotNav from './src/components/DotNav/DotNav.svelte';
 import DropDown from './src/components/DropDown/DropDown.svelte';
-import DropDownMenuItem from './src/components/DropDown/DropDownMenuItem.svelte';
-import DropDownMenuDivider from './src/components/DropDown/DropDownMenuDivider.svelte';
+import DropDownMenu from './src/components/DropDownMenu/DropDownMenu.svelte';
+import DropDownMenuButton from './src/components/DropDownMenu/DropDownMenuButton.svelte';
+import DropDownMenuLink from './src/components/DropDownMenu/DropDownMenuLink.svelte';
+import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem.svelte';
+import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider.svelte';
+import ImageButton from './src/components/ImageButton/ImageButton.svelte';
 import NavBar from './src/components/NavBar/NavBar.svelte';
 import NavLogo from './src/components/NavBar/NavLogo.svelte';
 import NavMenu from './src/components/NavBar/NavMenu.svelte';
+import NavMenuLink from './src/components/NavBar/NavMenuLink.svelte';
 import NavMenuItem from './src/components/NavBar/NavMenuItem.svelte';
 import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown.svelte';
 import Notification from './src/components/Notification/Notification.svelte';
@@ -97,6 +102,7 @@ import Cross from './src/icons/Cross.svelte';
 import Check from './src/icons/Check.svelte';
 import Plus from './src/icons/Plus.svelte';
 import Minus from './src/icons/Minus.svelte';
+import Loading from './src/icons/Loading.svelte';
 
 export {
     // Base
@@ -115,8 +121,9 @@ export {
     DatePicker,
     DotNav,
     DropDown,
-    DropDownMenuItem, DropDownMenuDivider,
-    NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
+    DropDownMenu, DropDownMenuButton, DropDownMenuLink, DropDownMenuItem, DropDownMenuDivider,
+    ImageButton,
+    NavBar, NavLogo, NavMenu, NavMenuLink, NavMenuItem, NavMenuDropDown,
     Notification,
     OffScreen,
     Pagination,
@@ -171,5 +178,6 @@ export {
     // Icons
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
     ChevronUp, ChevronDown, ChevronLeft, ChevronRight,
-    Bars, Cross, Check, Plus, Minus
+    Bars, Cross, Check, Plus, Minus,
+    Loading
 }

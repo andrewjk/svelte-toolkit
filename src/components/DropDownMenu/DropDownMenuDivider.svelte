@@ -5,6 +5,10 @@
   export let classNames = [];
 </script>
 
+<style src="DropDownMenuDivider.scss">
+
+</style>
+
 <div
   {id}
   class={['drop-down-menu-divider', className].concat(classNames).filter(Boolean).join(' ')}>

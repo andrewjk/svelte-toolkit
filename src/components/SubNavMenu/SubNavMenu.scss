@@ -8,59 +8,8 @@
         margin: 0;
         padding: 0;
     }
-
-    li {
-        display: inline-block;
-        margin: 0;
-        padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
-    }
-
-    li:first-child {
-        padding-left: 0;
-    }
-
-    li:last-child {
-        padding-right: 0;
-    }
 }
 
 .sub-nav-menu:last-child {
     margin: 0;
-}
-
-.sub-nav-menu.line {
-    li {
-        border-right: 1px solid var(--border-color, $border-color);
-        margin: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
-        // Use var(--element-margin, $element-margin) to ensure that there is the same distance on either side of the line:
-        padding: 0 calc(var(--element-margin, #{$element-margin}) / 2) 0 0;
-    }
-
-    li:last-child {
-        border-right: 0;
-        margin-right: 0;
-        padding-right: 0;
-    }
-}
-
-.sub-nav-menu.vertical {
-    li {
-        display: block;
-        padding: calc(var(--element-padding, #{$element-padding}) / 4) 0;
-    }
-
-    li:first-child {
-        padding-top: 0;
-    }
-
-    li:last-child {
-        padding-bottom: 0;
-    }
-}
-
-.sub-nav-menu-header {
-    font-size: var(--font-size, $font-size);
-    line-height: 2rem;
-    text-transform: uppercase;
-    margin-bottom: calc(var(--element-margin, #{$element-margin}) / 2);
 }

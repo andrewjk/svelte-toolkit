@@ -6,10 +6,17 @@
   export let active = false;
 </script>
 
+<style src="NavMenuItem.scss">
+
+</style>
+
 <li
   role="menuitem"
   {id}
-  class={['nav-menu-item', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['nav-menu-item', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   class:active>
   <slot />
 </li>

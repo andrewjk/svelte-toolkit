@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
+  import ImageButton from "../ImageButton/ImageButton";
   import Cross from "../../icons/Cross.svelte";
 
   export let id = null;
@@ -22,7 +23,7 @@
   }
 </script>
 
-<style src="Tag.scss" global>
+<style src="Tag.scss">
 
 </style>
 
@@ -35,14 +36,11 @@
       .join(' ')}>
     <slot>{content}</slot>
     {#if closable}
-      <button
-        class="button small image tag-close"
-        type="button"
-        on:click={close}>
+      <ImageButton class="tag-close" size="small" on:click={close}>
         <slot name="button">
           <Cross />
         </slot>
-      </button>
+      </ImageButton>
     {/if}
   </span>
 {/if}

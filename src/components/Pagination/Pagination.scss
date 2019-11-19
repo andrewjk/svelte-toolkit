@@ -1,5 +1,5 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button";
+@import "../../styles/general/button-reset";
 
 .pagination {
     padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
@@ -10,10 +10,8 @@
 }
 
 .pagination-button {
-    font-size: inherit;
-    height: 3rem;
-    margin: 0 calc(var(--element-margin, #{$element-margin}) / 4);
-    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) calc(var(--element-padding, #{$element-padding}) / 2);
     min-width: 3rem;
 }
 
@@ -24,6 +22,10 @@
     font-weight: bold;
 }
 
-.pagination-button:disabled {
-    background-color: inherit !important;
+.pagination-button:disabled,
+.pagination-button:disabled:hover,
+.pagination-button:disabled:focus {
+    background-color: var(--disabled-color, $disabled-color);
+    color: var(--disabled-text-color, $disabled-text-color);
+    cursor: default;
 }

@@ -1,0 +1,9 @@
+@import "../../styles/_variables";
+
+.nav-logo {
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
+
+    img {
+        vertical-align: middle;
+    }
+}

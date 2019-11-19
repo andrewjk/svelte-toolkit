@@ -83,7 +83,7 @@
   }
 </script>
 
-<style src="ColorPicker.scss" global>
+<style src="ColorPicker.scss">
 
 </style>
 

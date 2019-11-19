@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import LeftChevron from "../../icons/ChevronLeft.svelte";
-  import RightChevron from "../../icons/ChevronRight.svelte";
+  import ChevronLeft from "../../icons/ChevronLeft.svelte";
+  import ChevronRight from "../../icons/ChevronRight.svelte";
 
   export let id = null;
   let className = null;
@@ -21,7 +21,7 @@
   }
 </script>
 
-<style src="WizardNav.scss" global>
+<style src="WizardNav.scss">
 
 </style>
 
@@ -41,7 +41,7 @@
         tabindex="-1"
         on:click={e => setIndex(index - 1)}>
         <slot name="prev-button">
-          <LeftChevron />
+          <ChevronLeft class="wizard-button-icon" />
         </slot>
         <span>Previous</span>
       </button>
@@ -58,7 +58,7 @@
         Next
         </span>
         <slot name="next-button">
-          <RightChevron />
+          <ChevronRight class="wizard-button-icon" />
         </slot>
       </button>
     {/if}

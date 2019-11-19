@@ -46,7 +46,7 @@
 
 input.drop-down-input {
     border: 0;
-    height: calc(var(--input-height, $input-height) - 2px);
+    height: calc(var(--input-height, #{$input-height}) - 2px);
     margin: 0;
     padding: 0 4px;
     width: 100%;
@@ -66,26 +66,9 @@ input.drop-down-input:focus {
     position: absolute;
     z-index: 10000;
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-.drop-down-list-item {
-    cursor: default;
-    margin: 0;
-    padding: 2px 6px;
-    width: 100%;
-}
-
-.drop-down-list-item:hover {
-    background-color: var(--select-color, $select-color);
-    color: white;
-}
-
-.drop-down-list-item.active {
-    background-color: var(--select-color, $select-color);
-    color: white;
+    //ul {
+    //    list-style: none;
+    //    margin: 0;
+    //    padding: 0;
+    //}
 }

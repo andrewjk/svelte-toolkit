@@ -1,5 +1,5 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button";
+@import "../../styles/general/button-reset";
 
 .wizard-nav {
     padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
@@ -10,15 +10,8 @@
 }
 
 .wizard-button {
-    font-size: inherit;
     margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
-    min-width: 0;
-    padding: 0 calc(var(--element-padding, #{$element-padding}) / 2);
-    height: 3rem;
-}
-
-.wizard-button.active {
-    font-weight: bold;
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) calc(var(--element-padding, #{$element-padding}) / 2);
 }
 
 .wizard-button.finish {
@@ -28,6 +21,10 @@
     font-weight: bold;
 }
 
-.wizard-button:disabled {
-    background-color: inherit !important;
+.wizard-button-icon + span {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
+}
+
+span + .wizard-button-icon {
+    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
 }

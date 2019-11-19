@@ -7,7 +7,7 @@
   export let content = "";
 </script>
 
-<style src="Badge.scss" global>
+<style src="Badge.scss">
 
 </style>
 

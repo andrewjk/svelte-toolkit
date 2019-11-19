@@ -5,7 +5,7 @@
   export let classNames = [];
 </script>
 
-<style src="Icon.scss" global>
+<style src="Icon.scss">
 
 </style>
 

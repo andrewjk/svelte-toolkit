@@ -248,7 +248,7 @@
   }
 </script>
 
-<style src="TagInput.scss" global>
+<style src="TagInput.scss">
 
 </style>
 

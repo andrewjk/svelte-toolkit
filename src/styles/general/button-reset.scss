@@ -9,6 +9,10 @@
     position: relative;
     user-select: none;
     white-space: nowrap;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:focus {

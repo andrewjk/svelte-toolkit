@@ -1,0 +1,10 @@
+@import "../../styles/_variables";
+
+.tab-item {
+    display: none;
+    padding: var(--element-padding, $element-padding) 0;
+}
+
+.tab-item.active {
+    display: block;
+}

@@ -36,6 +36,10 @@
   }
 </script>
 
+<style src="CalendarDay.scss">
+
+</style>
+
 <div
   {id}
   class={['calendar-day', className]

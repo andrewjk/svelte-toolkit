@@ -1,0 +1,25 @@
+@import "../../styles/_variables";
+
+.nav-menu {
+    flex-grow: 1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+}
+
+.nav-menu-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu.start {
+    .nav-menu-bar {
+        justify-content: start;
+    }
+}
+
+.nav-menu.end {
+    .nav-menu-bar {
+        justify-content: end;
+    }
+}

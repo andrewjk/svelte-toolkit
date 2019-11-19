@@ -1,5 +1,8 @@
 <script>
   import { tick } from "svelte";
+
+  //import Button from "../Button/Button";
+  //import ImageButton from "../ImageButton/ImageButton";
   import ChevronDown from "../../icons/ChevronDown.svelte";
 
   export let id = null;
@@ -61,7 +64,7 @@
   }
 </script>
 
-<style src="DropDown.scss" global>
+<style src="DropDown.scss">
 
 </style>
 

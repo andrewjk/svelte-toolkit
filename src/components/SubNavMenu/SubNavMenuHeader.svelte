@@ -5,6 +5,15 @@
   export let classNames = [];
 </script>
 
-<h2 {id} class={['sub-nav-menu-header', className].concat(classNames).filter(Boolean).join(' ')}>
+<style src="SubNavMenuHeader.scss">
+
+</style>
+
+<h2
+  {id}
+  class={['sub-nav-menu-header', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <slot />
 </h2>

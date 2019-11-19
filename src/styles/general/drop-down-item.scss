@@ -1,0 +1,18 @@
+﻿@import "../../styles/_variables.scss";
+
+.drop-down-item {
+    cursor: default;
+    margin: 0;
+    padding: 2px 6px;
+    width: 100%;
+}
+
+.drop-down-item:hover {
+    background-color: var(--select-color, $select-color);
+    color: white;
+}
+
+.drop-down-item.active {
+    background-color: var(--select-color, $select-color);
+    color: white;
+}

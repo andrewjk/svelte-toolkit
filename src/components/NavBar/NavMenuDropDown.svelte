@@ -1,4 +1,6 @@
 <script>
+  import { getContext, setContext } from "svelte";
+
   import ChevronDown from "../../icons/ChevronDown.svelte";
 
   export let id = null;
@@ -11,6 +13,13 @@
 
   // HACK: To avoid an accessibility warning - but I think it's fine to use an anchor with href="#" on a drop-down?
   const href = "#";
+
+  var context = getContext("navmenu");
+  if (context) {
+    setContext("dropdownmenu", {
+      position: context.position
+    });
+  }
 
   function showDropDown() {
     expanded = true;
@@ -44,13 +53,13 @@
   }
 </script>
 
-<style>
+<style src="NavMenuDropDown.scss">
 
 </style>
 
 <li
   {id}
-  class={['nav-menu-item', 'nav-menu-drop-down', className]
+  class={['nav-menu-drop-down', className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}
@@ -60,6 +69,7 @@
   on:mouseleave={handleMouseLeave}>
   <a
     {href}
+    class="nav-menu-link"
     aria-haspopup="true"
     on:mousedown={handleMouseDown}
     on:touchstart={handleTouchStart}>
@@ -69,8 +79,6 @@
     </slot>
   </a>
   {#if expanded}
-    <div class="drop-down-menu">
-      <slot name="menu" />
-    </div>
+    <slot name="menu" />
   {/if}
 </li>

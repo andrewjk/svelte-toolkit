@@ -1,0 +1,29 @@
+@import "../../styles/_variables";
+
+.nav-menu-link {
+    background-color: var(--nav-bar-item-back-color, $nav-bar-item-back-color);
+    color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link:focus {
+    background-color: var(--nav-bar-item-hover-back-color, $nav-bar-item-hover-back-color);
+    color: var(--nav-bar-item-hover-text-color, $nav-bar-item-hover-text-color);
+}
+/*
+.nav-menu-link.active:after {
+    background-color: var(--active-color, $active-color);
+    background-color: #ffa500;
+    content: " ";
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+*/

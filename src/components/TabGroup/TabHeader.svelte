@@ -6,6 +6,7 @@
   export { className as class };
   export let classNames = [];
   export let active = false;
+  export let boxed = false;
 
   // ID in this case is a special prop that can't be set by the user because it's used for aria fields
   let id = `${itemId}-header`;
@@ -13,7 +14,9 @@
   const dispatch = createEventDispatcher();
 
   // Register this item with the parent TabGroup, which will handle toggling active for all items
-  const { registerHeader, toggleItemId, handleKey } = getContext("tabGroup");
+  const context = getContext("tabGroup");
+  boxed = context.boxed;
+  const { registerHeader, toggleItemId, handleKey } = context;
   registerHeader(id, setActive);
 
   // This function is called by the parent TabGroup to set this item's active value
@@ -29,9 +32,13 @@
   }
 </script>
 
+<style src="TabHeader.scss">
+
+</style>
+
 <button
   {id}
-  class={['button', 'tab-list-button', className]
+  class={['button', 'tab-list-button', boxed ? 'boxed' : null, className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}

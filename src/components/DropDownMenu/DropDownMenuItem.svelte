@@ -6,10 +6,17 @@
   export let active = false;
 </script>
 
+<style src="DropDownMenuItem.scss">
+
+</style>
+
 <div
   {id}
-  class={['drop-down-menu-item', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['drop-down-item', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   class:active
   role="menuitem">
-  <slot/>
+  <slot />
 </div>

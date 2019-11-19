@@ -1,0 +1,8 @@
+@import "../../styles/_variables";
+
+.sub-nav-menu-header {
+    font-size: var(--font-size, $font-size);
+    line-height: 2rem;
+    text-transform: uppercase;
+    margin-bottom: calc(var(--element-margin, #{$element-margin}) / 2);
+}

@@ -1,30 +1,13 @@
 ﻿@import "../../styles/_variables";
 @import "../../styles/general/drop-down";
 
-.tag-input {
-    .tag {
-        line-height: calc(var(--input-height, $input-height) - 1px);
-        margin: 4px 0 4px 4px;
-    }
-}
+//.tag-input {
+//    .tag {
+//        line-height: calc(var(--input-height, $input-height) - 1px);
+//        margin: 4px 0 4px 4px;
+//    }
+//}
 
 .tag-input-value-list {
     white-space: nowrap;
 }
-
-/*
-.wc-multi-select-value-item {
-    background-color: var(--default-color, $default-color);
-    border-radius: var(--border-radius, $border-radius);
-    color: #FFFFFF;
-    line-height: calc(var(--input-height, $input-height) - 2px);
-    margin-left: 6px;
-    padding: 2px 6px;
-    white-space: nowrap;
-}
-
-.wc-multi-select-value-item-button {
-    cursor: pointer;
-    //display: inline;
-    margin-left: 6px;
-}*/

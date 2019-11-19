@@ -140,7 +140,7 @@
   }
 </script>
 
-<style src="Accordion.scss" global>
+<style src="Accordion.scss">
 
 </style>
 

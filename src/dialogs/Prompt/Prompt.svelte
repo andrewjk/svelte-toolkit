@@ -58,7 +58,7 @@
   }
 </script>
 
-<style src="../Dialog.scss" global>
+<style src="../Dialog.scss">
 
 </style>
 

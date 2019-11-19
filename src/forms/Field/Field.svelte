@@ -111,7 +111,7 @@
   }
 </script>
 
-<style src="Field.scss" global>
+<style src="Field.scss">
 
 </style>
 

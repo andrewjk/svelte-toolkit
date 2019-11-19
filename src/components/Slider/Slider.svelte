@@ -77,7 +77,7 @@
   }
 </script>
 
-<style src="Slider.scss" global>
+<style src="Slider.scss">
 
 </style>
 

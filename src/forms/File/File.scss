@@ -4,7 +4,7 @@
     background-color: var(--light-back-color, $light-back-color);
     border: 1px dashed var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
-    min-height: calc(var(--input-height, $input-height) * 2);
+    min-height: calc(var(--input-height, #{$input-height}) * 2);
     padding: 0 4px;
 
     display: flex;
@@ -16,15 +16,16 @@
     cursor: pointer;
 }
 
-.file.info,
-.file.success,
-.file.warning,
-.file.danger {
-    a {
-        color: var(--info-color, $info-color);
-        text-decoration: underline;
-    }
-}
+// TODO:
+//.file.info,
+//.file.success,
+//.file.warning,
+//.file.danger {
+//    a {
+//        color: var(--info-color, $info-color);
+//        text-decoration: underline;
+//    }
+//}
 
 .file.info {
     color: var(--light-info-text-color, $light-info-text-color);

@@ -1,0 +1,18 @@
+@import "../../styles/_variables";
+
+.drop-down-menu-button {
+    background-color: transparent;
+    color: var(--text-color, $text-color);
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: block;
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
+    width: 100%;
+}
+
+.drop-down-menu-button:hover,
+.drop-down-menu-button:focus {
+    background-color: var(--select-color, $select-color);
+    color: white;
+}

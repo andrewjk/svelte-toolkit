@@ -12,7 +12,7 @@
   export let type = "bar";
 </script>
 
-<style src="ChartAxis.scss" global>
+<style src="ChartAxis.scss">
 
 </style>
 

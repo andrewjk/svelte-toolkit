@@ -1,0 +1,25 @@
+@import "../../styles/_variables";
+
+.nav-menu-drop-down {
+    display: inline-block;
+    font-size: var(--font-size-title, $font-size-title);
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.nav-menu-link {
+    background-color: var(--nav-bar-item-back-color, $nav-bar-item-back-color);
+    color: var(--nav-bar-item-text-color, $nav-bar-item-text-color);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link:focus {
+    background-color: var(--nav-bar-item-hover-back-color, $nav-bar-item-hover-back-color);
+    color: var(--nav-bar-item-hover-text-color, $nav-bar-item-hover-text-color);
+}

@@ -44,9 +44,13 @@
   }
 </script>
 
+<style src="TagInputItem.scss">
+
+</style>
+
 <div
   {id}
-  class={['drop-down-list-item', className]
+  class={['drop-down-item', className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}

@@ -1,0 +1,51 @@
+@import "../../styles/_variables";
+
+.image-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.3rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-button:hover,
+.image-button:focus {
+    // On white, this is #e5e5e5 (i.e. $middle-back-color) but it will adapt itself to other colors
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.image-button:disabled {
+    background-color: transparent !important;
+}
+
+.image-button-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-button,
+.image-button.medium {
+    height: 2.8rem;
+    width: 2.8rem;
+
+    //// HACK: For dropdown buttons...
+    //span > .icon {
+    //    vertical-align: middle;
+    //}
+}
+
+.image-button.large {
+    height: 3.8rem;
+    width: 3.8rem;
+}
+
+.image-button.small {
+    height: 1.8rem;
+    width: 1.8rem;
+}

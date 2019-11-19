@@ -1,0 +1,31 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-reset";
+
+.tab-list-button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color, $border-color);
+    font-size: var(--font-size-title, $font-size-title);
+    margin-bottom: -1px;
+    padding: calc(var(--element-padding, #{$element-padding}) / 2) var(--element-padding, $element-padding);
+}
+
+.tab-list-button:hover,
+.tab-list-button:focus {
+    box-shadow: none;
+}
+
+.tab-list-button.active {
+    border-bottom: 1px solid var(--active-color, $active-color);
+}
+
+.tab-list-button.boxed {
+    border: 1px solid transparent;
+    border-radius: var(--border-radius, $border-radius) var(--border-radius, $border-radius) 0 0;
+    z-index: 500;
+}
+
+.tab-list-button.boxed.active {
+    border: 1px solid var(--border-color, $border-color);
+    border-bottom-color: white;
+}

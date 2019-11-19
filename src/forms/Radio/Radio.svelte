@@ -61,7 +61,7 @@
   }
 </script>
 
-<style src="Radio.scss" global>
+<style src="Radio.scss">
 
 </style>
 

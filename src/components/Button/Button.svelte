@@ -1,4 +1,6 @@
 <script>
+  import Loading from "../../icons/Loading";
+
   export let id = null;
   let className = null;
   export { className as class };
@@ -6,7 +8,6 @@
   export let type = "info";
   export let size = "medium";
   export let loading = false;
-  export let image = false;
   export let submit = false;
   export let reset = false;
   export let title = "";
@@ -14,13 +15,13 @@
   export let content = "";
 </script>
 
-<style src="Button.scss" global>
+<style src="Button.scss">
 
 </style>
 
 <button
   {id}
-  class={['button', type, size, loading ? 'loading' : null, image ? 'image' : null, className]
+  class={['button', type, size, loading ? 'loading' : null, className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}
@@ -33,5 +34,10 @@
   on:keyup
   on:mousedown
   on:mouseup>
+  {#if loading}
+    <span class="loading-background">
+      <Loading rotate />
+    </span>
+  {/if}
   <slot>{content}</slot>
 </button>

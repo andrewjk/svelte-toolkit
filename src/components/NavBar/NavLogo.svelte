@@ -11,9 +11,16 @@
   export let width = undefined;
 </script>
 
+<style src="NavLogo.scss">
+
+</style>
+
 <a
   {id}
-  class={['nav-logo', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['nav-logo', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   {href}
   {title}>
   <img class="nav-logo-image" {src} {alt} {height} {width} />

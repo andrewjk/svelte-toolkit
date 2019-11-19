@@ -1,0 +1,29 @@
+@import "../../styles/_variables";
+@import "../../styles/general/button-reset";
+
+.dialog-button {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 4 * 3);
+    font-size: 1.75rem;
+    min-width: 9.6rem;
+    padding: calc(var(--element-padding, #{$element-padding}) / 4);
+}
+
+.dialog-button.select {
+    background-color: var(--select-color, $select-color);
+    border: 1px solid transparent;
+    color: white,
+}
+
+.dialog-button.select:hover:not(.loading) {
+    background-color: var(--select-hover-color, $select-hover-color);
+}
+
+.dialog-button.cancel {
+    background-color: var(--cancel-color, $cancel-color);
+    border: 1px solid transparent;
+    color: white,
+}
+
+.dialog-button.cancel:hover:not(.loading) {
+    background-color: var(--cancel-hover-color, $cancel-hover-color);
+}
