@@ -1,8 +1,8 @@
 <script>
   import { tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown.svelte";
-  import Palette from "../Palette/Palette.svelte";
+  import ChevronDown from "../../icons/ChevronDown";
+  import Palette from "../Palette/Palette";
 
   import { keyCodes } from "../../utils/key-codes";
 

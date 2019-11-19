@@ -1,7 +1,7 @@
 <script>
   import { beforeUpdate, setContext, createEventDispatcher } from "svelte";
 
-  import TabHeader from "./TabHeader.svelte";
+  import TabHeader from "./TabHeader";
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;

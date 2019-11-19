@@ -2,7 +2,7 @@
   import { createEventDispatcher, getContext } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import Tag from "../Tag/Tag.svelte";
+  import Tag from "../Tag/Tag";
 
   export let id = null;
   let className = null;

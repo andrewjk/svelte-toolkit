@@ -1,7 +1,7 @@
 <script>
   import { getContext, setContext } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown";
 
   export let id = null;
   let className = null;

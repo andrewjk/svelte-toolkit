@@ -2,7 +2,7 @@
   import { createEventDispatcher, setContext, tick } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import AutoCompleteItem from "./AutoCompleteItem.svelte";
+  import AutoCompleteItem from "./AutoCompleteItem";
 
   export let id = null;
   let className = null;

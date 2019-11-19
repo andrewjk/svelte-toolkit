@@ -1,8 +1,8 @@
 <script>
   import { tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown.svelte";
-  import Calendar from "../Calendar/Calendar.svelte";
+  import ChevronDown from "../../icons/ChevronDown";
+  import Calendar from "../Calendar/Calendar";
 
   import { parseDateTime, formatDate } from "../../utils/date-utils";
   import { keyCodes } from "../../utils/key-codes";

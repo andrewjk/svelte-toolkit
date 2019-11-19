@@ -1,8 +1,8 @@
 <script>
   import { setContext, createEventDispatcher } from "svelte";
 
-  import TableHeader from "./TableHeader.svelte";
-  import Pagination from "../Pagination/Pagination.svelte";
+  import TableHeader from "./TableHeader";
+  import Pagination from "../Pagination/Pagination";
 
   export let id = null;
   let className = null;

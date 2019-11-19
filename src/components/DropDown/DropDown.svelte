@@ -3,7 +3,7 @@
 
   //import Button from "../Button/Button";
   //import ImageButton from "../ImageButton/ImageButton";
-  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown";
 
   export let id = null;
   let className = null;

@@ -1,6 +1,6 @@
 <script>
   import { setContext, onMount, beforeUpdate } from "svelte";
-  import ChartAxis from "../ChartAxis/ChartAxis.svelte";
+  import ChartAxis from "../ChartAxis/ChartAxis";
   import { chartColors } from "../../utils/chart-colors";
 
   export let id = null;

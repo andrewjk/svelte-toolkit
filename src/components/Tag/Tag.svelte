@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   import ImageButton from "../ImageButton/ImageButton";
-  import Cross from "../../icons/Cross.svelte";
+  import Cross from "../../icons/Cross";
 
   export let id = null;
   let className = null;

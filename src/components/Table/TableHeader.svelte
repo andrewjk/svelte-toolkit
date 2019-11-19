@@ -1,8 +1,8 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
 
-  import ArrowDown from "../../icons/ArrowDown.svelte";
-  import ArrowUp from "../../icons/ArrowUp.svelte";
+  import ArrowDown from "../../icons/ArrowDown";
+  import ArrowUp from "../../icons/ArrowUp";
 
   export let id = null;
   let className = null;

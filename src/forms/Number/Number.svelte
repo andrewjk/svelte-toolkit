@@ -1,7 +1,7 @@
 <script>
   import { onMount, getContext, createEventDispatcher } from "svelte";
-  import Minus from "../../icons/Minus.svelte";
-  import Plus from "../../icons/Plus.svelte";
+  import Minus from "../../icons/Minus";
+  import Plus from "../../icons/Plus";
 
   import { keyCodes } from "../../utils/key-codes";
 

@@ -2,8 +2,8 @@
   import { createEventDispatcher, setContext, tick } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import TagInputItem from "./TagInputItem.svelte";
-  import TagInputValue from "./TagInputValue.svelte";
+  import TagInputItem from "./TagInputItem";
+  import TagInputValue from "./TagInputValue";
 
   export let id = null;
   let className = null;

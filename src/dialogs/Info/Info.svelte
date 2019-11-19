@@ -2,7 +2,7 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import DialogButton from "../DialogButton/DialogButton.svelte";
+  import DialogButton from "../DialogButton/DialogButton";
 
   export let id = null;
   let className = null;
