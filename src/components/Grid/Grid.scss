@@ -1,0 +1,29 @@
+@import "../../styles/_variables";
+
+// THE GRID
+// ========================================================
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin: 0 0 var(--element-padding, $element-padding);
+}
+
+.grid:last-child {
+    margin-bottom: 0;
+}
+
+.grid.spaced {
+    margin: calc(-1 * var(--element-padding, #{$element-padding}) / 2)
+        calc(-1 * var(--element-padding, #{$element-padding}) / 2)
+        calc(var(--element-margin, #{$element-margin}) - var(--element-padding, #{$element-padding}) / 2);
+}
+
+.grid.spaced:last-child {
+    margin: calc(-1 * var(--element-padding, #{$element-padding}) / 2);
+}
+
+.grid.nowrap {
+    flex-wrap: nowrap;
+}

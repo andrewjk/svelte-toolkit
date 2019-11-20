@@ -23,6 +23,8 @@ import DropDownMenuButton from './src/components/DropDownMenu/DropDownMenuButton
 import DropDownMenuLink from './src/components/DropDownMenu/DropDownMenuLink.svelte';
 import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem.svelte';
 import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider.svelte';
+import Grid from './src/components/Grid/Grid.svelte';
+import GridItem from './src/components/Grid/GridItem.svelte';
 import ImageButton from './src/components/ImageButton/ImageButton.svelte';
 import Level from './src/components/Level/Level.svelte';
 import LevelItem from './src/components/Level/LevelItem.svelte';
@@ -128,6 +130,7 @@ export {
     DropDown,
     DropDownMenu, DropDownMenuButton, DropDownMenuLink, DropDownMenuItem, DropDownMenuDivider,
     ImageButton,
+    Grid, GridItem,
     Level, LevelItem,
     NavBar, NavLogo, NavMenu, NavMenuLink, NavMenuItem, NavMenuDropDown,
     Notification,
