@@ -1,0 +1,27 @@
+@import "../../styles/_variables";
+
+.container {
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 100%;
+}
+
+.container.small {
+    max-width: $small-screen;
+}
+
+.container.medium {
+    max-width: $medium-screen;
+}
+
+.container.large {
+    max-width: $large-screen;
+}
+
+.container.xlarge {
+    max-width: $xlarge-screen;
+}
+
+.container.padded {
+    padding: var(--element-padding, $element-padding);
+}

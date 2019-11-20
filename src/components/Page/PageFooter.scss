@@ -1,0 +1,13 @@
+@import "../../styles/_variables";
+
+.page-footer {
+    background-color: var(--light-back-color, $light-back-color);
+    display: table; // To size to content
+    padding: 0 var(--element-padding, $element-padding);
+    width: 100%;
+}
+
+.page-footer {
+    border-top: 1px solid var(--border-color, $border-color);
+    line-height: var(--footer-line-height, $footer-line-height);
+}

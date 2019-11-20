@@ -14,6 +14,7 @@ import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
 import Card from './src/components/Card/Card.svelte';
 import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
+import Container from './src/components/Container/Container.svelte';
 import CoverImage from './src/components/CoverImage/CoverImage.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
 import DotNav from './src/components/DotNav/DotNav.svelte';
@@ -36,6 +37,10 @@ import NavMenuItem from './src/components/NavBar/NavMenuItem.svelte';
 import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown.svelte';
 import Notification from './src/components/Notification/Notification.svelte';
 import OffScreen from './src/components/OffScreen/OffScreen.svelte';
+import Page from './src/components/Page/Page.svelte';
+import PageBody from './src/components/Page/PageBody.svelte';
+import PageFooter from './src/components/Page/PageFooter.svelte';
+import PageHeader from './src/components/Page/PageHeader.svelte';
 import Pagination from './src/components/Pagination/Pagination.svelte';
 import Palette from './src/components/Palette/Palette.svelte';
 import Panel from './src/components/Panel/Panel.svelte';
@@ -124,6 +129,7 @@ export {
     Calendar,
     Card,
     ColorPicker,
+    Container,
     CoverImage,
     DatePicker,
     DotNav,
@@ -135,6 +141,7 @@ export {
     NavBar, NavLogo, NavMenu, NavMenuLink, NavMenuItem, NavMenuDropDown,
     Notification,
     OffScreen,
+    Page, PageBody, PageFooter, PageHeader,
     Pagination,
     Palette,
     Panel,

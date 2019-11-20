@@ -1,0 +1,7 @@
+@import "../../styles/_variables";
+
+.page-body {
+    flex: 1 0 auto; // To stretch to the full vertical height
+    overflow: hidden;
+    width: 100%;
+}

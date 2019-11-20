@@ -1,0 +1,8 @@
+@import "../../styles/_variables";
+
+// A container to hold a header, main and footer and ensure that they are at least as tall as the viewarea
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
