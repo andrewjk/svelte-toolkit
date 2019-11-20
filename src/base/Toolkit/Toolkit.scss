@@ -7,17 +7,17 @@ can use to customize styles
 /*
 The base file contains styles for elements such as text and headings
 */
-@import "../../styles/general/base";
+@import "../../styles/base/base";
 
 /*
 The layout file contains styles for laying out the page, including styles for headers, mains,
 footers and containers
 */
-@import "../../styles/general/layout";
+@import "../../styles/base/layout";
 
 /*
 The forms file contains styles for basic form elements
 The table file contains table styles
 */
-@import "../../styles/general/form";
-@import "../../styles/general/table";
+@import "../../styles/base/form";
+@import "../../styles/base/table";

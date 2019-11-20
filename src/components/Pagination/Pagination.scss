@@ -1,5 +1,5 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-base";
+@import "../../styles/shared/button-base";
 
 .pagination {
     padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
