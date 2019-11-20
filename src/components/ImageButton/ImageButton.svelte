@@ -3,7 +3,7 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let type = "info";
+  export let type = "";
   export let size = "medium";
   export let submit = false;
   export let reset = false;

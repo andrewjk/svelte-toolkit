@@ -19,15 +19,14 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.image-button:disabled {
-    background-color: transparent !important;
-}
-
 .image-button-content {
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
+
+// BUTTON SIZES
+// ========================================================
 
 .image-button,
 .image-button.medium {
@@ -48,4 +47,81 @@
 .image-button.small {
     height: 1.8rem;
     width: 1.8rem;
+}
+
+// BUTTON COLORS
+// ========================================================
+
+.image-button.primary,
+.image-button.info,
+.image-button.success,
+.image-button.warning,
+.image-button.danger,
+.image-button.cancel {
+    border: 1px solid transparent;
+    color: white,
+}
+
+.image-button.primary {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
+.image-button.primary:hover:not(.loading) {
+    background-color: var(--primary-hover-color, $primary-hover-color);
+}
+
+.image-button.info {
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
+}
+
+.image-button.info:hover:not(.loading) {
+    background-color: var(--info-hover-color, $info-hover-color);
+}
+
+.image-button.success {
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
+}
+
+.image-button.success:hover:not(.loading) {
+    background-color: var(--success-hover-color, $success-hover-color);
+}
+
+.image-button.warning {
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
+}
+
+.image-button.warning:hover:not(.loading) {
+    background-color: var(--warning-hover-color, $warning-hover-color);
+}
+
+.image-button.danger {
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
+}
+
+.image-button.danger:hover:not(.loading) {
+    background-color: var(--danger-hover-color, $danger-hover-color);
+}
+
+.image-button.cancel {
+    background-color: var(--cancel-color, $cancel-color);
+}
+
+.image-button.cancel:hover:not(.loading) {
+    background-color: var(--cancel-hover-color, $cancel-hover-color);
+}
+
+// DISABLED
+// ========================================================
+
+.image-button:disabled,
+.image-button:disabled:hover,
+.image-button:disabled:focus {
+    background-color: var(--disabled-color, $disabled-color);
+    color: var(--disabled-text-color, $disabled-text-color);
+    cursor: default;
 }
