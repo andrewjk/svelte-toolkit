@@ -5,7 +5,7 @@
   let className = null;
   export { className as class };
   export let classNames = [];
-  export let type = "info";
+  export let type = "primary";
   export let size = "medium";
   export let loading = false;
   export let submit = false;
