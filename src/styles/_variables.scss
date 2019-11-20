@@ -54,6 +54,9 @@ $active-color: #ffa500;
 $link-color: #0265b7;
 $link-hover-color: #0265b7;
 
+$primary-color: #ff0066;
+$primary-text-color: #fff;
+$primary-hover-color: scale-color($primary-color, $lightness: -25%);
 $info-color: #4d90fe;
 $info-text-color: #fff;
 $info-hover-color: scale-color($info-color, $lightness: -25%);
@@ -72,6 +75,9 @@ $cancel-hover-color: scale-color($cancel-color, $lightness: -25%);
 $disabled-color: #f2f2f2;
 $disabled-text-color: #a5a5a5;
 
+$light-primary-color: scale-color($primary-color, $lightness: 95%);
+$light-primary-text-color: scale-color($primary-color, $lightness: -20%);
+$light-primary-border-color: $primary-color;
 $light-info-color: scale-color($info-color, $lightness: 95%);
 $light-info-text-color: scale-color($info-color, $lightness: -20%);
 $light-info-border-color: $info-color;

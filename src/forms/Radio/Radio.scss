@@ -36,6 +36,7 @@ input[type=radio]:focus + span:before {
     box-shadow: 0px 0px 1px var(--select-color, $select-color);
 }
 
+.radio.primary,
 .radio.info,
 .radio.success,
 .radio.warning,
@@ -44,6 +45,22 @@ input[type=radio]:focus + span:before {
         border: 1px solid rgba(0, 0, 0, 0.06);
         // TODO: Maybe extract icons into svg files that I can just include here?
         content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><circle cx="50" cy="45" r="30" fill="white" /></g></svg>');
+    }
+}
+
+.radio.primary {
+    color: var(--primary-color, $primary-color);
+
+    input[type=radio] + span:before {
+        border-color: var(--primary-color, $primary-color);
+    }
+
+    input[type=radio]:checked + span:before {
+        background-color: var(--primary-color, $primary-color);
+    }
+
+    input[type=radio]:focus + span:before {
+        box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
     }
 }
 

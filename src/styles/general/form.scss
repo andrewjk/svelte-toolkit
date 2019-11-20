@@ -181,6 +181,18 @@ textarea:disabled:focus {
 // TYPES
 // ========================================================
 
+input.primary,
+select.primary,
+textarea.primary {
+    border-color: var(--primary-color, $primary-color);
+}
+
+input.primary:focus,
+select.primary:focus,
+textarea.primary:focus {
+    box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
+}
+
 input.info,
 select.info,
 textarea.info {

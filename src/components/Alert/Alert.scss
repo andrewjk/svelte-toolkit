@@ -54,12 +54,18 @@
     bottom: 20px;
 }
 
+.alert.primary,
 .alert.info,
 .alert.success,
 .alert.warning,
 .alert.danger {
     border: 1px solid rgba(0, 0, 0, 0.06);
     color: white;
+}
+
+.alert.primary {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
 }
 
 .alert.info {

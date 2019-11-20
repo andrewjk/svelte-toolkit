@@ -12,6 +12,14 @@
     box-shadow: 0px 0px 1px var(--select-color, $select-color);
 }
 
+.number-input-container.primary {
+    border-color: var(--primary-color, $primary-color);
+}
+
+.number-input-container.primary.focus {
+    box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
+}
+
 .number-input-container.info {
     border-color: var(--info-color, $info-color);
 }

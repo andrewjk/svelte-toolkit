@@ -37,6 +37,7 @@
 // BUTTON COLORS
 // ========================================================
 
+.button.primary,
 .button.info,
 .button.success,
 .button.warning,
@@ -44,6 +45,15 @@
 .button.cancel {
     border: 1px solid transparent;
     color: white,
+}
+
+.button.primary {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
+.button.primary:hover:not(.loading) {
+    background-color: var(--primary-hover-color, $primary-hover-color);
 }
 
 .button.info {

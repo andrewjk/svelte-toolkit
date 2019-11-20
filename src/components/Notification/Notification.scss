@@ -25,6 +25,7 @@
 }
 
 // TODO:
+//.notification.primary,
 //.notification.info,
 //.notification.success,
 //.notification.warning,
@@ -35,6 +36,7 @@
 //    }
 //}
 
+.notification.primary.solid,
 .notification.info.solid,
 .notification.success.solid,
 .notification.warning.solid,
@@ -42,10 +44,21 @@
     border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.notification.primary {
+    background-color: var(--light-primary-color, $light-primary-color);
+    border: 1px solid var(--light-primary-border-color, $light-primary-border-color);
+    color: var(--light-primary-text-color, $light-primary-text-color);
+}
+
+.notification.primary.solid {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
 .notification.info {
-    color: var(--light-info-text-color, $light-info-text-color);
-    border: 1px solid var(--light-info-border-color, $light-info-border-color);
     background-color: var(--light-info-color, $light-info-color);
+    border: 1px solid var(--light-info-border-color, $light-info-border-color);
+    color: var(--light-info-text-color, $light-info-text-color);
 }
 
 .notification.info.solid {
@@ -54,9 +67,9 @@
 }
 
 .notification.success {
-    color: var(--light-success-text-color, $light-success-text-color);
-    border: 1px solid var(--light-success-border-color, $light-success-border-color);
     background-color: var(--light-success-color, $light-success-color);
+    border: 1px solid var(--light-success-border-color, $light-success-border-color);
+    color: var(--light-success-text-color, $light-success-text-color);
 }
 
 .notification.success.solid {
@@ -65,9 +78,9 @@
 }
 
 .notification.warning {
-    color: var(--light-warning-text-color, $light-warning-text-color);
-    border: 1px solid var(--light-warning-border-color, $light-warning-border-color);
     background-color: var(--light-warning-color, $light-warning-color);
+    border: 1px solid var(--light-warning-border-color, $light-warning-border-color);
+    color: var(--light-warning-text-color, $light-warning-text-color);
 }
 
 .notification.warning.solid {
@@ -76,9 +89,9 @@
 }
 
 .notification.danger {
-    color: var(--light-danger-text-color, $light-danger-text-color);
-    border: 1px solid var(--light-danger-border-color, $light-danger-border-color);
     background-color: var(--light-danger-color, $light-danger-color);
+    border: 1px solid var(--light-danger-border-color, $light-danger-border-color);
+    color: var(--light-danger-text-color, $light-danger-text-color);
 }
 
 .notification.danger.solid {

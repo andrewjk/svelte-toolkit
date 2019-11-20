@@ -36,6 +36,7 @@
     box-shadow: 0px 0px 1px var(--select-color, $select-color);
 }
 
+.checkbox.primary,
 .checkbox.info,
 .checkbox.success,
 .checkbox.warning,
@@ -43,6 +44,22 @@
     .checkbox-input:checked + span:before {
         border: 1px solid rgba(0, 0, 0, 0.06);
         content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,40 L35,65 L90,10" fill="none" stroke="white" stroke-width="15" /></g></svg>');
+    }
+}
+
+.checkbox.primary {
+    color: var(--primary-color, $primary-color);
+
+    .checkbox-input + span:before {
+        border-color: var(--primary-color, $primary-color);
+    }
+
+    .checkbox-input:checked + span:before {
+        background-color: var(--primary-color, $primary-color);
+    }
+
+    .checkbox-input:focus + span:before {
+        box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
     }
 }
 

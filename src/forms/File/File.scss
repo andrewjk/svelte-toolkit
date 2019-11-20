@@ -17,6 +17,7 @@
 }
 
 // TODO:
+//.file.primary,
 //.file.info,
 //.file.success,
 //.file.warning,
@@ -26,6 +27,12 @@
 //        text-decoration: underline;
 //    }
 //}
+
+.file.primary {
+    color: var(--light-primary-text-color, $light-primary-text-color);
+    border: 1px dashed var(--light-primary-border-color, $light-primary-border-color);
+    background-color: var(--light-primary-color, $light-primary-color);
+}
 
 .file.info {
     color: var(--light-info-text-color, $light-info-text-color);

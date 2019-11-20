@@ -46,6 +46,13 @@
 // PROGRESS COLORS
 // ========================================================
 
+.progress.primary {
+    .progress-bar {
+        background-color: var(--primary-color, $primary-color);
+        color: var(--primary-text-color, $primary-text-color);
+    }
+}
+
 .progress.info {
     .progress-bar {
         background-color: var(--info-color, $info-color);

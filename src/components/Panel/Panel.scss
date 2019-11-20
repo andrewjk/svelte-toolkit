@@ -29,6 +29,12 @@
     color: white;
 }
 
+.panel.primary {
+    background-color: var(--primary-color, $primary-color);
+    border-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
 .panel.info {
     background-color: var(--info-color, $info-color);
     border-color: var(--info-color, $info-color);
