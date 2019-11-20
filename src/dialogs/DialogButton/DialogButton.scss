@@ -8,13 +8,13 @@
     padding: calc(var(--element-padding, #{$element-padding}) / 4);
 }
 
-.dialog-button.select {
+.dialog-button.confirm {
     background-color: var(--select-color, $select-color);
     border: 1px solid transparent;
     color: white,
 }
 
-.dialog-button.select:hover:not(.loading) {
+.dialog-button.confirm:hover:not(.loading) {
     background-color: var(--select-hover-color, $select-hover-color);
 }
 
