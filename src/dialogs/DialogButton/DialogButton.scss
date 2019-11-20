@@ -1,5 +1,5 @@
 @import "../../styles/_variables";
-@import "../../styles/general/button-reset";
+@import "../../styles/general/button-base";
 
 .dialog-button {
     margin-left: calc(var(--element-margin, #{$element-margin}) / 4 * 3);

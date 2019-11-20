@@ -5,9 +5,7 @@
     border: 1px solid var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
     cursor: pointer;
-    font-weight: normal;
     position: relative;
-    user-select: none;
     white-space: nowrap;
 
     display: inline-flex;
