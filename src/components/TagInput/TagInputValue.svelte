@@ -18,6 +18,17 @@
   }
 </script>
 
-<Tag {id} class={className} {classNames} closable={true} on:close={handleClose}>
+<style src="TagInputValue.scss">
+
+</style>
+
+<Tag
+  {id}
+  class={['tag-input-value', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
+  closable={true}
+  on:close={handleClose}>
   <slot />
 </Tag>
