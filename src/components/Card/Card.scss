@@ -1,0 +1,8 @@
+@import "../../styles/_variables";
+
+.card {
+    background-color: white;
+    border: 1px solid var(--border-color, $border-color);
+    margin: -1px 0;
+    padding: var(--element-padding, $element-padding);
+}

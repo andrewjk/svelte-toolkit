@@ -12,6 +12,7 @@ import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
 import Button from './src/components/Button/Button.svelte';
 import Calendar from './src/components/Calendar/Calendar.svelte';
+import Card from './src/components/Card/Card.svelte';
 import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
 import CoverImage from './src/components/CoverImage/CoverImage.svelte';
 import DatePicker from './src/components/DatePicker/DatePicker.svelte';
@@ -118,6 +119,7 @@ export {
     Breadcrumb, BreadcrumbItem,
     Button,
     Calendar,
+    Card,
     ColorPicker,
     CoverImage,
     DatePicker,
