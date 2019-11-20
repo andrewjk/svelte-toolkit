@@ -35,9 +35,20 @@
     color: var(--info-text-color, $info-text-color);
 }
 
-.card {
-    background-color: white;
-    border: 1px solid var(--border-color, $border-color);
-    margin: -1px 0;
-    padding: var(--element-padding, $element-padding);
+.panel.success {
+    background-color: var(--success-color, $success-color);
+    border-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
+}
+
+.panel.warning {
+    background-color: var(--warning-color, $warning-color);
+    border-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
+}
+
+.panel.danger {
+    background-color: var(--danger-color, $danger-color);
+    border-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
 }

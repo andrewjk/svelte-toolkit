@@ -36,6 +36,7 @@ import Notification from './src/components/Notification/Notification.svelte';
 import OffScreen from './src/components/OffScreen/OffScreen.svelte';
 import Pagination from './src/components/Pagination/Pagination.svelte';
 import Palette from './src/components/Palette/Palette.svelte';
+import Panel from './src/components/Panel/Panel.svelte';
 import Progress from './src/components/Progress/Progress.svelte';
 import Slider from './src/components/Slider/Slider.svelte';
 import StoryNav from './src/components/StoryNav/StoryNav.svelte';
@@ -133,6 +134,7 @@ export {
     OffScreen,
     Pagination,
     Palette,
+    Panel,
     Progress,
     Slider,
     StoryNav,
