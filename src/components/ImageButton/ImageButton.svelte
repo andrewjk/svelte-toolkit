@@ -10,6 +10,8 @@
   export let title = "";
   export let disabled = false;
   export let content = "";
+
+  export let hasPopup = null;
 </script>
 
 <style src="ImageButton.scss">
@@ -25,6 +27,7 @@
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {title}
   {disabled}
+  aria-haspopup={hasPopup}
   on:click
   on:keydown
   on:keypress
