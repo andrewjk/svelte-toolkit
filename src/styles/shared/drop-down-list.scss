@@ -1,0 +1,16 @@
+@import "../../styles/_variables.scss";
+
+.drop-down-list {
+    background-color: white;
+    border: 1px solid var(--border-color, $border-color);
+    max-height: 24.4rem;
+    overflow: auto;
+    position: absolute;
+    z-index: 10000;
+
+    //ul {
+    //    list-style: none;
+    //    margin: 0;
+    //    padding: 0;
+    //}
+}

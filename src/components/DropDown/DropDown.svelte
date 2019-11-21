@@ -1,9 +1,9 @@
 <script>
-  import { tick } from "svelte";
+  import { beforeUpdate, tick } from "svelte";
 
-  //import Button from "../Button/Button";
-  //import ImageButton from "../ImageButton/ImageButton";
+  import Button from "../Button/Button";
   import ChevronDown from "../../icons/ChevronDown";
+  import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
   export let id = null;
   let className = null;
@@ -11,18 +11,27 @@
   export let classNames = [];
   export let buttonType = "info";
   export let buttonSize = "medium";
-  export let buttonImage = false;
   export let position = "below";
   export let alignment = "left";
+  export let expanded = false;
 
-  let expanded = false;
+  let previousExpanded = false;
   let container;
   let button;
   let menu;
 
+  beforeUpdate(() => {
+    // Handle expanded being set outside the component
+    if (expanded != previousExpanded) {
+      expanded = previousExpanded
+      toggleDropDown();
+    }
+  })
+
   function toggleDropDown(e) {
     if (e) e.preventDefault();
     expanded = !expanded;
+    previousExpanded = expanded;
     if (expanded) {
       positionList();
       document.addEventListener("click", handleCloseClick);
@@ -41,10 +50,10 @@
     await tick();
     // TODO: Take into account window width in case the menu would be outside the bounds
     var rect = button.getBoundingClientRect();
-    var menuRect = menu.getBoundingClientRect();
+    var menuRect = menu.childNodes[0].getBoundingClientRect();
     switch (position) {
       case "above":
-        menu.style.bottom = rect.height + "px";
+        menu.style.bottom = (rect.height + menuRect.height) + "px";
         break;
       case "below":
         menu.style.top = rect.height + "px";
@@ -68,27 +77,33 @@
 
 </style>
 
-<div class="drop-down" bind:this={container}>
-  <button
-    {id}
-    class={['drop-down-button', 'button', buttonType, buttonSize, buttonImage ? 'image' : null, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
-    type="button"
-    aria-haspopup="true"
-    bind:this={button}
-    on:click={toggleDropDown}>
-    <slot />
-    {#if !buttonImage}
-      <slot name="button">
-        <ChevronDown />
-      </slot>
-    {/if}
-  </button>
+<div
+  {id}
+  class={['drop-down', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
+  bind:this={container}>
+  <div class="drop-down-button-container" bind:this={button}>
+    <slot name="element">
+      <Button
+        class="drop-down-button"
+        type={buttonType}
+        size={buttonSize}
+        hasPopup={true}
+        on:click={toggleDropDown}>
+        <slot />
+        <slot name="button">
+          <ChevronDown />
+        </slot>
+      </Button>
+    </slot>
+  </div>
   {#if expanded}
-    <div class="drop-down-menu" bind:this={menu}>
-      <slot name="menu" />
+    <div class="drop-down-menu-container" bind:this={menu}>
+      <DropDownMenu>
+        <slot name="menu" />
+      </DropDownMenu>
     </div>
   {/if}
 </div>

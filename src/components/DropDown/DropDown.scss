@@ -1,5 +1,16 @@
 @import "../../styles/_variables";
+@import "../../styles/shared/drop-down-list";
 
 .drop-down {
+    display: inline-block;
     position: relative;
+}
+
+.drop-down-button-container {
+    display: inline-block;
+}
+
+.drop-down-menu-container {
+    display: inline-block;
+    position: absolute;
 }

@@ -1,4 +1,5 @@
 ﻿@import "../../styles/_variables.scss";
+@import "../../styles/shared/drop-down-list";
 @import "../../styles/shared/input-button";
 
 .drop-down-input-container {
@@ -64,19 +65,4 @@ input.drop-down-input {
 input.drop-down-input:focus {
     box-shadow: none;
     border: 0;
-}
-
-.drop-down-list {
-    background-color: white;
-    border: 1px solid var(--border-color, $border-color);
-    max-height: 24.4rem;
-    overflow: auto;
-    position: absolute;
-    z-index: 10000;
-
-    //ul {
-    //    list-style: none;
-    //    margin: 0;
-    //    padding: 0;
-    //}
 }
