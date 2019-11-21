@@ -44,7 +44,6 @@
 .button.danger,
 .button.cancel {
     border: 1px solid transparent;
-    color: white,
 }
 
 .button.primary {
@@ -94,6 +93,7 @@
 
 .button.cancel {
     background-color: var(--cancel-color, $cancel-color);
+    color: var(--cancel-text-color, $cancel-text-color);
 }
 
 .button.cancel:hover:not(:disabled):not(.loading) {
