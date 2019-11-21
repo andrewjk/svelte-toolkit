@@ -67,7 +67,7 @@
     color: var(--primary-text-color, $primary-text-color);
 }
 
-.image-button.primary:hover:not(.loading) {
+.image-button.primary:hover:not(:disabled):not(.loading) {
     background-color: var(--primary-hover-color, $primary-hover-color);
 }
 
@@ -76,7 +76,7 @@
     color: var(--info-text-color, $info-text-color);
 }
 
-.image-button.info:hover:not(.loading) {
+.image-button.info:hover:not(:disabled):not(.loading) {
     background-color: var(--info-hover-color, $info-hover-color);
 }
 
@@ -85,7 +85,7 @@
     color: var(--success-text-color, $success-text-color);
 }
 
-.image-button.success:hover:not(.loading) {
+.image-button.success:hover:not(:disabled):not(.loading) {
     background-color: var(--success-hover-color, $success-hover-color);
 }
 
@@ -94,7 +94,7 @@
     color: var(--warning-text-color, $warning-text-color);
 }
 
-.image-button.warning:hover:not(.loading) {
+.image-button.warning:hover:not(:disabled):not(.loading) {
     background-color: var(--warning-hover-color, $warning-hover-color);
 }
 
@@ -103,7 +103,7 @@
     color: var(--danger-text-color, $danger-text-color);
 }
 
-.image-button.danger:hover:not(.loading) {
+.image-button.danger:hover:not(:disabled):not(.loading) {
     background-color: var(--danger-hover-color, $danger-hover-color);
 }
 
@@ -111,7 +111,7 @@
     background-color: var(--cancel-color, $cancel-color);
 }
 
-.image-button.cancel:hover:not(.loading) {
+.image-button.cancel:hover:not(:disabled):not(.loading) {
     background-color: var(--cancel-hover-color, $cancel-hover-color);
 }
 
