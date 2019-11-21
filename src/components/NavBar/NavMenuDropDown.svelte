@@ -2,6 +2,7 @@
   import { getContext, setContext } from "svelte";
 
   import ChevronDown from "../../icons/ChevronDown";
+  import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
   export let id = null;
   let className = null;
@@ -79,6 +80,8 @@
     </slot>
   </a>
   {#if expanded}
-    <slot name="menu" />
+    <DropDownMenu>
+      <slot name="menu" />
+    </DropDownMenu>
   {/if}
 </li>
