@@ -1,8 +1,9 @@
 @import "../../styles/_variables.scss";
 
 .drop-down-list {
-    background-color: white;
+    background-color: var(--list-back-color, $list-back-color);
     border: 1px solid var(--border-color, $border-color);
+    color: var(--list-text-color, $list-text-color);
     max-height: 24.4rem;
     overflow: auto;
     position: absolute;

@@ -2,9 +2,9 @@
 
 .drop-down-menu
 {
-    background-color: white;
+    background-color: var(--list-back-color, $list-back-color);
     border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
+    color: var(--list-text-color, $list-text-color);
     list-style: none;
     margin: 0;
     padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;

@@ -18,7 +18,7 @@
 .pagination-button.active {
     background-color: var(--select-color, $select-color);
     border-color: var(--select-color, $select-color);
-    color: white;
+    color: var(--select-text-color, $select-text-color);
     font-weight: bold;
 }
 

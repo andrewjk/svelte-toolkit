@@ -17,37 +17,41 @@ function setThemeValue(name, value) {
 
 const transforms = [
     ['--link-color', function (c) { setThemeValue('--link-hover-color', c); }],
-    ['--primary-color', function (c) { setThemeValue('--primary-text-color', findInvertColor(c)); }],
-    ['--primary-color', function (c) { setThemeValue('--primary-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--select-color', function (c) { setThemeValue('--select-text-color', findColorInvert(c)); }],
+    ['--button-color', function (c) { setThemeValue('--button-text-color', findColorInvert(c)); }],
+    ['--button-color', function (c) { setThemeValue('--button-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--list-color', function (c) { setThemeValue('--list-text-color', findColorInvert(c)); }],
+    ['--primary-color', function (c) { setThemeValue('--primary-text-color', findColorInvert(c)); }],
+    ['--primary-color', function (c) { setThemeValue('--primary-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--primary-color', function (c) { setThemeValue('--light-primary-color', scaleColor(c, { 'lightness': 0.95 })); }],
-    ['--primary-color', function (c) { setThemeValue('--light-primary-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--primary-color', function (c) { setThemeValue('--light-primary-text-color', scaleColor(c, { 'lightness': -0.22 })); }],
     ['--primary-color', function (c) { setThemeValue('--light-primary-border-color', c); }],
-    ['--info-color', function (c) { setThemeValue('--info-text-color', findInvertColor(c)); }],
-    ['--info-color', function (c) { setThemeValue('--info-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--info-color', function (c) { setThemeValue('--info-text-color', findColorInvert(c)); }],
+    ['--info-color', function (c) { setThemeValue('--info-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--info-color', function (c) { setThemeValue('--light-info-color', scaleColor(c, { 'lightness': 0.95 })); }],
-    ['--info-color', function (c) { setThemeValue('--light-info-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--info-color', function (c) { setThemeValue('--light-info-text-color', scaleColor(c, { 'lightness': -0.22 })); }],
     ['--info-color', function (c) { setThemeValue('--light-info-border-color', c); }],
-    ['--success-color', function (c) { setThemeValue('--success-text-color', findInvertColor(c)); }],
-    ['--success-color', function (c) { setThemeValue('--success-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--success-color', function (c) { setThemeValue('--success-text-color', findColorInvert(c)); }],
+    ['--success-color', function (c) { setThemeValue('--success-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--success-color', function (c) { setThemeValue('--light-success-color', scaleColor(c, { 'lightness': 0.95 })); }],
-    ['--success-color', function (c) { setThemeValue('--light-success-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--success-color', function (c) { setThemeValue('--light-success-text-color', scaleColor(c, { 'lightness': -0.22 })); }],
     ['--success-color', function (c) { setThemeValue('--light-success-border-color', c); }],
-    ['--warning-color', function (c) { setThemeValue('--warning-text-color', findInvertColor(c)); }],
-    ['--warning-color', function (c) { setThemeValue('--warning-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--warning-color', function (c) { setThemeValue('--warning-text-color', findColorInvert(c)); }],
+    ['--warning-color', function (c) { setThemeValue('--warning-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--warning-color', function (c) { setThemeValue('--light-warning-color', scaleColor(c, { 'lightness': 0.95 })); }],
-    ['--warning-color', function (c) { setThemeValue('--light-warning-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--warning-color', function (c) { setThemeValue('--light-warning-text-color', scaleColor(c, { 'lightness': -0.22 })); }],
     ['--warning-color', function (c) { setThemeValue('--light-warning-border-color', c); }],
-    ['--danger-color', function (c) { setThemeValue('--danger-text-color', findInvertColor(c)); }],
-    ['--danger-color', function (c) { setThemeValue('--danger-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--danger-color', function (c) { setThemeValue('--danger-text-color', findColorInvert(c)); }],
+    ['--danger-color', function (c) { setThemeValue('--danger-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--danger-color', function (c) { setThemeValue('--light-danger-color', scaleColor(c, { 'lightness': 0.95 })); }],
-    ['--danger-color', function (c) { setThemeValue('--light-danger-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--danger-color', function (c) { setThemeValue('--light-danger-text-color', scaleColor(c, { 'lightness': -0.22 })); }],
     ['--danger-color', function (c) { setThemeValue('--light-danger-border-color', c); }],
-    ['--confirm-color', function (c) { setThemeValue('--confirm-text-color', findInvertColor(c)); }],
-    ['--confirm-color', function (c) { setThemeValue('--confirm-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
-    ['--cancel-color', function (c) { setThemeValue('--cancel-text-color', findInvertColor(c)); }],
-    ['--cancel-color', function (c) { setThemeValue('--cancel-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
-    ['--disabled-color', function (c) { setThemeValue('--disabled-text-color', findInvertColor(c)); }],
-    ['--disabled-color', function (c) { setThemeValue('--disabled-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
+    ['--confirm-color', function (c) { setThemeValue('--confirm-text-color', findColorInvert(c)); }],
+    ['--confirm-color', function (c) { setThemeValue('--confirm-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--cancel-color', function (c) { setThemeValue('--cancel-text-color', findColorInvert(c)); }],
+    ['--cancel-color', function (c) { setThemeValue('--cancel-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
+    ['--disabled-color', function (c) { setThemeValue('--disabled-text-color', findColorInvert(c)); }],
+    ['--disabled-color', function (c) { setThemeValue('--disabled-hover-color', scaleColor(c, { 'lightness': -0.2 })); }],
 ]
 
 // These are adapted from Bulma at https://github.com/jgthms/bulma/blob/master/sass/utilities/functions.sass
@@ -74,7 +78,7 @@ function colorLuminance(color) {
     return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
 }
 
-function findInvertColor(color) {
+function findColorInvert(color) {
     if (colorLuminance(color) > 0.55) {
         return 'rgba(0, 0, 0, 0.7)';
     } else {

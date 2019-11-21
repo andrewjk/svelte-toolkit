@@ -2,7 +2,7 @@
 
 .drop-down-menu-button {
     background-color: transparent;
-    color: var(--text-color, $text-color);
+    color: var(--body-text-color, $body-text-color);
     border: none;
     cursor: pointer;
     text-align: left;
@@ -14,5 +14,5 @@
 .drop-down-menu-button:hover,
 .drop-down-menu-button:focus {
     background-color: var(--select-color, $select-color);
-    color: white;
+    color: var(--select-text-color, $select-text-color);
 }

@@ -1,7 +1,7 @@
 @import "../../styles/_variables";
 
 .drop-down-menu-link {
-    color: var(--text-color, $text-color);
+    color: inherit;
     display: block;
     padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
     width: 100%;
@@ -10,6 +10,6 @@
 .drop-down-menu-link:hover,
 .drop-down-menu-link:focus {
     background-color: var(--select-color, $select-color);
-    color: white;
+    color: var(--select-text-color, $select-text-color);
     text-decoration: none;
 }

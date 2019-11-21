@@ -34,76 +34,88 @@ $line-height: 1.4;
 // COLORS
 // ========================================================
 
-$text-color: #222;
-$body-back-color: #fff;
+$light-color: #fff;
+$dark-color: #222;
+
+$body-back-color: $light-color;
+$body-text-color: $dark-color;
 
 $light-back-color: #fafafa;
 $middle-back-color: #e5e5e5;
 $dark-back-color: #888;
 
-$mark-back-color: #ffff00;
-$mark-color: #222;
-$select-color: #3396ff;
-$focus-color: #8fc5ff;
-$active-color: #ffa500;
-
-// Link
 $link-color: #0265b7;
 $link-hover-color: $link-color;
 
+$button-back-color: $light-color;
+$button-text-color: find-color-invert($button-back-color);
+$button-hover-color: scale-color($button-back-color, $lightness: -20%);
+
+$list-back-color: $light-color;
+$list-text-color: find-color-invert($list-back-color);
+
+$select-color: #3396ff;
+$select-text-color: find-color-invert($select-color);
+
+$focus-color: #8fc5ff;
+$active-color: #ffa500;
+
+$mark-back-color: #ffff00;
+$mark-text-color: $dark-color;
+
 // Primary
 $primary-color: #ff0066;
-$primary-text-color: find-invert-color($primary-color);
-$primary-hover-color: scale-color($primary-color, $lightness: -25%);
+$primary-text-color: find-color-invert($primary-color);
+$primary-hover-color: scale-color($primary-color, $lightness: -20%);
 $light-primary-color: scale-color($primary-color, $lightness: 95%);
-$light-primary-text-color: scale-color($primary-color, $lightness: -20%);
+$light-primary-text-color: scale-color($primary-color, $lightness: -22%);
 $light-primary-border-color: $primary-color;
 
 // Info
 $info-color: #4d90fe;
-$info-text-color: find-invert-color($info-color);
-$info-hover-color: scale-color($info-color, $lightness: -25%);
+$info-text-color: find-color-invert($info-color);
+$info-hover-color: scale-color($info-color, $lightness: -20%);
 $light-info-color: scale-color($info-color, $lightness: 95%);
-$light-info-text-color: scale-color($info-color, $lightness: -20%);
+$light-info-text-color: scale-color($info-color, $lightness: -22%);
 $light-info-border-color: $info-color;
 
 // Success
 $success-color: #00a852;
-$success-text-color: find-invert-color($success-color);
-$success-hover-color: scale-color($success-color, $lightness: -25%);
+$success-text-color: find-color-invert($success-color);
+$success-hover-color: scale-color($success-color, $lightness: -20%);
 $light-success-color: scale-color($success-color, $lightness: 95%);
-$light-success-text-color: scale-color($success-color, $lightness: -20%);
+$light-success-text-color: scale-color($success-color, $lightness: -22%);
 $light-success-border-color: $success-color;
 
 // Warning
 $warning-color: #f3c42e;
-$warning-text-color: find-invert-color($warning-color);
-$warning-hover-color: scale-color($warning-color, $lightness: -25%);
+$warning-text-color: find-color-invert($warning-color);
+$warning-hover-color: scale-color($warning-color, $lightness: -20%);
 $light-warning-color: scale-color($warning-color, $lightness: 95%);
 $light-warning-text-color: scale-color($warning-color, $lightness: -35%);
 $light-warning-border-color: $warning-color;
 
 // Danger
 $danger-color: #ee2e24;
-$danger-text-color: find-invert-color($danger-color);
-$danger-hover-color: scale-color($danger-color, $lightness: -25%);
+$danger-text-color: find-color-invert($danger-color);
+$danger-hover-color: scale-color($danger-color, $lightness: -20%);
 $light-danger-color: scale-color($danger-color, $lightness: 95%);
-$light-danger-text-color: scale-color($danger-color, $lightness: -20%);
+$light-danger-text-color: scale-color($danger-color, $lightness: -22%);
 $light-danger-border-color: $danger-color;
 
 // Confirm
 $confirm-color: #3396ff;
-$confirm-text-color: find-invert-color($confirm-color);
-$confirm-hover-color: scale-color($confirm-color, $lightness: -25%);
+$confirm-text-color: find-color-invert($confirm-color);
+$confirm-hover-color: scale-color($confirm-color, $lightness: -20%);
 
 // Cancel
 $cancel-color: #949494;
-$cancel-text-color: find-invert-color($cancel-color);
-$cancel-hover-color: scale-color($cancel-color, $lightness: -25%);
+$cancel-text-color: find-color-invert($cancel-color);
+$cancel-hover-color: scale-color($cancel-color, $lightness: -20%);
 
 // Disabled
 $disabled-color: #f2f2f2;
-$disabled-text-color: scale-color($disabled-color, $lightness: -25%);
+$disabled-text-color: scale-color($disabled-color, $lightness: -20%);
 
 // HEADER AND FOOTER
 // ========================================================
@@ -122,7 +134,10 @@ $nav-bar-item-hover-text-color: #222;
 // FORMS
 // ========================================================
 
+$input-back-color: $light-color;
+$input-text-color: #000;
 $input-height: 3.2rem;
+$input-width: 32rem;
+
 $label-color: #777;
 $label-width: 16rem;
-$input-width: 32rem;

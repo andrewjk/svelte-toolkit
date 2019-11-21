@@ -25,8 +25,10 @@ input[type="number"],
 input[type="datetime"],
 input[type="file"],
 input[type="url"] {
+    background-color: var(--input-back-color, $input-back-color);
     border: 1px solid var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
+    color: var(--input-text-color, $input-text-color);
     height: var(--input-height, $input-height);
     padding: 0 4px;
     width: 100%;
@@ -55,6 +57,7 @@ input[type="submit"]:disabled,
 input[type="submit"]:disabled:hover,
 input[type="submit"]:disabled:focus {
     background-color: var(--disabled-color, $disabled-color);
+    color: var(--disabled-text-color, $disabled-text-color);
 }
 
 input[type="range"] {
@@ -94,10 +97,12 @@ select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    background-color: var(--input-back-color, $input-back-color);
     background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,30 L50,70 L90,30" fill="none" stroke="%23777" stroke-width="15" /></g></svg>');
     background-repeat: no-repeat, repeat;
     background-position: right 0.6rem top 50%, 0 0;
     background-size: 1.1rem auto, 100%;
+    color: var(--input-text-color, $input-text-color);
 }
 
 select:not([multiple]) {
@@ -113,10 +118,10 @@ select:not([multiple]) {
    per https://stackoverflow.com/a/27510551 */
 select:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 var(--text-color, $text-color);
+    text-shadow: 0 0 0 var(--body-text-color, $body-text-color);
 }
 select:-moz-focusring * {
-    color: var(--text-color, $text-color);
+    color: var(--body-text-color, $body-text-color);
     text-shadow: none;
 }
 
@@ -130,8 +135,10 @@ select.inline {
 // ========================================================
 
 textarea {
+    background-color: var(--input-back-color, $input-back-color);
     border: 1px solid var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
+    color: var(--input-text-color, $input-text-color);
     font-size: inherit;
     margin: 0;
     /* Roughly enough for two rows at default sizing: */

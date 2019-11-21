@@ -1,9 +1,10 @@
 @import "../../styles/_variables";
 
 .button {
-    background-color: white;
+    background-color: var(--button-back-color, $button-back-color);
     border: 1px solid var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
+    color: var(--button-text-color, $button-text-color);
     cursor: pointer;
     position: relative;
     white-space: nowrap;
@@ -14,13 +15,13 @@
 }
 
 .button:focus {
-    background-color: var(--middle-back-color, $middle-back-color);
+    background-color: var(--button-hover-color, $button-hover-color);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     outline: 0;
 }
 
 .button:hover {
-    background-color: var(--middle-back-color, $middle-back-color);
+    background-color: var(--button-hover-color, $button-hover-color);
 }
 
 /* Remove the black dotted focus border in Firefox */
