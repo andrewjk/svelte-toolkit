@@ -9,21 +9,21 @@
 }
 
 .dialog-button.confirm {
-    background-color: var(--select-color, $select-color);
+    background-color: var(--confirm-color, $confirm-color);
     border: 1px solid transparent;
-    color: white,
+    color: var(--confirm-text-color, $confirm-text-color);
 }
 
-.dialog-button.confirm:hover:not(.loading) {
-    background-color: var(--select-hover-color, $select-hover-color);
+.dialog-button.confirm:hover:not(:disabled):not(.loading) {
+    background-color: var(--confirm-hover-color, $confirm-hover-color);
 }
 
 .dialog-button.cancel {
     background-color: var(--cancel-color, $cancel-color);
     border: 1px solid transparent;
-    color: white,
+    color: var(--cancel-text-color, $cancel-text-color);
 }
 
-.dialog-button.cancel:hover:not(.loading) {
+.dialog-button.cancel:hover:not(:disabled):not(.loading) {
     background-color: var(--cancel-hover-color, $cancel-hover-color);
 }

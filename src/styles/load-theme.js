@@ -16,7 +16,6 @@ function setThemeValue(name, value) {
 }
 
 const transforms = [
-    ['--select-color', function (c) { setThemeValue('--select-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
     ['--link-color', function (c) { setThemeValue('--link-hover-color', c); }],
     ['--primary-color', function (c) { setThemeValue('--primary-text-color', findInvertColor(c)); }],
     ['--primary-color', function (c) { setThemeValue('--primary-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
@@ -43,6 +42,8 @@ const transforms = [
     ['--danger-color', function (c) { setThemeValue('--light-danger-color', scaleColor(c, { 'lightness': 0.95 })); }],
     ['--danger-color', function (c) { setThemeValue('--light-danger-text-color', scaleColor(c, { 'lightness': -0.2 })); }],
     ['--danger-color', function (c) { setThemeValue('--light-danger-border-color', c); }],
+    ['--confirm-color', function (c) { setThemeValue('--confirm-text-color', findInvertColor(c)); }],
+    ['--confirm-color', function (c) { setThemeValue('--confirm-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
     ['--cancel-color', function (c) { setThemeValue('--cancel-text-color', findInvertColor(c)); }],
     ['--cancel-color', function (c) { setThemeValue('--cancel-hover-color', scaleColor(c, { 'lightness': -0.25 })); }],
     ['--disabled-color', function (c) { setThemeValue('--disabled-text-color', findInvertColor(c)); }],

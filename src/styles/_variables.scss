@@ -44,7 +44,6 @@ $dark-back-color: #888;
 $mark-back-color: #ffff00;
 $mark-color: #222;
 $select-color: #3396ff;
-$select-hover-color: scale-color($select-color, $lightness: -25%);
 $focus-color: #8fc5ff;
 $active-color: #ffa500;
 
@@ -91,6 +90,11 @@ $danger-hover-color: scale-color($danger-color, $lightness: -25%);
 $light-danger-color: scale-color($danger-color, $lightness: 95%);
 $light-danger-text-color: scale-color($danger-color, $lightness: -20%);
 $light-danger-border-color: $danger-color;
+
+// Confirm
+$confirm-color: #3396ff;
+$confirm-text-color: find-invert-color($confirm-color);
+$confirm-hover-color: scale-color($confirm-color, $lightness: -25%);
 
 // Cancel
 $cancel-color: #949494;
