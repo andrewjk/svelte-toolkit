@@ -1,6 +1,9 @@
 // Base
 import Toolkit from './src/base/Toolkit/Toolkit.svelte';
 
+// Style methods
+import loadTheme from './src/styles/load-theme';
+
 // Components
 import Accordion from './src/components/Accordion/Accordion.svelte';
 import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
@@ -118,6 +121,9 @@ import Loading from './src/icons/Loading.svelte';
 export {
     // Base
     Toolkit,
+
+    // Style methods
+    loadTheme,
 
     // Components
     Accordion, AccordionItem,
