@@ -1,93 +1,93 @@
 // Base
-import Toolkit from './src/base/Toolkit/Toolkit.svelte';
+import Toolkit from './src/base/Toolkit/Toolkit';
 
 // Style methods
 import loadTheme from './src/styles/load-theme';
 
 // Components
-import Accordion from './src/components/Accordion/Accordion.svelte';
-import AccordionItem from './src/components/Accordion/AccordionItem.svelte';
-import Alert from './src/components/Alert/Alert.svelte';
-import AutoComplete from './src/components/AutoComplete/AutoComplete.svelte';
-import AutoCompleteItem from './src/components/AutoComplete/AutoCompleteItem.svelte';
-import Badge from './src/components/Badge/Badge.svelte';
-import Breadcrumb from './src/components/Breadcrumb/Breadcrumb.svelte';
-import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem.svelte';
-import Button from './src/components/Button/Button.svelte';
-import Calendar from './src/components/Calendar/Calendar.svelte';
-import Card from './src/components/Card/Card.svelte';
-import ColorPicker from './src/components/ColorPicker/ColorPicker.svelte';
-import Container from './src/components/Container/Container.svelte';
-import CoverImage from './src/components/CoverImage/CoverImage.svelte';
-import DatePicker from './src/components/DatePicker/DatePicker.svelte';
-import DotNav from './src/components/DotNav/DotNav.svelte';
-import DropDown from './src/components/DropDown/DropDown.svelte';
-import DropDownMenu from './src/components/DropDownMenu/DropDownMenu.svelte';
-import DropDownMenuButton from './src/components/DropDownMenu/DropDownMenuButton.svelte';
-import DropDownMenuLink from './src/components/DropDownMenu/DropDownMenuLink.svelte';
-import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem.svelte';
-import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider.svelte';
-import Grid from './src/components/Grid/Grid.svelte';
-import GridItem from './src/components/Grid/GridItem.svelte';
-import ImageButton from './src/components/ImageButton/ImageButton.svelte';
-import Level from './src/components/Level/Level.svelte';
-import LevelItem from './src/components/Level/LevelItem.svelte';
-import NavBar from './src/components/NavBar/NavBar.svelte';
-import NavLogo from './src/components/NavBar/NavLogo.svelte';
-import NavMenu from './src/components/NavBar/NavMenu.svelte';
-import NavMenuLink from './src/components/NavBar/NavMenuLink.svelte';
-import NavMenuItem from './src/components/NavBar/NavMenuItem.svelte';
-import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown.svelte';
-import Notification from './src/components/Notification/Notification.svelte';
-import OffScreen from './src/components/OffScreen/OffScreen.svelte';
-import Page from './src/components/Page/Page.svelte';
-import PageBody from './src/components/Page/PageBody.svelte';
-import PageFooter from './src/components/Page/PageFooter.svelte';
-import PageHeader from './src/components/Page/PageHeader.svelte';
-import Pagination from './src/components/Pagination/Pagination.svelte';
-import Palette from './src/components/Palette/Palette.svelte';
-import Panel from './src/components/Panel/Panel.svelte';
-import Progress from './src/components/Progress/Progress.svelte';
-import Slider from './src/components/Slider/Slider.svelte';
-import StoryNav from './src/components/StoryNav/StoryNav.svelte';
-import SubNavMenu from './src/components/SubNavMenu/SubNavMenu.svelte';
-import SubNavMenuItem from './src/components/SubNavMenu/SubNavMenuItem.svelte';
-import SubNavMenuHeader from './src/components/SubNavMenu/SubNavMenuHeader.svelte';
-import Switcher from './src/components/Switcher/Switcher.svelte';
-import SwitcherItem from './src/components/Switcher/SwitcherItem.svelte';
-import TabGroup from './src/components/TabGroup/TabGroup.svelte';
-import TabItem from './src/components/TabGroup/TabItem.svelte';
-import TabHeader from './src/components/TabGroup/TabHeader.svelte';
-import Table from './src/components/Table/Table.svelte';
-import TableColumn from './src/components/Table/TableColumn.svelte';
-import TableHeader from './src/components/Table/TableHeader.svelte';
-import Tag from './src/components/Tag/Tag.svelte';
-import TagInput from './src/components/TagInput/TagInput.svelte';
-import TagInputItem from './src/components/TagInput/TagInputItem.svelte';
-import WizardNav from './src/components/WizardNav/WizardNav.svelte';
+import Accordion from './src/components/Accordion/Accordion';
+import AccordionItem from './src/components/Accordion/AccordionItem';
+import Alert from './src/components/Alert/Alert';
+import AutoComplete from './src/components/AutoComplete/AutoComplete';
+import AutoCompleteItem from './src/components/AutoComplete/AutoCompleteItem';
+import Badge from './src/components/Badge/Badge';
+import Breadcrumb from './src/components/Breadcrumb/Breadcrumb';
+import BreadcrumbItem from './src/components/Breadcrumb/BreadcrumbItem';
+import Button from './src/components/Button/Button';
+import Calendar from './src/components/Calendar/Calendar';
+import Card from './src/components/Card/Card';
+import ColorPicker from './src/components/ColorPicker/ColorPicker';
+import Container from './src/components/Container/Container';
+import CoverImage from './src/components/CoverImage/CoverImage';
+import DatePicker from './src/components/DatePicker/DatePicker';
+import DotNav from './src/components/DotNav/DotNav';
+import DropDown from './src/components/DropDown/DropDown';
+import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
+import DropDownMenuButton from './src/components/DropDownMenu/DropDownMenuButton';
+import DropDownMenuLink from './src/components/DropDownMenu/DropDownMenuLink';
+import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem';
+import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider';
+import Grid from './src/components/Grid/Grid';
+import GridItem from './src/components/Grid/GridItem';
+import ImageButton from './src/components/ImageButton/ImageButton';
+import Level from './src/components/Level/Level';
+import LevelItem from './src/components/Level/LevelItem';
+import NavBar from './src/components/NavBar/NavBar';
+import NavLogo from './src/components/NavBar/NavLogo';
+import NavMenu from './src/components/NavBar/NavMenu';
+import NavMenuLink from './src/components/NavBar/NavMenuLink';
+import NavMenuItem from './src/components/NavBar/NavMenuItem';
+import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown';
+import Notification from './src/components/Notification/Notification';
+import OffScreen from './src/components/OffScreen/OffScreen';
+import Page from './src/components/Page/Page';
+import PageBody from './src/components/Page/PageBody';
+import PageFooter from './src/components/Page/PageFooter';
+import PageHeader from './src/components/Page/PageHeader';
+import Pagination from './src/components/Pagination/Pagination';
+import Palette from './src/components/Palette/Palette';
+import Panel from './src/components/Panel/Panel';
+import Progress from './src/components/Progress/Progress';
+import Slider from './src/components/Slider/Slider';
+import StoryNav from './src/components/StoryNav/StoryNav';
+import SubNavMenu from './src/components/SubNavMenu/SubNavMenu';
+import SubNavMenuItem from './src/components/SubNavMenu/SubNavMenuItem';
+import SubNavMenuHeader from './src/components/SubNavMenu/SubNavMenuHeader';
+import Switcher from './src/components/Switcher/Switcher';
+import SwitcherItem from './src/components/Switcher/SwitcherItem';
+import TabGroup from './src/components/TabGroup/TabGroup';
+import TabItem from './src/components/TabGroup/TabItem';
+import TabHeader from './src/components/TabGroup/TabHeader';
+import Table from './src/components/Table/Table';
+import TableColumn from './src/components/Table/TableColumn';
+import TableHeader from './src/components/Table/TableHeader';
+import Tag from './src/components/Tag/Tag';
+import TagInput from './src/components/TagInput/TagInput';
+import TagInputItem from './src/components/TagInput/TagInputItem';
+import WizardNav from './src/components/WizardNav/WizardNav';
 
 // Component methods
 import showAlert from './src/components/Alert/show-alert';
 
 // Forms
-import Field from './src/forms/Field/Field.svelte';
-import CheckBox from './src/forms/CheckBox/CheckBox.svelte';
-import File from './src/forms/File/File.svelte';
-import Number from './src/forms/Number/Number.svelte';
-import Radio from './src/forms/Radio/Radio.svelte';
-import Select from './src/forms/Select/Select.svelte';
-import TextBox from './src/forms/TextBox/TextBox.svelte';
-import TextArea from './src/forms/TextArea/TextArea.svelte';
+import Field from './src/forms/Field/Field';
+import CheckBox from './src/forms/CheckBox/CheckBox';
+import File from './src/forms/File/File';
+import Number from './src/forms/Number/Number';
+import Radio from './src/forms/Radio/Radio';
+import Select from './src/forms/Select/Select';
+import TextBox from './src/forms/TextBox/TextBox';
+import TextArea from './src/forms/TextArea/TextArea';
 
 // Validation
 import Validator from './src/forms/Validator';
-import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary.svelte';
+import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary';
 
 // Dialogs
-import DialogButton from './src/dialogs/DialogButton/DialogButton.svelte';
-import Info from './src/dialogs/Info/Info.svelte';
-import Confirm from './src/dialogs/Confirm/Confirm.svelte';
-import Prompt from './src/dialogs/Prompt/Prompt.svelte';
+import DialogButton from './src/dialogs/DialogButton/DialogButton';
+import Info from './src/dialogs/Info/Info';
+import Confirm from './src/dialogs/Confirm/Confirm';
+import Prompt from './src/dialogs/Prompt/Prompt';
 
 // Dialog methods
 import showInfo from './src/dialogs/Info/show-info';
@@ -95,28 +95,28 @@ import showConfirm from './src/dialogs/Confirm/show-confirm';
 import showPrompt from './src/dialogs/Prompt/show-prompt';
 
 // Charts
-import BarChart from './src/charts/BarChart/BarChart.svelte';
-import BarChartItem from './src/charts/BarChart/BarChartItem.svelte';
-import LineChart from './src/charts/LineChart/LineChart.svelte';
-import LineChartSeries from './src/charts/LineChart/LineChartSeries.svelte';
-import PieChart from './src/charts/PieChart/PieChart.svelte';
-import PieChartItem from './src/charts/PieChart/PieChartItem.svelte';
+import BarChart from './src/charts/BarChart/BarChart';
+import BarChartItem from './src/charts/BarChart/BarChartItem';
+import LineChart from './src/charts/LineChart/LineChart';
+import LineChartSeries from './src/charts/LineChart/LineChartSeries';
+import PieChart from './src/charts/PieChart/PieChart';
+import PieChartItem from './src/charts/PieChart/PieChartItem';
 
 // Icons
-import ArrowUp from './src/icons/ArrowUp.svelte';
-import ArrowDown from './src/icons/ArrowDown.svelte';
-import ArrowLeft from './src/icons/ArrowLeft.svelte';
-import ArrowRight from './src/icons/ArrowRight.svelte';
-import Bars from './src/icons/Bars.svelte';
-import ChevronUp from './src/icons/ChevronUp.svelte';
-import ChevronDown from './src/icons/ChevronDown.svelte';
-import ChevronLeft from './src/icons/ChevronLeft.svelte';
-import ChevronRight from './src/icons/ChevronRight.svelte';
-import Cross from './src/icons/Cross.svelte';
-import Check from './src/icons/Check.svelte';
-import Plus from './src/icons/Plus.svelte';
-import Minus from './src/icons/Minus.svelte';
-import Loading from './src/icons/Loading.svelte';
+import ArrowUp from './src/icons/ArrowUp';
+import ArrowDown from './src/icons/ArrowDown';
+import ArrowLeft from './src/icons/ArrowLeft';
+import ArrowRight from './src/icons/ArrowRight';
+import Bars from './src/icons/Bars';
+import ChevronUp from './src/icons/ChevronUp';
+import ChevronDown from './src/icons/ChevronDown';
+import ChevronLeft from './src/icons/ChevronLeft';
+import ChevronRight from './src/icons/ChevronRight';
+import Cross from './src/icons/Cross';
+import Check from './src/icons/Check';
+import Plus from './src/icons/Plus';
+import Minus from './src/icons/Minus';
+import Loading from './src/icons/Loading';
 
 export {
     // Base
