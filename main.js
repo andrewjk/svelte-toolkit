@@ -3,6 +3,7 @@ import Toolkit from './src/base/Toolkit/Toolkit';
 
 // Style methods
 import loadTheme from './src/styles/load-theme';
+import getTheme from './src/styles/get-theme';
 
 // Components
 import Accordion from './src/components/Accordion/Accordion';
@@ -124,6 +125,7 @@ export {
 
     // Style methods
     loadTheme,
+    getTheme,
 
     // Components
     Accordion, AccordionItem,
