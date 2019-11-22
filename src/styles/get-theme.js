@@ -1,6 +1,5 @@
 
 export default function getTheme() {
-    console.log(document.documentElement.style['"--info-color"']);
     return props.map(p => getThemeValue(p)).filter(Boolean).join('\n');
 }
 
