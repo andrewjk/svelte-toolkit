@@ -4,7 +4,7 @@
 // ========================================================
 
 label {
-    color: var(--label-color, $label-color);
+    color: var(--label-text-color, $label-text-color);
     display: block;
     line-height: var(--input-height, $input-height);
     padding-left: 1px;
@@ -162,7 +162,7 @@ fieldset {
 }
 
 legend {
-    color: var(--label-color, $label-color);
+    color: var(--label-text-color, $label-text-color);
     padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
 }
 

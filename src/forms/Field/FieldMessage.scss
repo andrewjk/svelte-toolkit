@@ -1,7 +1,7 @@
 @import "../../styles/_variables";
 
 .field-message {
-    color: var(--label-color, $label-color);
+    color: var(--label-text-color, $label-text-color);
     font-size: 1.3rem;
     margin: calc(var(--element-margin, #{$element-margin}) / 4) 0 0;
 }

@@ -22,8 +22,6 @@ const props = [
     '--font-size-large',
     '--font-size-title',
     '--line-height',
-    '--light-color',
-    '--dark-color',
     '--body-back-color',
     '--body-text-color',
     '--light-back-color',
@@ -94,6 +92,6 @@ const props = [
     '--input-text-color',
     '--input-height',
     '--input-width',
-    '--label-color',
+    '--label-text-color',
     '--label-width',
 ];
