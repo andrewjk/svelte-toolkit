@@ -36,11 +36,13 @@
       .join(' ')}>
     <slot>{content}</slot>
     {#if closable}
-      <ImageButton class="tag-close" size="small" on:click={close}>
-        <slot name="button">
-          <Cross />
-        </slot>
-      </ImageButton>
+      <div class="tag-close">
+        <ImageButton size="small" on:click={close}>
+          <slot name="button">
+            <Cross />
+          </slot>
+        </ImageButton>
+      </div>
     {/if}
   </span>
 {/if}

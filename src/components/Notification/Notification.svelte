@@ -2,7 +2,7 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import ImageButton from '../ImageButton/ImageButton'
+  import ImageButton from "../ImageButton/ImageButton";
   import Cross from "../../icons/Cross";
 
   export let id = null;
@@ -47,14 +47,13 @@
       <slot>{content}</slot>
     </div>
     {#if closable}
-      <ImageButton
-        class="notification-close"
-        size="small"
-        on:click={close}>
-        <slot name="button">
-          <Cross />
-        </slot>
-      </ImageButton>
+      <div class="notification-close">
+        <ImageButton size="small" on:click={close}>
+          <slot name="button">
+            <Cross />
+          </slot>
+        </ImageButton>
+      </div>
     {/if}
   </div>
 {/if}

@@ -14,3 +14,11 @@
     display: inline-block;
     position: absolute;
 }
+
+.drop-down-icon-container {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

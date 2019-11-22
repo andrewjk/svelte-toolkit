@@ -23,10 +23,10 @@
   beforeUpdate(() => {
     // Handle expanded being set outside the component
     if (expanded != previousExpanded) {
-      expanded = previousExpanded
+      expanded = previousExpanded;
       toggleDropDown();
     }
-  })
+  });
 
   function toggleDropDown(e) {
     if (e) e.preventDefault();
@@ -53,7 +53,7 @@
     var menuRect = menu.childNodes[0].getBoundingClientRect();
     switch (position) {
       case "above":
-        menu.style.bottom = (rect.height + menuRect.height) + "px";
+        menu.style.bottom = rect.height + menuRect.height + "px";
         break;
       case "below":
         menu.style.top = rect.height + "px";
@@ -93,9 +93,11 @@
         hasPopup={true}
         on:click={toggleDropDown}>
         <slot />
-        <slot name="button">
-          <ChevronDown />
-        </slot>
+        <div class="drop-down-icon-container">
+          <slot name="button">
+            <ChevronDown />
+          </slot>
+        </div>
       </Button>
     </slot>
   </div>

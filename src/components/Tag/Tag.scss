@@ -57,4 +57,8 @@
 .tag-close {
     margin-left: calc(var(--element-margin, #{$element-margin}) / 4);
     margin-right: calc(var(--element-margin, #{$element-margin}) * -1 / 4);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
