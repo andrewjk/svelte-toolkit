@@ -120,7 +120,12 @@ $disabled-text-color: scale-color($disabled-color, $lightness: -20%);
 // HEADER AND FOOTER
 // ========================================================
 
+$header-back-color: $light-back-color;
+$header-text-color: find-color-invert($header-back-color);
 $header-line-height: 4rem;
+
+$footer-back-color: $light-back-color;
+$footer-text-color: find-color-invert($footer-back-color);
 $footer-line-height: 4rem;
 
 // NAVBAR

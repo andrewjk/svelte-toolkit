@@ -1,13 +1,11 @@
 @import "../../styles/_variables";
 
 .page-header {
-    background-color: var(--light-back-color, $light-back-color);
+    background-color: var(--header-back-color, $header-back-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    color: var(--header-text-color, $header-text-color);
     display: table; // To size to content
+    line-height: var(--header-line-height, $header-line-height);
     padding: 0 var(--element-padding, $element-padding);
     width: 100%;
-}
-
-.page-header {
-    border-bottom: 1px solid var(--border-color, $border-color);
-    line-height: var(--header-line-height, $header-line-height);
 }
