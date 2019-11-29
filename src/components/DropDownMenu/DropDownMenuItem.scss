@@ -1,2 +1,36 @@
 @import "../../styles/_variables";
 @import "../../styles/shared/drop-down-item";
+
+.drop-down-item {
+    :global(a) {
+        color: inherit;
+        display: block;
+        padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
+        width: 100%;
+    }
+
+    :global(a:hover),
+    :global(a:focus) {
+        background-color: var(--select-color, $select-color);
+        color: var(--select-text-color, $select-text-color);
+        text-decoration: none;
+    }
+
+    :global(button.link) {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        display: block;
+        cursor: pointer;
+        text-align: left;
+        padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
+        width: 100%;
+    }
+    
+    :global(button.link:hover),
+    :global(button.link:focus) {
+        background-color: var(--select-color, $select-color);
+        color: var(--select-text-color, $select-text-color);
+        text-decoration: none;
+    }
+}

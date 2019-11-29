@@ -16,17 +16,17 @@
     cursor: pointer;
 }
 
-// TODO:
-//.file.primary,
-//.file.info,
-//.file.success,
-//.file.warning,
-//.file.danger {
-//    a {
-//        color: var(--info-color, $info-color);
-//        text-decoration: underline;
-//    }
-//}
+.file.primary,
+.file.info,
+.file.success,
+.file.warning,
+.file.danger {
+    :global(a),
+    :global(a:hover) {
+        color: var(--info-color, $info-color);
+        text-decoration: underline;
+    }
+}
 
 .file.primary {
     color: var(--light-primary-text-color, $light-primary-text-color);

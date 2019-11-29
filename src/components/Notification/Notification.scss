@@ -24,17 +24,20 @@
     margin-right: calc(var(--element-margin, #{$element-margin}) * -1 / 2);
 }
 
-// TODO:
-//.notification.primary,
-//.notification.info,
-//.notification.success,
-//.notification.warning,
-//.notification.danger {
-//    a {
-//        color: inherit;
-//        text-decoration: underline;
-//    }
-//}
+.notification.primary,
+.notification.info,
+.notification.success,
+.notification.warning,
+.notification.danger {
+    :global(a) {
+        color: inherit;
+        border-bottom: 1px solid;
+    }
+    :global(a:hover),
+    :global(a:focus) {
+        border-bottom: 1px double;
+    }
+}
 
 .notification.primary.solid,
 .notification.info.solid,
