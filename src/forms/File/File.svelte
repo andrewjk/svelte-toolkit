@@ -28,10 +28,14 @@
     context.registerInput(setValid);
   }
 
-  function setValid(valid) {
-    type = valid ? originalType : "danger";
+  function setValid(newValid, newType) {
+    if (newType) {
+      type = newType;
+    } else {
+      type = newValid ? originalType : "danger";
+    }
   }
-
+  
   function handleDrop(e) {
     const files = e.dataTransfer.files;
     handleFiles(files);

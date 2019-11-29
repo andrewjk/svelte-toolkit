@@ -33,16 +33,21 @@
   // Register this item with the parent Field (if applicable), which will let us know when we are invalid
   const context = getContext("field");
   if (context) {
-    value = context.fieldValue;
-    setValue = context.fieldSetValue;
-    group = context.fieldGroup;
     name = context.fieldName;
+    type = context.fieldType;
+    value = context.fieldValue;
+    group = context.fieldGroup;
+    setValue = context.fieldSetValue;
     validator = context.fieldValidator;
     context.registerInput(setValid, "group");
   }
 
-  function setValid(valid) {
-    type = valid ? originalType : "danger";
+  function setValid(newValid, newType) {
+    if (newType) {
+      type = newType;
+    } else {
+      type = newValid ? originalType : "danger";
+    }
   }
 
   function handleChange(e) {

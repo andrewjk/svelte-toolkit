@@ -1,5 +1,10 @@
 <script>
-  import { onMount, setContext, createEventDispatcher } from "svelte";
+  import {
+    onMount,
+    beforeUpdate,
+    setContext,
+    createEventDispatcher
+  } from "svelte";
   import FieldMessage from "./FieldMessage";
 
   export let id = null;
@@ -9,6 +14,7 @@
 
   export let label = "";
   export let name = null;
+  export let type = null;
   export let value = "";
   export let checked = false;
   export let group = null;
@@ -21,8 +27,10 @@
   export let compareTo = "";
   export let maxsize = 0;
   export let friendlyName = label || name;
+  export let message = null;
 
-  let errorMessage = false;
+  let valid = true;
+  let originalType = type;
   let setInputValid = null;
   let inputValueProp = null;
 
@@ -30,11 +38,12 @@
 
   // HACK: This seems like bad code, but I don't know how to pass props to items in slots
   setContext("field", {
+    fieldName: name,
+    fieldType: type,
     fieldValue: value,
     fieldChecked: checked,
     fieldGroup: group,
     fieldSetValue: setValue,
-    fieldName: name,
     fieldValidator: validator,
     fieldRequired: required,
     fieldMinlength: minlength,
@@ -50,13 +59,14 @@
 
   onMount(() => {
     // Make sure we have a validator if required
-    const validate = required || minlength || maxlength || regex || compareTo || maxsize;
+    const validate =
+      required || minlength || maxlength || regex || compareTo || maxsize;
     if (validate) {
       if (!name) {
-        throw `Name required for input`;
+        throw `Name required for field`;
       }
       if (!validator) {
-        throw `Validator required for input '${name}'`;
+        throw `Validator required for field '${name}'`;
       }
     }
     // Register all fields with the validator (to handle e.g. when they are being used to compare)
@@ -68,6 +78,12 @@
         { required, minlength, maxlength, regex, compareTo, maxsize },
         friendlyName
       );
+    }
+  });
+
+  beforeUpdate(() => {
+    if (setInputValid) {
+      setInputValid(valid, type);
     }
   });
 
@@ -105,9 +121,11 @@
     }
   }
 
-  function setValid(valid, message) {
-    errorMessage = message;
-    setInputValid(valid);
+  function setValid(newValid, newMessage) {
+    valid = newValid;
+    message = newMessage;
+    type = valid ? originalType : "danger";
+    setInputValid(valid, type);
   }
 </script>
 
@@ -115,12 +133,19 @@
 
 </style>
 
-<div {id} class={['field', className].concat(classNames).filter(Boolean).join(' ')}>
+<div
+  {id}
+  class={['field', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <slot name="label">
-    <label for={name}>{label}</label>
+    {#if label}
+      <label for={name}>{label}</label>
+    {/if}
   </slot>
   <slot />
-  {#if errorMessage}
-    <FieldMessage content={errorMessage} type="danger" />
+  {#if message}
+    <FieldMessage content={message} {type} />
   {/if}
 </div>
