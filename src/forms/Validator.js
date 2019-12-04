@@ -55,7 +55,6 @@ export default class Validator {
     addMessage(message) {
         this.valid = false;
         this.messages.push(message);
-        this.setValid();
     }
 
     // TODO: Custom validation?
