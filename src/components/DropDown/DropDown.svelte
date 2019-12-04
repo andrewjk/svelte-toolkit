@@ -1,5 +1,5 @@
 <script>
-  import { beforeUpdate, tick } from "svelte";
+  import { beforeUpdate, onDestroy, tick } from "svelte";
 
   import Button from "../Button/Button";
   import ChevronDown from "../../icons/ChevronDown";
@@ -24,6 +24,13 @@
     // Handle expanded being set outside the component
     if (expanded != previousExpanded) {
       expanded = previousExpanded;
+      toggleDropDown();
+    }
+  });
+
+  onDestroy(() => {
+    // Clean up
+    if (expanded) {
       toggleDropDown();
     }
   });
