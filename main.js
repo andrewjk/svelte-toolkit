@@ -24,8 +24,6 @@ import DatePicker from './src/components/DatePicker/DatePicker';
 import DotNav from './src/components/DotNav/DotNav';
 import DropDown from './src/components/DropDown/DropDown';
 import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
-import DropDownMenuButton from './src/components/DropDownMenu/DropDownMenuButton';
-import DropDownMenuLink from './src/components/DropDownMenu/DropDownMenuLink';
 import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem';
 import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider';
 import Grid from './src/components/Grid/Grid';
@@ -36,7 +34,6 @@ import LevelItem from './src/components/Level/LevelItem';
 import NavBar from './src/components/NavBar/NavBar';
 import NavLogo from './src/components/NavBar/NavLogo';
 import NavMenu from './src/components/NavBar/NavMenu';
-import NavMenuLink from './src/components/NavBar/NavMenuLink';
 import NavMenuItem from './src/components/NavBar/NavMenuItem';
 import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown';
 import Notification from './src/components/Notification/Notification';
@@ -142,11 +139,11 @@ export {
     DatePicker,
     DotNav,
     DropDown,
-    DropDownMenu, DropDownMenuButton, DropDownMenuLink, DropDownMenuItem, DropDownMenuDivider,
+    DropDownMenu, DropDownMenuItem, DropDownMenuDivider,
     ImageButton,
     Grid, GridItem,
     Level, LevelItem,
-    NavBar, NavLogo, NavMenu, NavMenuLink, NavMenuItem, NavMenuDropDown,
+    NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
     OffScreen,
     Page, PageBody, PageFooter, PageHeader,
