@@ -9,6 +9,7 @@
 
   export let confirm = false;
   export let cancel = false;
+  export let type = null;
 
   function handleKey(e) {
     // Handle tabbing manually to trap focus within the dialog
@@ -38,7 +39,7 @@
 
 <button
   {id}
-  class={['button', 'dialog-button', confirm ? 'confirm' : null, cancel ? 'cancel' : null, className]
+  class={['button', 'dialog-button', confirm ? 'confirm' : null, cancel ? 'cancel' : null, type, className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}

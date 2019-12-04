@@ -5,8 +5,11 @@
     margin-left: calc(var(--element-margin, #{$element-margin}) / 4 * 3);
     font-size: 1.75rem;
     min-width: 9.6rem;
-    padding: calc(var(--element-padding, #{$element-padding}) / 4);
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
 }
+
+// CONFIRM AND CANCEL
+// ========================================================
 
 .dialog-button.confirm {
     background-color: var(--confirm-color, $confirm-color);
@@ -26,4 +29,60 @@
 
 .dialog-button.cancel:hover:not(:disabled):not(.loading) {
     background-color: var(--cancel-hover-color, $cancel-hover-color);
+}
+
+// BUTTON COLORS
+// ========================================================
+
+.dialog-button.primary,
+.dialog-button.info,
+.dialog-button.success,
+.dialog-button.warning,
+.dialog-button.danger {
+    border: 1px solid transparent;
+}
+
+.dialog-button.primary {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
+.dialog-button.primary:hover:not(:disabled):not(.loading) {
+    background-color: var(--primary-hover-color, $primary-hover-color);
+}
+
+.dialog-button.info {
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
+}
+
+.dialog-button.info:hover:not(:disabled):not(.loading) {
+    background-color: var(--info-hover-color, $info-hover-color);
+}
+
+.dialog-button.success {
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
+}
+
+.dialog-button.success:hover:not(:disabled):not(.loading) {
+    background-color: var(--success-hover-color, $success-hover-color);
+}
+
+.dialog-button.warning {
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
+}
+
+.dialog-button.warning:hover:not(:disabled):not(.loading) {
+    background-color: var(--warning-hover-color, $warning-hover-color);
+}
+
+.dialog-button.danger {
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
+}
+
+.dialog-button.danger:hover:not(:disabled):not(.loading) {
+    background-color: var(--danger-hover-color, $danger-hover-color);
 }

@@ -12,7 +12,7 @@
   export let header = "";
   export let content = "";
   export let callback = null;
-  // Buttons can have { content, confirm, cancel, result }
+  // Buttons can have { content, confirm, cancel, type, result }
   export let buttons = [];
 
   const dispatch = createEventDispatcher();
@@ -94,6 +94,7 @@
             <DialogButton
               confirm={button.confirm}
               cancel={button.cancel}
+              type={button.type}
               on:click={e => handleClick(button.confirm, button.cancel, button.result)}>
                {button.content}
             </DialogButton>
