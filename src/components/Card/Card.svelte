@@ -3,6 +3,7 @@
   let className = null;
   export { className as class };
   export let classNames = [];
+  export let type = null;
 </script>
 
 <style src="Card.scss">
@@ -11,7 +12,7 @@
 
 <div
   {id}
-  class={['card', className]
+  class={['card', type, className]
     .concat(classNames)
     .filter(Boolean)
     .join(' ')}>

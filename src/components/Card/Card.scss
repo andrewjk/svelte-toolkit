@@ -6,3 +6,62 @@
     margin: -1px 0;
     padding: var(--element-padding, $element-padding);
 }
+
+.card.transparent {
+    background-color: transparent;
+}
+
+.card.light {
+    background-color: var(--light-back-color, $light-back-color);
+}
+
+.card.dark {
+    background-color: var(--dark-back-color, $dark-back-color);
+    border-color: var(--dark-back-color, $dark-back-color);
+    color: white;
+}
+
+.card.primary,
+.card.info,
+.card.success,
+.card.warning,
+.card.danger {
+    :global(a) {
+        color: inherit;
+        border-bottom: 1px solid;
+    }
+    :global(a:hover),
+    :global(a:focus) {
+        border-bottom: 1px double;
+    }
+}
+
+.card.primary {
+    background-color: var(--light-primary-color, $light-primary-color);
+    border: 1px solid var(--light-primary-border-color, $light-primary-border-color);
+    color: var(--light-primary-text-color, $light-primary-text-color);
+}
+
+.card.info {
+    background-color: var(--light-info-color, $light-info-color);
+    border: 1px solid var(--light-info-border-color, $light-info-border-color);
+    color: var(--light-info-text-color, $light-info-text-color);
+}
+
+.card.success {
+    background-color: var(--light-success-color, $light-success-color);
+    border: 1px solid var(--light-success-border-color, $light-success-border-color);
+    color: var(--light-success-text-color, $light-success-text-color);
+}
+
+.card.warning {
+    background-color: var(--light-warning-color, $light-warning-color);
+    border: 1px solid var(--light-warning-border-color, $light-warning-border-color);
+    color: var(--light-warning-text-color, $light-warning-text-color);
+}
+
+.card.danger {
+    background-color: var(--light-danger-color, $light-danger-color);
+    border: 1px solid var(--light-danger-border-color, $light-danger-border-color);
+    color: var(--light-danger-text-color, $light-danger-text-color);
+}
