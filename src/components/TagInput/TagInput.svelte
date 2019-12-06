@@ -17,6 +17,7 @@
   export let items = [];
   export let delay = 300;
   export let minChars = 1;
+  export let maxnumber = 0;
 
   let expanded = false;
   let focus = false;
@@ -57,7 +58,8 @@
     const newItemStates = newItems.map((item, index) => {
       return {
         active: index === 0,
-        text: typeof item === "object" ? item.text : item
+        text: typeof item === "object" ? item.text : item,
+        value: item
       };
     });
     if (newItemStates.length && !expanded) {
@@ -114,6 +116,26 @@
           toggleList();
         } else {
           toggleItem(index + 1);
+        }
+        break;
+      }
+      case keyCodes.space: {
+        if (!itemStates || !itemStates.length) {
+          e.preventDefault();
+          addValue(text);
+        }
+        break;
+      }
+      case keyCodes.backspace: {
+        if (!text) {
+          e.preventDefault();
+          removeItem(values.length - 1);
+        }
+        break;
+      }
+      default: {
+        if (maxnumber && values.length >= maxnumber) {
+          e.preventDefault();
         }
         break;
       }
@@ -210,36 +232,29 @@
     dispatch("change", index);
   }
 
-  // ===
-
-  //function setValue(index) {
-  //  if (index >= 0 && index < itemStates.length) {
-  //    skipSearch = true;
-  //    value = itemStates[index].text;
-  //    if (expanded) {
-  //      toggleList();
-  //    }
-  //  }
-  //}
-
-  function handleClose(e) {
+  function handleRemove(e) {
     removeItem(e.detail);
   }
 
   function setValue(index) {
     if (index >= 0 && index < itemStates.length) {
       // Add the value to values, clear text, hide the list and focus the textbox
-      values = values.concat([itemStates[index].text]);
-      text = "";
-      input.focus();
-      if (expanded) {
-        toggleList();
-      }
+      addValue(itemStates[index].value);
+    }
+  }
+
+  function addValue(value) {
+    // Add the value to values, clear text, hide the list and focus the textbox
+    values = values.concat(value);
+    text = "";
+    input.focus();
+    if (expanded) {
+      toggleList();
     }
   }
 
   function removeItem(index) {
-    if (index >= 0 && index < itemStates.length) {
+    if (index >= 0 && index < values.length) {
       // Remove the value from values and focus the textbox
       values.splice(index, 1);
       values = values;
@@ -263,7 +278,9 @@
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <div class="tag-input-value-list">
       {#each values as value, index (value)}
-        <TagInputValue {index} on:close={handleClose}>{value}</TagInputValue>
+        <TagInputValue {index} on:close={handleRemove}>
+          {typeof value === 'object' ? value.text : value}
+        </TagInputValue>
       {/each}
     </div>
     <input
@@ -281,7 +298,7 @@
       <slot>
         {#each itemStates as item, index}
           <TagInputItem active={item.active} {index} on:select={handleSelect}>
-             {item.text}
+            {item.text}
           </TagInputItem>
         {/each}
       </slot>
