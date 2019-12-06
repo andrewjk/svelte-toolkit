@@ -19,6 +19,11 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Remove the black dotted focus border in Firefox */
+.image-button::-moz-focus-inner {
+    border: 0;
+}
+
 .image-button-content {
     display: inline-flex;
     justify-content: center;
