@@ -36,7 +36,6 @@
   if (context) {
     name = context.fieldName;
     type = context.fieldType;
-    value = context.fieldValue;
     checked = context.fieldChecked;
     group = context.fieldGroup;
     setValue = context.fieldSetValue;

@@ -35,7 +35,6 @@
   if (context) {
     name = context.fieldName;
     type = context.fieldType;
-    value = context.fieldValue;
     group = context.fieldGroup;
     setValue = context.fieldSetValue;
     validator = context.fieldValidator;
