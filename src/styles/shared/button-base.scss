@@ -25,6 +25,6 @@
 }
 
 /* Remove the black dotted focus border in Firefox */
-button::-moz-focus-inner {
+.button::-moz-focus-inner {
     border: 0;
 }
