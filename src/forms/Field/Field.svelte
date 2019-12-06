@@ -125,7 +125,9 @@
     valid = newValid;
     message = newMessage;
     type = valid ? originalType : "danger";
-    setInputValid(valid, type);
+    if (setInputValid) {
+      setInputValid(valid, type);
+    }
   }
 </script>
 
