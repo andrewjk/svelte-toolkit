@@ -1,5 +1,5 @@
 <script>
-  import { getContext, createEventDispatcher } from "svelte";
+  import { getContext, createEventDispatcher, onDestroy } from "svelte";
 
   export let id = null;
   let className = null;
@@ -9,10 +9,11 @@
   const dispatch = createEventDispatcher();
 
   let active;
+  let itemID;
 
   // Register this item with the parent Switcher, which will handle toggling active for all items
-  const { registerItem } = getContext("switcher");
-  registerItem(setActive);
+  const { registerItem, removeItem } = getContext("switcher");
+  registerItem(setActive, setItemID);
 
   // This function is called by the parent Switcher to set this item's active value
   function setActive(value) {
@@ -21,6 +22,15 @@
       dispatch("activeChange", value);
     }
   }
+
+  // This function is called by the parent Switcher to set this item's ID
+  function setItemID(newItemID) {
+    itemID = newItemID;
+  }
+
+  onDestroy(() => {
+    removeItem(itemID);
+  });
 </script>
 
 <style>
@@ -35,7 +45,10 @@
 
 <div
   {id}
-  class={['switcher-item', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['switcher-item', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}
   class:active
   tabindex="0">
   <slot />

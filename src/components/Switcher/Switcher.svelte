@@ -17,13 +17,22 @@
   // A collection containing the active state and some functions for each item
   const itemStates = [];
 
+  let itemid = 0;
+
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
   // declared in slots
   setContext("switcher", {
     // The registerItem function is called from each SwitcherItem to register itself with this
-    // Switcher. They pass us their header, as well as a setActive method that we can call
-    registerItem: setActive => {
-      itemStates.push({ active: false, setActive });
+    // Switcher. They pass us a setActive method that we can call and let us know when they have
+    // been unloaded so that we can remove them from the itemStates array
+    registerItem: (setActive, setItemID) => {
+      const newitemid = itemid++;
+      itemStates.push({ itemid: newitemid, active: false, setActive });
+      setItemID(newitemid);
+    },
+    removeItem: itemid => {
+      itemStates.splice(itemStates.findIndex(i => i.itemid === itemid), 1);
+      toggleItem(index);
     }
   });
 
@@ -65,6 +74,11 @@
   }
 </script>
 
-<div {id} class={['switcher', className].concat(classNames).filter(Boolean).join(' ')}>
+<div
+  {id}
+  class={['switcher', className]
+    .concat(classNames)
+    .filter(Boolean)
+    .join(' ')}>
   <slot />
 </div>
