@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let active = false;
 
   let expanded = false;
@@ -60,10 +59,7 @@
 
 <li
   {id}
-  class={['nav-menu-drop-down', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['nav-menu-drop-down', className].filter(Boolean).join(' ')}
   class:active
   role="menuitem"
   on:mouseenter={handleMouseEnter}

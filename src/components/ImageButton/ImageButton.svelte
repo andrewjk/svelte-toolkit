@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = "";
   export let size = "medium";
   export let submit = false;
@@ -20,10 +19,7 @@
 
 <button
   {id}
-  class={['image-button', type, size, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['image-button', type, size, className].filter(Boolean).join(' ')}
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {title}
   {disabled}

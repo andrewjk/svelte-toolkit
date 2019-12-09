@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = "primary";
   export let size = "medium";
   export let loading = false;
@@ -23,10 +22,7 @@
 
 <button
   {id}
-  class={['button', type, size, loading ? 'loading' : null, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['button', type, size, loading ? 'loading' : null, className].filter(Boolean).join(' ')}
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {title}
   {disabled}

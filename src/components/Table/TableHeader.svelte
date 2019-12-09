@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let field = "";
   export let sortable = false;
   export let sortDirection = "";
@@ -29,10 +28,7 @@
 
 <th
   {id}
-  class={[className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={[className].filter(Boolean).join(' ')}>
   {#if sortable}
     <button class="table-button" type="button" on:click={sort}>
       <slot />

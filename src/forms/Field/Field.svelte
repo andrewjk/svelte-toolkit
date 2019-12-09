@@ -10,7 +10,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let label = "";
   export let name = null;
@@ -137,10 +136,7 @@
 
 <div
   {id}
-  class={['field', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['field', className].filter(Boolean).join(' ')}>
   <slot name="label">
     {#if label}
       <label for={name}>{label}</label>

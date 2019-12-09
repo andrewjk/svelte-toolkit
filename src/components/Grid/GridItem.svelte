@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let width = null;
   export let smwidth = null;
@@ -60,7 +59,6 @@
       spaced ? 'spaced' : null,
       className
     ]
-    .concat(classNames)
     .filter(Boolean)
     .join(' ')}>
   <slot />

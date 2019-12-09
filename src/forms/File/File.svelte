@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let value = null;
   export let type = "";
@@ -64,10 +63,7 @@
 
 <label
   {id}
-  class={['file', type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['file', type, className].filter(Boolean).join(' ')}
   on:dragenter|stopPropagation|preventDefault={e => null}
   on:dragover|stopPropagation|preventDefault={e => null}
   on:drop|stopPropagation|preventDefault={e => handleDrop(e)}>

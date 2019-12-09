@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let position = null;
 
@@ -20,9 +19,6 @@
 
 <div
   {id}
-  class={['drop-down-menu', position, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['drop-down-menu', position, className].filter(Boolean).join(' ')}>
   <slot />
 </div>

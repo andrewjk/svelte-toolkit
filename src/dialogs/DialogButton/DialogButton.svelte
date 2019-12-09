@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let content = "";
 
   export let confirm = false;
@@ -39,10 +38,7 @@
 
 <button
   {id}
-  class={['button', 'dialog-button', confirm ? 'confirm' : null, cancel ? 'cancel' : null, type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['button', 'dialog-button', confirm ? 'confirm' : null, cancel ? 'cancel' : null, type, className].filter(Boolean).join(' ')}
   type="button"
   on:keydown={handleKey}
   on:click>

@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let label = "";
   export let type = "";
@@ -73,10 +72,7 @@
 
 <label
   {id}
-  class={['checkbox', type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['checkbox', type, className].filter(Boolean).join(' ')}>
   {#if group}
     <input
       class="checkbox-input"

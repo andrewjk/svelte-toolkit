@@ -8,7 +8,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let buttonType = "info";
   export let buttonSize = "medium";
   export let position = "below";
@@ -86,10 +85,7 @@
 
 <div
   {id}
-  class={['drop-down', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}>
   <div class="drop-down-button-container" bind:this={button}>
     <slot name="element">

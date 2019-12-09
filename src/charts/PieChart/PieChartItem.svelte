@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let value = 0;
   export let color = "";
 
@@ -61,6 +60,6 @@
 
 <path
   {id}
-  class={['chart-segment', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['chart-segment', className].filter(Boolean).join(' ')}
   d={path}
   fill={color} />

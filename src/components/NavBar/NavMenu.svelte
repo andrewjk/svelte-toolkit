@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let position = "start";
   export let ariaLabel = "";
 
@@ -19,10 +18,7 @@
 
 <nav
   {id}
-  class={['nav-menu', position, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['nav-menu', position, className].filter(Boolean).join(' ')}
   aria-label={ariaLabel}>
   <ul class="nav-menu-bar" role="menubar">
     <slot />

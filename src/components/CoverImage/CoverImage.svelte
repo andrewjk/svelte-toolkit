@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let src = "";
   export let position = "";
@@ -41,10 +40,7 @@
 
 <div
   {id}
-  class={['cover-image', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['cover-image', className].filter(Boolean).join(' ')}
   {style}
   role="img"
   aria-label={alt} />

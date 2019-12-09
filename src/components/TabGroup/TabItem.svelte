@@ -4,7 +4,6 @@
   export let id;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let header = null;
   export let active = false;
 
@@ -29,10 +28,7 @@
 
 <div
   {id}
-  class={['tab-item', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['tab-item', className].filter(Boolean).join(' ')}
   class:active
   role="tabpanel"
   aria-labelledby={`${id}-header`}>

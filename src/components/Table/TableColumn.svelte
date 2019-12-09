@@ -4,7 +4,6 @@
   export let id = "";
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let field = "";
   export let header = "";
@@ -18,9 +17,6 @@
 
 <td
   {id}
-  class={[className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={[className].filter(Boolean).join(' ')}>
   <slot/>
 </td>

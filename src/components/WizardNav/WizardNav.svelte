@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let index = 0;
   export let itemCount = 0;
 
@@ -28,10 +27,7 @@
 {#if itemCount > 0}
   <div
     {id}
-    class={['wizard-nav', className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={['wizard-nav', className].filter(Boolean).join(' ')}
     tabindex="0">
     {#if index > 0}
       <button

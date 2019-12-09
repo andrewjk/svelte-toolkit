@@ -17,7 +17,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let value = null;
   export let standardColors = [
@@ -332,10 +331,7 @@
 
 <div
   {id}
-  class={['palette', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['palette', className].filter(Boolean).join(' ')}>
   <div class="palette-colors">
     <!-- HACK: Need to specify dimensions because it's not initially shown and thus has scrollWidth/Height = 0 -->
     <div class="palette-canvas-container">

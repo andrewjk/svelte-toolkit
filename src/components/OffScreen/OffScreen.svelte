@@ -5,7 +5,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let visible = false;
   export let position = "left";
 
@@ -52,7 +51,7 @@
   <div class="off-screen-background" on:click={close}>
     <div
       {id}
-      class={['off-screen', position, className].concat(classNames).filter(Boolean).join(' ')}
+      class={['off-screen', position, className].filter(Boolean).join(' ')}
       transition:fly={transitionArgs()}
       bind:this={offscreen}>
       <slot />

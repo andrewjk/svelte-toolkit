@@ -11,7 +11,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let multiple = false;
   export let value = -1;
 
@@ -146,7 +145,7 @@
 
 <div
   {id}
-  class={['accordion', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['accordion', className].filter(Boolean).join(' ')}
   tabindex="0"
   on:focus={handleFocus}>
   <slot />

@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let type = "";
   export let value = "";
@@ -70,10 +69,7 @@
 
 <textarea
   {id}
-  class={[type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={[type, className].filter(Boolean).join(' ')}
   {name}
   bind:this={input}
   bind:value

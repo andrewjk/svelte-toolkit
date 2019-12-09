@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let value = 0;
   export let total = 0;
@@ -83,10 +82,7 @@
 
 <div
   {id}
-  class={['slider', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['slider', className].filter(Boolean).join(' ')}
   on:mousemove={handleMouseMove}
   on:mouseup={handleMouseUp}>
   <div class="slider-background" bind:this={background} />

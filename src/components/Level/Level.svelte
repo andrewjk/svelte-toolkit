@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 </script>
 
 <style src="Level.scss">
@@ -11,9 +10,6 @@
 
 <div
   {id}
-  class={['level', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['level', className].filter(Boolean).join(' ')}>
   <slot />
 </div>

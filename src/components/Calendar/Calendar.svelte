@@ -11,7 +11,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let startOfWeek = 1;
   export let selectable = false;
@@ -240,10 +239,7 @@
 
 <div
   {id}
-  class={['calendar', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['calendar', className].filter(Boolean).join(' ')}
   bind:this={container}
   tabindex={selectable ? '0' : '-1'}
   on:focus={handleFocus}>

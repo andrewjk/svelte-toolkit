@@ -8,7 +8,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = "info";
   export let content = "";
   export let closable = false;
@@ -38,10 +37,7 @@
 {#if visible}
   <div
     {id}
-    class={['notification', type, solid ? 'solid' : null, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={['notification', type, solid ? 'solid' : null, className].filter(Boolean).join(' ')}
     out:fade>
     <div class="notification-content">
       <slot>{content}</slot>

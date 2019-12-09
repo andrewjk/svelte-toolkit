@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let content = "Please correct the following errors:";
 
   export let validator = null;
@@ -31,7 +30,7 @@
 </style>
 
 {#if messages.length}
-  <div {id} class={['validation-summary', className].concat(classNames).filter(Boolean).join(' ')}>
+  <div {id} class={['validation-summary', className].filter(Boolean).join(' ')}>
     <slot>{content}</slot>
     <ul>
       {#each messages as message}

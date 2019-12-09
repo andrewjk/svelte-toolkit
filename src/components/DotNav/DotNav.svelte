@@ -5,7 +5,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let index = 0;
   export let itemCount = 0;
   export let type = "";
@@ -59,10 +58,7 @@
 {#if itemCount > 0}
   <div
     {id}
-    class={['dot-nav', type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={['dot-nav', type, className].filter(Boolean).join(' ')}
     on:focus={handleFocus}
     on:keydown={handleKey}
     tabindex="0">

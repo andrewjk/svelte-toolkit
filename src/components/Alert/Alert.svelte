@@ -8,7 +8,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = "info";
   export let content = "";
   export let position = "top";
@@ -66,10 +65,7 @@
 {#if visible}
   <div
     {id}
-    class={['alert', type, position, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={['alert', type, position, className].filter(Boolean).join(' ')}
     role="alert"
     in:fly={transitionArgs()}
     out:fade

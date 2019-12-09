@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = "info";
   export let content = "";
 </script>
@@ -11,6 +10,6 @@
 
 </style>
 
-<span {id} class={['badge', type, className].concat(classNames).filter(Boolean).join(' ')}>
+<span {id} class={['badge', type, className].filter(Boolean).join(' ')}>
   <slot>{content}</slot>
 </span>

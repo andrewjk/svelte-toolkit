@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   // Pass in items if you want the table to handle paging, sorting, etc, or data if you want to handle it (e.g. by fetching from a web service)
   export let items = null;
@@ -111,10 +110,7 @@
 {#if view && view.length}
   <table
     {id}
-    class={['table', type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}>
+    class={['table', type, className].filter(Boolean).join(' ')}>
     <thead>
       <slot name="header">
         <tr>

@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let x1 = 0;
   export let x2 = 0;
   export let y1 = 0;
@@ -18,10 +17,7 @@
 
 <line
   {id}
-  class={['chart-axis', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['chart-axis', className].filter(Boolean).join(' ')}
   {x1}
   {y1}
   {x2}

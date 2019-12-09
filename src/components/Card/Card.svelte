@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let type = null;
 </script>
 
@@ -12,9 +11,6 @@
 
 <div
   {id}
-  class={['card', type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['card', type, className].filter(Boolean).join(' ')}>
   <slot />
 </div>

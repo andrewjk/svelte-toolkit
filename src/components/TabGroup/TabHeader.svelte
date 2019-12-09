@@ -4,7 +4,6 @@
   export let itemId;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let active = false;
   export let boxed = false;
 
@@ -38,10 +37,7 @@
 
 <button
   {id}
-  class={['button', 'tab-list-button', boxed ? 'boxed' : null, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['button', 'tab-list-button', boxed ? 'boxed' : null, className].filter(Boolean).join(' ')}
   class:active
   type="button"
   role="tab"

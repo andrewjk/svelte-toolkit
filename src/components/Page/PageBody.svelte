@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 </script>
 
 <style src="PageBody.scss">
@@ -11,9 +10,6 @@
 
 <main
   {id}
-  class={['page-body', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['page-body', className].filter(Boolean).join(' ')}>
   <slot />
 </main>

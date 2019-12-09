@@ -9,7 +9,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let value = null;
   export let placeholder = "";
@@ -89,10 +88,7 @@
 
 <div
   {id}
-  class={['color-picker', 'drop-down', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['color-picker', 'drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}>
   <div
     bind:this={inputContainer}

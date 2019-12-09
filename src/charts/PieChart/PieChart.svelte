@@ -5,7 +5,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let size = 200;
   export let radius = size / 2;
 
@@ -58,7 +57,7 @@
 
 <svg
   {id}
-  class={['chart', className].concat(classNames).filter(Boolean).join(' ')}
+  class={['chart', className].filter(Boolean).join(' ')}
   version="1.1"
   width={size}
   height={size}>

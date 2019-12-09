@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let position = null;
 </script>
@@ -13,9 +12,6 @@
 
 <div
   {id}
-  class={['level-item', position, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['level-item', position, className].filter(Boolean).join(' ')}>
   <slot />
 </div>

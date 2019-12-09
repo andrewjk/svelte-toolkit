@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let type = "info";
   export let content = "";
@@ -30,10 +29,7 @@
 {#if visible}
   <span
     {id}
-    class={['tag', type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}>
+    class={['tag', type, className].filter(Boolean).join(' ')}>
     <slot>{content}</slot>
     {#if closable}
       <div class="tag-close">

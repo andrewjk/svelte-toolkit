@@ -4,7 +4,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let spaced = null;
   export let nowrap = null;
@@ -20,9 +19,6 @@
 
 <div
   {id}
-  class={['grid', spaced ? 'spaced' : null, nowrap ? 'nowrap' : null, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['grid', spaced ? 'spaced' : null, nowrap ? 'nowrap' : null, className].filter(Boolean).join(' ')}>
   <slot />
 </div>

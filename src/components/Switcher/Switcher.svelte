@@ -9,7 +9,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let index = 0;
 
   const dispatch = createEventDispatcher();
@@ -76,9 +75,6 @@
 
 <div
   {id}
-  class={['switcher', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['switcher', className].filter(Boolean).join(' ')}>
   <slot />
 </div>

@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let rotate = false;
 </script>
 
@@ -12,10 +11,7 @@
 
 <svg
   {id}
-  class={['icon', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['icon', className].filter(Boolean).join(' ')}
   class:rotate
   viewBox="0 0 100 100"
   stroke-width="20">

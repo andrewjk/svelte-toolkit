@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let value = null;
   export let placeholder = "";
@@ -227,10 +226,7 @@
 
 <div
   {id}
-  class={['auto-complete', 'drop-down', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['auto-complete', 'drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}
   role="combobox">
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>

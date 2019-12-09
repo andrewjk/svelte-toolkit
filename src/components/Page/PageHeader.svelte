@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 </script>
 
 <style src="PageHeader.scss">
@@ -11,9 +10,6 @@
 
 <header
   {id}
-  class={['page-header', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['page-header', className].filter(Boolean).join(' ')}>
   <slot />
 </header>

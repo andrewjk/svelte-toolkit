@@ -7,7 +7,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let index = 0;
 
@@ -24,10 +23,7 @@
 
 <Tag
   {id}
-  class={['tag-input-value', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['tag-input-value', className].filter(Boolean).join(' ')}
   closable={true}
   on:close={handleClose}>
   <slot />

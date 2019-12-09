@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
   export let contentType = "text";
 
   export let type = "";
@@ -73,10 +72,7 @@
   <input
     type="text"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -93,10 +89,7 @@
   <input
     type="password"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -113,10 +106,7 @@
   <input
     type="email"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -133,10 +123,7 @@
   <input
     type="url"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -153,10 +140,7 @@
   <input
     type="tel"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value
@@ -173,10 +157,7 @@
   <input
     type="file"
     {id}
-    class={[type, className]
-      .concat(classNames)
-      .filter(Boolean)
-      .join(' ')}
+    class={[type, className].filter(Boolean).join(' ')}
     {name}
     bind:this={input}
     bind:value

@@ -5,7 +5,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let label = "";
   export let type = "";
@@ -71,10 +70,7 @@
 
 <label
   {id}
-  class={['radio', type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['radio', type, className].filter(Boolean).join(' ')}>
   <input
     class="radio-input"
     {name}

@@ -9,7 +9,6 @@
   export let name = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let type = "";
   export let value = 0;
@@ -101,10 +100,7 @@
 
 <div
   {id}
-  class={['number-input-container', type, className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['number-input-container', type, className].filter(Boolean).join(' ')}
   class:focus>
   <input
     {name}

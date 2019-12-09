@@ -8,7 +8,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 
   export let text = "";
   export let values = [];
@@ -269,10 +268,7 @@
 
 <div
   {id}
-  class={['tag-input', 'drop-down', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}
+  class={['tag-input', 'drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}
   role="combobox">
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>

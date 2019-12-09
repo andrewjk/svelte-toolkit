@@ -2,7 +2,6 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let classNames = [];
 </script>
 
 <style src="SubNavMenuHeader.scss">
@@ -11,9 +10,6 @@
 
 <h2
   {id}
-  class={['sub-nav-menu-header', className]
-    .concat(classNames)
-    .filter(Boolean)
-    .join(' ')}>
+  class={['sub-nav-menu-header', className].filter(Boolean).join(' ')}>
   <slot />
 </h2>
