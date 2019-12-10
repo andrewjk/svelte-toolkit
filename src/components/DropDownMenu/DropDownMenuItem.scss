@@ -2,6 +2,8 @@
 @import "../../styles/shared/drop-down-item";
 
 .drop-down-item {
+    padding: 0;
+
     :global(a) {
         color: inherit;
         display: block;
