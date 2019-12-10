@@ -8,14 +8,14 @@
   export let size = 200;
   export let radius = size / 2;
 
-  const itemStates = [];
+  let itemStates = [];
 
   setContext("piechart", {
     // The registerItem function is called from each PieChartItem to register itself with this
     // PieChart. They pass us their value, as well as a setInfo method that we can call in onMount
     // and beforeUpdate, when we have all of the items and can calculate sizes and (default) colors
     registerItem: (value, setInfo) => {
-      itemStates.push({ value, setInfo });
+      itemStates = [...itemStates, { value, setInfo }];
     }
   });
 

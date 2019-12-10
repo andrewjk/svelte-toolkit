@@ -17,7 +17,7 @@
   const dispatch = createEventDispatcher();
 
   // A collection containing the expanded state and some functions for each item
-  const itemStates = [];
+  let itemStates = [];
 
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
   // declared in slots
@@ -27,7 +27,7 @@
     // itemStates collection along with a toggleItem method that they can call when their header
     // is clicked
     registerItem: (setExpanded, setFocused) => {
-      itemStates.push({ expanded: false, setExpanded, setFocused });
+      itemStates = [...itemStates, { expanded: false, setExpanded, setFocused }];
       return {
         index: itemStates.length - 1,
         toggleItem,

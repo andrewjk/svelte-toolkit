@@ -9,7 +9,7 @@
   export let width = 400;
   export let height = 200;
 
-  const itemStates = [];
+  let itemStates = [];
 
   const haxisBuffer = 20;
   const vaxisBuffer = 20;
@@ -22,7 +22,7 @@
     // BarChart. They pass us their value, as well as a setInfo method that we can call in onMount
     // and beforeUpdate, when we have all of the items and can calculate sizes and (default) colors
     registerItem: (value, label, setInfo) => {
-      itemStates.push({ value, label, setInfo });
+      itemStates = [...itemStates, { value, label, setInfo }];
     }
   });
 

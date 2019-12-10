@@ -14,7 +14,7 @@
   const dispatch = createEventDispatcher();
 
   // A collection containing the active state and some functions for each item
-  const itemStates = [];
+  let itemStates = [];
 
   let itemid = 0;
 
@@ -26,7 +26,7 @@
     // been unloaded so that we can remove them from the itemStates array
     registerItem: (setActive, setItemID) => {
       const newitemid = itemid++;
-      itemStates.push({ itemid: newitemid, active: false, setActive });
+      itemStates = [...itemStates, { itemid: newitemid, active: false, setActive }];
       setItemID(newitemid);
     },
     removeItem: itemid => {

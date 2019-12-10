@@ -9,7 +9,7 @@
   export let width = 400;
   export let height = 200;
 
-  const itemStates = [];
+  let itemStates = [];
 
   const hBuffer = 20;
   const vBuffer = 20;
@@ -22,7 +22,7 @@
     // LineChart. They pass us their values, as well as a setInfo method that we can call in onMount
     // and beforeUpdate, when we have all of the items and can calculate sizes and (default) colors
     registerItem: (values, labels, setInfo) => {
-      itemStates.push({ values, labels, setInfo });
+      itemStates = [...itemStates, { values, labels, setInfo }];
     }
   });
 
