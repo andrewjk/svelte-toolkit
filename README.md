@@ -2,7 +2,7 @@
 
 A collection of UI components for [`Svelte`](https://svelte.dev/).
 
-[View the documentation.](https://andrewjk.github.io/svelte-toolkit-docs/index.html)
+[View the documentation.](https://andrewjk.github.io/svelte-toolkit-docs/)
 
 ## Getting Started
 
