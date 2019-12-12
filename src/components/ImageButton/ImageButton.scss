@@ -7,6 +7,7 @@
     color: inherit;
     cursor: pointer;
     padding: 0.3rem;
+    position: relative;
 
     display: inline-flex;
     justify-content: center;
@@ -128,5 +129,12 @@
 .image-button:disabled:focus {
     background-color: var(--disabled-color, $disabled-color);
     color: var(--disabled-text-color, $disabled-text-color);
+    cursor: default;
+}
+
+// LOADING
+// ========================================================
+
+.image-button.loading {
     cursor: default;
 }
