@@ -10,6 +10,7 @@
   export { className as class };
   export let header = "";
   export let content = "";
+  export let options = [];
   export let value = "";
   export let callback = null;
   export let buttonContent = "OK";
@@ -21,7 +22,7 @@
   let input = null;
 
   onMount(() => {
-    // Focus the text box
+    // Focus the input control
     input.focus();
   });
 
@@ -78,19 +79,29 @@
         <slot name="body">
           <label>{content}</label>
         </slot>
-        <div class="block">
+        {#if options && options.length}
+          <select
+            bind:value
+            bind:this={input}
+            {placeholder}
+            on:keydown={handleInputKey}>
+            {#each options as option}
+              <option>{option}</option>
+            {/each}
+          </select>
+        {:else}
           <input
             type="text"
             bind:value
             bind:this={input}
             {placeholder}
             on:keydown={handleInputKey} />
-        </div>
+        {/if}
       </div>
       <div class="dialog-footer">
         <slot name="footer">
           <DialogButton confirm={true} on:click={e => handleClick(true, false)}>
-             {buttonContent}
+            {buttonContent}
           </DialogButton>
           <DialogButton cancel={true} on:click={e => handleClick(false, true)}>
             Cancel
