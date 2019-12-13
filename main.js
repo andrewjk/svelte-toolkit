@@ -85,6 +85,7 @@ import ValidationSummary from './src/forms/ValidationSummary/ValidationSummary';
 import DialogButton from './src/dialogs/DialogButton/DialogButton';
 import Info from './src/dialogs/Info/Info';
 import Confirm from './src/dialogs/Confirm/Confirm';
+import Modal from './src/dialogs/Modal/Modal';
 import Prompt from './src/dialogs/Prompt/Prompt';
 
 // Dialog methods
@@ -182,6 +183,7 @@ export {
     DialogButton,
     Info,
     Confirm,
+    Modal,
     Prompt,
 
     // Dialog methods
