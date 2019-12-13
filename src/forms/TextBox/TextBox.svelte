@@ -78,7 +78,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
@@ -95,7 +95,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
@@ -112,7 +112,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
@@ -129,7 +129,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
@@ -146,7 +146,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
@@ -163,7 +163,7 @@
     bind:value
     {placeholder}
     {readonly}
-    maxlength={maxlength > 0 ? maxlength : 50000}
+    maxlength={maxlength > 0 ? maxlength : null}
     on:keydown
     on:keyup
     on:keypress
