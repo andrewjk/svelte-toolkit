@@ -70,6 +70,7 @@ import showAlert from './src/components/Alert/show-alert';
 // Forms
 import Field from './src/forms/Field/Field';
 import CheckBox from './src/forms/CheckBox/CheckBox';
+import Currency from './src/forms/Currency/Currency';
 import File from './src/forms/File/File';
 import Number from './src/forms/Number/Number';
 import Radio from './src/forms/Radio/Radio';
@@ -167,6 +168,7 @@ export {
 
     // Forms
     Field,
+    Currency,
     CheckBox,
     File,
     Number,
