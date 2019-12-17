@@ -5,6 +5,18 @@ import Toolkit from './src/base/Toolkit/Toolkit';
 import loadTheme from './src/styles/load-theme';
 import getTheme from './src/styles/get-theme';
 
+// Layout
+import Container from './src/layout/Container/Container';
+import Grid from './src/layout/Grid/Grid';
+import GridItem from './src/layout/Grid/GridItem';
+import Level from './src/layout/Level/Level';
+import LevelItem from './src/layout/Level/LevelItem';
+import Page from './src/layout/Page/Page';
+import PageBody from './src/layout/Page/PageBody';
+import PageFooter from './src/layout/Page/PageFooter';
+import PageHeader from './src/layout/Page/PageHeader';
+import Panel from './src/layout/Panel/Panel';
+
 // Components
 import Accordion from './src/components/Accordion/Accordion';
 import AccordionItem from './src/components/Accordion/AccordionItem';
@@ -18,41 +30,18 @@ import Button from './src/components/Button/Button';
 import Calendar from './src/components/Calendar/Calendar';
 import Card from './src/components/Card/Card';
 import ColorPicker from './src/components/ColorPicker/ColorPicker';
-import Container from './src/components/Container/Container';
 import CoverImage from './src/components/CoverImage/CoverImage';
 import DatePicker from './src/components/DatePicker/DatePicker';
-import DotNav from './src/components/DotNav/DotNav';
 import DropDown from './src/components/DropDown/DropDown';
 import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
 import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem';
 import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider';
-import Grid from './src/components/Grid/Grid';
-import GridItem from './src/components/Grid/GridItem';
 import ImageButton from './src/components/ImageButton/ImageButton';
-import Level from './src/components/Level/Level';
-import LevelItem from './src/components/Level/LevelItem';
-import NavBar from './src/components/NavBar/NavBar';
-import NavLogo from './src/components/NavBar/NavLogo';
-import NavMenu from './src/components/NavBar/NavMenu';
-import NavMenuItem from './src/components/NavBar/NavMenuItem';
-import NavMenuDropDown from './src/components/NavBar/NavMenuDropDown';
 import Notification from './src/components/Notification/Notification';
 import OffScreen from './src/components/OffScreen/OffScreen';
-import Page from './src/components/Page/Page';
-import PageBody from './src/components/Page/PageBody';
-import PageFooter from './src/components/Page/PageFooter';
-import PageHeader from './src/components/Page/PageHeader';
-import Pagination from './src/components/Pagination/Pagination';
 import Palette from './src/components/Palette/Palette';
-import Panel from './src/components/Panel/Panel';
 import Progress from './src/components/Progress/Progress';
 import Slider from './src/components/Slider/Slider';
-import StoryNav from './src/components/StoryNav/StoryNav';
-import SubNavMenu from './src/components/SubNavMenu/SubNavMenu';
-import SubNavMenuItem from './src/components/SubNavMenu/SubNavMenuItem';
-import SubNavMenuHeader from './src/components/SubNavMenu/SubNavMenuHeader';
-import Switcher from './src/components/Switcher/Switcher';
-import SwitcherItem from './src/components/Switcher/SwitcherItem';
 import TabGroup from './src/components/TabGroup/TabGroup';
 import TabItem from './src/components/TabGroup/TabItem';
 import TabHeader from './src/components/TabGroup/TabHeader';
@@ -62,10 +51,25 @@ import TableHeader from './src/components/Table/TableHeader';
 import Tag from './src/components/Tag/Tag';
 import TagInput from './src/components/TagInput/TagInput';
 import TagInputItem from './src/components/TagInput/TagInputItem';
-import WizardNav from './src/components/WizardNav/WizardNav';
 
 // Component methods
 import showAlert from './src/components/Alert/show-alert';
+
+// Navigation
+import DotNav from './src/navigation/DotNav/DotNav';
+import NavBar from './src/navigation/NavBar/NavBar';
+import NavLogo from './src/navigation/NavBar/NavLogo';
+import NavMenu from './src/navigation/NavBar/NavMenu';
+import NavMenuItem from './src/navigation/NavBar/NavMenuItem';
+import NavMenuDropDown from './src/navigation/NavBar/NavMenuDropDown';
+import Pagination from './src/navigation/Pagination/Pagination';
+import StoryNav from './src/navigation/StoryNav/StoryNav';
+import SubNavMenu from './src/navigation/SubNavMenu/SubNavMenu';
+import SubNavMenuItem from './src/navigation/SubNavMenu/SubNavMenuItem';
+import SubNavMenuHeader from './src/navigation/SubNavMenu/SubNavMenuHeader';
+import Switcher from './src/navigation/Switcher/Switcher';
+import SwitcherItem from './src/navigation/Switcher/SwitcherItem';
+import WizardNav from './src/navigation/WizardNav/WizardNav';
 
 // Forms
 import Field from './src/forms/Field/Field';
@@ -126,6 +130,13 @@ export {
     loadTheme,
     getTheme,
 
+    // Layout
+    Container,
+    Grid, GridItem,
+    Level, LevelItem,
+    Page, PageBody, PageFooter, PageHeader,
+    Panel,
+
     // Components
     Accordion, AccordionItem,
     Alert,
@@ -136,36 +147,33 @@ export {
     Calendar,
     Card,
     ColorPicker,
-    Container,
     CoverImage,
     DatePicker,
-    DotNav,
     DropDown,
     DropDownMenu, DropDownMenuItem, DropDownMenuDivider,
     ImageButton,
-    Grid, GridItem,
-    Level, LevelItem,
-    NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
     Notification,
     OffScreen,
-    Page, PageBody, PageFooter, PageHeader,
-    Pagination,
     Palette,
-    Panel,
     Progress,
     Slider,
-    StoryNav,
-    SubNavMenu, SubNavMenuItem, SubNavMenuHeader,
-    Switcher, SwitcherItem,
     TabGroup, TabItem, TabHeader,
     Table, TableColumn, TableHeader,
     Tag,
     TagInput, TagInputItem,
-    WizardNav,
-
+    
     // Component methods
     showAlert,
-
+    
+    // Navigation
+    DotNav,
+    NavBar, NavLogo, NavMenu, NavMenuItem, NavMenuDropDown,
+    Pagination,
+    StoryNav,
+    SubNavMenu, SubNavMenuItem, SubNavMenuHeader,
+    Switcher, SwitcherItem,
+    WizardNav,
+    
     // Forms
     Field,
     Currency,

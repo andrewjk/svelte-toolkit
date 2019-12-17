@@ -2,7 +2,7 @@
   import { setContext, createEventDispatcher } from "svelte";
 
   import TableHeader from "./TableHeader";
-  import Pagination from "../Pagination/Pagination";
+  import Pagination from "../../navigation/Pagination/Pagination";
 
   export let id = null;
   let className = null;

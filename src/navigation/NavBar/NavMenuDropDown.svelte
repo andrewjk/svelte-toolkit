@@ -2,7 +2,7 @@
   import { getContext, setContext } from "svelte";
 
   import ChevronDown from "../../icons/ChevronDown";
-  import DropDownMenu from "../DropDownMenu/DropDownMenu";
+  import DropDownMenu from "../../components/DropDownMenu/DropDownMenu";
 
   export let id = null;
   let className = null;
