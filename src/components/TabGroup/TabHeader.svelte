@@ -13,7 +13,7 @@
   const dispatch = createEventDispatcher();
 
   // Register this item with the parent TabGroup, which will handle toggling active for all items
-  const context = getContext("tabGroup");
+  const context = getContext("tabgroup");
   boxed = context.boxed;
   const { registerHeader, toggleItemId, handleKey } = context;
   registerHeader(id, setActive);

@@ -10,7 +10,7 @@
   const dispatch = createEventDispatcher();
 
   // Register this item with the parent TabGroup, which will handle toggling active for all items
-  const { registerItem } = getContext("tabGroup");
+  const { registerItem } = getContext("tabgroup");
   registerItem(id, header, setActive);
 
   // This function is called by the parent TabGroup to set this item's active value
