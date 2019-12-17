@@ -9,6 +9,7 @@
   export { className as class };
 
   export let index = 0;
+  export let type = null;
 
   const dispatch = createEventDispatcher();
 
@@ -24,6 +25,7 @@
 <Tag
   {id}
   class={['tag-input-value', className].filter(Boolean).join(' ')}
+  {type}
   closable={true}
   on:close={handleClose}>
   <slot />

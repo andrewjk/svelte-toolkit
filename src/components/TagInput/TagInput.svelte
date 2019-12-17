@@ -18,6 +18,9 @@
   export let minChars = 1;
   export let maxnumber = 0;
 
+  export let tagType = "info";
+  export let tagClass = null;
+
   let expanded = false;
   let focus = false;
   let index = 0;
@@ -99,7 +102,11 @@
       }
       case keyCodes.enter: {
         e.preventDefault();
-        setValue(index);
+        if (expanded) {
+          setValue(index);
+        } else if (!itemStates || !itemStates.length) {
+          addValue(text);
+        }
         break;
       }
       case keyCodes.up: {
@@ -151,9 +158,11 @@
   function handleInputBlur(e) {
     focus = false;
     if (!expanded) {
-      const text = e.target.value;
       if (text) {
-        // TODO: Set the first option?
+        // TODO: Set the first option if the list is expanded?
+        if (!itemStates || !itemStates.length) {
+          addValue(text);
+        }
       }
     }
   }
@@ -197,8 +206,7 @@
       }
     } else {
       dispatch("search", text);
-      // HACK: How to tell if items were set?
-      if (!expanded) {
+      if (!expanded && items.length) {
         toggleList();
       }
     }
@@ -274,7 +282,11 @@
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <div class="tag-input-value-list">
       {#each values as value, index (value)}
-        <TagInputValue {index} on:close={handleRemove}>
+        <TagInputValue
+          {index}
+          class={tagClass}
+          type={tagType}
+          on:close={handleRemove}>
           {typeof value === 'object' ? value.text : value}
         </TagInputValue>
       {/each}

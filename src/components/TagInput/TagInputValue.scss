@@ -2,6 +2,6 @@
 
 // TODO:
 :global(.tag-input-value) {
-    line-height: calc(var(--input-height, $input-height) - 1px);
+    line-height: calc(var(--input-height, #{$input-height}) - 12px) !important;
     margin: 4px 0 4px 4px;
 }
