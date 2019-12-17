@@ -26,7 +26,6 @@
 
 .nav-menu-item.active:after {
     background-color: var(--active-color, $active-color);
-    background-color: #ffa500;
     content: " ";
     display: block;
     height: 2px;
