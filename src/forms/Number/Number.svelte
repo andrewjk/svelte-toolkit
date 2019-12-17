@@ -11,7 +11,8 @@
   export { className as class };
 
   export let type = "";
-  export let value = 0;
+  export let value = null;
+  export let placeholder = "";
   export let min = null;
   export let max = null;
   export let autofocus = false;
@@ -103,11 +104,12 @@
   class={['number-input-container', type, className].filter(Boolean).join(' ')}
   class:focus>
   <input
+    type="number"
     {name}
     class="number-input"
-    bind:value
-    type="number"
     bind:this={input}
+    bind:value
+    {placeholder}
     {min}
     {max}
     {readonly}
