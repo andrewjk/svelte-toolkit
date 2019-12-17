@@ -47,7 +47,7 @@
     fieldRequired: required,
     fieldMinlength: minlength,
     fieldMaxlength: maxlength,
-    fieldMaxSize: maxlength,
+    fieldMaxSize: maxsize,
     fieldRegex: regex,
     fieldCompareTo: compareTo,
     registerInput: (setValid, valueProp) => {
