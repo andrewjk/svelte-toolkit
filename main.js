@@ -36,6 +36,8 @@ import DropDown from './src/components/DropDown/DropDown';
 import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
 import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem';
 import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider';
+import FocusGroup from './src/components/FocusGroup/FocusGroup';
+import FocusGroupItem from './src/components/FocusGroup/FocusGroupItem';
 import ImageButton from './src/components/ImageButton/ImageButton';
 import Notification from './src/components/Notification/Notification';
 import OffScreen from './src/components/OffScreen/OffScreen';
@@ -151,6 +153,7 @@ export {
     DatePicker,
     DropDown,
     DropDownMenu, DropDownMenuItem, DropDownMenuDivider,
+    FocusGroup, FocusGroupItem,
     ImageButton,
     Notification,
     OffScreen,
