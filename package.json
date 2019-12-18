@@ -13,16 +13,16 @@
   "devDependencies": {
     "ava": "^2.4.0",
     "browser-env": "^3.3.0",
-    "canvas": "^2.6.0",
-    "postcss": "^7.0.24",
+    "canvas": "^2.6.1",
+    "postcss": "^7.0.25",
     "postcss-load-config": "^2.1.0",
     "raf": "^3.4.1",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
-    "rollup": "^1.27.9",
+    "rollup": "^1.27.13",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "svelte": "^3.16.3",
+    "svelte": "^3.16.5",
     "svelte-preprocess": "^3.2.6"
   },
   "keywords": [
