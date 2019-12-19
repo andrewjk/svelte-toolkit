@@ -1,5 +1,5 @@
 import test from 'ava';
-import Pagination from '../../src/components/Pagination/Pagination.svelte';
+import Pagination from '../../src/navigation/Pagination/Pagination.svelte';
 
 test('pagination creation', t => {
     const target = document.createElement('div');

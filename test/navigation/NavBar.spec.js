@@ -1,6 +1,6 @@
 import test from 'ava';
-import NavBar from '../../src/components/NavBar/NavBar.svelte';
-import NavMenu from '../../src/components/NavBar/NavMenu.svelte';
+import NavBar from '../../src/navigation/NavBar/NavBar.svelte';
+import NavMenu from '../../src/navigation/NavBar/NavMenu.svelte';
 
 test('navbar creation', t => {
     const target = document.createElement('div');

@@ -1,5 +1,5 @@
 import test from 'ava';
-import DotNav from '../../src/components/DotNav/DotNav.svelte';
+import DotNav from '../../src/navigation/DotNav/DotNav.svelte';
 
 test('dot nav creation', t => {
     const target = document.createElement('div');

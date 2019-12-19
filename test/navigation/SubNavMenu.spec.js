@@ -1,6 +1,6 @@
 import test from 'ava';
-import SubNavMenu from '../../src/components/SubNavMenu/SubNavMenu.svelte';
-import SubNavMenuItem from '../../src/components/SubNavMenu/SubNavMenuItem.svelte';
+import SubNavMenu from '../../src/navigation/SubNavMenu/SubNavMenu.svelte';
+import SubNavMenuItem from '../../src/navigation/SubNavMenu/SubNavMenuItem.svelte';
 
 test('subnav creation', t => {
     const target = document.createElement('div');

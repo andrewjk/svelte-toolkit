@@ -1,5 +1,5 @@
 import test from 'ava';
-import WizardNav from '../../src/components/WizardNav/WizardNav.svelte';
+import WizardNav from '../../src/navigation/WizardNav/WizardNav.svelte';
 
 test('wizard nav creation', t => {
     const target = document.createElement('div');

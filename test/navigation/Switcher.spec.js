@@ -1,6 +1,6 @@
 import test from 'ava';
-import Switcher from '../../src/components/Switcher/Switcher.svelte';
-import SwitcherItem from '../../src/components/Switcher/SwitcherItem.svelte';
+import Switcher from '../../src/navigation/Switcher/Switcher.svelte';
+import SwitcherItem from '../../src/navigation/Switcher/SwitcherItem.svelte';
 
 test('switcher creation', t => {
     const target = document.createElement('div');

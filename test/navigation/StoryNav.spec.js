@@ -1,5 +1,5 @@
 import test from 'ava';
-import StoryNav from '../../src/components/StoryNav/StoryNav.svelte';
+import StoryNav from '../../src/navigation/StoryNav/StoryNav.svelte';
 
 test('story nav creation', t => {
     const target = document.createElement('div');
