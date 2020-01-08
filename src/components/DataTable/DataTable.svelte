@@ -11,6 +11,7 @@
   // Pass in items if you want the table to handle paging, sorting, etc, or data if you want to handle it (e.g. by fetching from a web service)
   export let items = null;
   export let data = null;
+  export let loading = false;
   export let keyField;
   export let columns = [];
 
@@ -107,6 +108,9 @@
   }
 </script>
 
+{#if loading}
+  <slot name="loading" />
+{:else if view && view.length}
   <table
     {id}
     class={['table', type, className].filter(Boolean).join(' ')}>
