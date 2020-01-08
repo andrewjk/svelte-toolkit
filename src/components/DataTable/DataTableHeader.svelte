@@ -13,8 +13,8 @@
 
   const dispatch = createEventDispatcher();
 
-  // Register this item with the parent Table
-  const { registerHeader, handleSort } = getContext("table");
+  // Register this item with the parent DataTable
+  const { registerHeader, handleSort } = getContext("datatable");
   registerHeader(field, sortDirection, setSortDirection);
 
   function setSortDirection(direction) {

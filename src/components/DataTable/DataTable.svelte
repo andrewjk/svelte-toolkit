@@ -1,7 +1,7 @@
 <script>
   import { setContext, createEventDispatcher } from "svelte";
 
-  import TableHeader from "./TableHeader";
+  import DataTableHeader from "./DataTableHeader";
   import Pagination from "../../navigation/Pagination/Pagination";
 
   export let id = null;
@@ -24,7 +24,7 @@
 
   const dispatch = createEventDispatcher();
 
-  setContext("table", {
+  setContext("datatable", {
     registerColumn: (field, header, sortable, sortDirection) => {
       if (!columns.some(c => c.field === field)) {
         columns = [...columns, { field, header, sortable, sortDirection }];
@@ -107,7 +107,6 @@
   }
 </script>
 
-{#if view && view.length}
   <table
     {id}
     class={['table', type, className].filter(Boolean).join(' ')}>
@@ -115,12 +114,12 @@
       <slot name="header">
         <tr>
           {#each columns as item}
-            <TableHeader
+            <DataTableHeader
               field={item.field}
               sortable={item.sortable}
               sortDirection={item.sortDirection}>
               {item.header}
-            </TableHeader>
+            </DataTableHeader>
           {/each}
         </tr>
       </slot>

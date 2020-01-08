@@ -10,8 +10,8 @@
   export let sortable = false;
   export let sortDirection = "";
 
-  // Register this item with the parent Table
-  const { registerColumn } = getContext("table");
+  // Register this item with the parent DataTable
+  const { registerColumn } = getContext("datatable");
   registerColumn(field, header, sortable, sortDirection);
 </script>
 
