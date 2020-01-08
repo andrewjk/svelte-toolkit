@@ -31,6 +31,9 @@ import Calendar from './src/components/Calendar/Calendar';
 import Card from './src/components/Card/Card';
 import ColorPicker from './src/components/ColorPicker/ColorPicker';
 import CoverImage from './src/components/CoverImage/CoverImage';
+import DataTable from './src/components/DataTable/DataTable';
+import DataTableColumn from './src/components/DataTable/DataTableColumn';
+import DataTableHeader from './src/components/DataTable/DataTableHeader';
 import DatePicker from './src/components/DatePicker/DatePicker';
 import DropDown from './src/components/DropDown/DropDown';
 import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
@@ -47,9 +50,6 @@ import Slider from './src/components/Slider/Slider';
 import TabGroup from './src/components/TabGroup/TabGroup';
 import TabItem from './src/components/TabGroup/TabItem';
 import TabHeader from './src/components/TabGroup/TabHeader';
-import Table from './src/components/Table/Table';
-import TableColumn from './src/components/Table/TableColumn';
-import TableHeader from './src/components/Table/TableHeader';
 import Tag from './src/components/Tag/Tag';
 import TagInput from './src/components/TagInput/TagInput';
 import TagInputItem from './src/components/TagInput/TagInputItem';
@@ -150,6 +150,7 @@ export {
     Card,
     ColorPicker,
     CoverImage,
+    DataTable, DataTableColumn, DataTableHeader,
     DatePicker,
     DropDown,
     DropDownMenu, DropDownMenuItem, DropDownMenuDivider,
@@ -161,7 +162,6 @@ export {
     Progress,
     Slider,
     TabGroup, TabItem, TabHeader,
-    Table, TableColumn, TableHeader,
     Tag,
     TagInput, TagInputItem,
     
