@@ -16,6 +16,13 @@ import PageBody from './src/layout/Page/PageBody';
 import PageFooter from './src/layout/Page/PageFooter';
 import PageHeader from './src/layout/Page/PageHeader';
 import Panel from './src/layout/Panel/Panel';
+import Table from './src/layout/Table/Table';
+import TableBody from './src/layout/Table/TableBody';
+import TableCell from './src/layout/Table/TableCell';
+import TableFooter from './src/layout/Table/TableFooter';
+import TableHeader from './src/layout/Table/TableHeader';
+import TableHeaderCell from './src/layout/Table/TableHeaderCell';
+import TableRow from './src/layout/Table/TableRow';
 
 // Components
 import Accordion from './src/components/Accordion/Accordion';
@@ -138,6 +145,7 @@ export {
     Level, LevelItem,
     Page, PageBody, PageFooter, PageHeader,
     Panel,
+    Table, TableBody, TableCell, TableFooter, TableHeader, TableHeaderCell, TableRow,
 
     // Components
     Accordion, AccordionItem,
