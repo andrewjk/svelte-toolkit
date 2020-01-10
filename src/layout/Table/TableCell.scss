@@ -1,0 +1,13 @@
+@import "../../styles/_variables";
+
+td {
+    padding: calc(var(--element-padding, #{$element-padding}) / 2);
+}
+
+td:first-child {
+    padding-left: 0;
+}
+
+td:last-child {
+    padding-right: 0;
+}

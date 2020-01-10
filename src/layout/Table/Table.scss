@@ -1,0 +1,30 @@
+@import "../../styles/_variables";
+
+.table {
+    border-collapse: collapse;
+    margin: 0 0 var(--element-margin, $element-margin);
+    width: 100%;
+
+    // Elements in a table shouldn't have margins because it makes the table rows too big
+    :global(p),
+    :global(ul),
+    :global(ol),
+    :global(dl),
+    :global(blockquote),
+    :global(pre),
+    :global(address),
+    :global(fieldset),
+    :global(figure) {
+        margin: 0;
+    }
+}
+
+.table:last-child {
+    margin: 0;
+}
+
+.table.line {
+    :global(tr) {
+        border-bottom: 1px solid var(--border-color, $border-color);
+    }
+}

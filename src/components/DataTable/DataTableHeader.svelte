@@ -1,6 +1,7 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
 
+  import TableHeaderCell from "../../layout/Table/TableHeaderCell";
   import ArrowDown from "../../icons/ArrowDown";
   import ArrowUp from "../../icons/ArrowUp";
 
@@ -26,7 +27,7 @@
   }
 </script>
 
-<th
+<TableHeaderCell
   {id}
   class={[className].filter(Boolean).join(' ')}>
   {#if sortable}
@@ -43,4 +44,4 @@
   {:else}
     <slot />
   {/if}
-</th>
+</TableHeaderCell>

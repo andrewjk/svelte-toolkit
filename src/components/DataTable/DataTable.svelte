@@ -1,6 +1,8 @@
 <script>
   import { setContext, createEventDispatcher } from "svelte";
 
+  import Table from "../../layout/Table/Table";
+  import TableRow from "../../layout/Table/TableRow";
   import DataTableHeader from "./DataTableHeader";
   import Pagination from "../../navigation/Pagination/Pagination";
 
@@ -111,12 +113,13 @@
 {#if loading}
   <slot name="loading" />
 {:else if view && view.length}
-  <table
+  <Table
     {id}
-    class={['table', type, className].filter(Boolean).join(' ')}>
+    class={className}
+    {type}>
     <thead>
       <slot name="header">
-        <tr>
+        <TableRow>
           {#each columns as item}
             <DataTableHeader
               field={item.field}
@@ -125,17 +128,17 @@
               {item.header}
             </DataTableHeader>
           {/each}
-        </tr>
+        </TableRow>
       </slot>
     </thead>
     <tbody>
       {#each view as item (item[keyField])}
-        <tr>
+        <TableRow>
           <slot {item} />
-        </tr>
+        </TableRow>
       {/each}
     </tbody>
-  </table>
+  </Table>
   <Pagination {pageNumber} {pageSize} {itemCount} on:change={handlePage} />
 {:else}
   <slot name="empty" />

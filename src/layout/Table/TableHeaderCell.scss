@@ -1,0 +1,30 @@
+@import "../../styles/_variables";
+
+th {
+    padding: calc(var(--element-padding, #{$element-padding}) / 2);
+    text-align: left;
+
+    :global(a) {
+        color: inherit;
+    }
+
+    // HACK:
+    :global(.table-button) {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    :global(.table-button:hover),
+    :global(.table-button:active) {
+        text-decoration: underline;
+    }
+}
+
+th:first-child {
+    padding-left: 0;
+}
+
+th:last-child {
+    padding-right: 0;
+}
