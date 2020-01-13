@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import FocusGroup from '../../src/components/FocusGroup/FocusGroup.svelte';
 
-test('focusgroup creation', t => {
-    const target = document.createElement('div');
-    const app = new FocusGroup({
-        target,
-        props: {
-            id: 'focusgroup'
-        },
-    });
+test('focusgroup creation', () => {
+    const { container, getByText } = render(FocusGroup, { id: 'focusgroup' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'focusgroup');
+    expect(container.querySelector('#focusgroup')).toBeInTheDocument();
 });

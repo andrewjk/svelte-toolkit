@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Tag from '../../src/components/Tag/Tag.svelte';
 
-test('tag creation', t => {
-    const target = document.createElement('div');
-    const app = new Tag({
-        target,
-        props: {
-            id: 'tag'
-        },
-    });
+test('tag creation', () => {
+    const { container, getByText } = render(Tag, { id: 'tag' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'tag');
+    expect(container.querySelector('#tag')).toBeInTheDocument();
 });

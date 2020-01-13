@@ -1,16 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Confirm from '../../src/dialogs/Confirm/Confirm.svelte';
 
-test('confirm creation', t => {
-    const target = document.createElement('div');
-    const app = new Confirm({
-        target,
-        props: {
-            id: 'confirm'
-        },
-    });
+test('confirm creation', () => {
+    const { container, getByText } = render(Confirm, { id: 'confirm' });
 
-    const background = target.firstChild;
-    const el = background.firstChild;
-    t.is(el.id, 'confirm');
+    expect(container.querySelector('#confirm')).toBeInTheDocument();
 });

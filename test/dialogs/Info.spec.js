@@ -1,16 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Info from '../../src/dialogs/Info/Info.svelte';
 
-test('info creation', t => {
-    const target = document.createElement('div');
-    const app = new Info({
-        target,
-        props: {
-            id: 'info'
-        },
-    });
+test('info creation', () => {
+    const { container, getByText } = render(Info, { id: 'info' });
 
-    const background = target.firstChild;
-    const el = background.firstChild;
-    t.is(el.id, 'info');
+    expect(container.querySelector('#info')).toBeInTheDocument();
 });

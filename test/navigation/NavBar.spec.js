@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import NavBar from '../../src/navigation/NavBar/NavBar.svelte';
 import NavMenu from '../../src/navigation/NavBar/NavMenu.svelte';
 
-test('navbar creation', t => {
-    const target = document.createElement('div');
-    const app = new NavBar({
-        target,
-        props: {
-            id: 'navbar'
-        },
-    });
+test('navbar creation', () => {
+    const { container, getByText } = render(NavBar, { id: 'navbar' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'navbar');
+    expect(container.querySelector('#navbar')).toBeInTheDocument();
 });

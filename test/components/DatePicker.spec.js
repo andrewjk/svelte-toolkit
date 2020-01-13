@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import DatePicker from '../../src/components/DatePicker/DatePicker.svelte';
 
-test('datepicker creation', t => {
-    const target = document.createElement('div');
-    const app = new DatePicker({
-        target,
-        props: {
-            id: 'datepicker'
-        },
-    });
+test('datepicker creation', () => {
+    const { container, getByText } = render(DatePicker, { id: 'datepicker' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'datepicker');
+    expect(container.querySelector('#datepicker')).toBeInTheDocument();
 });

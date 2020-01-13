@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import CheckBox from '../../src/forms/CheckBox/CheckBox.svelte';
 
-test('checkbox creation', t => {
-    const target = document.createElement('div');
-    const app = new CheckBox({
-        target,
-        props: {
-            id: 'checkbox'
-        },
-    });
+test('checkbox creation', () => {
+    const { container, getByText } = render(CheckBox, { id: 'checkbox' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'checkbox');
+    expect(container.querySelector('#checkbox')).toBeInTheDocument();
 });

@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Palette from '../../src/components/Palette/Palette.svelte';
 
-test('palette creation', t => {
-    const target = document.createElement('div');
-    const app = new Palette({
-        target,
-        props: {
-            id: 'palette'
-        },
-    });
+test('palette creation', () => {
+    const { container, getByText } = render(Palette, { id: 'palette' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'palette');
+    expect(container.querySelector('#palette')).toBeInTheDocument();
 });

@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Currency from '../../src/forms/Currency/Currency.svelte';
 
-test('currency creation', t => {
-    const target = document.createElement('div');
-    const app = new Currency({
-        target,
-        props: {
-            id: 'currency'
-        },
-    });
+test('currency creation', () => {
+    const { container, getByText } = render(Currency, { id: 'currency' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'currency');
+    expect(container.querySelector('#currency')).toBeInTheDocument();
 });

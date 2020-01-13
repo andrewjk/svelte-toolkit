@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Radio from '../../src/forms/Radio/Radio.svelte';
 
-test('radio creation', t => {
-    const target = document.createElement('div');
-    const app = new Radio({
-        target,
-        props: {
-            id: 'radio'
-        },
-    });
+test('radio creation', () => {
+    const { container, getByText } = render(Radio, { id: 'radio' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'radio');
+    expect(container.querySelector('#radio')).toBeInTheDocument();
 });

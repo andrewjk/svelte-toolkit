@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Field from '../../src/forms/Field/Field.svelte';
 
-test('field creation', t => {
-    const target = document.createElement('div');
-    const app = new Field({
-        target,
-        props: {
-            id: 'field'
-        },
-    });
+test('field creation', () => {
+    const { container, getByText } = render(Field, { id: 'field' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'field');
+    expect(container.querySelector('#field')).toBeInTheDocument();
 });

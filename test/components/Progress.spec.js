@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Progress from '../../src/components/Progress/Progress.svelte';
 
-test('progress creation', t => {
-    const target = document.createElement('div');
-    const app = new Progress({
-        target,
-        props: {
-            id: 'progress'
-        },
-    });
+test('progress creation', () => {
+    const { container, getByText } = render(Progress, { id: 'progress' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'progress');
+    expect(container.querySelector('#progress')).toBeInTheDocument();
 });

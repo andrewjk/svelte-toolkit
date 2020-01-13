@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Container from '../../src/layout/Container/Container.svelte';
 
-test('container creation', t => {
-    const target = document.createElement('div');
-    const app = new Container({
-        target,
-        props: {
-            id: 'container'
-        },
-    });
+test('container creation', () => {
+    const { container, getByText } = render(Container, { id: 'container' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'container');
+    expect(container.querySelector('#container')).toBeInTheDocument();
 });

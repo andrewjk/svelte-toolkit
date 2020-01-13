@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import TextArea from '../../src/forms/TextArea/TextArea.svelte';
 
-test('textarea creation', t => {
-    const target = document.createElement('div');
-    const app = new TextArea({
-        target,
-        props: {
-            id: 'textarea'
-        },
-    });
+test('textarea creation', () => {
+    const { container, getByText } = render(TextArea, { id: 'textarea' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'textarea');
+    expect(container.querySelector('#textarea')).toBeInTheDocument();
 });

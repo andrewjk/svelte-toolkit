@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Notification from '../../src/components/Notification/Notification.svelte';
 
-test('notification creation', t => {
-    const target = document.createElement('div');
-    const app = new Notification({
-        target,
-        props: {
-            id: 'notification'
-        },
-    });
+test('notification creation', () => {
+    const { container, getByText } = render(Notification, { id: 'notification' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'notification');
+    expect(container.querySelector('#notification')).toBeInTheDocument();
 });

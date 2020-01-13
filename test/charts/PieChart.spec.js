@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import PieChart from '../../src/charts/PieChart/PieChart.svelte';
 import PieChartItem from '../../src/charts/PieChart/PieChartItem.svelte';
 
-test('piechart creation', t => {
-    const target = document.createElement('div');
-    const app = new PieChart({
-        target,
-        props: {
-            id: 'piechart'
-        },
-    });
+test('piechart creation', () => {
+    const { container, getByText } = render(PieChart, { id: 'piechart' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'piechart');
+    expect(container.querySelector('#piechart')).toBeInTheDocument();
 });

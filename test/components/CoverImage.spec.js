@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import CoverImage from '../../src/components/CoverImage/CoverImage.svelte';
 
-test('coverimage creation', t => {
-    const target = document.createElement('div');
-    const app = new CoverImage({
-        target,
-        props: {
-            id: 'coverimage'
-        },
-    });
+test('coverimage creation', () => {
+    const { container, getByText } = render(CoverImage, { id: 'coverimage' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'coverimage');
+    expect(container.querySelector('#coverimage')).toBeInTheDocument();
 });

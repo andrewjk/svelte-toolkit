@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Select from '../../src/forms/Select/Select.svelte';
 
-test('select creation', t => {
-    const target = document.createElement('div');
-    const app = new Select({
-        target,
-        props: {
-            id: 'select'
-        },
-    });
+test('select creation', () => {
+    const { container, getByText } = render(Select, { id: 'select' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'select');
+    expect(container.querySelector('#select')).toBeInTheDocument();
 });

@@ -1,20 +1,16 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import ValidationSummary from '../../src/forms/ValidationSummary/ValidationSummary.svelte';
 import Validator from '../../src/forms/Validator.js';
 
-test('validation summary creation', t => {
+test('validation summary creation', () => {
     const validator = new Validator();
     validator.messages = ['this is not ok'];
 
-    const target = document.createElement('div');
-    const app = new ValidationSummary({
-        target,
-        props: {
-            id: 'validationsummary',
-            validator
-        },
+    const { container, getByText } = render(ValidationSummary, {
+        id: 'validationsummary',
+        validator
     });
 
-    const el = target.firstChild;
-    t.is(el.id, 'validationsummary');
+    expect(container.querySelector('#validationsummary')).toBeInTheDocument();
 });

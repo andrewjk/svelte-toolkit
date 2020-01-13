@@ -1,29 +1,30 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Validator from '../../src/forms/Validator.js';
 
 // REQUIRED
 // ========================================================
 
-test('validator check required ok', t => {
+test('validator check required ok', () => {
     const validator = new Validator();
     const result = validator.checkRequired({ options: { required: true } }, 'ok');
-    t.is(result.valid, true);
+    expect(result.valid).toBe(true);
 });
 
-test('validator check required empty string', t => {
+test('validator check required empty string', () => {
     const validator = new Validator();
     const result = validator.checkRequired({ options: { required: true } }, '');
-    t.is(result.valid, false);
+    expect(result.valid).toBe(false);
 });
 
-test('validator check required empty null', t => {
+test('validator check required empty null', () => {
     const validator = new Validator();
     const result = validator.checkRequired({ options: { required: true } }, null);
-    t.is(result.valid, false);
+    expect(result.valid).toBe(false);
 });
 
-test('validator check required undefined', t => {
+test('validator check required undefined', () => {
     const validator = new Validator();
     const result = validator.checkRequired({ options: { required: true } }, undefined);
-    t.is(result.valid, false);
+    expect(result.valid).toBe(false);
 });

@@ -1,16 +1,12 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import WizardNav from '../../src/navigation/WizardNav/WizardNav.svelte';
 
-test('wizard nav creation', t => {
-    const target = document.createElement('div');
-    const app = new WizardNav({
-        target,
-        props: {
-            id: 'wizardnav',
-            itemCount: 10
-        },
+test('wizard nav creation', () => {
+    const { container, getByText } = render(WizardNav, {
+        id: 'wizardnav',
+        itemCount: 10
     });
 
-    const el = target.firstChild;
-    t.is(el.id, 'wizardnav');
+    expect(container.querySelector('#wizardnav')).toBeInTheDocument();
 });

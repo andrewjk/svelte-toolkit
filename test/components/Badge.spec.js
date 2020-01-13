@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Badge from '../../src/components/Badge/Badge.svelte';
 
-test('badge creation', t => {
-    const target = document.createElement('div');
-    const app = new Badge({
-        target,
-        props: {
-            id: 'badge'
-        },
-    });
+test('badge creation', () => {
+    const { container, getByText } = render(Badge, { id: 'badge' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'badge');
+    expect(container.querySelector('#badge')).toBeInTheDocument();
 });

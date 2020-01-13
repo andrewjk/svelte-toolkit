@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Grid from '../../src/layout/Grid/Grid.svelte';
 
-test('grid creation', t => {
-    const target = document.createElement('div');
-    const app = new Grid({
-        target,
-        props: {
-            id: 'grid'
-        },
-    });
+test('grid creation', () => {
+    const { container, getByText } = render(Grid, { id: 'grid' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'grid');
+    expect(container.querySelector('#grid')).toBeInTheDocument();
 });

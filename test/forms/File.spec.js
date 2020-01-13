@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import File from '../../src/forms/File/File.svelte';
 
-test('file creation', t => {
-    const target = document.createElement('div');
-    const app = new File({
-        target,
-        props: {
-            id: 'file'
-        },
-    });
+test('file creation', () => {
+    const { container, getByText } = render(File, { id: 'file' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'file');
+    expect(container.querySelector('#file')).toBeInTheDocument();
 });

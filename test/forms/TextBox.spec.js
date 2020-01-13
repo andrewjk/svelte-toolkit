@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import TextBox from '../../src/forms/TextBox/TextBox.svelte';
 
-test('textbox creation', t => {
-    const target = document.createElement('div');
-    const app = new TextBox({
-        target,
-        props: {
-            id: 'textbox'
-        },
-    });
+test('textbox creation', () => {
+    const { container, getByText } = render(TextBox, { id: 'textbox' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'textbox');
+    expect(container.querySelector('#textbox')).toBeInTheDocument();
 });

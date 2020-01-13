@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Slider from '../../src/components/Slider/Slider.svelte';
 
-test('slider creation', t => {
-    const target = document.createElement('div');
-    const app = new Slider({
-        target,
-        props: {
-            id: 'slider'
-        },
-    });
+test('slider creation', () => {
+    const { container, getByText } = render(Slider, { id: 'slider' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'slider');
+    expect(container.querySelector('#slider')).toBeInTheDocument();
 });

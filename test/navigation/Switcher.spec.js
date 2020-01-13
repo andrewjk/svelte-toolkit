@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Switcher from '../../src/navigation/Switcher/Switcher.svelte';
 import SwitcherItem from '../../src/navigation/Switcher/SwitcherItem.svelte';
 
-test('switcher creation', t => {
-    const target = document.createElement('div');
-    const app = new Switcher({
-        target,
-        props: {
-            id: 'switcher'
-        },
-    });
+test('switcher creation', () => {
+    const { container, getByText } = render(Switcher, { id: 'switcher' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'switcher');
+    expect(container.querySelector('#switcher')).toBeInTheDocument();
 });

@@ -1,16 +1,12 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import StoryNav from '../../src/navigation/StoryNav/StoryNav.svelte';
 
-test('story nav creation', t => {
-    const target = document.createElement('div');
-    const app = new StoryNav({
-        target,
-        props: {
-            id: 'storynav',
-            itemCount: 10
-        },
+test('story nav creation', () => {
+    const { container, getByText } = render(StoryNav, {
+        id: 'storynav',
+        itemCount: 10
     });
 
-    const el = target.firstChild;
-    t.is(el.id, 'storynav');
+    expect(container.querySelector('#storynav')).toBeInTheDocument();
 });

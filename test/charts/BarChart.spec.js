@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import BarChart from '../../src/charts/BarChart/BarChart.svelte';
 import BarChartItem from '../../src/charts/BarChart/BarChartItem.svelte';
 
-test('barchart creation', t => {
-    const target = document.createElement('div');
-    const app = new BarChart({
-        target,
-        props: {
-            id: 'barchart'
-        },
-    });
+test('barchart creation', () => {
+    const { container, getByText } = render(BarChart, { id: 'barchart' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'barchart');
+    expect(container.querySelector('#barchart')).toBeInTheDocument();
 });

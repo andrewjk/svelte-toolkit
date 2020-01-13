@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Breadcrumb from '../../src/components/Breadcrumb/Breadcrumb.svelte';
 import BreadcrumbItem from '../../src/components/Breadcrumb/BreadcrumbItem.svelte';
 
-test('breadcrumb creation', t => {
-    const target = document.createElement('div');
-    const app = new Breadcrumb({
-        target,
-        props: {
-            id: 'breadcrumb'
-        },
-    });
+test('breadcrumb creation', () => {
+    const { container, getByText } = render(Breadcrumb, { id: 'breadcrumb' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'breadcrumb');
+    expect(container.querySelector('#breadcrumb')).toBeInTheDocument();
 });

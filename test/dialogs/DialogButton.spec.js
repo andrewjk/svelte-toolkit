@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import DialogButton from '../../src/dialogs/DialogButton/DialogButton.svelte';
 
-test('dialog button creation', t => {
-    const target = document.createElement('div');
-    const app = new DialogButton({
-        target,
-        props: {
-            id: 'dialogbutton'
-        },
-    });
+test('dialog button creation', () => {
+    const { container, getByText } = render(DialogButton, { id: 'dialogbutton' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'dialogbutton');
+    expect(container.querySelector('#dialogbutton')).toBeInTheDocument();
 });

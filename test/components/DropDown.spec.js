@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import DropDown from '../../src/components/DropDown/DropDown.svelte';
 
-test('dropdown creation', t => {
-    const target = document.createElement('div');
-    const app = new DropDown({
-        target,
-        props: {
-            id: 'dropdown'
-        },
-    });
+test('dropdown creation', () => {
+    const { container, getByText } = render(DropDown, { id: 'dropdown' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'dropdown');
+    expect(container.querySelector('#dropdown')).toBeInTheDocument();
 });

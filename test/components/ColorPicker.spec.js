@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import ColorPicker from '../../src/components/ColorPicker/ColorPicker.svelte';
 
-test('colorpicker creation', t => {
-    const target = document.createElement('div');
-    const app = new ColorPicker({
-        target,
-        props: {
-            id: 'colorpicker'
-        },
-    });
+test('colorpicker creation', () => {
+    const { container, getByText } = render(ColorPicker, { id: 'colorpicker' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'colorpicker');
+    expect(container.querySelector('#colorpicker')).toBeInTheDocument();
 });

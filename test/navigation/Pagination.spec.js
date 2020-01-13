@@ -1,16 +1,12 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Pagination from '../../src/navigation/Pagination/Pagination.svelte';
 
-test('pagination creation', t => {
-    const target = document.createElement('div');
-    const app = new Pagination({
-        target,
-        props: {
-            id: 'pagination',
-            itemCount: 100
-        },
+test('pagination creation', () => {
+    const { container, getByText } = render(Pagination, {
+        id: 'pagination',
+        itemCount: 100
     });
 
-    const el = target.firstChild;
-    t.is(el.id, 'pagination');
+    expect(container.querySelector('#pagination')).toBeInTheDocument();
 });

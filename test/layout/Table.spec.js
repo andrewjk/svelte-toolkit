@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Table from '../../src/layout/Table/Table.svelte';
 
-test('table creation', t => {
-    const target = document.createElement('div');
-    const app = new Table({
-        target,
-        props: {
-            id: 'table'
-        },
-    });
+test('table creation', () => {
+    const { container, getByText } = render(Table, { id: 'table' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'table');
+    expect(container.querySelector('#table')).toBeInTheDocument();
 });

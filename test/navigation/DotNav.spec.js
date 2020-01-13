@@ -1,16 +1,12 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import DotNav from '../../src/navigation/DotNav/DotNav.svelte';
 
-test('dot nav creation', t => {
-    const target = document.createElement('div');
-    const app = new DotNav({
-        target,
-        props: {
-            id: 'dotnav',
-            itemCount: 10
-        },
+test('dot nav creation', () => {
+    const { container, getByText } = render(DotNav, {
+        id: 'dotnav',
+        itemCount: 10
     });
 
-    const el = target.firstChild;
-    t.is(el.id, 'dotnav');
+    expect(container.querySelector('#dotnav')).toBeInTheDocument();
 });

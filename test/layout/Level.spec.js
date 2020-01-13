@@ -1,15 +1,9 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import Level from '../../src/layout/Level/Level.svelte';
 
-test('level creation', t => {
-    const target = document.createElement('div');
-    const app = new Level({
-        target,
-        props: {
-            id: 'level'
-        },
-    });
+test('level creation', () => {
+    const { container, getByText } = render(Level, { id: 'level' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'level');
+    expect(container.querySelector('#level')).toBeInTheDocument();
 });

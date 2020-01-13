@@ -1,16 +1,10 @@
-import test from 'ava';
+import { render } from '@testing-library/svelte';
+
 import TabGroup from '../../src/components/TabGroup/TabGroup.svelte';
 import TabItem from '../../src/components/TabGroup/TabItem.svelte';
 
-test('tab group creation', t => {
-    const target = document.createElement('div');
-    const app = new TabGroup({
-        target,
-        props: {
-            id: 'tabgroup'
-        },
-    });
+test('tab group creation', () => {
+    const { container, getByText } = render(TabGroup, { id: 'tabgroup' });
 
-    const el = target.firstChild;
-    t.is(el.id, 'tabgroup');
+    expect(container.querySelector('#tabgroup')).toBeInTheDocument();
 });

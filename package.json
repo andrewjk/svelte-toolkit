@@ -8,22 +8,28 @@
   "main": "build/index.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "ava"
+    "test": "jest tests",
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
-    "ava": "^2.4.0",
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/svelte": "^1.11.0",
+    "babel-jest": "^24.9.0",
     "browser-env": "^3.3.0",
-    "canvas": "^2.6.1",
-    "postcss": "^7.0.25",
+    "jest": "^24.9.0",
+    "jest-canvas-mock": "^2.2.0",
+    "node-sass": "^4.13.0",
+    "postcss": "^7.0.26",
     "postcss-load-config": "^2.1.0",
     "raf": "^3.4.1",
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^1.0.0",
-    "rollup": "^1.27.13",
+    "rollup": "^1.29.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "svelte": "^3.16.5",
-    "svelte-preprocess": "^3.2.6"
+    "svelte": "^3.16.7",
+    "svelte-jester": "^1.0.3",
+    "svelte-preprocess": "^3.3.0"
   },
   "keywords": [
     "svelte"
@@ -33,10 +39,5 @@
     "src",
     "main.js",
     "main.scss"
-  ],
-  "ava": {
-    "require": [
-      "./test/_setup.js"
-    ]
-  }
+  ]
 }
