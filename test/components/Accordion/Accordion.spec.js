@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, waitForElementToBeRemoved } from '@testing-library/svelte';
 
+import Accordion from '../../../src/components/Accordion/Accordion.svelte';
 import AccordionSpec from './AccordionSpec.svelte';
 
 test('accordion creation', async () => {
