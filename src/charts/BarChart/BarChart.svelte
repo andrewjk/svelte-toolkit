@@ -6,52 +6,96 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let width = 400;
+
   export let height = 200;
+  export let width = 400;
 
-  let itemStates = [];
+  export let xlabel = "";
+  export let ylabel = "";
 
-  const haxisBuffer = 20;
-  const vaxisBuffer = 20;
+  export let labels = [];
+  export let color = chartColors[0];
+  export let data = [];
+  export let series = [];
 
-  let itemWidth = 0;
-  let valueHeight = 0;
+  export let stepCount = 2;
 
-  setContext("barchart", {
-    // The registerItem function is called from each BarChartItem to register itself with this
-    // BarChart. They pass us their value, as well as a setInfo method that we can call in onMount
-    // and beforeUpdate, when we have all of the items and can calculate sizes and (default) colors
-    registerItem: (value, label, setInfo) => {
-      itemStates = [...itemStates, { value, label, setInfo }];
-    }
-  });
+  export let showXaxis = true;
+  export let showYaxis = true;
+  export let showHlines = false;
+
+  let container;
+  let measurer;
+  let textWidth = 0;
+  let textHeight = 0;
+
+  $: calculatedWidth = !width && container ? container.clientWidth : width;
+  $: calculatedSeries = data ? [{ color, data }] : series;
+  $: stepValue = calculateStepValue(data, calculatedSeries, stepCount);
+  $: stepLabels = calculateStepLabels(stepCount, stepValue);
+  $: itemWidth = (calculatedWidth - chartLeft) / labels.length;
+  $: valueHeight = chartBottom / (stepValue * stepCount);
+
+  let xlabelBottom = height;
+  $: chartLabelBottom = xlabel ? height - textHeight : height;
+  $: chartBottom = xlabel ? height - textHeight * 2 : height - textHeight;
+  let ylabelLeft = 0;
+  $: chartLeft = calculateChartLeft(stepLabels, ylabel, textHeight, textWidth);
 
   onMount(() => {
-    setSizes();
+    const bbox = measurer.getBBox();
+    textWidth = bbox.width;
+    textHeight = bbox.height * 1.2;
   });
 
-  beforeUpdate(() => {
-    setSizes();
-  });
+  function calculateStepValue(theData, theSeries, theStepCount) {
+    // HACK: Yeah, nested reduces
+    const maxValue = theSeries.reduce((a, b) => {
+      return Math.max(a, parseInt(b.data.reduce((c, d) => Math.max(c, d), 0)));
+    }, 0);
+    return calculateStepValue2(maxValue, theStepCount);
+  }
 
-  function setSizes() {
-    if (itemStates.length) {
-      const maxValue = itemStates.reduce(
-        (a, b) => Math.max(a, parseInt(b.value)),
-        0
-      );
-
-      itemWidth = (width - vaxisBuffer) / itemStates.length / 2;
-      valueHeight = (height - haxisBuffer) / maxValue;
-
-      for (let i = 0; i < itemStates.length; i++) {
-        const state = itemStates[i];
-        const itemHeight = state.value * valueHeight - 20;
-        const itemx = 20 + i * itemWidth * 2 + itemWidth / 2;
-        const itemy = height - 20;
-        state.setInfo(itemx, itemy, itemWidth, itemHeight, chartColors[0]);
-      }
+  function calculateStepValue2(range, stepCount) {
+    // Get the next power of 10 e.g. for 75 it would be 100
+    let maxUpper = parseInt(
+      "1" +
+        Array.prototype.join.call({ length: range.toString().length + 1 }, "0")
+    );
+    // Special case: if we already have a power of 10, use that instead of the next one
+    if (maxUpper === parseInt(range + "0")) {
+      maxUpper = range.toString();
     }
+    // Start with the naive step value
+    let step = range / stepCount;
+    // Make it a decimal value and round it up
+    step = Math.ceil(step / (maxUpper / 10));
+    // If the step would be a multiple of 3, 7 or 9, round it up to the next even number (for aesthetic purposes)
+    if (step === 3 || step === 7 || step === 9) {
+      step = step + (step % 2);
+    }
+    // Convert the step back from the decimal value
+    step = step * (maxUpper / 10);
+    return step;
+  }
+
+  function calculateStepLabels(theStepCount, theStepValue) {
+    // Calculate the step value and labels
+    const newStepLabels = [];
+    for (var i = 0; i < theStepCount + 1; i++) {
+      newStepLabels.push(theStepValue * i);
+    }
+    return newStepLabels;
+  }
+
+  function calculateChartLeft(theStepLabels, theYlabel, theTextHeight, theTextWidth) {
+    // Get the longest label width
+    const maxLabelWidth = theStepLabels.reduce((a, b) => {
+      return Math.max(a.toString().length, b.toString().length);
+    }, 0);
+    let theChartLeft = theYlabel ? textHeight * 1.5 : textHeight / 2;
+    theChartLeft += maxLabelWidth * textWidth;
+    return theChartLeft;
   }
 </script>
 
@@ -59,28 +103,95 @@
 
 </style>
 
-<svg
+<div
   {id}
   class={['chart', className].filter(Boolean).join(' ')}
-  version="1.1"
-  {width}
-  {height}>
-  <g>
-    {#if itemStates.length}
-      <ChartAxis
-        labels={itemStates.map(item => item.label)}
-        x1={vaxisBuffer}
-        y1={height - haxisBuffer}
-        x2={width}
-        y2={height - haxisBuffer}
-        itemWidth={itemWidth * 2}
-        type="bar" />
-      <ChartAxis
-        x1={vaxisBuffer}
-        y1={height - haxisBuffer}
-        x2={vaxisBuffer}
-        y2={0} />
-    {/if}
-    <slot />
-  </g>
-</svg>
+  bind:this={container}>
+  <svg version="1.1" width={calculatedWidth} {height}>
+    <g>
+      {#if !container}
+        <text bind:this={measurer}>8</text>
+      {/if}
+      {#if container}
+        <!-- x axis -->
+        {#if showXaxis}
+          <line
+            {id}
+            class="chart-axis"
+            x1={chartLeft}
+            y1={chartBottom}
+            x2={calculatedWidth}
+            y2={chartBottom} />
+        {/if}
+        {#if xlabel}
+          <text
+            text-anchor="middle"
+            dominant-baseline="text-after-edge"
+            x={calculatedWidth - (calculatedWidth - chartLeft) / 2}
+            y={height}>
+            {xlabel}
+          </text>
+        {/if}
+        {#each labels as label, i}
+          <text
+            text-anchor="middle"
+            dominant-baseline="text-after-edge"
+            x={chartLeft + itemWidth * i + itemWidth / 2}
+            y={chartLabelBottom}>
+            {label}
+          </text>
+        {/each}
+        <!-- y axis -->
+        {#if showYaxis}
+          <line
+            class="chart-axis"
+            x1={chartLeft}
+            y1={chartBottom}
+            x2={chartLeft}
+            y2={0} />
+        {/if}
+        {#if ylabel}
+          <text
+            text-anchor="middle"
+            dominant-baseline="hanging"
+            x={0}
+            y={chartBottom / 2}
+            transform={`rotate(-90, ${0}, ${chartBottom / 2})`}>
+            {ylabel}
+          </text>
+        {/if}
+        {#each stepLabels as label, i}
+          <text
+            text-anchor="end"
+            dominant-baseline="middle"
+            x={chartLeft - textHeight / 4}
+            y={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i}>
+            {label}
+          </text>
+          {#if showHlines}
+            <line
+              class="chart-gridline"
+              x1={chartLeft}
+              y1={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i}
+              x2={calculatedWidth}
+              y2={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i} />
+          {/if}
+        {/each}
+        <!-- values -->
+        {#each labels as label, i}
+          {#each calculatedSeries as ser, j}
+            {#if ser.data.length > i}
+              <rect
+                class="chart-bar"
+                x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 1}
+                y={chartBottom - Math.max(1, ser.data[i] * valueHeight - textHeight)}
+                width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 1)}
+                height={Math.max(1, ser.data[i] * valueHeight - textHeight)}
+                fill={ser.color || chartColors[j]} />
+            {/if}
+          {/each}
+        {/each}
+      {/if}
+    </g>
+  </svg>
+</div>

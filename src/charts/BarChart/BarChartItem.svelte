@@ -4,16 +4,16 @@
   export let id = null;
   let className = null;
   export { className as class };
-  export let value = 0;
-  export let label = "";
+  //export let value = 0;
+  //export let label = "";
   export let color = "";
 
-  let x = 0;
-  let y = 0;
-  let width = 20;
-  let height = 0;
+  export let x = 0;
+  export let y = 0;
+  export let width = 20;
+  export let height = 0;
 
-  // Register this item with the parent BarChart, which will set our sizes and default color
+  /*// Register this item with the parent BarChart, which will set our sizes and default color
   const { registerItem } = getContext("barchart");
   registerItem(value, label, setInfo);
 
@@ -25,7 +25,7 @@
     if (!color) {
       color = newColor;
     }
-  }
+  }*/
 </script>
 
 <rect

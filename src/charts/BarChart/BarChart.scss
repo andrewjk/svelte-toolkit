@@ -7,3 +7,13 @@
 .chart:last-child {
     margin: 0;
 }
+
+.chart-axis {
+    stroke: var(--border-color, $border-color);
+    stroke-width: 1px;
+}
+
+.chart-gridline {
+    stroke: var(--light-border-color, $light-border-color);
+    stroke-width: 1px;
+}
