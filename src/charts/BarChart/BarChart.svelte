@@ -35,6 +35,7 @@
   export let showXAxis = true;
   export let showYAxis = true;
   export let showHLines = false;
+  export let showVLines = false;
 
   let container;
   let measurer;
@@ -120,9 +121,12 @@
           {chartBottom} />
         <ChartGridLines
           {showHLines}
+          {showVLines}
           width={calculatedWidth}
+          {labels}
           stepValue={calculatedStepValue}
           {stepLabels}
+          {itemWidth}
           {valueHeight}
           {chartLeft}
           {chartBottom} />
