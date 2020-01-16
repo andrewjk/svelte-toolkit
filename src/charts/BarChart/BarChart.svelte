@@ -10,8 +10,8 @@
   export let height = 200;
   export let width = 400;
 
-  export let xlabel = "";
-  export let ylabel = "";
+  export let xLabel = "";
+  export let yLabel = "";
 
   export let labels = [];
   export let color = chartColors[0];
@@ -20,9 +20,9 @@
 
   export let stepCount = 2;
 
-  export let showXaxis = true;
-  export let showYaxis = true;
-  export let showHlines = false;
+  export let showXAxis = true;
+  export let showYAxis = true;
+  export let showHLines = false;
 
   let container;
   let measurer;
@@ -36,11 +36,11 @@
   $: itemWidth = (calculatedWidth - chartLeft) / labels.length;
   $: valueHeight = chartBottom / (stepValue * stepCount);
 
-  let xlabelBottom = height;
-  $: chartLabelBottom = xlabel ? height - textHeight : height;
-  $: chartBottom = xlabel ? height - textHeight * 2 : height - textHeight;
-  let ylabelLeft = 0;
-  $: chartLeft = calculateChartLeft(stepLabels, ylabel, textHeight, textWidth);
+  let xLabelBottom = height;
+  $: chartLabelBottom = xLabel ? height - textHeight : height;
+  $: chartBottom = xLabel ? height - textHeight * 2 : height - textHeight;
+  let yLabelLeft = 0;
+  $: chartLeft = calculateChartLeft(stepLabels, yLabel, textHeight, textWidth);
 
   onMount(() => {
     const bbox = measurer.getBBox();
@@ -114,7 +114,7 @@
       {/if}
       {#if container}
         <!-- x axis -->
-        {#if showXaxis}
+        {#if showXAxis}
           <line
             {id}
             class="chart-axis"
@@ -123,13 +123,13 @@
             x2={calculatedWidth}
             y2={chartBottom} />
         {/if}
-        {#if xlabel}
+        {#if xLabel}
           <text
             text-anchor="middle"
             dominant-baseline="text-after-edge"
             x={calculatedWidth - (calculatedWidth - chartLeft) / 2}
             y={height}>
-            {xlabel}
+            {xLabel}
           </text>
         {/if}
         {#each labels as label, i}
@@ -142,7 +142,7 @@
           </text>
         {/each}
         <!-- y axis -->
-        {#if showYaxis}
+        {#if showYAxis}
           <line
             class="chart-axis"
             x1={chartLeft}
@@ -150,14 +150,14 @@
             x2={chartLeft}
             y2={0} />
         {/if}
-        {#if ylabel}
+        {#if yLabel}
           <text
             text-anchor="middle"
             dominant-baseline="hanging"
             x={0}
             y={chartBottom / 2}
             transform={`rotate(-90, ${0}, ${chartBottom / 2})`}>
-            {ylabel}
+            {yLabel}
           </text>
         {/if}
         {#each stepLabels as label, i}
