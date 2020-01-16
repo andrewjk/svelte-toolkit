@@ -1,67 +1,92 @@
 <script>
-  import { setContext, onMount, beforeUpdate } from "svelte";
-  import ChartAxis from "../ChartAxis/ChartAxis";
+  import { onMount } from "svelte";
+  import XAxis from "../XAxis/XAxis";
+  import YAxis from "../YAxis/YAxis";
+  import ChartGridLines from "../ChartGridLines/ChartGridLines";
+  import {
+    calculateMaxValue,
+    calculateStepValue,
+    calculateStepLabels,
+    calculateItemWidth,
+    calculateValueHeight,
+    calculateChartBottom,
+    calculateChartLeft
+  } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
   export let id = null;
   let className = null;
   export { className as class };
-  export let width = 400;
+
   export let height = 200;
+  export let width = 400;
 
-  let itemStates = [];
+  export let xLabel = "";
+  export let yLabel = "";
 
-  const hBuffer = 20;
-  const vBuffer = 20;
+  export let labels = [];
+  export let color = "";
+  export let data = [];
+  export let series = [];
 
-  let itemWidth = 0;
-  let valueHeight = 0;
+  export let stepCount = 2;
+  export let stepValue = 0;
 
-  setContext("linechart", {
-    // The registerItem function is called from each LineChartItem to register itself with this
-    // LineChart. They pass us their values, as well as a setInfo method that we can call in onMount
-    // and beforeUpdate, when we have all of the items and can calculate sizes and (default) colors
-    registerItem: (values, labels, setInfo) => {
-      itemStates = [...itemStates, { values, labels, setInfo }];
-    }
-  });
+  export let showPoints = true;
+  export let showXAxis = true;
+  export let showYAxis = true;
+  export let showHLines = false;
+  export let showVLines = false;
+
+  let container;
+  let measurer;
+  let textWidth = 0;
+  let textHeight = 0;
+
+  $: calculatedWidth = !width && container ? container.clientWidth : width;
+  $: calculatedSeries = data ? [{ color, data }] : series;
+  $: maxValue = calculateMaxValue(data, calculatedSeries, stepCount);
+  $: calculatedStepValue = stepValue || calculateStepValue(maxValue, stepCount);
+  $: stepLabels = calculateStepLabels(stepCount, calculatedStepValue);
+  $: itemWidth = calculateItemWidth(calculatedWidth, chartLeft, labels);
+  $: valueHeight = calculateValueHeight(
+    chartBottom,
+    textHeight,
+    calculatedStepValue,
+    stepCount
+  );
+
+  $: chartBottom = calculateChartBottom(xLabel, height, textHeight);
+  $: chartLeft = calculateChartLeft(stepLabels, yLabel, textHeight, textWidth);
+
+  $: pointSeries = calculatePointSeries(
+    calculatedSeries,
+    chartLeft,
+    chartBottom,
+    itemWidth,
+    valueHeight
+  );
 
   onMount(() => {
-    setSizes();
+    const bbox = measurer.getBBox();
+    textWidth = bbox.width;
+    textHeight = bbox.height * 1.2;
   });
 
-  beforeUpdate(() => {
-    setSizes();
-  });
-
-  function setSizes() {
-    if (itemStates.length) {
-      const maxNumber = itemStates.reduce(
-        (a, b) => Math.max(a, b.values.length),
-        0
-      );
-      // HACK: Yeah, nested reduces
-      const maxValue = itemStates.reduce(
-        (a, b) =>
-          Math.max(a, parseInt(b.values.reduce((a, b) => Math.max(a, b), 0))),
-        0
-      );
-
-      itemWidth = (width - vBuffer) / (maxNumber - 1);
-      valueHeight = (height - hBuffer) / maxValue;
-
-      for (let i = 0; i < itemStates.length; i++) {
-        const state = itemStates[i];
-        state.setInfo(
-          hBuffer,
-          vBuffer,
-          height,
-          itemWidth,
-          valueHeight,
-          chartColors[i % chartColors.length]
-        );
-      }
-    }
+  function calculatePointSeries(
+    theSeries,
+    theChartLeft,
+    theChartBottom,
+    theItemWidth,
+    theValueHeight
+  ) {
+    return theSeries.map(ser => {
+      return ser.data.map((value, i) => {
+        const x = theChartLeft + i * theItemWidth + theItemWidth / 2;
+        const y = theChartBottom - value * theValueHeight;
+        return { x, y };
+      });
+    });
   }
 </script>
 
@@ -69,24 +94,71 @@
 
 </style>
 
-<svg
+<div
   {id}
   class={['chart', className].filter(Boolean).join(' ')}
-  version="1.1"
-  {width}
-  {height}>
-  <g>
-    {#if itemStates.length}
-      <ChartAxis
-        labels={itemStates[0].labels}
-        x1={vBuffer}
-        y1={height - hBuffer}
-        x2={width}
-        y2={height - hBuffer}
-        {itemWidth}
-        type="line" />
-      <ChartAxis x1={vBuffer} y1={height - hBuffer} x2={vBuffer} y2={0} />
-    {/if}
-    <slot />
-  </g>
-</svg>
+  bind:this={container}>
+  <svg version="1.1" width={calculatedWidth} {height}>
+    <g>
+      {#if !container}
+        <text bind:this={measurer}>8</text>
+      {/if}
+      {#if container}
+        <XAxis
+          showAxis={showXAxis}
+          {height}
+          width={calculatedWidth}
+          {itemWidth}
+          {textHeight}
+          {xLabel}
+          {labels}
+          {chartLeft}
+          {chartBottom} />
+        <YAxis
+          showAxis={showYAxis}
+          {valueHeight}
+          {textHeight}
+          {yLabel}
+          {stepLabels}
+          stepValue={calculatedStepValue}
+          {chartLeft}
+          {chartBottom} />
+        <ChartGridLines
+          {showHLines}
+          {showVLines}
+          width={calculatedWidth}
+          {labels}
+          stepValue={calculatedStepValue}
+          {stepLabels}
+          {itemWidth}
+          {valueHeight}
+          {chartLeft}
+          {chartBottom}
+          type="line" />
+        {#each calculatedSeries as ser, i}
+          <polyline
+            class="chart-line"
+            points={pointSeries[i].map(p => `${p.x},${p.y}`).join(' ')}
+            stroke={ser.color || chartColors[i]}
+            stroke-width="2"
+            fill="none" />
+          {#if showPoints}
+            {#each pointSeries[i] as point, j}
+              <circle
+                cx={point.x}
+                cy={point.y}
+                r="4"
+                stroke={ser.color || chartColors[i]}
+                stroke-width="2"
+                fill="white">
+                <title>
+                  {`${ser.name ? ser.name + '\n' : ''}${labels[j] + '\n'}${ser.data[j]}`}
+                </title>
+              </circle>
+            {/each}
+          {/if}
+        {/each}
+      {/if}
+    </g>
+  </svg>
+</div>

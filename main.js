@@ -110,7 +110,6 @@ import showPrompt from './src/dialogs/Prompt/show-prompt';
 // Charts
 import BarChart from './src/charts/BarChart/BarChart';
 import LineChart from './src/charts/LineChart/LineChart';
-import LineChartSeries from './src/charts/LineChart/LineChartSeries';
 import PieChart from './src/charts/PieChart/PieChart';
 import PieChartItem from './src/charts/PieChart/PieChartItem';
 
@@ -214,7 +213,6 @@ export {
     // Charts
     BarChart,
     LineChart,
-    LineChartSeries,
     PieChart,
     PieChartItem,
 
