@@ -57,15 +57,10 @@
   }
 
   function calculateStepValue2(range, stepCount) {
-    // Get the next power of 10 e.g. for 75 it would be 100
+    // Get the closest half-power of 10 e.g. for 35 or 75 it would be 50
     let maxUpper = parseInt(
-      "1" +
-        Array.prototype.join.call({ length: range.toString().length + 1 }, "0")
+      "5" + Array.prototype.join.call({ length: range.toString().length }, "0")
     );
-    // Special case: if we already have a power of 10, use that instead of the next one
-    if (maxUpper === parseInt(range + "0")) {
-      maxUpper = range.toString();
-    }
     // Start with the naive step value
     let step = range / stepCount;
     // Make it a decimal value and round it up
