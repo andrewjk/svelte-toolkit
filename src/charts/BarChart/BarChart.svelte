@@ -1,5 +1,5 @@
 <script>
-  import { setContext, onMount, beforeUpdate } from "svelte";
+  import { onMount } from "svelte";
   import ChartAxis from "../ChartAxis/ChartAxis";
   import { chartColors } from "../../utils/chart-colors";
 
@@ -19,6 +19,7 @@
   export let series = [];
 
   export let stepCount = 2;
+  export let stepValue = 0;
 
   export let showXAxis = true;
   export let showYAxis = true;
@@ -31,10 +32,12 @@
 
   $: calculatedWidth = !width && container ? container.clientWidth : width;
   $: calculatedSeries = data ? [{ color, data }] : series;
-  $: stepValue = calculateStepValue(data, calculatedSeries, stepCount);
-  $: stepLabels = calculateStepLabels(stepCount, stepValue);
+  $: calculatedStepValue =
+    stepValue || calculateStepValue(data, calculatedSeries, stepCount);
+  $: stepLabels = calculateStepLabels(stepCount, calculatedStepValue);
   $: itemWidth = (calculatedWidth - chartLeft) / labels.length;
-  $: valueHeight = chartBottom / (stepValue * stepCount);
+  $: valueHeight =
+    (chartBottom - textHeight) / (calculatedStepValue * stepCount);
 
   let xLabelBottom = height;
   $: chartLabelBottom = xLabel ? height - textHeight : height;
@@ -47,6 +50,27 @@
     textWidth = bbox.width;
     textHeight = bbox.height * 1.2;
   });
+
+  //beforeUpdate(() => {
+  //  if (!textWidth) {
+  //    calculateTextSize();
+  //  }
+  //});
+
+  //function calculateTextSize() {
+  //  const ns = "http://www.w3.org/2000/svg";
+  //  const svg = document.createElementNS(ns, "svg");
+  //  const textNode = document.createTextNode("8");
+  //  const text = document.createElementNS(ns, "text");
+  //  text.appendChild(textNode);
+  //  svg.appendChild(text);
+  //  document.body.appendChild(svg);
+  //  const bbox = text.getBBox();
+  //  textWidth = bbox.width;
+  //  textHeight = bbox.height * 1.2;
+  //  svg.removeChild(text);
+  //  document.body.removeChild(svg);
+  //}
 
   function calculateStepValue(theData, theSeries, theStepCount) {
     // HACK: Yeah, nested reduces
@@ -83,12 +107,17 @@
     return newStepLabels;
   }
 
-  function calculateChartLeft(theStepLabels, theYlabel, theTextHeight, theTextWidth) {
+  function calculateChartLeft(
+    theStepLabels,
+    theYLabel,
+    theTextHeight,
+    theTextWidth
+  ) {
     // Get the longest label width
     const maxLabelWidth = theStepLabels.reduce((a, b) => {
       return Math.max(a.toString().length, b.toString().length);
     }, 0);
-    let theChartLeft = theYlabel ? textHeight * 1.5 : textHeight / 2;
+    let theChartLeft = theYLabel ? textHeight * 1.5 : textHeight / 2;
     theChartLeft += maxLabelWidth * textWidth;
     return theChartLeft;
   }
@@ -160,16 +189,16 @@
             text-anchor="end"
             dominant-baseline="middle"
             x={chartLeft - textHeight / 4}
-            y={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i}>
+            y={chartBottom - i * calculatedStepValue * valueHeight}>
             {label}
           </text>
           {#if showHLines}
             <line
               class="chart-gridline"
               x1={chartLeft}
-              y1={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i}
+              y1={chartBottom - i * calculatedStepValue * valueHeight}
               x2={calculatedWidth}
-              y2={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i} />
+              y2={chartBottom - i * calculatedStepValue * valueHeight} />
           {/if}
         {/each}
         <!-- values -->
@@ -179,8 +208,9 @@
               <rect
                 class="chart-bar"
                 x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 1}
-                y={chartBottom - Math.max(1, ser.data[i] * valueHeight - textHeight)}
+                y={chartBottom - Math.max(1, ser.data[i] * valueHeight)}
                 width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 1)}
+                height={Math.max(1, ser.data[i] * valueHeight)}
                 fill={ser.color || chartColors[j]}>
                 <title>
                   {`${ser.name ? ser.name + '\n' : ''}${label + '\n'}${ser.data[i]}`}
