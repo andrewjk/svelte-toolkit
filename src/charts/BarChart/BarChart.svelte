@@ -168,7 +168,7 @@
             y={chartBottom - ((chartBottom - textHeight) / (stepLabels.length - 1)) * i}>
             {label}
           </text>
-          {#if showHlines}
+          {#if showHLines}
             <line
               class="chart-gridline"
               x1={chartLeft}
