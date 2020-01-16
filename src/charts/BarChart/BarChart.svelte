@@ -186,8 +186,11 @@
                 x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 1}
                 y={chartBottom - Math.max(1, ser.data[i] * valueHeight - textHeight)}
                 width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 1)}
-                height={Math.max(1, ser.data[i] * valueHeight - textHeight)}
-                fill={ser.color || chartColors[j]} />
+                fill={ser.color || chartColors[j]}>
+                <title>
+                  {`${ser.name ? ser.name + '\n' : ''}${label + '\n'}${ser.data[i]}`}
+                </title>
+              </rect>
             {/if}
           {/each}
         {/each}
