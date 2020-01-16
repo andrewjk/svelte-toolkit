@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import XAxis from "../XAxis/XAxis";
   import YAxis from "../YAxis/YAxis";
-  import ChartLines from "../ChartLines/ChartLines";
+  import ChartGridLines from "../ChartGridLines/ChartGridLines";
   import {
     calculateMaxValue,
     calculateStepValue,
@@ -118,7 +118,7 @@
           stepValue={calculatedStepValue}
           {chartLeft}
           {chartBottom} />
-        <ChartLines
+        <ChartGridLines
           {showHLines}
           width={calculatedWidth}
           stepValue={calculatedStepValue}

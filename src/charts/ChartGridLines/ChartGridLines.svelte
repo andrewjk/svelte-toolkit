@@ -1,0 +1,43 @@
+<script>
+  export let showHLines = false;
+  export let showVLines = false;
+
+  export let width = 0;
+
+  export let labels = [];
+  export let stepValue = 0;
+  export let stepLabels = [];
+  export let itemWidth = 0;
+  export let valueHeight = 0;
+
+  export let chartLeft = 0;
+  export let chartBottom = 0;
+
+  export let type = "bar";
+</script>
+
+<style src="ChartGridLines.scss">
+
+</style>
+
+{#if showHLines}
+  {#each stepLabels as label, i}
+    <line
+      class="chart-gridline"
+      x1={chartLeft}
+      y1={chartBottom - i * stepValue * valueHeight}
+      x2={width}
+      y2={chartBottom - i * stepValue * valueHeight} />
+  {/each}
+{/if}
+
+{#if showVLines}
+  {#each labels as label, i}
+    <line
+      class="chart-gridline"
+      x1={chartLeft + i * itemWidth + (type === "bar" ? 0 : itemWidth / 2)}
+      y1={chartBottom}
+      x2={chartLeft + i * itemWidth + (type === "bar" ? 0 : itemWidth / 2)}
+      y2={0} />
+  {/each}
+{/if}
