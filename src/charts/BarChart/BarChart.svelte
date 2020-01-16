@@ -1,6 +1,17 @@
 <script>
   import { onMount } from "svelte";
-  import ChartAxis from "../ChartAxis/ChartAxis";
+  import XAxis from "../XAxis/XAxis";
+  import YAxis from "../YAxis/YAxis";
+  import ChartLines from "../ChartLines/ChartLines";
+  import {
+    calculateMaxValue,
+    calculateStepValue,
+    calculateStepLabels,
+    calculateItemWidth,
+    calculateValueHeight,
+    calculateChartBottom,
+    calculateChartLeft
+  } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
   export let id = null;
@@ -14,7 +25,7 @@
   export let yLabel = "";
 
   export let labels = [];
-  export let color = chartColors[0];
+  export let color = "";
   export let data = [];
   export let series = [];
 
@@ -32,17 +43,18 @@
 
   $: calculatedWidth = !width && container ? container.clientWidth : width;
   $: calculatedSeries = data ? [{ color, data }] : series;
-  $: calculatedStepValue =
-    stepValue || calculateStepValue(data, calculatedSeries, stepCount);
+  $: maxValue = calculateMaxValue(data, calculatedSeries, stepCount);
+  $: calculatedStepValue = stepValue || calculateStepValue(maxValue, stepCount);
   $: stepLabels = calculateStepLabels(stepCount, calculatedStepValue);
-  $: itemWidth = (calculatedWidth - chartLeft) / labels.length;
-  $: valueHeight =
-    (chartBottom - textHeight) / (calculatedStepValue * stepCount);
+  $: itemWidth = calculateItemWidth(calculatedWidth, chartLeft, labels);
+  $: valueHeight = calculateValueHeight(
+    chartBottom,
+    textHeight,
+    calculatedStepValue,
+    stepCount
+  );
 
-  let xLabelBottom = height;
-  $: chartLabelBottom = xLabel ? height - textHeight : height;
-  $: chartBottom = xLabel ? height - textHeight * 2 : height - textHeight;
-  let yLabelLeft = 0;
+  $: chartBottom = calculateChartBottom(xLabel, height, textHeight);
   $: chartLeft = calculateChartLeft(stepLabels, yLabel, textHeight, textWidth);
 
   onMount(() => {
@@ -71,56 +83,6 @@
   //  svg.removeChild(text);
   //  document.body.removeChild(svg);
   //}
-
-  function calculateStepValue(theData, theSeries, theStepCount) {
-    // HACK: Yeah, nested reduces
-    const maxValue = theSeries.reduce((a, b) => {
-      return Math.max(a, parseInt(b.data.reduce((c, d) => Math.max(c, d), 0)));
-    }, 0);
-    return calculateStepValue2(maxValue, theStepCount);
-  }
-
-  function calculateStepValue2(range, stepCount) {
-    // Get the closest half-power of 10 e.g. for 35 or 75 it would be 50
-    let maxUpper = parseInt(
-      "5" + Array.prototype.join.call({ length: range.toString().length }, "0")
-    );
-    // Start with the naive step value
-    let step = range / stepCount;
-    // Make it a decimal value and round it up
-    step = Math.ceil(step / (maxUpper / 10));
-    // If the step would be a multiple of 3, 7 or 9, round it up to the next even number (for aesthetic purposes)
-    if (step === 3 || step === 7 || step === 9) {
-      step = step + (step % 2);
-    }
-    // Convert the step back from the decimal value
-    step = step * (maxUpper / 10);
-    return step;
-  }
-
-  function calculateStepLabels(theStepCount, theStepValue) {
-    // Calculate the step value and labels
-    const newStepLabels = [];
-    for (var i = 0; i < theStepCount + 1; i++) {
-      newStepLabels.push(theStepValue * i);
-    }
-    return newStepLabels;
-  }
-
-  function calculateChartLeft(
-    theStepLabels,
-    theYLabel,
-    theTextHeight,
-    theTextWidth
-  ) {
-    // Get the longest label width
-    const maxLabelWidth = theStepLabels.reduce((a, b) => {
-      return Math.max(a.toString().length, b.toString().length);
-    }, 0);
-    let theChartLeft = theYLabel ? textHeight * 1.5 : textHeight / 2;
-    theChartLeft += maxLabelWidth * textWidth;
-    return theChartLeft;
-  }
 </script>
 
 <style src="BarChart.scss">
@@ -137,71 +99,33 @@
         <text bind:this={measurer}>8</text>
       {/if}
       {#if container}
-        <!-- x axis -->
-        {#if showXAxis}
-          <line
-            {id}
-            class="chart-axis"
-            x1={chartLeft}
-            y1={chartBottom}
-            x2={calculatedWidth}
-            y2={chartBottom} />
-        {/if}
-        {#if xLabel}
-          <text
-            text-anchor="middle"
-            dominant-baseline="text-after-edge"
-            x={calculatedWidth - (calculatedWidth - chartLeft) / 2}
-            y={height}>
-            {xLabel}
-          </text>
-        {/if}
-        {#each labels as label, i}
-          <text
-            text-anchor="middle"
-            dominant-baseline="text-after-edge"
-            x={chartLeft + itemWidth * i + itemWidth / 2}
-            y={chartLabelBottom}>
-            {label}
-          </text>
-        {/each}
-        <!-- y axis -->
-        {#if showYAxis}
-          <line
-            class="chart-axis"
-            x1={chartLeft}
-            y1={chartBottom}
-            x2={chartLeft}
-            y2={0} />
-        {/if}
-        {#if yLabel}
-          <text
-            text-anchor="middle"
-            dominant-baseline="hanging"
-            x={0}
-            y={chartBottom / 2}
-            transform={`rotate(-90, ${0}, ${chartBottom / 2})`}>
-            {yLabel}
-          </text>
-        {/if}
-        {#each stepLabels as label, i}
-          <text
-            text-anchor="end"
-            dominant-baseline="middle"
-            x={chartLeft - textHeight / 4}
-            y={chartBottom - i * calculatedStepValue * valueHeight}>
-            {label}
-          </text>
-          {#if showHLines}
-            <line
-              class="chart-gridline"
-              x1={chartLeft}
-              y1={chartBottom - i * calculatedStepValue * valueHeight}
-              x2={calculatedWidth}
-              y2={chartBottom - i * calculatedStepValue * valueHeight} />
-          {/if}
-        {/each}
-        <!-- values -->
+        <XAxis
+          showAxis={showXAxis}
+          {height}
+          width={calculatedWidth}
+          {itemWidth}
+          {textHeight}
+          {xLabel}
+          {labels}
+          {chartLeft}
+          {chartBottom} />
+        <YAxis
+          showAxis={showYAxis}
+          {valueHeight}
+          {textHeight}
+          {yLabel}
+          {stepLabels}
+          stepValue={calculatedStepValue}
+          {chartLeft}
+          {chartBottom} />
+        <ChartLines
+          {showHLines}
+          width={calculatedWidth}
+          stepValue={calculatedStepValue}
+          {stepLabels}
+          {valueHeight}
+          {chartLeft}
+          {chartBottom} />
         {#each labels as label, i}
           {#each calculatedSeries as ser, j}
             {#if ser.data.length > i}
