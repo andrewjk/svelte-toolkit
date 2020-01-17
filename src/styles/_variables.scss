@@ -64,7 +64,7 @@ $mark-back-color: #ffff00;
 $mark-text-color: $dark-color;
 
 // Primary
-$primary-color: #ff0066;
+$primary-color: #fd3f92;
 $primary-text-color: find-color-invert($primary-color);
 $primary-hover-color: scale-color($primary-color, $lightness: -20%);
 $light-primary-color: scale-color($primary-color, $lightness: 95%);
