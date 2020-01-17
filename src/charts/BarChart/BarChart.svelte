@@ -61,7 +61,7 @@
   onMount(() => {
     const bbox = measurer.getBBox();
     textWidth = bbox.width;
-    textHeight = bbox.height * 1.2;
+    textHeight = bbox.height * 1.5;
   });
 
   //beforeUpdate(() => {
@@ -80,7 +80,7 @@
   //  document.body.appendChild(svg);
   //  const bbox = text.getBBox();
   //  textWidth = bbox.width;
-  //  textHeight = bbox.height * 1.2;
+  //  textHeight = bbox.height * 1.5;
   //  svg.removeChild(text);
   //  document.body.removeChild(svg);
   //}
@@ -135,11 +135,11 @@
             {#if ser.data.length > i}
               <rect
                 class="chart-bar"
-                x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 1}
+                x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 2}
                 y={chartBottom - Math.max(1, ser.data[i] * valueHeight)}
-                width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 1)}
+                width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 2)}
                 height={Math.max(1, ser.data[i] * valueHeight)}
-                fill={ser.color || chartColors[j]}>
+                fill={ser.color || chartColors[j % chartColors.length]}>
                 <title>
                   {`${ser.name ? ser.name + '\n' : ''}${label + '\n'}${ser.data[i]}`}
                 </title>

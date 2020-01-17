@@ -59,7 +59,7 @@
   $: chartBottom = calculateChartBottom(xLabel, height, textHeight);
   $: chartLeft = calculateChartLeft(stepLabels, yLabel, textHeight, textWidth);
 
-  $: pointSeries = calculatePointSeries(
+  $: pointSeries = buildPointSeries(
     calculatedSeries,
     chartLeft,
     chartBottom,
@@ -70,10 +70,10 @@
   onMount(() => {
     const bbox = measurer.getBBox();
     textWidth = bbox.width;
-    textHeight = bbox.height * 1.2;
+    textHeight = bbox.height * 1.5;
   });
 
-  function calculatePointSeries(
+  function buildPointSeries(
     theSeries,
     theChartLeft,
     theChartBottom,
@@ -139,7 +139,7 @@
           <polyline
             class="chart-line"
             points={pointSeries[i].map(p => `${p.x},${p.y}`).join(' ')}
-            stroke={ser.color || chartColors[i]}
+            stroke={ser.color || chartColors[i % chartColors.length]}
             stroke-width="2"
             fill="none" />
           {#if showPoints}
@@ -148,7 +148,7 @@
                 cx={point.x}
                 cy={point.y}
                 r="4"
-                stroke={ser.color || chartColors[i]}
+                stroke={ser.color || chartColors[i % chartColors.length]}
                 stroke-width="2"
                 fill="white">
                 <title>
