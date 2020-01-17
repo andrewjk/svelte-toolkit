@@ -111,7 +111,6 @@ import showPrompt from './src/dialogs/Prompt/show-prompt';
 import BarChart from './src/charts/BarChart/BarChart';
 import LineChart from './src/charts/LineChart/LineChart';
 import PieChart from './src/charts/PieChart/PieChart';
-import PieChartItem from './src/charts/PieChart/PieChartItem';
 
 // Icons
 import ArrowUp from './src/icons/ArrowUp';
@@ -214,7 +213,6 @@ export {
     BarChart,
     LineChart,
     PieChart,
-    PieChartItem,
 
     // Icons
     ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
