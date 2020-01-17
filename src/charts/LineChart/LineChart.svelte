@@ -82,8 +82,8 @@
   ) {
     return theSeries.map(ser => {
       return ser.data.map((value, i) => {
-        const x = theChartLeft + i * theItemWidth + theItemWidth / 2;
-        const y = theChartBottom - value * theValueHeight;
+        const x = +(theChartLeft + i * theItemWidth + theItemWidth / 2).toFixed(2);
+        const y = +(theChartBottom - value * theValueHeight).toFixed(2);
         return { x, y };
       });
     });
