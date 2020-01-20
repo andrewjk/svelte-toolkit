@@ -1,5 +1,5 @@
 
-export function calculateMaxValue(data, series, stepCount) {
+export function calculateMaxValue(data, series) {
     // HACK: Yeah, nested reduces
     return series.reduce((a, b) => {
         return Math.max(a, parseInt(b.data.reduce((c, d) => Math.max(c, d), 0)));

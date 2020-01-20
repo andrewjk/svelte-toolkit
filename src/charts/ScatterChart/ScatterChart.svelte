@@ -4,7 +4,6 @@
   import YAxis from "../YAxis/YAxis";
   import ChartGridLines from "../ChartGridLines/ChartGridLines";
   import {
-    calculateMaxValue,
     calculateStepValue,
     calculateStepLabels,
     calculateItemWidth,
@@ -24,15 +23,15 @@
   export let xLabel = "";
   export let yLabel = "";
 
-  export let labels = [];
   export let color = "";
   export let data = [];
   export let series = [];
 
-  export let stepCount = 2;
-  export let stepValue = 0;
+  export let xStepCount = 2;
+  export let xStepValue = 0;
+  export let yStepCount = 2;
+  export let yStepValue = 0;
 
-  export let showPoints = true;
   export let showXAxis = true;
   export let showYAxis = true;
   export let showHLines = false;
@@ -45,19 +44,29 @@
 
   $: calculatedWidth = !width && container ? container.clientWidth : width;
   $: calculatedSeries = data ? [{ color, data }] : series;
-  $: maxValue = calculateMaxValue(data, calculatedSeries);
-  $: calculatedStepValue = stepValue || calculateStepValue(maxValue, stepCount);
-  $: stepLabels = calculateStepLabels(stepCount, calculatedStepValue);
-  $: itemWidth = calculateItemWidth(calculatedWidth, chartLeft, labels);
+  $: maxXValue = calculateMaxValue(data, calculatedSeries, "x");
+  $: calculatedXStepValue =
+    xStepValue || calculateStepValue(maxXValue, xStepCount);
+  $: xStepLabels = calculateStepLabels(xStepCount, calculatedXStepValue);
+  $: maxYValue = calculateMaxValue(data, calculatedSeries, "y");
+  $: calculatedYStepValue =
+    yStepValue || calculateStepValue(maxYValue, yStepCount);
+  $: yStepLabels = calculateStepLabels(yStepCount, calculatedYStepValue);
+  $: itemWidth = calculateValueHeight(
+    calculatedWidth - chartLeft,
+    textHeight,
+    calculatedXStepValue,
+    xStepCount
+  );
   $: valueHeight = calculateValueHeight(
     chartBottom,
     textHeight,
-    calculatedStepValue,
-    stepCount
+    calculatedYStepValue,
+    yStepCount
   );
 
   $: chartBottom = calculateChartBottom(xLabel, height, textHeight);
-  $: chartLeft = calculateChartLeft(stepLabels, yLabel, textHeight, textWidth);
+  $: chartLeft = calculateChartLeft(yStepLabels, yLabel, textHeight, textWidth);
 
   $: pointSeries = buildPointSeries(
     calculatedSeries,
@@ -73,6 +82,16 @@
     textHeight = bbox.height * 1.5;
   });
 
+  function calculateMaxValue(data, series, field) {
+    // HACK: Yeah, nested reduces
+    return series.reduce((a, b) => {
+      return Math.max(
+        a,
+        parseInt(b.data.reduce((c, d) => Math.max(c, d[field]), 0))
+      );
+    }, 0);
+  }
+
   function buildPointSeries(
     theSeries,
     theChartLeft,
@@ -81,16 +100,16 @@
     theValueHeight
   ) {
     return theSeries.map(ser => {
-      return ser.data.map((value, i) => {
-        const x = +(theChartLeft + i * theItemWidth + theItemWidth / 2).toFixed(2);
-        const y = +(theChartBottom - value * theValueHeight).toFixed(2);
+      return ser.data.map((item, i) => {
+        const x = +(theChartLeft + item.x * theItemWidth).toFixed(2);
+        const y = +(theChartBottom - item.y * theValueHeight).toFixed(2);
         return { x, y };
       });
     });
   }
 </script>
 
-<style src="LineChart.scss">
+<style src="ScatterChart.scss">
 
 </style>
 
@@ -111,7 +130,8 @@
           {itemWidth}
           {textHeight}
           {xLabel}
-          {labels}
+          stepLabels={xStepLabels}
+          stepValue={calculatedXStepValue}
           {chartLeft}
           {chartBottom} />
         <YAxis
@@ -119,44 +139,35 @@
           {valueHeight}
           {textHeight}
           {yLabel}
-          {stepLabels}
-          stepValue={calculatedStepValue}
+          stepLabels={yStepLabels}
+          stepValue={calculatedYStepValue}
           {chartLeft}
           {chartBottom} />
         <ChartGridLines
           {showHLines}
           {showVLines}
           width={calculatedWidth}
-          {labels}
-          yStepValue={calculatedStepValue}
-          yStepLabels={stepLabels}
+          xStepValue={calculatedXStepValue}
+          {xStepLabels}
+          yStepValue={calculatedYStepValue}
+          {yStepLabels}
           {itemWidth}
           {valueHeight}
           {chartLeft}
           {chartBottom}
           type="line" />
         {#each calculatedSeries as ser, i}
-          <polyline
-            class="chart-line"
-            points={pointSeries[i].map(p => `${p.x},${p.y}`).join(' ')}
-            stroke={ser.color || chartColors[i % chartColors.length]}
-            stroke-width="2"
-            fill="none" />
-          {#if showPoints}
-            {#each pointSeries[i] as point, j}
-              <circle
-                cx={point.x}
-                cy={point.y}
-                r="4"
-                stroke={ser.color || chartColors[i % chartColors.length]}
-                stroke-width="2"
-                fill="white">
-                <title>
-                  {`${ser.name ? ser.name + '\n' : ''}${labels[j] + '\n'}${ser.data[j]}`}
-                </title>
-              </circle>
-            {/each}
-          {/if}
+          {#each pointSeries[i] as point, j}
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="4"
+              fill={ser.color || chartColors[i % chartColors.length]}>
+              <title>
+                {`${ser.name ? ser.name + '\n' : ''}${ser.data[j].label + '\n'}${ser.data[j].x}, ${ser.data[j].y}`}
+              </title>
+            </circle>
+          {/each}
         {/each}
       {/if}
     </g>

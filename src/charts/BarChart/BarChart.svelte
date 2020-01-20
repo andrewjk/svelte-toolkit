@@ -44,7 +44,7 @@
 
   $: calculatedWidth = !width && container ? container.clientWidth : width;
   $: calculatedSeries = data ? [{ color, data }] : series;
-  $: maxValue = calculateMaxValue(data, calculatedSeries, stepCount);
+  $: maxValue = calculateMaxValue(data, calculatedSeries);
   $: calculatedStepValue = stepValue || calculateStepValue(maxValue, stepCount);
   $: stepLabels = calculateStepLabels(stepCount, calculatedStepValue);
   $: itemWidth = calculateItemWidth(calculatedWidth, chartLeft, labels);
@@ -124,8 +124,8 @@
           {showVLines}
           width={calculatedWidth}
           {labels}
-          stepValue={calculatedStepValue}
-          {stepLabels}
+          yStepValue={calculatedStepValue}
+          yStepLabels={stepLabels}
           {itemWidth}
           {valueHeight}
           {chartLeft}

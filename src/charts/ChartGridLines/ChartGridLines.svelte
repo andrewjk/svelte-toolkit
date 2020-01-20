@@ -5,8 +5,10 @@
   export let width = 0;
 
   export let labels = [];
-  export let stepValue = 0;
-  export let stepLabels = [];
+  export let xStepValue = 0;
+  export let xStepLabels = [];
+  export let yStepValue = 0;
+  export let yStepLabels = [];
   export let itemWidth = 0;
   export let valueHeight = 0;
 
@@ -21,23 +23,34 @@
 </style>
 
 {#if showHLines}
-  {#each stepLabels as label, i}
+  {#each yStepLabels as label, i}
     <line
       class="chart-gridline"
       x1={chartLeft}
-      y1={chartBottom - i * stepValue * valueHeight}
+      y1={chartBottom - i * yStepValue * valueHeight}
       x2={width}
-      y2={chartBottom - i * stepValue * valueHeight} />
+      y2={chartBottom - i * yStepValue * valueHeight} />
   {/each}
 {/if}
 
 {#if showVLines}
-  {#each labels as label, i}
-    <line
-      class="chart-gridline"
-      x1={chartLeft + i * itemWidth + (type === "bar" ? 0 : itemWidth / 2)}
-      y1={chartBottom}
-      x2={chartLeft + i * itemWidth + (type === "bar" ? 0 : itemWidth / 2)}
-      y2={0} />
-  {/each}
+  {#if xStepLabels.length && xStepValue}
+    {#each xStepLabels as label, i}
+      <line
+        class="chart-gridline"
+        x1={chartLeft + i * xStepValue * itemWidth}
+        y1={chartBottom}
+        x2={chartLeft + i * xStepValue * itemWidth}
+        y2={0} />
+    {/each}
+  {:else}
+    {#each labels as label, i}
+      <line
+        class="chart-gridline"
+        x1={chartLeft + i * itemWidth + (type === 'bar' ? 0 : itemWidth / 2)}
+        y1={chartBottom}
+        x2={chartLeft + i * itemWidth + (type === 'bar' ? 0 : itemWidth / 2)}
+        y2={0} />
+    {/each}
+  {/if}
 {/if}
