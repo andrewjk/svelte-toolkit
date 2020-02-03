@@ -15,12 +15,12 @@
 
 .nav-menu.start {
     .nav-menu-bar {
-        justify-content: start;
+        justify-content: flex-start;
     }
 }
 
 .nav-menu.end {
     .nav-menu-bar {
-        justify-content: end;
+        justify-content: flex-end;
     }
 }

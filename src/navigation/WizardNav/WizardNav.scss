@@ -5,7 +5,7 @@
     padding: calc(var(--element-padding, #{$element-padding}) / 2) 0;
 
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 
