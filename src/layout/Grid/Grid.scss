@@ -4,10 +4,11 @@
 // ========================================================
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
+    display: grid;
     margin: 0 0 var(--element-padding, $element-padding);
+
+    // Default to 12 columns
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .grid:last-child {
@@ -15,15 +16,44 @@
 }
 
 .grid.spaced {
-    margin: calc(-1 * var(--element-padding, #{$element-padding}) / 2)
-        calc(-1 * var(--element-padding, #{$element-padding}) / 2)
-        calc(var(--element-margin, #{$element-margin}) - var(--element-padding, #{$element-padding}) / 2);
+    row-gap: var(--element-padding, $element-padding);
+    column-gap: var(--element-padding, $element-padding);
 }
 
-.grid.spaced:last-child {
-    margin: calc(-1 * var(--element-padding, #{$element-padding}) / 2);
+@for $i from 1 through 12 {
+    .grid.cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+    }
 }
 
-.grid.nowrap {
-    flex-wrap: nowrap;
+@media (min-width: $small-screen) {
+    @for $i from 1 through 12 {
+        .grid.sm-cols-#{$i} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+        }
+    }
+}
+
+@media (min-width: $medium-screen) {
+    @for $i from 1 through 12 {
+        .grid.md-cols-#{$i} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+        }
+    }
+}
+
+@media (min-width: $large-screen) {
+    @for $i from 1 through 12 {
+        .grid.lg-cols-#{$i} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+        }
+    }
+}
+
+@media (min-width: $xlarge-screen) {
+    @for $i from 1 through 12 {
+        .grid.xl-cols-#{$i} {
+            grid-template-columns: repeat(#{$i}, 1fr);
+        }
+    }
 }
