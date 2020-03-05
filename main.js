@@ -16,6 +16,8 @@ import PageBody from './src/layout/Page/PageBody';
 import PageFooter from './src/layout/Page/PageFooter';
 import PageHeader from './src/layout/Page/PageHeader';
 import Panel from './src/layout/Panel/Panel';
+import Stack from './src/layout/Stack/Stack';
+import StackItem from './src/layout/Stack/StackItem';
 import Table from './src/layout/Table/Table';
 import TableBody from './src/layout/Table/TableBody';
 import TableCell from './src/layout/Table/TableCell';
@@ -144,6 +146,7 @@ export {
     Level, LevelItem,
     Page, PageBody, PageFooter, PageHeader,
     Panel,
+    Stack, StackItem,
     Table, TableBody, TableCell, TableFooter, TableHeader, TableHeaderCell, TableRow,
 
     // Components

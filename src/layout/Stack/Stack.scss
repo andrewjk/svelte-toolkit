@@ -1,0 +1,23 @@
+@import "../../styles/_variables";
+
+.stack {
+    height: 100%;
+    display: flex;
+}
+
+.stack.vertical {
+    flex-direction: column;
+    margin: 0 0 var(--element-margin, $element-margin);
+}
+
+.stack.vertical:last-child {
+    margin-bottom: 0;
+}
+
+.stack.horizontal {
+    flex-direction: row;
+}
+
+.stack.nowrap {
+    flex-wrap: nowrap;
+}
