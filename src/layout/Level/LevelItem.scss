@@ -2,7 +2,6 @@
 
 .level-item {
     flex: 1 1 auto;
-    margin: 0 !important;
 
     display: flex;
     justify-content: center;
@@ -17,4 +16,16 @@
 .level-item.end {
     flex: 0 0 auto;
     justify-content: flex-end;
+}
+
+.level-item.spaced {
+    margin: 0 calc(var(--element-margin, #{$element-margin}) / 2);
+}
+
+.level-item.spaced:first-child {
+    margin-left: 0;
+}
+
+.level-item.spaced:last-child {
+    margin-right: 0;
 }
