@@ -6,6 +6,7 @@ import DataTableColumn from '../../src/components/DataTable/DataTableColumn.svel
 test('table creation', () => {
     const { container, getByText } = render(DataTable, {
         id: 'table',
+        keyField: 'name',
         items: [
             { name: 'a' },
             { name: 'b' },
