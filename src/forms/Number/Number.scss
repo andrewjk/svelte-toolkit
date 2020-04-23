@@ -53,13 +53,13 @@
 }
 
 input.number-input {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
     border: 0;
     height: var(--input-height, $input-height);
     margin: 0;
     padding: 0 4px;
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
 }
 
 input.number-input::-webkit-inner-spin-button, 

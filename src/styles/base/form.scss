@@ -25,6 +25,7 @@ input[type="number"],
 input[type="datetime"],
 input[type="file"],
 input[type="url"] {
+    -webkit-appearance: none;
     background-color: var(--input-back-color, $input-back-color);
     border: 1px solid var(--border-color, $border-color);
     border-radius: var(--border-radius, $border-radius);
@@ -32,7 +33,6 @@ input[type="url"] {
     height: var(--input-height, $input-height);
     padding: 0 4px;
     width: 100%;
-    -webkit-appearance: none;
 }
 
 input[type="file"] {
@@ -88,12 +88,6 @@ input.inline {
 // ========================================================
 
 select {
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    width: 100%;
-}
-
-select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -102,7 +96,12 @@ select {
     background-repeat: no-repeat, repeat;
     background-position: right 0.6rem top 50%, 0 0;
     background-size: 1.1rem auto, 100%;
+    border: 1px solid var(--border-color, $border-color);
+    border-radius: var(--border-radius, $border-radius);
     color: var(--input-text-color, $input-text-color);
+    height: var(--input-height, $input-height);
+    padding: 0 4px;
+    width: 100%;
 }
 
 select:not([multiple]) {

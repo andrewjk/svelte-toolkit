@@ -54,12 +54,12 @@
 }
 
 input.drop-down-input {
+    -webkit-appearance: none;
     border: 0;
     height: calc(var(--input-height, #{$input-height}) - 2px);
     margin: 0;
     padding: 0 4px;
     width: 100%;
-    -webkit-appearance: none;
 }
 
 input.drop-down-input:focus {
