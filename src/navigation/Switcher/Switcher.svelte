@@ -16,21 +16,22 @@
   // A collection containing the active state and some functions for each item
   let itemStates = [];
 
-  let itemid = 0;
+  // A unique item id is set for each item
+  let itemId = 0;
 
-  // HACK: This seems like bad code, but I don't know how to handle events from items that are
-  // declared in slots
   setContext("switcher", {
-    // The registerItem function is called from each SwitcherItem to register itself with this
-    // Switcher. They pass us a setActive method that we can call and let us know when they have
-    // been unloaded so that we can remove them from the itemStates array
+    // The registerItem function is called from each SwitcherItem to register itself and its
+    // methods with this Switcher
     registerItem: (setActive, setItemID) => {
-      const newitemid = itemid++;
-      itemStates = [...itemStates, { itemid: newitemid, active: false, setActive }];
-      setItemID(newitemid);
+      const newItemId = itemId++;
+      itemStates = [...itemStates, { itemId: newItemId, active: false, setActive }];
+      setItemID(newItemId);
+      toggleItem(index);
     },
-    removeItem: itemid => {
-      itemStates.splice(itemStates.findIndex(i => i.itemid === itemid), 1);
+    // The removeItem function is called from a SwitcherItem when it has been unloaded so that we
+    // can remove it from the itemStates array
+    removeItem: itemId => {
+      itemStates.splice(itemStates.findIndex(i => i.itemId === itemId), 1);
       toggleItem(index);
     }
   });
@@ -50,23 +51,16 @@
       return;
     }
 
-    let sanitizedValue = atIndex;
-
     // Make sure the value isn't outside the bounds of the items
-    if (sanitizedValue < 0) {
-      sanitizedValue = 0;
-    } else if (sanitizedValue > itemStates.length - 1) {
-      sanitizedValue = itemStates.length - 1;
-    }
+    const newIndex = Math.max(0, Math.min(atIndex, itemStates.length - 1));
 
-    // Toggle items
+    // Set items to active or inactive
     itemStates.map((item, itemIndex) => {
-      // The item is active if it has the supplied index (i.e. if it was clicked)
-      item.active = itemIndex === sanitizedValue;
+      item.active = itemIndex === newIndex;
       item.setActive(item.active);
     });
 
-    // Set the value to the index of the active item
+    // Set the new index value
     index = atIndex;
 
     dispatch("change", index);
