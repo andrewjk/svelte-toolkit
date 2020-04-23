@@ -4,21 +4,17 @@
 // BUTTON SIZES
 // ========================================================
 
-.button {
-    font-size: 1.75rem;
-    padding: calc(var(--element-padding, #{$element-padding}) / 4);
-}
-
-.button.medium {
-    font-size: 1.75rem;
-    min-width: 9.6rem;
-    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
-}
-
 .button.small {
     font-size: 1.4rem;
     min-width: 6.4rem;
     padding: calc(var(--element-padding, #{$element-padding}) / 8) calc(var(--element-padding, #{$element-padding}) / 2);
+}
+
+.button,
+.button.medium {
+    font-size: 1.75rem;
+    min-width: 9.6rem;
+    padding: calc(var(--element-padding, #{$element-padding}) / 4) var(--element-padding, $element-padding);
 }
 
 .button.large {
@@ -34,6 +30,10 @@
     padding: 0 12px !important;
 }
 
+.button.rounded {
+    border-radius: 9999px;
+}
+
 // BUTTON COLORS
 // ========================================================
 
@@ -46,6 +46,7 @@
     border: 1px solid transparent;
 }
 
+.button,
 .button.primary {
     background-color: var(--primary-color, $primary-color);
     color: var(--primary-text-color, $primary-text-color);
@@ -100,6 +101,78 @@
     background-color: var(--cancel-hover-color, $cancel-hover-color);
 }
 
+// OUTLINED COLORS
+// =======================================================
+
+.button.primary.outlined,
+.button.info.outlined,
+.button.success.outlined,
+.button.warning.outlined,
+.button.danger.outlined,
+.button.cancel.outlined {
+    background-color: transparent;
+}
+
+.button.primary.outlined {
+    border: 2px solid var(--primary-color, $primary-color);
+    color: var(--primary-color, $primary-color);
+}
+
+.button.primary.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--primary-color, $primary-color);
+    color: var(--primary-text-color, $primary-text-color);
+}
+
+.button.info.outlined {
+    border: 2px solid var(--info-color, $info-color);
+    color: var(--info-color, $info-color);
+}
+
+.button.info.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--info-color, $info-color);
+    color: var(--info-text-color, $info-text-color);
+}
+
+.button.success.outlined {
+    border: 2px solid var(--success-color, $success-color);
+    color: var(--success-color, $success-color);
+}
+
+.button.success.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--success-color, $success-color);
+    color: var(--success-text-color, $success-text-color);
+}
+
+.button.warning.outlined {
+    border: 2px solid var(--warning-color, $warning-color);
+    color: var(--warning-color, $warning-color);
+}
+
+.button.warning.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
+}
+
+.button.danger.outlined {
+    border: 2px solid var(--danger-color, $danger-color);
+    color: var(--danger-color, $danger-color);
+}
+
+.button.danger.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--danger-color, $danger-color);
+    color: var(--danger-text-color, $danger-text-color);
+}
+
+.button.warning.outlined {
+    border: 2px solid var(--warning-color, $warning-color);
+    color: var(--warning-color, $warning-color);
+}
+
+.button.warning.outlined:hover:not(:disabled):not(.loading) {
+    background-color: var(--warning-color, $warning-color);
+    color: var(--warning-text-color, $warning-text-color);
+}
+
 // DISABLED
 // ========================================================
 
@@ -107,6 +180,14 @@
 .button:disabled:hover,
 .button:disabled:focus {
     background-color: var(--disabled-color, $disabled-color);
+    color: var(--disabled-text-color, $disabled-text-color);
+    cursor: default;
+}
+
+.button.outlined:disabled,
+.button.outlined:disabled:hover,
+.button.outlined:disabled:focus {
+    border-color: var(--disabled-text-color, $disabled-text-color);
     color: var(--disabled-text-color, $disabled-text-color);
     cursor: default;
 }
@@ -121,6 +202,7 @@
 .loading-background {
     position: absolute;
     background-color: inherit;
+    border-radius: inherit;
     top: 0;
     left: 0;
     right: 0;

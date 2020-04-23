@@ -7,6 +7,8 @@
   export let type = "primary";
   export let size = "medium";
   export let loading = false;
+  export let rounded = false;
+  export let outlined = false;
   export let submit = false;
   export let reset = false;
   export let title = "";
@@ -22,7 +24,10 @@
 
 <button
   {id}
-  class={['button', type, size, loading ? 'loading' : null, className].filter(Boolean).join(' ')}
+  class={['button', type, size, className].filter(Boolean).join(' ')}
+  class:loading
+  class:rounded
+  class:outlined
   type={submit ? 'submit' : reset ? 'reset' : 'button'}
   {title}
   {disabled}
