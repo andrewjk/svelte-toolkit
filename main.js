@@ -62,6 +62,7 @@ import TabHeader from './src/components/TabGroup/TabHeader';
 import Tag from './src/components/Tag/Tag';
 import TagInput from './src/components/TagInput/TagInput';
 import TagInputItem from './src/components/TagInput/TagInputItem';
+import TimePicker from './src/components/TimePicker/TimePicker';
 
 // Component methods
 import showAlert from './src/components/Alert/show-alert';
@@ -174,6 +175,7 @@ export {
     TabGroup, TabItem, TabHeader,
     Tag,
     TagInput, TagInputItem,
+    TimePicker,
     
     // Component methods
     showAlert,
