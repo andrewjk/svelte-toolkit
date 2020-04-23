@@ -5,7 +5,7 @@
   let className = null;
   export { className as class };
 
-  export let width = "grow";
+  export let size = "auto";
 
   let spaced = false;
   let direction = "vertical";
@@ -25,7 +25,7 @@
   {id}
   class={[
     'stack-item',
-    width,
+    size,
     spaced ? direction.substr(0, 1) + '-spaced' : null,
     className
   ]
