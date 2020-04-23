@@ -119,6 +119,23 @@
     on:input={handleInput}
     on:focus
     on:blur={handleBlur} />
+{:else if contentType === 'number'}
+  <input
+    type="number"
+    {id}
+    class={[type, className].filter(Boolean).join(' ')}
+    {name}
+    bind:this={input}
+    bind:value
+    {placeholder}
+    {readonly}
+    maxlength={maxlength > 0 ? maxlength : null}
+    on:keydown
+    on:keyup
+    on:keypress
+    on:input={handleInput}
+    on:focus
+    on:blur={handleBlur} />
 {:else if contentType === 'url'}
   <input
     type="url"
