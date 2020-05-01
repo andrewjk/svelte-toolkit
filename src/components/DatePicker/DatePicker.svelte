@@ -1,5 +1,5 @@
 <script>
-  import { tick } from "svelte";
+  import { onMount, tick } from "svelte";
 
   import ChevronDown from "../../icons/ChevronDown";
   import Calendar from "../Calendar/Calendar";
@@ -13,6 +13,7 @@
 
   export let value = null;
   export let placeholder = "";
+  export let autofocus = false;
   export let startOfWeek = 1;
   export let dateFormat = "d MMM yyyy";
   export let dateOrder = "mdy";
@@ -23,6 +24,15 @@
   let inputContainer;
   let input;
   let list;
+
+  onMount(() => {
+    // We're manually focussing in onMount for two reasons:
+    // 1. to avoid an overly-broad accessibility warning (there are instances where autofocus is desirable)
+    // 2. to enable autofocus when an item is dynamically added to a page (e.g. adding a new item at the bottom of a list)
+    if (autofocus) {
+      input.focus();
+    }
+  });
 
   async function toggleList() {
     expanded = !expanded;

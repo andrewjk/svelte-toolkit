@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   export let id = null;
   let className = null;
   export { className as class };
@@ -6,8 +8,19 @@
   export let value = null;
   export let interval = 30;
   export let placeholder = "";
+  export let autofocus = false;
 
   const times = buildTimes();
+  let input;
+
+  onMount(() => {
+    // We're manually focussing in onMount for two reasons:
+    // 1. to avoid an overly-broad accessibility warning (there are instances where autofocus is desirable)
+    // 2. to enable autofocus when an item is dynamically added to a page (e.g. adding a new item at the bottom of a list)
+    if (autofocus) {
+      input.focus();
+    }
+  });
 
   function buildTimes() {
     const options = {
@@ -50,6 +63,7 @@
   {id}
   class={['time-picker', className].filter(Boolean).join(' ')}
   value={getMinutes(value)}
+  bind:this={input}
   {placeholder}
   on:change={handleChange}>
   {#each times as time}
