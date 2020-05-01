@@ -95,11 +95,13 @@
   }
 
   function setValue(date) {
-    value = date;
+    // Set the date part of the value only (in case something else is handling the time part)
+    value = new Date(value);
+    value.setFullYear(date.getFullYear(), date.getMonth(), date.getDate());
   }
 
   function dateSelected(date) {
-    value = date.detail;
+    setValue(date.detail);
     if (expanded) {
       toggleList();
     }
@@ -114,10 +116,7 @@
   {id}
   class={['date-picker', 'drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}>
-  <div
-    bind:this={inputContainer}
-    class="drop-down-input-container"
-    class:focus>
+  <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
       value={formatDate(value, dateFormat)}
@@ -137,7 +136,6 @@
       <Calendar
         selectable={true}
         {startOfWeek}
-        showEvents={false}
         on:change={dateSelected}
         on:close={toggleList} />
     </div>
