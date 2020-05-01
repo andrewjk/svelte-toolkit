@@ -155,9 +155,16 @@ export function formatDate(value, dateFormat) {
 
     // Build the text that will be displayed
     return dateFormat
-        .replace(/(d+)/g, d => formatDay(date, d))
-        .replace(/(M+)/g, m => formatMonth(date, m))
-        .replace(/(y+)/g, y => formatYear(date, y))
+        .replace(/(d+)|(M+)|(y+)/g, m => {
+            if (m.indexOf('d') >= 0) {
+                return formatDay(date, m);
+            } else if (m.indexOf('M') >= 0) {
+                return formatMonth(date, m);
+            } else if (m.indexOf('y') >= 0) {
+                return formatYear(date, m);
+            }
+        });
+
 
     // TODO: Time
     //if (includeTime) {
