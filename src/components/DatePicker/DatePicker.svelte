@@ -135,6 +135,7 @@
     <div bind:this={list} class="drop-down-list">
       <Calendar
         selectable={true}
+        {value}
         {startOfWeek}
         on:change={dateSelected}
         on:close={toggleList} />

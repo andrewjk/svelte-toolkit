@@ -15,6 +15,7 @@
   export let startOfWeek = 1;
   export let selectable = false;
   export let value = new Date();
+
   // Events can have { date, content, color }
   export let events = [];
 
@@ -22,9 +23,9 @@
   // * value is the selected value
   // * activeDate is the date that is active when the user is navigating via keyboard
   // * visibleDate is the date that is currently being displayed in the calendar (really only the month part is important here)
-
   let activeDate = value;
   let visibleDate = value;
+
   let visibleStartDate = value;
   let visibleEndDate = value;
   let container = null;
@@ -106,7 +107,7 @@
         visibleStartDate.getMonth(),
         visibleStartDate.getDate() + i
       );
-      dayDate.setHours(9);
+      dayDate.setHours(0);
       dayDate.setMinutes(0);
       dayDate.setSeconds(0);
       dayDate.setMilliseconds(0);
@@ -123,12 +124,8 @@
   function setValue(date) {
     value = date;
 
-    // If the selected date is outside the visible date range, move the date range
-    if (value < visibleStartDate || value > visibleEndDate) {
-      refocus = true;
-      visibleDate = value;
-      dispatch("changedate", visibleDate);
-    }
+    // Also set the active date so that the user knows where they are
+    setActiveDate(date);
 
     dispatch("change", value);
   }
@@ -143,9 +140,11 @@
       dispatch("changedate", visibleDate);
     }
 
-    days.forEach(day =>
-      day.setActive(areDatesEqual(day.date, new Date(activeDate)))
-    );
+    days.forEach(day => {
+      const active = areDatesEqual(day.date, new Date(activeDate));
+      day.setActive(active);
+      day.active = active;
+    });
   }
 
   function handleFocus(e) {
@@ -174,7 +173,6 @@
     }
 
     setValue(date.detail);
-    setActiveDate(date.detail);
   }
 
   function handleKey(e) {
