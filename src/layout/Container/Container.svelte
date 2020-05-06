@@ -4,6 +4,10 @@
   export { className as class };
   export let size = null;
   export let padded = false;
+  export let paddedsm = false;
+  export let paddedmd = false;
+  export let paddedlg = false;
+  export let paddedxl = false;
 </script>
 
 <style src="Container.scss">
@@ -12,6 +16,11 @@
 
 <div
   {id}
-  class={['container', size, padded ? 'padded' : null, className].filter(Boolean).join(' ')}>
+  class={['container', size, className].filter(Boolean).join(' ')}
+  class:padded
+  class:padded-sm={paddedsm}
+  class:padded-md={paddedmd}
+  class:padded-lg={paddedlg}
+  class:padded-xl={paddedxl}>
   <slot />
 </div>

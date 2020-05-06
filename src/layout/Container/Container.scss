@@ -25,3 +25,27 @@
 .container.padded {
     padding: var(--element-padding, $element-padding);
 }
+
+@media (min-width: $small-screen) {
+    .container.padded-sm {
+        padding: var(--element-padding, $element-padding);
+    }
+}
+
+@media (min-width: $medium-screen) {
+    .container.padded-md {
+        padding: var(--element-padding, $element-padding);
+    }
+}
+
+@media (min-width: $large-screen) {
+    .container.padded-lg {
+        padding: var(--element-padding, $element-padding);
+    }
+}
+
+@media (min-width: $xlarge-screen) {
+    .container.padded-xl {
+        padding: var(--element-padding, $element-padding);
+    }
+}
