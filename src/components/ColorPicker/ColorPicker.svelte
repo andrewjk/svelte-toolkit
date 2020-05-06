@@ -5,6 +5,7 @@
   import Palette from "../Palette/Palette";
 
   import { keyCodes } from "../../utils/key-codes";
+  import { rgbToHex } from "../../utils/color-utils";
 
   export let id = null;
   let className = null;
@@ -17,6 +18,7 @@
   let focus = false;
   let container;
   let inputContainer;
+  let preview;
   let input;
   let list;
 
@@ -72,6 +74,19 @@
 
   function handleInputBlur(e) {
     focus = false;
+    if (value.indexOf("#") !== 0) {
+      const color = window
+        .getComputedStyle(preview, null)
+        .getPropertyValue("background-color");
+      const regex = /(?:rgb|rgba)\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d\.]+))*\)/i;
+      const matches = regex.exec(color);
+      const r = parseInt(matches[1]);
+      const g = parseInt(matches[2]);
+      const b = parseInt(matches[3]);
+      let a = parseFloat(matches[4]);
+      if (isNaN(a)) a = 1;
+      value = rgbToHex(r, g, b, a);
+    }
     //if (expanded) {
     //  toggleList();
     //}
@@ -90,12 +105,12 @@
   {id}
   class={['color-picker', 'drop-down', className].filter(Boolean).join(' ')}
   bind:this={container}>
-  <div
-    bind:this={inputContainer}
-    class="drop-down-input-container"
-    class:focus>
+  <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     {#if value}
-      <div class="color-picker-preview" style={`background-color: ${value}`} />
+      <div
+        bind:this={preview}
+        class="color-picker-preview"
+        style={`background-color: ${value}`} />
     {/if}
     <input
       class="drop-down-input"
