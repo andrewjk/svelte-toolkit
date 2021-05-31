@@ -3,6 +3,7 @@
 .dialog {
     background-color: white;
     border-radius: var(--border-radius, $border-radius);
+    margin: var(--element-margin, $element-margin);
     max-height: 32rem;
     min-height: 14rem;
     max-width: 48rem;
