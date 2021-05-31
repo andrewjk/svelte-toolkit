@@ -105,7 +105,7 @@ export default class Validator {
 
     // HACK: Everything about this is a bit dodgy, and would probably be better done as a plugin to the validator
     checkSize(el, value) {
-        if (el.options.maxsize && !el.options.minsize && value.size > el.options.maxsize) {
+        if (el.options.maxsize && value && value.size > el.options.maxsize) {
             const message = `${el.friendlyName} cannot be larger than ${Math.floor(el.options.maxsize / 1024 / 1024)} MB`;
             return { valid: false, message };
         }
