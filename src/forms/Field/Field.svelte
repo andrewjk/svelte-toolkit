@@ -3,7 +3,7 @@
     onMount,
     beforeUpdate,
     setContext,
-    createEventDispatcher
+    createEventDispatcher,
   } from "svelte";
   import FieldMessage from "./FieldMessage";
 
@@ -17,6 +17,7 @@
   export let value = "";
   export let checked = false;
   export let group = null;
+  export let info = "";
 
   export let validator = null;
   export let required = false;
@@ -32,8 +33,6 @@
   let originalType = type;
   let setInputValid = null;
   let inputValueProp = null;
-
-  const dispatch = createEventDispatcher();
 
   // HACK: This seems like bad code, but I don't know how to pass props to items in slots
   setContext("field", {
@@ -53,7 +52,7 @@
     registerInput: (setValid, valueProp) => {
       setInputValid = setValid;
       inputValueProp = valueProp;
-    }
+    },
   });
 
   onMount(() => {
@@ -130,13 +129,7 @@
   }
 </script>
 
-<style src="Field.scss">
-
-</style>
-
-<div
-  {id}
-  class={['field', className].filter(Boolean).join(' ')}>
+<div {id} class={["field", className].filter(Boolean).join(" ")}>
   <slot name="label">
     {#if label}
       <label for={name}>{label}</label>
@@ -146,4 +139,10 @@
   {#if message}
     <FieldMessage content={message} {type} />
   {/if}
+  {#if info}
+    <FieldMessage content={info} />
+  {/if}
 </div>
+
+<style src="Field.scss">
+</style>
