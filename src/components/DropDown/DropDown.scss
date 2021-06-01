@@ -15,10 +15,24 @@
     position: absolute;
 }
 
-.drop-down-icon-container {
-    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
+.drop-down-menu-container.start {
+    text-align: start;
+}
 
+.drop-down-menu-container.center {
+    text-align: center;
+}
+
+.drop-down-menu-container.end {
+    text-align: end;
+}
+
+.drop-down-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+* + .drop-down-icon-container {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
 }

@@ -1,5 +1,5 @@
 <script>
-  import { beforeUpdate, onDestroy, tick } from "svelte";
+  import { onDestroy, tick } from "svelte";
 
   import Button from "../Button/Button";
   import ChevronDown from "../../icons/ChevronDown";
@@ -11,33 +11,32 @@
   export let buttonType = "info";
   export let buttonSize = "medium";
   export let position = "below";
-  export let alignment = "left";
+  export let alignment = "start";
   export let expanded = false;
 
-  let previousExpanded = false;
   let container;
   let button;
   let menu;
 
-  beforeUpdate(() => {
-    // Handle expanded being set outside the component
-    if (expanded != previousExpanded) {
-      expanded = previousExpanded;
-      toggleDropDown();
-    }
-  });
+  $: expandedChanged(expanded);
 
   onDestroy(() => {
-    // Clean up
     if (expanded) {
-      toggleDropDown();
+      // Hide the menu and remove the document click event
+      showOrHide();
     }
   });
 
+  function expandedChanged(value) {
+    showOrHide();
+  }
+
   function toggleDropDown(e) {
-    if (e) e.preventDefault();
+    e.preventDefault();
     expanded = !expanded;
-    previousExpanded = expanded;
+  }
+
+  function showOrHide() {
     if (expanded) {
       positionList();
       document.addEventListener("click", handleCloseClick);
@@ -48,7 +47,7 @@
 
   function handleCloseClick(e) {
     if (!container.contains(e.target)) {
-      toggleDropDown();
+      toggleDropDown(e);
     }
   }
 
@@ -66,27 +65,24 @@
         break;
     }
     switch (alignment) {
-      case "left":
+      case "start":
         menu.style.left = "0px";
         break;
       case "center":
         menu.style.left = rect.width / 2 - menuRect.width / 2 + "px";
         break;
-      case "right":
+      case "end":
         menu.style.left = rect.width - menuRect.width + "px";
         break;
     }
   }
 </script>
 
-<style src="DropDown.scss">
-
-</style>
-
 <div
   {id}
-  class={['drop-down', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["drop-down", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <div class="drop-down-button-container" bind:this={button}>
     <slot name="element">
       <Button
@@ -94,7 +90,8 @@
         type={buttonType}
         size={buttonSize}
         hasPopup={true}
-        on:click={toggleDropDown}>
+        on:click={toggleDropDown}
+      >
         <slot />
         <div class="drop-down-icon-container">
           <slot name="button">
@@ -105,10 +102,13 @@
     </slot>
   </div>
   {#if expanded}
-    <div class="drop-down-menu-container" bind:this={menu}>
+    <div class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")} bind:this={menu}>
       <DropDownMenu>
         <slot name="menu" />
       </DropDownMenu>
     </div>
   {/if}
 </div>
+
+<style src="DropDown.scss">
+</style>
