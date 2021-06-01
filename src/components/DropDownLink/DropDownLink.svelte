@@ -19,8 +19,7 @@
 
   onDestroy(() => {
     if (expanded) {
-      // Hide the menu and remove the document click event
-      showOrHide();
+      document.removeEventListener("click", handleCloseClick);
     }
   });
 
