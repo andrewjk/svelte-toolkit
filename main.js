@@ -45,6 +45,8 @@ import DataTableColumn from './src/components/DataTable/DataTableColumn';
 import DataTableHeader from './src/components/DataTable/DataTableHeader';
 import DatePicker from './src/components/DatePicker/DatePicker';
 import DropDown from './src/components/DropDown/DropDown';
+import DropDownButton from './src/components/DropDownButton/DropDownButton';
+import DropDownLink from './src/components/DropDownLink/DropDownLink';
 import DropDownMenu from './src/components/DropDownMenu/DropDownMenu';
 import DropDownMenuItem from './src/components/DropDownMenu/DropDownMenuItem';
 import DropDownMenuDivider from './src/components/DropDownMenu/DropDownMenuDivider';
@@ -163,7 +165,7 @@ export {
     CoverImage,
     DataTable, DataTableColumn, DataTableHeader,
     DatePicker,
-    DropDown,
+    DropDown, DropDownButton, DropDownLink,
     DropDownMenu, DropDownMenuItem, DropDownMenuDivider,
     FocusGroup, FocusGroupItem,
     ImageButton,

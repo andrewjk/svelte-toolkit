@@ -5,8 +5,6 @@
   import ChevronDown from "../../icons/ChevronDown";
   import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
-  console.warn("Svelte Toolkit: DropDown is obsolete -- use DropDownButton or DropDownLink instead");
-
   export let id = null;
   let className = null;
   export { className as class };
@@ -82,7 +80,7 @@
 
 <div
   {id}
-  class={["drop-down", className].filter(Boolean).join(" ")}
+  class={["drop-down-button", className].filter(Boolean).join(" ")}
   bind:this={container}
 >
   <div class="drop-down-button-container" bind:this={button}>
@@ -112,5 +110,5 @@
   {/if}
 </div>
 
-<style src="DropDown.scss">
+<style src="DropDownButton.scss">
 </style>

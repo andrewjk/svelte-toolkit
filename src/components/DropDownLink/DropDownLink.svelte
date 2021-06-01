@@ -1,23 +1,18 @@
 <script>
   import { onDestroy, tick } from "svelte";
 
-  import Button from "../Button/Button";
   import ChevronDown from "../../icons/ChevronDown";
   import DropDownMenu from "../DropDownMenu/DropDownMenu";
-
-  console.warn("Svelte Toolkit: DropDown is obsolete -- use DropDownButton or DropDownLink instead");
 
   export let id = null;
   let className = null;
   export { className as class };
-  export let buttonType = "info";
-  export let buttonSize = "medium";
   export let position = "below";
   export let alignment = "start";
   export let expanded = false;
 
   let container;
-  let button;
+  let link;
   let menu;
 
   $: expandedChanged(expanded);
@@ -56,7 +51,7 @@
   async function positionList() {
     await tick();
     // TODO: Take into account window width in case the menu would be outside the bounds
-    var rect = button.getBoundingClientRect();
+    var rect = link.getBoundingClientRect();
     var menuRect = menu.childNodes[0].getBoundingClientRect();
     switch (position) {
       case "above":
@@ -82,15 +77,14 @@
 
 <div
   {id}
-  class={["drop-down", className].filter(Boolean).join(" ")}
+  class={["drop-down-link", className].filter(Boolean).join(" ")}
   bind:this={container}
 >
-  <div class="drop-down-button-container" bind:this={button}>
+  <div class="drop-down-link-container" bind:this={link}>
     <slot name="element">
-      <Button
-        class="drop-down-button"
-        type={buttonType}
-        size={buttonSize}
+      <button
+        type="button"
+        class="link"
         hasPopup={true}
         on:click={toggleDropDown}
       >
@@ -100,11 +94,14 @@
             <ChevronDown />
           </slot>
         </div>
-      </Button>
+      </button>
     </slot>
   </div>
   {#if expanded}
-    <div class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")} bind:this={menu}>
+    <div
+      class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")}
+      bind:this={menu}
+    >
       <DropDownMenu>
         <slot name="menu" />
       </DropDownMenu>
@@ -112,5 +109,5 @@
   {/if}
 </div>
 
-<style src="DropDown.scss">
+<style src="DropDownLink.scss">
 </style>
