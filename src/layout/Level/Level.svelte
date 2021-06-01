@@ -5,16 +5,17 @@
   let className = null;
   export { className as class };
   export let spaced = null;
+  export let collapse = null;
 
   setContext("level", {
-    spaced
+    spaced,
+    collapse,
   });
 </script>
 
-<style src="Level.scss">
-
-</style>
-
-<div {id} class={['level', className].filter(Boolean).join(' ')}>
+<div {id} class={["level", className].filter(Boolean).join(" ")} class:collapse>
   <slot />
 </div>
+
+<style src="Level.scss">
+</style>

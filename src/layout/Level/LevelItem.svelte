@@ -8,21 +8,23 @@
   export let position = null;
 
   let spaced = false;
+  let collapse = false;
 
   const context = getContext("level");
   if (context) {
     spaced = context.spaced;
+    collapse = context.collapse;
   }
 </script>
 
-<style src="LevelItem.scss">
-
-</style>
-
 <div
   {id}
-  class={['level-item', position, spaced ? 'spaced' : null, className]
-    .filter(Boolean)
-    .join(' ')}>
+  class={["level-item", position, className].filter(Boolean).join(" ")}
+  class:spaced
+  class:collapse
+>
   <slot />
 </div>
+
+<style src="LevelItem.scss">
+</style>

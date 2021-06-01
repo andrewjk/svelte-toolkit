@@ -29,3 +29,9 @@
 .level-item.spaced:last-child {
     margin-right: 0;
 }
+
+@media (max-width: $small-screen) {
+    .level-item.collapse {
+        margin: 0;
+    }
+}
