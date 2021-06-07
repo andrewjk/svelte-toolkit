@@ -34,4 +34,8 @@
     .level-item.collapse {
         margin: 0;
     }
+    
+    .level-item.collapse.spaced {
+        margin: calc(var(--element-margin, #{$element-margin}) / 2) 0;
+    }
 }
