@@ -30,15 +30,14 @@
   }
 </script>
 
-<style src="Notification.scss">
-
-</style>
-
 {#if visible}
   <div
     {id}
-    class={['notification', type, solid ? 'solid' : null, className].filter(Boolean).join(' ')}
-    out:fade>
+    class={["notification", type, solid ? "solid" : null, className]
+      .filter(Boolean)
+      .join(" ")}
+    out:fade={{ duration: duration > 0 ? 400 : 0 }}
+  >
     <div class="notification-content">
       <slot>{content}</slot>
     </div>
@@ -53,3 +52,6 @@
     {/if}
   </div>
 {/if}
+
+<style src="Notification.scss">
+</style>

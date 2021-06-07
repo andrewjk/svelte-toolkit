@@ -33,14 +33,14 @@
       case "bottom-right": {
         return {
           x: window.innerWidth + 100 - alert.offsetWidth,
-          duration: 800
+          duration: 800,
         };
       }
       case "bottom": {
         alert.style.left = window.innerWidth / 2 - alert.offsetWidth / 2 + "px";
         return {
           y: window.innerHeight + 100 - alert.offsetHeight,
-          duration: 800
+          duration: 800,
         };
       }
     }
@@ -58,18 +58,15 @@
   }
 </script>
 
-<style src="Alert.scss">
-
-</style>
-
 {#if visible}
   <div
     {id}
-    class={['alert', type, position, className].filter(Boolean).join(' ')}
+    class={["alert", type, position, className].filter(Boolean).join(" ")}
     role="alert"
     in:fly={transitionArgs()}
-    out:fade
-    bind:this={alert}>
+    out:fade={{ duration: duration > 0 ? 400 : 0 }}
+    bind:this={alert}
+  >
     <div class="alert-content">
       <slot>{content}</slot>
     </div>
@@ -84,3 +81,6 @@
     {/if}
   </div>
 {/if}
+
+<style src="Alert.scss">
+</style>
