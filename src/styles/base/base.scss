@@ -121,6 +121,7 @@ button.link {
     border: none;
     color: var(--link-color, $link-color);
     cursor: pointer;
+    display: inline-flex;
     padding: 0;
     text-align: left;
 }
