@@ -33,6 +33,10 @@
     justify-content: center;
 }
 
-* + .drop-down-icon-container {
+:global(* + .drop-down-icon-container) {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
+}
+
+:global(.drop-down-icon-container + *) {
     margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
 }
