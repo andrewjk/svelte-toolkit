@@ -1,7 +1,7 @@
 {
   "name": "svelte-toolkit",
   "description": "A collection of UI components for Svelte",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "license": "MIT",
   "svelte": "main.js",
   "module": "build/index.mjs",
@@ -26,9 +26,9 @@
     "raf": "^3.4.1",
     "rollup": "^2.56.1",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "svelte-jester": "^1.8.2",
     "rollup-plugin-svelte": "^7.1.0",
     "svelte": "^3.42.1",
+    "svelte-jester": "^1.8.2",
     "svelte-preprocess": "^4.7.4"
   },
   "keywords": [
