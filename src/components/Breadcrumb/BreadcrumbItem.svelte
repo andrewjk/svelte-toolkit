@@ -11,7 +11,7 @@
     display: inline;
   }
 
-  li + li:before {
+  :global(.breadcrumb-item + .breadcrumb-item:before) {
     content: " / ";
   }
 </style>

@@ -21,10 +21,10 @@
     font-weight: bold;
 }
 
-.wizard-button-icon + span {
+:global(.wizard-button-icon + *) {
     margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
 }
 
-span + .wizard-button-icon {
-    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
+:global(* + .wizard-button-icon) {
+    margin-left: calc(var(--element-margin, #{$element-margin}) / 2);
 }
