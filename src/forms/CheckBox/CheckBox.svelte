@@ -70,6 +70,7 @@
 
 </style>
 
+<!-- svelte-ignore a11y-label-has-associated-control -->
 <label
   {id}
   class={['checkbox', type, className].filter(Boolean).join(' ')}>

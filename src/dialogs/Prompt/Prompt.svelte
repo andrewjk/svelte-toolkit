@@ -77,10 +77,11 @@
       </div>
       <div class="dialog-body">
         <slot name="body">
-          <label>{content}</label>
+          <label for="prompt-input">{content}</label>
         </slot>
         {#if options && options.length}
           <select
+            id="prompt-input"
             bind:value
             bind:this={input}
             {placeholder}
@@ -91,6 +92,7 @@
           </select>
         {:else}
           <input
+            id="prompt-input"
             type="text"
             bind:value
             bind:this={input}
