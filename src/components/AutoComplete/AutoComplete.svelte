@@ -1,8 +1,10 @@
 <script>
   import { createEventDispatcher, setContext, tick } from "svelte";
-  import { keyCodes } from "../../utils/key-codes";
-
+  
   import AutoCompleteItem from "./AutoCompleteItem";
+
+  import { keyCodes } from "../../utils/key-codes";
+  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -71,10 +73,10 @@
       if (focus) {
         list.childNodes[0].focus();
       }
-      document.addEventListener("click", handleCloseClick);
+      addDocumentEvent("click", handleCloseClick);
     } else {
       input.focus();
-      document.removeEventListener("click", handleCloseClick);
+      removeDocumentEvent("click", handleCloseClick);
     }
   }
 

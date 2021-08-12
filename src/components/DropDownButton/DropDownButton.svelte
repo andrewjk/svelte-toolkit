@@ -1,9 +1,11 @@
 <script>
   import { onDestroy, tick } from "svelte";
-
+  
   import Button from "../Button/Button";
   import ChevronDown from "../../icons/ChevronDown";
   import DropDownMenu from "../DropDownMenu/DropDownMenu";
+
+  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -22,7 +24,7 @@
 
   onDestroy(() => {
     if (expanded) {
-      document.removeEventListener("click", handleCloseClick);
+      removeDocumentEvent("click", handleCloseClick);
     }
   });
 
@@ -38,9 +40,9 @@
   function showOrHide() {
     if (expanded) {
       positionList();
-      document.addEventListener("click", handleCloseClick);
+      addDocumentEvent("click", handleCloseClick);
     } else {
-      document.removeEventListener("click", handleCloseClick);
+      removeDocumentEvent("click", handleCloseClick);
     }
   }
 
@@ -101,7 +103,10 @@
     </slot>
   </div>
   {#if expanded}
-    <div class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")} bind:this={menu}>
+    <div
+      class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")}
+      bind:this={menu}
+    >
       <DropDownMenu>
         <slot name="menu" />
       </DropDownMenu>

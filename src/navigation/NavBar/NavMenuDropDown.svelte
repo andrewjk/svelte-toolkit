@@ -4,6 +4,8 @@
   import ChevronDown from "../../icons/ChevronDown";
   import DropDownMenu from "../../components/DropDownMenu/DropDownMenu";
 
+  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+
   export let id = null;
   let className = null;
   export { className as class };
@@ -27,7 +29,7 @@
 
   onDestroy(() => {
     if (expanded) {
-      document.removeEventListener("click", handleCloseClick);
+      removeDocumentEvent("click", handleCloseClick);
     }
   });
 
@@ -43,9 +45,9 @@
   function showOrHide() {
     if (typeof window !== "undefined") {
       if (expanded) {
-        document.addEventListener("click", handleCloseClick);
+        addDocumentEvent("click", handleCloseClick);
       } else {
-        document.removeEventListener("click", handleCloseClick);
+        removeDocumentEvent("click", handleCloseClick);
       }
     }
   }
