@@ -1,10 +1,10 @@
 <script>
   import { setContext, createEventDispatcher } from "svelte";
 
-  import Table from "../../layout/Table/Table";
-  import TableRow from "../../layout/Table/TableRow";
-  import DataTableHeader from "./DataTableHeader";
-  import Pagination from "../../navigation/Pagination/Pagination";
+  import Table from "../../layout/Table/Table.svelte";
+  import TableRow from "../../layout/Table/TableRow.svelte";
+  import DataTableHeader from "./DataTableHeader.svelte";
+  import Pagination from "../../navigation/Pagination/Pagination.svelte";
 
   export let id = null;
   let className = null;
@@ -29,12 +29,12 @@
 
   setContext("datatable", {
     registerColumn: (field, header, sortable, sortDirection) => {
-      if (!columns.some(c => c.field === field)) {
+      if (!columns.some((c) => c.field === field)) {
         columns = [...columns, { field, header, sortable, sortDirection }];
       }
     },
     registerHeader: (field, sortDirection, setSortDirection) => {
-      if (!columns.some(c => c.field === field)) {
+      if (!columns.some((c) => c.field === field)) {
         columns = [...columns, { field }];
       }
       for (let i = 0; i < columns.length; i++) {
@@ -44,7 +44,7 @@
         }
       }
     },
-    handleSort
+    handleSort,
   });
 
   function handleSort(field) {
@@ -73,7 +73,13 @@
     dispatch("page", pageNumber);
   }
 
-  function buildView(newItems, newData, newColumns, newPageNumber, newPageSize) {
+  function buildView(
+    newItems,
+    newData,
+    newColumns,
+    newPageNumber,
+    newPageSize
+  ) {
     if (newItems) {
       itemCount = newItems.length;
 
@@ -102,9 +108,9 @@
 
   // From https://stackoverflow.com/a/979325
   function compare(field, reverse, primer) {
-    var key = primer ? x => primer(x[field]) : x => x[field];
+    var key = primer ? (x) => primer(x[field]) : (x) => x[field];
     reverse = !reverse ? 1 : -1;
-    return function(a, b) {
+    return function (a, b) {
       return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
     };
   }
@@ -113,10 +119,7 @@
 {#if loading}
   <slot name="loading" />
 {:else if view && view.length}
-  <Table
-    {id}
-    class={className}
-    {type}>
+  <Table {id} class={className} {type}>
     <thead>
       <slot name="header">
         <TableRow>
@@ -124,7 +127,8 @@
             <DataTableHeader
               field={item.field}
               sortable={item.sortable}
-              sortDirection={item.sortDirection}>
+              sortDirection={item.sortDirection}
+            >
               {item.header}
             </DataTableHeader>
           {/each}

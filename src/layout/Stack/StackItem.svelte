@@ -17,19 +17,19 @@
   }
 </script>
 
-<style src="StackItem.scss">
-
-</style>
-
 <div
   {id}
   class={[
-    'stack-item',
+    "stack-item",
     size,
-    spaced ? direction.substr(0, 1) + '-spaced' : null,
-    className
+    spaced ? direction.substr(0, 1) + "-spaced" : null,
+    className,
   ]
     .filter(Boolean)
-    .join(' ')}>
+    .join(" ")}
+>
   <slot />
 </div>
+
+<style src="StackItem.scss">
+</style>

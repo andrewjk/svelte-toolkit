@@ -14,7 +14,7 @@
   let itemStates = [];
 
   onMount(() => {
-    container.querySelectorAll(tagName).forEach(el => (el.tabIndex = -1));
+    container.querySelectorAll(tagName).forEach((el) => (el.tabIndex = -1));
   });
 
   // HACK: This seems like bad code, but I don't know how to handle events from items that are
@@ -23,14 +23,14 @@
     // The registerItem function is called from each FocusGroupItem to register itself with this
     // FocusGroup. They pass us some methods that we can call, and we pass them their index in the
     // itemStates collection along with a handleItemKey method that they can call when a key is pressed
-    registerItem: setFocused => {
+    registerItem: (setFocused) => {
       itemStates = [...itemStates, { setFocused }];
       return {
         index: itemStates.length - 1,
         tagName,
-        handleItemKey
+        handleItemKey,
       };
-    }
+    },
   });
 
   function handleFocus(e) {
@@ -74,15 +74,15 @@
   }
 </script>
 
-<style src="FocusGroup.scss">
-
-</style>
-
 <div
   {id}
-  class={['focus-group', className].filter(Boolean).join(' ')}
+  class={["focus-group", className].filter(Boolean).join(" ")}
   bind:this={container}
   tabindex="0"
-  on:focus={handleFocus}>
+  on:focus={handleFocus}
+>
   <slot />
 </div>
+
+<style src="FocusGroup.scss">
+</style>

@@ -23,7 +23,7 @@
       if (skipRecalc) {
         skipRecalc = false;
       } else {
-      calculatePosition();
+        calculatePosition();
       }
     }
   });
@@ -76,19 +76,20 @@
   }
 </script>
 
-<style src="Slider.scss">
-
-</style>
-
 <div
   {id}
-  class={['slider', className].filter(Boolean).join(' ')}
+  class={["slider", className].filter(Boolean).join(" ")}
   on:mousemove={handleMouseMove}
-  on:mouseup={handleMouseUp}>
+  on:mouseup={handleMouseUp}
+>
   <div class="slider-background" bind:this={background} />
   <div
     class="slider-handle"
     bind:this={handle}
     style={`left: ${position}px;`}
-    on:mousedown={handleMouseDown} />
+    on:mousedown={handleMouseDown}
+  />
 </div>
+
+<style src="Slider.scss">
+</style>

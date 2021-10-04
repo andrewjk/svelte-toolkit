@@ -51,24 +51,25 @@
   }
 </script>
 
-<style src="DotNav.scss">
-
-</style>
-
 {#if itemCount > 0}
   <div
     {id}
-    class={['dot-nav', type, className].filter(Boolean).join(' ')}
+    class={["dot-nav", type, className].filter(Boolean).join(" ")}
     on:focus={handleFocus}
     on:keydown={handleKey}
-    tabindex="0">
+    tabindex="0"
+  >
     {#each indexes as idx}
       <button
         class="button dot-button"
         class:active={idx === index}
         type="button"
-        on:click={e => setIndex(idx)}
-        tabindex="-1" />
+        on:click={(e) => setIndex(idx)}
+        tabindex="-1"
+      />
     {/each}
   </div>
 {/if}
+
+<style src="DotNav.scss">
+</style>

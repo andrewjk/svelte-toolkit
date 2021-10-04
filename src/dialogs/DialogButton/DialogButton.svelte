@@ -32,15 +32,24 @@
   }
 </script>
 
-<style src="DialogButton.scss">
-
-</style>
-
 <button
   {id}
-  class={['button', 'dialog-button', confirm ? 'confirm' : null, cancel ? 'cancel' : null, type, className].filter(Boolean).join(' ')}
+  class={[
+    "button",
+    "dialog-button",
+    confirm ? "confirm" : null,
+    cancel ? "cancel" : null,
+    type,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ")}
   type="button"
   on:keydown={handleKey}
-  on:click>
+  on:click
+>
   <slot>{content}</slot>
 </button>
+
+<style src="DialogButton.scss">
+</style>

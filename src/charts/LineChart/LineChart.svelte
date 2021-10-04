@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import XAxis from "../XAxis/XAxis";
-  import YAxis from "../YAxis/YAxis";
-  import ChartGridLines from "../ChartGridLines/ChartGridLines";
+  import XAxis from "../XAxis/XAxis.svelte";
+  import YAxis from "../YAxis/YAxis.svelte";
+  import ChartGridLines from "../ChartGridLines/ChartGridLines.svelte";
   import {
     calculateMaxValue,
     calculateStepValue,
@@ -10,7 +10,7 @@
     calculateItemWidth,
     calculateValueHeight,
     calculateChartBottom,
-    calculateChartLeft
+    calculateChartLeft,
   } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
@@ -80,9 +80,11 @@
     theItemWidth,
     theValueHeight
   ) {
-    return theSeries.map(ser => {
+    return theSeries.map((ser) => {
       return ser.data.map((value, i) => {
-        const x = +(theChartLeft + i * theItemWidth + theItemWidth / 2).toFixed(2);
+        const x = +(theChartLeft + i * theItemWidth + theItemWidth / 2).toFixed(
+          2
+        );
         const y = +(theChartBottom - value * theValueHeight).toFixed(2);
         return { x, y };
       });
@@ -90,14 +92,11 @@
   }
 </script>
 
-<style src="LineChart.scss">
-
-</style>
-
 <div
   {id}
-  class={['chart', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["chart", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <svg version="1.1" width={calculatedWidth} {height}>
     <g>
       {#if !container}
@@ -113,7 +112,8 @@
           {xLabel}
           {labels}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <YAxis
           showAxis={showYAxis}
           {valueHeight}
@@ -122,7 +122,8 @@
           {stepLabels}
           stepValue={calculatedStepValue}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <ChartGridLines
           {showHLines}
           {showVLines}
@@ -134,14 +135,16 @@
           {valueHeight}
           {chartLeft}
           {chartBottom}
-          type="line" />
+          type="line"
+        />
         {#each calculatedSeries as ser, i}
           <polyline
             class="chart-line"
-            points={pointSeries[i].map(p => `${p.x},${p.y}`).join(' ')}
+            points={pointSeries[i].map((p) => `${p.x},${p.y}`).join(" ")}
             stroke={ser.color || chartColors[i % chartColors.length]}
             stroke-width="2"
-            fill="none" />
+            fill="none"
+          />
           {#if showPoints}
             {#each pointSeries[i] as point, j}
               <circle
@@ -150,9 +153,12 @@
                 r="4"
                 stroke={ser.color || chartColors[i % chartColors.length]}
                 stroke-width="2"
-                fill="white">
+                fill="white"
+              >
                 <title>
-                  {`${ser.name ? ser.name + '\n' : ''}${labels[j] + '\n'}${ser.data[j]}`}
+                  {`${ser.name ? ser.name + "\n" : ""}${labels[j] + "\n"}${
+                    ser.data[j]
+                  }`}
                 </title>
               </circle>
             {/each}
@@ -162,3 +168,6 @@
     </g>
   </svg>
 </div>
+
+<style src="LineChart.scss">
+</style>

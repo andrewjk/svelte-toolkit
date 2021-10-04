@@ -1,7 +1,7 @@
 <script>
   import { onMount, getContext, createEventDispatcher } from "svelte";
-  import Minus from "../../icons/Minus";
-  import Plus from "../../icons/Plus";
+  import Minus from "../../icons/Minus.svelte";
+  import Plus from "../../icons/Plus.svelte";
 
   import { keyCodes } from "../../utils/key-codes";
 
@@ -95,14 +95,11 @@
   }
 </script>
 
-<style src="Number.scss">
-
-</style>
-
 <div
   {id}
-  class={['number-input-container', type, className].filter(Boolean).join(' ')}
-  class:focus>
+  class={["number-input-container", type, className].filter(Boolean).join(" ")}
+  class:focus
+>
   <input
     type="number"
     {name}
@@ -113,20 +110,24 @@
     {min}
     {max}
     {readonly}
-    on:change={e => handleChange(0)}
+    on:change={(e) => handleChange(0)}
     on:keydown={handleInputKey}
     on:focus={handleInputFocus}
-    on:blur={handleInputBlur} />
+    on:blur={handleInputBlur}
+  />
   {#if !readonly}
-    <div class="input-button" on:click={e => handleChange(-1)}>
+    <div class="input-button" on:click={(e) => handleChange(-1)}>
       <slot name="down-button">
         <Minus />
       </slot>
     </div>
-    <div class="input-button" on:click={e => handleChange(1)}>
+    <div class="input-button" on:click={(e) => handleChange(1)}>
       <slot name="up-button">
         <Plus />
       </slot>
     </div>
   {/if}
 </div>
+
+<style src="Number.scss">
+</style>

@@ -1,15 +1,15 @@
 <script>
   import { onMount } from "svelte";
-  import XAxis from "../XAxis/XAxis";
-  import YAxis from "../YAxis/YAxis";
-  import ChartGridLines from "../ChartGridLines/ChartGridLines";
+  import XAxis from "../XAxis/XAxis.svelte";
+  import YAxis from "../YAxis/YAxis.svelte";
+  import ChartGridLines from "../ChartGridLines/ChartGridLines.svelte";
   import {
     calculateStepValue,
     calculateStepLabels,
     calculateItemWidth,
     calculateValueHeight,
     calculateChartBottom,
-    calculateChartLeft
+    calculateChartLeft,
   } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
@@ -99,7 +99,7 @@
     theItemWidth,
     theValueHeight
   ) {
-    return theSeries.map(ser => {
+    return theSeries.map((ser) => {
       return ser.data.map((item, i) => {
         const x = +(theChartLeft + item.x * theItemWidth).toFixed(2);
         const y = +(theChartBottom - item.y * theValueHeight).toFixed(2);
@@ -109,14 +109,11 @@
   }
 </script>
 
-<style src="ScatterChart.scss">
-
-</style>
-
 <div
   {id}
-  class={['chart', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["chart", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <svg version="1.1" width={calculatedWidth} {height}>
     <g>
       {#if !container}
@@ -133,7 +130,8 @@
           stepLabels={xStepLabels}
           stepValue={calculatedXStepValue}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <YAxis
           showAxis={showYAxis}
           {valueHeight}
@@ -142,7 +140,8 @@
           stepLabels={yStepLabels}
           stepValue={calculatedYStepValue}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <ChartGridLines
           {showHLines}
           {showVLines}
@@ -155,16 +154,20 @@
           {valueHeight}
           {chartLeft}
           {chartBottom}
-          type="line" />
+          type="line"
+        />
         {#each calculatedSeries as ser, i}
           {#each pointSeries[i] as point, j}
             <circle
               cx={point.x}
               cy={point.y}
               r="4"
-              fill={ser.color || chartColors[i % chartColors.length]}>
+              fill={ser.color || chartColors[i % chartColors.length]}
+            >
               <title>
-                {`${ser.name ? ser.name + '\n' : ''}${ser.data[j].label + '\n'}${ser.data[j].x}, ${ser.data[j].y}`}
+                {`${ser.name ? ser.name + "\n" : ""}${
+                  ser.data[j].label + "\n"
+                }${ser.data[j].x}, ${ser.data[j].y}`}
               </title>
             </circle>
           {/each}
@@ -173,3 +176,6 @@
     </g>
   </svg>
 </div>
+
+<style src="ScatterChart.scss">
+</style>

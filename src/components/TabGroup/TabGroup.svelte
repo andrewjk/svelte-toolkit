@@ -1,7 +1,7 @@
 <script>
   import { beforeUpdate, setContext, createEventDispatcher } from "svelte";
 
-  import TabHeader from "./TabHeader";
+  import TabHeader from "./TabHeader.svelte";
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
@@ -39,7 +39,7 @@
       headerStates = [...headerStates, { active, id, setActive }];
     },
     toggleItemId,
-    handleKey
+    handleKey,
   });
 
   beforeUpdate(() => {
@@ -81,7 +81,7 @@
   }
 
   function toggleItemId(itemId) {
-    const index = itemStates.findIndex(x => x.id === itemId);
+    const index = itemStates.findIndex((x) => x.id === itemId);
     toggleItem(index);
   }
 
@@ -131,20 +131,15 @@
   }
 </script>
 
-<style src="TabGroup.scss">
-
-</style>
-
-<div
-  {id}
-  class={['tab-group', className].filter(Boolean).join(' ')}>
+<div {id} class={["tab-group", className].filter(Boolean).join(" ")}>
   <div
     class="tab-list"
     class:boxed
     role="tablist"
     aria-label={ariaLabel}
     tabindex="0"
-    on:focus={handleFocus}>
+    on:focus={handleFocus}
+  >
     <slot name="header">
       {#each itemStates as item, index}
         <TabHeader itemId={item.id} active={item.active}>
@@ -155,3 +150,6 @@
   </div>
   <slot />
 </div>
+
+<style src="TabGroup.scss">
+</style>

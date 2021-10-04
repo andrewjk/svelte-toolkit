@@ -64,13 +64,7 @@
   }
 </script>
 
-<style src="Radio.scss">
-
-</style>
-
-<label
-  {id}
-  class={['radio', type, className].filter(Boolean).join(' ')}>
+<label {id} class={["radio", type, className].filter(Boolean).join(" ")}>
   <input
     class="radio-input"
     {name}
@@ -79,8 +73,12 @@
     bind:group
     bind:this={input}
     on:change={handleChange}
-    on:blur={handleBlur} />
+    on:blur={handleBlur}
+  />
   <span>
     <slot>{label}</slot>
   </span>
 </label>
+
+<style src="Radio.scss">
+</style>

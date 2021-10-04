@@ -4,14 +4,14 @@
     onMount,
     beforeUpdate,
     createEventDispatcher,
-    tick
+    tick,
   } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
   import {
     rgbToHex,
     hexToRgb,
     rgbToHsl,
-    hslToRgb
+    hslToRgb,
   } from "../../utils/color-utils";
 
   export let id = null;
@@ -39,7 +39,7 @@
     "#660066", // Dark purple
     "#6600FF", // Light purple
     "#FF66FF", // Pink
-    "#FF0066" // Whatever this is
+    "#FF0066", // Whatever this is
   ];
 
   let oldValue = "";
@@ -325,13 +325,7 @@
   }
 </script>
 
-<style src="Palette.scss">
-
-</style>
-
-<div
-  {id}
-  class={['palette', className].filter(Boolean).join(' ')}>
+<div {id} class={["palette", className].filter(Boolean).join(" ")}>
   <div class="palette-colors">
     <!-- HACK: Need to specify dimensions because it's not initially shown and thus has scrollWidth/Height = 0 -->
     <div class="palette-canvas-container">
@@ -342,11 +336,15 @@
         height={200}
         on:mousedown={handleHsCanvasMouseDown}
         on:mousemove={handleHsCanvasMouseMove}
-        on:mouseup={handleHsCanvasMouseUp} />
+        on:mouseup={handleHsCanvasMouseUp}
+      />
       {#if hsSelectorLocation[0] >= 0}
         <div
           class="palette-selector"
-          style={`left: ${hsSelectorLocation[0] - 5}px; top: ${hsSelectorLocation[1] - 5}px`} />
+          style={`left: ${hsSelectorLocation[0] - 5}px; top: ${
+            hsSelectorLocation[1] - 5
+          }px`}
+        />
       {/if}
     </div>
     <div class="palette-canvas-container">
@@ -357,11 +355,15 @@
         height={200}
         on:mousedown={handleLCanvasMouseDown}
         on:mousemove={handleLCanvasMouseMove}
-        on:mouseup={handleLCanvasMouseUp} />
+        on:mouseup={handleLCanvasMouseUp}
+      />
       {#if lSelectorLocation[0] >= 0}
         <div
           class="palette-selector"
-          style={`left: ${lSelectorLocation[0] - 5}px; top: ${lSelectorLocation[1] - 5}px`} />
+          style={`left: ${lSelectorLocation[0] - 5}px; top: ${
+            lSelectorLocation[1] - 5
+          }px`}
+        />
       {/if}
     </div>
     <div class="palette-standard-colors">
@@ -369,9 +371,13 @@
         <div
           class="palette-color"
           style={`background-color: ${color}`}
-          on:click={handleStandardColorClick} />
+          on:click={handleStandardColorClick}
+        />
       {/each}
     </div>
   </div>
   <canvas class="palette-preview" bind:this={previewCanvas} />
 </div>
+
+<style src="Palette.scss">
+</style>

@@ -66,14 +66,8 @@
   }
 </script>
 
-<style src="CheckBox.scss">
-
-</style>
-
 <!-- svelte-ignore a11y-label-has-associated-control -->
-<label
-  {id}
-  class={['checkbox', type, className].filter(Boolean).join(' ')}>
+<label {id} class={["checkbox", type, className].filter(Boolean).join(" ")}>
   {#if group}
     <input
       class="checkbox-input"
@@ -83,7 +77,8 @@
       bind:group
       bind:this={input}
       on:change={handleChange}
-      on:blur={handleBlur} />
+      on:blur={handleBlur}
+    />
   {:else}
     <input
       class="checkbox-input"
@@ -93,9 +88,13 @@
       bind:checked
       bind:this={input}
       on:change={handleChange}
-      on:blur={handleBlur} />
+      on:blur={handleBlur}
+    />
   {/if}
   <span>
     <slot>{label}</slot>
   </span>
 </label>
+
+<style src="CheckBox.scss">
+</style>

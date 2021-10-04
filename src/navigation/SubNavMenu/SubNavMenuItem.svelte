@@ -12,13 +12,13 @@
   }
 </script>
 
-<style src="SubNavMenuItem.scss">
-
-</style>
-
 <li
   {id}
-  class={['sub-nav-menu-item', type, className].filter(Boolean).join(' ')}
-  role="menuitem">
+  class={["sub-nav-menu-item", type, className].filter(Boolean).join(" ")}
+  role="menuitem"
+>
   <slot />
 </li>
+
+<style src="SubNavMenuItem.scss">
+</style>

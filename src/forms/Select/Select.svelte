@@ -65,12 +65,13 @@
 <!-- HACK: Can't use a dynamic type attribute so we have to make sure these all stay in sync! -->
 <select
   {id}
-  class={[type, className].filter(Boolean).join(' ')}
+  class={[type, className].filter(Boolean).join(" ")}
   {name}
   bind:this={input}
   bind:value
   {placeholder}
   on:change={handleChange}
-  on:blur={handleBlur}>
+  on:blur={handleBlur}
+>
   <slot />
 </select>

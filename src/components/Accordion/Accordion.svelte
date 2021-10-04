@@ -3,7 +3,7 @@
     onMount,
     beforeUpdate,
     setContext,
-    createEventDispatcher
+    createEventDispatcher,
   } from "svelte";
 
   import { keyCodes } from "../../utils/key-codes";
@@ -27,13 +27,16 @@
     // itemStates collection along with a toggleItem method that they can call when their header
     // is clicked
     registerItem: (setExpanded, setFocused) => {
-      itemStates = [...itemStates, { expanded: false, setExpanded, setFocused }];
+      itemStates = [
+        ...itemStates,
+        { expanded: false, setExpanded, setFocused },
+      ];
       return {
         index: itemStates.length - 1,
         toggleItem,
-        handleHeaderKey
+        handleHeaderKey,
       };
-    }
+    },
   });
 
   onMount(() => {
@@ -51,7 +54,7 @@
       ) {
         sanitizedValue = sanitizedValue
           .split(",")
-          .map(index => parseInt(index));
+          .map((index) => parseInt(index));
       } else if (!Array.isArray(sanitizedValue)) {
         sanitizedValue = [sanitizedValue];
       }
@@ -87,11 +90,11 @@
       // Set the value to an array containing the indexes of expanded items
       value = itemStates
         .map((item, index) => (item.expanded ? index : -1))
-        .filter(item => item !== -1)
+        .filter((item) => item !== -1)
         .sort();
     } else {
       // Set the value to the index of the expanded item (or -1 if nothing is selected)
-      value = itemStates.findIndex(item => item.expanded);
+      value = itemStates.findIndex((item) => item.expanded);
     }
 
     dispatch("change", value);
@@ -139,14 +142,14 @@
   }
 </script>
 
-<style src="Accordion.scss">
-
-</style>
-
 <div
   {id}
-  class={['accordion', className].filter(Boolean).join(' ')}
+  class={["accordion", className].filter(Boolean).join(" ")}
   tabindex="0"
-  on:focus={handleFocus}>
+  on:focus={handleFocus}
+>
   <slot />
 </div>
+
+<style src="Accordion.scss">
+</style>

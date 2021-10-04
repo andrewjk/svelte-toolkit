@@ -78,10 +78,6 @@
   }
 </script>
 
-<style src="File.scss">
-
-</style>
-
 <label
   {id}
   class={["file", type, className].filter(Boolean).join(" ")}
@@ -107,3 +103,6 @@
     </slot>
   </span>
 </label>
+
+<style src="File.scss">
+</style>

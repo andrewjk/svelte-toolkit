@@ -8,19 +8,19 @@
   export let ariaLabel = "";
 
   setContext("subnavmenu", {
-    type
+    type,
   });
 </script>
 
-<style src="SubNavMenu.scss">
-
-</style>
-
 <nav
   {id}
-  class={['sub-nav-menu', type, className].filter(Boolean).join(' ')}
-  aria-label={ariaLabel}>
+  class={["sub-nav-menu", type, className].filter(Boolean).join(" ")}
+  aria-label={ariaLabel}
+>
   <ul role="menubar">
     <slot />
   </ul>
 </nav>
+
+<style src="SubNavMenu.scss">
+</style>

@@ -2,8 +2,8 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import ImageButton from "../ImageButton/ImageButton";
-  import Cross from "../../icons/Cross";
+  import ImageButton from "../ImageButton/ImageButton.svelte";
+  import Cross from "../../icons/Cross.svelte";
 
   export let id = null;
   let className = null;

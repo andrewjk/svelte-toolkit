@@ -98,20 +98,16 @@
       maximumFractionDigits: 2,
       currency: format,
       style: "currency",
-      currencyDisplay: "symbol"
+      currencyDisplay: "symbol",
     };
     return v ? stringToNumber(v).toLocaleString(undefined, options) : "";
   }
 </script>
 
-<style src="Currency.scss">
-
-</style>
-
 <input
   type="text"
   {id}
-  class={['currency-input', type, className].filter(Boolean).join(' ')}
+  class={["currency-input", type, className].filter(Boolean).join(" ")}
   {name}
   bind:this={input}
   bind:value={text}
@@ -124,4 +120,8 @@
   on:keypress
   on:input={handleInput}
   on:focus={handleFocus}
-  on:blur={handleBlur} />
+  on:blur={handleBlur}
+/>
+
+<style src="Currency.scss">
+</style>

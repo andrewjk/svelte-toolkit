@@ -31,13 +31,11 @@
   }
 </script>
 
-<style src="TabHeader.scss">
-
-</style>
-
 <button
   {id}
-  class={['button', 'tab-list-button', boxed ? 'boxed' : null, className].filter(Boolean).join(' ')}
+  class={["button", "tab-list-button", boxed ? "boxed" : null, className]
+    .filter(Boolean)
+    .join(" ")}
   class:active
   type="button"
   role="tab"
@@ -45,6 +43,10 @@
   tabindex="-1"
   aria-controls={itemId}
   on:click={handleClick}
-  on:keydown={handleKey}>
+  on:keydown={handleKey}
+>
   <slot />
 </button>
+
+<style src="TabHeader.scss">
+</style>

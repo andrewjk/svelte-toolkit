@@ -25,7 +25,7 @@
   function buildTimes() {
     const options = {
       hour: "numeric",
-      minute: "numeric"
+      minute: "numeric",
     };
     const formatter = new Intl.DateTimeFormat([], options);
 
@@ -35,7 +35,7 @@
     while (date.getDay() === day) {
       timeValues.push({
         value: getMinutes(date),
-        text: formatter.format(date)
+        text: formatter.format(date),
       });
       date = new Date(date.getTime() + interval * 60 * 1000);
     }
@@ -55,18 +55,18 @@
   }
 </script>
 
-<style src="TimePicker.scss">
-
-</style>
-
 <select
   {id}
-  class={['time-picker', className].filter(Boolean).join(' ')}
+  class={["time-picker", className].filter(Boolean).join(" ")}
   value={getMinutes(value)}
   bind:this={input}
   {placeholder}
-  on:change={handleChange}>
+  on:change={handleChange}
+>
   {#each times as time}
     <option value={time.value}>{time.text}</option>
   {/each}
 </select>
+
+<style src="TimePicker.scss">
+</style>

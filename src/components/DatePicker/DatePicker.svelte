@@ -1,12 +1,15 @@
 <script>
   import { onMount, tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown";
-  import Calendar from "../Calendar/Calendar";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import Calendar from "../Calendar/Calendar.svelte";
 
   import { parseDateTime, formatDate } from "../../utils/date-utils";
   import { keyCodes } from "../../utils/key-codes";
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -109,14 +112,11 @@
   }
 </script>
 
-<style src="DatePicker.scss">
-
-</style>
-
 <div
   {id}
-  class={['date-picker', 'drop-down', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["date-picker", "drop-down", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
@@ -125,7 +125,8 @@
       {placeholder}
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
-      on:blur={handleInputBlur} />
+      on:blur={handleInputBlur}
+    />
     <div class="input-button" on:click={handleButtonClick}>
       <slot name="button">
         <ChevronDown />
@@ -139,7 +140,11 @@
         {value}
         {startOfWeek}
         on:change={dateSelected}
-        on:close={toggleList} />
+        on:close={toggleList}
+      />
     </div>
   {/if}
 </div>
+
+<style src="DatePicker.scss">
+</style>

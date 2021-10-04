@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
 
-  import TableCell from "../../layout/Table/TableCell";
+  import TableCell from "../../layout/Table/TableCell.svelte";
 
   export let id = null;
   let className = null;
@@ -17,8 +17,6 @@
   registerColumn(field, header, sortable, sortDirection);
 </script>
 
-<TableCell
-  {id}
-  class={[className].filter(Boolean).join(' ')}>
-  <slot/>
+<TableCell {id} class={[className].filter(Boolean).join(" ")}>
+  <slot />
 </TableCell>

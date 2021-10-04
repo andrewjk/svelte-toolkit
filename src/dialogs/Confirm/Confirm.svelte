@@ -2,7 +2,7 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import DialogButton from "../DialogButton/DialogButton";
+  import DialogButton from "../DialogButton/DialogButton.svelte";
   import { keyCodes } from "../../utils/key-codes";
 
   export let id = null;
@@ -54,21 +54,19 @@
   }
 </script>
 
-<style src="../Dialog.scss">
-
-</style>
-
 {#if visible}
   <div
     class="dialog-background"
     class:visible
     tabindex="-1"
-    on:keydown={handleKey}>
+    on:keydown={handleKey}
+  >
     <div
       {id}
-      class={['dialog', className].filter(Boolean).join(' ')}
+      class={["dialog", className].filter(Boolean).join(" ")}
       tabindex="0"
-      transition:fade={{ duration: 200 }}>
+      transition:fade={{ duration: 200 }}
+    >
       <div class="dialog-header">
         <slot name="header">{header}</slot>
       </div>
@@ -80,12 +78,14 @@
           {#if !buttons || !buttons.length}
             <DialogButton
               confirm={true}
-              on:click={e => handleClick(true, false)}>
+              on:click={(e) => handleClick(true, false)}
+            >
               OK
             </DialogButton>
             <DialogButton
               cancel={true}
-              on:click={e => handleClick(false, true)}>
+              on:click={(e) => handleClick(false, true)}
+            >
               Cancel
             </DialogButton>
           {/if}
@@ -94,8 +94,10 @@
               confirm={button.confirm}
               cancel={button.cancel}
               type={button.type}
-              on:click={e => handleClick(button.confirm, button.cancel, button.result)}>
-               {button.content}
+              on:click={(e) =>
+                handleClick(button.confirm, button.cancel, button.result)}
+            >
+              {button.content}
             </DialogButton>
           {/each}
         </slot>
@@ -103,3 +105,6 @@
     </div>
   </div>
 {/if}
+
+<style src="../Dialog.scss">
+</style>

@@ -14,24 +14,24 @@
   export let spaced = null;
 </script>
 
-<!-- HACK: global because we're putting classes together with strings -->
-<style src="Grid.scss" global>
-
-</style>
-
 <div
   {id}
   class={[
-      'grid',
-      spaced ? 'spaced' : null,
-      cols ? 'cols-' + cols : null,
-      smcols ? 'sm-cols-' + smcols : null,
-      mdcols ? 'md-cols-' + mdcols : null,
-      lgcols ? 'lg-cols-' + lgcols : null,
-      xlcols ? 'xl-cols-' + xlcols : null,
-      className
-    ]
+    "grid",
+    spaced ? "spaced" : null,
+    cols ? "cols-" + cols : null,
+    smcols ? "sm-cols-" + smcols : null,
+    mdcols ? "md-cols-" + mdcols : null,
+    lgcols ? "lg-cols-" + lgcols : null,
+    xlcols ? "xl-cols-" + xlcols : null,
+    className,
+  ]
     .filter(Boolean)
-    .join(' ')}>
+    .join(" ")}
+>
   <slot />
 </div>
+
+<!-- HACK: global because we're putting classes together with strings -->
+<style src="Grid.scss" global>
+</style>

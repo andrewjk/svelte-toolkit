@@ -25,12 +25,8 @@
   }
 </script>
 
-<style src="ValidationSummary.scss">
-
-</style>
-
 {#if messages.length}
-  <div {id} class={['validation-summary', className].filter(Boolean).join(' ')}>
+  <div {id} class={["validation-summary", className].filter(Boolean).join(" ")}>
     <slot>{content}</slot>
     <ul>
       {#each messages as message}
@@ -39,3 +35,6 @@
     </ul>
   </div>
 {/if}
+
+<style src="ValidationSummary.scss">
+</style>

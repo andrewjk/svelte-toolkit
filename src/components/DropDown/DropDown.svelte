@@ -1,13 +1,18 @@
 <script>
   import { onDestroy, tick } from "svelte";
 
-  import Button from "../Button/Button";
-  import ChevronDown from "../../icons/ChevronDown";
-  import DropDownMenu from "../DropDownMenu/DropDownMenu";
+  import Button from "../Button/Button.svelte";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import DropDownMenu from "../DropDownMenu/DropDownMenu.svelte";
 
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
-  console.warn("Svelte Toolkit: DropDown is obsolete -- use DropDownButton or DropDownLink instead");
+  console.warn(
+    "Svelte Toolkit: DropDown is obsolete -- use DropDownButton or DropDownLink instead"
+  );
 
   export let id = null;
   let className = null;
@@ -105,7 +110,10 @@
     </slot>
   </div>
   {#if expanded}
-    <div class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")} bind:this={menu}>
+    <div
+      class={["drop-down-menu-container", alignment].filter(Boolean).join(" ")}
+      bind:this={menu}
+    >
       <DropDownMenu>
         <slot name="menu" />
       </DropDownMenu>

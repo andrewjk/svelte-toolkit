@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import ImageButton from "../ImageButton/ImageButton";
-  import Cross from "../../icons/Cross";
+  import ImageButton from "../ImageButton/ImageButton.svelte";
+  import Cross from "../../icons/Cross.svelte";
 
   export let id = null;
   let className = null;
@@ -22,14 +22,8 @@
   }
 </script>
 
-<style src="Tag.scss">
-
-</style>
-
 {#if visible}
-  <span
-    {id}
-    class={['tag', type, className].filter(Boolean).join(' ')}>
+  <span {id} class={["tag", type, className].filter(Boolean).join(" ")}>
     <slot>{content}</slot>
     {#if closable}
       <div class="tag-close">
@@ -42,3 +36,6 @@
     {/if}
   </span>
 {/if}
+
+<style src="Tag.scss">
+</style>

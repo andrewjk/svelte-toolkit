@@ -2,8 +2,8 @@
   import { createEventDispatcher } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import ChevronLeft from "../../icons/ChevronLeft";
-  import ChevronRight from "../../icons/ChevronRight";
+  import ChevronLeft from "../../icons/ChevronLeft.svelte";
+  import ChevronRight from "../../icons/ChevronRight.svelte";
 
   export let id = null;
   let className = null;
@@ -103,23 +103,21 @@
   }
 </script>
 
-<style src="Pagination.scss">
-
-</style>
-
 {#if pageCount > 1}
   <div
     {id}
-    class={['pagination', className].filter(Boolean).join(' ')}
-    tabindex="0">
+    class={["pagination", className].filter(Boolean).join(" ")}
+    tabindex="0"
+  >
     <button
       class="button pagination-button"
       type="button"
       disabled={pageNumber <= 1}
-      on:click={e => setPageNumber(pageNumber - 1)}
-      on:keydown={e => handleKey(e)}
+      on:click={(e) => setPageNumber(pageNumber - 1)}
+      on:keydown={(e) => handleKey(e)}
       aria-label="Previous"
-      tabindex="-1">
+      tabindex="-1"
+    >
       <slot name="prev-button">
         <ChevronLeft />
       </slot>
@@ -130,10 +128,11 @@
         class="button pagination-button"
         type="button"
         class:active={pageNumber === number}
-        on:click={e => setPageNumber(number)}
-        on:keydown={e => handleKey(e)}
-        tabindex="-1">
-        {number.toString().replace('$', '')}
+        on:click={(e) => setPageNumber(number)}
+        on:keydown={(e) => handleKey(e)}
+        tabindex="-1"
+      >
+        {number.toString().replace("$", "")}
       </button>
     {/each}
 
@@ -141,13 +140,17 @@
       class="button pagination-button"
       disabled={pageNumber >= pageCount}
       type="button"
-      on:click={e => setPageNumber(pageNumber + 1)}
-      on:keydown={e => handleKey(e)}
+      on:click={(e) => setPageNumber(pageNumber + 1)}
+      on:keydown={(e) => handleKey(e)}
       aria-label="Next"
-      tabindex="-1">
+      tabindex="-1"
+    >
       <slot name="next-button">
         <ChevronRight />
       </slot>
     </button>
   </div>
 {/if}
+
+<style src="Pagination.scss">
+</style>

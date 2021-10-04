@@ -1,12 +1,15 @@
 <script>
   import { tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown";
-  import Palette from "../Palette/Palette";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import Palette from "../Palette/Palette.svelte";
 
   import { keyCodes } from "../../utils/key-codes";
   import { rgbToHex } from "../../utils/color-utils";
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -79,7 +82,8 @@
       const color = window
         .getComputedStyle(preview, null)
         .getPropertyValue("background-color");
-      const regex = /(?:rgb|rgba)\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d\.]+))*\)/i;
+      const regex =
+        /(?:rgb|rgba)\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d\.]+))*\)/i;
       const matches = regex.exec(color);
       const r = parseInt(matches[1]);
       const g = parseInt(matches[2]);
@@ -98,20 +102,18 @@
   }
 </script>
 
-<style src="ColorPicker.scss">
-
-</style>
-
 <div
   {id}
-  class={['color-picker', 'drop-down', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["color-picker", "drop-down", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     {#if value}
       <div
         bind:this={preview}
         class="color-picker-preview"
-        style={`background-color: ${value}`} />
+        style={`background-color: ${value}`}
+      />
     {/if}
     <input
       class="drop-down-input"
@@ -120,7 +122,8 @@
       {placeholder}
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
-      on:blur={handleInputBlur} />
+      on:blur={handleInputBlur}
+    />
     <div class="input-button" on:click={handleButtonClick}>
       <slot name="button">
         <ChevronDown />
@@ -133,3 +136,6 @@
     </div>
   {/if}
 </div>
+
+<style src="ColorPicker.scss">
+</style>

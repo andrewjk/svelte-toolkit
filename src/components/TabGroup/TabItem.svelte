@@ -22,15 +22,15 @@
   }
 </script>
 
-<style src="TabItem.scss">
-
-</style>
-
 <div
   {id}
-  class={['tab-item', className].filter(Boolean).join(' ')}
+  class={["tab-item", className].filter(Boolean).join(" ")}
   class:active
   role="tabpanel"
-  aria-labelledby={`${id}-header`}>
+  aria-labelledby={`${id}-header`}
+>
   <slot />
 </div>
+
+<style src="TabItem.scss">
+</style>

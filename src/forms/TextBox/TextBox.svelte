@@ -68,11 +68,11 @@
 </script>
 
 <!-- HACK: Can't use a dynamic type attribute so we have to make sure these all stay in sync! -->
-{#if contentType === 'text'}
+{#if contentType === "text"}
   <input
     type="text"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -84,12 +84,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'password'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "password"}
   <input
     type="password"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -101,12 +102,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'email'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "email"}
   <input
     type="email"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -118,12 +120,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'number'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "number"}
   <input
     type="number"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -135,12 +138,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'url'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "url"}
   <input
     type="url"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -152,12 +156,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'tel'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "tel"}
   <input
     type="tel"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -169,12 +174,13 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
-{:else if contentType === 'file'}
+    on:blur={handleBlur}
+  />
+{:else if contentType === "file"}
   <input
     type="file"
     {id}
-    class={[type, className].filter(Boolean).join(' ')}
+    class={[type, className].filter(Boolean).join(" ")}
     {name}
     bind:this={input}
     bind:value
@@ -186,5 +192,6 @@
     on:keypress
     on:input={handleInput}
     on:focus
-    on:blur={handleBlur} />
+    on:blur={handleBlur}
+  />
 {/if}

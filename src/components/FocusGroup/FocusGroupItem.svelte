@@ -21,7 +21,7 @@
     //container.focus();
     const elements = container.querySelectorAll(tagName);
     if (elements && elements.length) {
-      elements.forEach(el => el.focus());
+      elements.forEach((el) => el.focus());
     }
   }
 
@@ -31,14 +31,14 @@
   }
 </script>
 
-<style src="FocusGroupItem.scss">
-
-</style>
-
 <div
   {id}
-  class={['focus-group-item', className].filter(Boolean).join(' ')}
+  class={["focus-group-item", className].filter(Boolean).join(" ")}
   bind:this={container}
-  on:keydown={handleKey}>
+  on:keydown={handleKey}
+>
   <slot />
 </div>
+
+<style src="FocusGroupItem.scss">
+</style>

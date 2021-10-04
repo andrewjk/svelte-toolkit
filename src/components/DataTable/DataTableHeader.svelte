@@ -1,9 +1,9 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
 
-  import TableHeaderCell from "../../layout/Table/TableHeaderCell";
-  import ArrowDown from "../../icons/ArrowDown";
-  import ArrowUp from "../../icons/ArrowUp";
+  import TableHeaderCell from "../../layout/Table/TableHeaderCell.svelte";
+  import ArrowDown from "../../icons/ArrowDown.svelte";
+  import ArrowUp from "../../icons/ArrowUp.svelte";
 
   export let id = null;
   let className = null;
@@ -27,16 +27,14 @@
   }
 </script>
 
-<TableHeaderCell
-  {id}
-  class={[className].filter(Boolean).join(' ')}>
+<TableHeaderCell {id} class={[className].filter(Boolean).join(" ")}>
   {#if sortable}
     <button class="table-button" type="button" on:click={sort}>
       <slot />
       <slot name="indicator" {sortDirection}>
-        {#if sortDirection === 'asc'}
+        {#if sortDirection === "asc"}
           <ArrowUp />
-        {:else if sortDirection === 'desc'}
+        {:else if sortDirection === "desc"}
           <ArrowDown />
         {/if}
       </slot>

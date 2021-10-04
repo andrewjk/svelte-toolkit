@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import XAxis from "../XAxis/XAxis";
-  import YAxis from "../YAxis/YAxis";
-  import ChartGridLines from "../ChartGridLines/ChartGridLines";
+  import XAxis from "../XAxis/XAxis.svelte";
+  import YAxis from "../YAxis/YAxis.svelte";
+  import ChartGridLines from "../ChartGridLines/ChartGridLines.svelte";
   import {
     calculateMaxValue,
     calculateStepValue,
@@ -10,7 +10,7 @@
     calculateItemWidth,
     calculateValueHeight,
     calculateChartBottom,
-    calculateChartLeft
+    calculateChartLeft,
   } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
@@ -86,14 +86,11 @@
   //}
 </script>
 
-<style src="BarChart.scss">
-
-</style>
-
 <div
   {id}
-  class={['chart', className].filter(Boolean).join(' ')}
-  bind:this={container}>
+  class={["chart", className].filter(Boolean).join(" ")}
+  bind:this={container}
+>
   <svg version="1.1" width={calculatedWidth} {height}>
     <g>
       {#if !container}
@@ -109,7 +106,8 @@
           {xLabel}
           {labels}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <YAxis
           showAxis={showYAxis}
           {valueHeight}
@@ -118,7 +116,8 @@
           {stepLabels}
           stepValue={calculatedStepValue}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         <ChartGridLines
           {showHLines}
           {showVLines}
@@ -129,19 +128,27 @@
           {itemWidth}
           {valueHeight}
           {chartLeft}
-          {chartBottom} />
+          {chartBottom}
+        />
         {#each labels as label, i}
           {#each calculatedSeries as ser, j}
             {#if ser.data.length > i}
               <rect
                 class="chart-bar"
-                x={chartLeft + i * itemWidth + itemWidth / 4 + (j * itemWidth) / 2 / calculatedSeries.length + 2}
+                x={chartLeft +
+                  i * itemWidth +
+                  itemWidth / 4 +
+                  (j * itemWidth) / 2 / calculatedSeries.length +
+                  2}
                 y={chartBottom - Math.max(1, ser.data[i] * valueHeight)}
                 width={Math.max(1, itemWidth / 2 / calculatedSeries.length - 2)}
                 height={Math.max(1, ser.data[i] * valueHeight)}
-                fill={ser.color || chartColors[j % chartColors.length]}>
+                fill={ser.color || chartColors[j % chartColors.length]}
+              >
                 <title>
-                  {`${ser.name ? ser.name + '\n' : ''}${label + '\n'}${ser.data[i]}`}
+                  {`${ser.name ? ser.name + "\n" : ""}${label + "\n"}${
+                    ser.data[i]
+                  }`}
                 </title>
               </rect>
             {/if}
@@ -151,3 +158,6 @@
     </g>
   </svg>
 </div>
+
+<style src="BarChart.scss">
+</style>

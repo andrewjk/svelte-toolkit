@@ -43,16 +43,16 @@
   }
 </script>
 
-<style src="AutoCompleteItem.scss">
-
-</style>
-
 <div
   {id}
-  class={['drop-down-item', className].filter(Boolean).join(' ')}
+  class={["drop-down-item", className].filter(Boolean).join(" ")}
   bind:this={item}
   class:active
   role="option"
-  on:click={e => dispatch('select', index)}>
+  on:click={(e) => dispatch("select", index)}
+>
   <slot />
 </div>
+
+<style src="AutoCompleteItem.scss">
+</style>

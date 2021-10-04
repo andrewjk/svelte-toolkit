@@ -3,10 +3,10 @@
   import { areDatesEqual } from "../../utils/date-utils";
   import { keyCodes } from "../../utils/key-codes";
 
-  import CalendarDay from "./CalendarDay";
-  import ImageButton from "../ImageButton/ImageButton";
-  import ChevronLeft from "../../icons/ChevronLeft";
-  import ChevronRight from "../../icons/ChevronRight";
+  import CalendarDay from "./CalendarDay.svelte";
+  import ImageButton from "../ImageButton/ImageButton.svelte";
+  import ChevronLeft from "../../icons/ChevronLeft.svelte";
+  import ChevronRight from "../../icons/ChevronRight.svelte";
 
   export let id = null;
   let className = null;
@@ -40,7 +40,7 @@
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   const months = [
     "January",
@@ -54,7 +54,7 @@
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
 
   const dispatch = createEventDispatcher();
@@ -63,8 +63,8 @@
     // The registerItem function is called from each CalendarDay to register itself with this
     // Calendar. They pass us a setActive method that we can call
     registerDay: (date, setActive) => {
-      days.find(day => areDatesEqual(day.date, date)).setActive = setActive;
-    }
+      days.find((day) => areDatesEqual(day.date, date)).setActive = setActive;
+    },
   });
 
   afterUpdate(() => {
@@ -114,7 +114,7 @@
       newDays.push({
         date: dayDate,
         muted: dayDate.getMonth() !== date.getMonth(),
-        active: areDatesEqual(dayDate, new Date(activeDate))
+        active: areDatesEqual(dayDate, new Date(activeDate)),
       });
     }
 
@@ -140,7 +140,7 @@
       dispatch("changedate", visibleDate);
     }
 
-    days.forEach(day => {
+    days.forEach((day) => {
       const active = areDatesEqual(day.date, new Date(activeDate));
       day.setActive(active);
       day.active = active;
@@ -231,16 +231,13 @@
   }
 </script>
 
-<style src="Calendar.scss">
-
-</style>
-
 <div
   {id}
-  class={['calendar', className].filter(Boolean).join(' ')}
+  class={["calendar", className].filter(Boolean).join(" ")}
   bind:this={container}
-  tabindex={selectable ? '0' : '-1'}
-  on:focus={handleFocus}>
+  tabindex={selectable ? "0" : "-1"}
+  on:focus={handleFocus}
+>
   <div class="calendar-header">
     <span class="calendar-nav">
       <ImageButton on:click={handlePrevMonth}>
@@ -250,7 +247,7 @@
       </ImageButton>
     </span>
     <span class="calendar-title">
-      {months[visibleDate.getMonth()] + ' ' + visibleDate.getFullYear()}
+      {months[visibleDate.getMonth()] + " " + visibleDate.getFullYear()}
     </span>
     <span class="calendar-nav">
       <ImageButton on:click={handleNextMonth}>
@@ -272,9 +269,15 @@
         muted={day.muted}
         active={day.active}
         {selectable}
-        events={events.filter(ev => areDatesEqual(new Date(ev.date), day.date))}
+        events={events.filter((ev) =>
+          areDatesEqual(new Date(ev.date), day.date)
+        )}
         on:click={handleDayClick}
-        on:keydown={handleKey} />
+        on:keydown={handleKey}
+      />
     {/each}
   </div>
 </div>
+
+<style src="Calendar.scss">
+</style>

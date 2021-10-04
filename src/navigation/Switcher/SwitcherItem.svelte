@@ -32,6 +32,15 @@
   });
 </script>
 
+<div
+  {id}
+  class={["switcher-item", className].filter(Boolean).join(" ")}
+  class:active
+  tabindex="0"
+>
+  <slot />
+</div>
+
 <style>
   .switcher-item {
     display: none;
@@ -41,11 +50,3 @@
     display: block;
   }
 </style>
-
-<div
-  {id}
-  class={['switcher-item', className].filter(Boolean).join(' ')}
-  class:active
-  tabindex="0">
-  <slot />
-</div>

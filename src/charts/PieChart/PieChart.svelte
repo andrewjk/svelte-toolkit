@@ -39,7 +39,7 @@
           startAngle,
           endAngle,
           largeArc
-        )
+        ),
       });
       startAngle = endAngle;
     }
@@ -98,24 +98,25 @@
   }
 </script>
 
-<style src="PieChart.scss">
-
-</style>
-
 <svg
   {id}
-  class={['chart', className].filter(Boolean).join(' ')}
+  class={["chart", className].filter(Boolean).join(" ")}
   version="1.1"
   width={size}
-  height={size}>
+  height={size}
+>
   <g>
     {#each segments as segment, i}
       <path
         class="chart-segment"
         d={segment.path}
-        fill={segment.color || chartColors[i % chartColors.length]}>
+        fill={segment.color || chartColors[i % chartColors.length]}
+      >
         <title>{`${segment.label}\n${segment.value}`}</title>
       </path>
     {/each}
   </g>
 </svg>
+
+<style src="PieChart.scss">
+</style>

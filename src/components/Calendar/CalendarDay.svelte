@@ -35,25 +35,21 @@
   }
 </script>
 
-<style src="CalendarDay.scss">
-
-</style>
-
-<div
-  {id}
-  class={['calendar-day', className].filter(Boolean).join(' ')}>
+<div {id} class={["calendar-day", className].filter(Boolean).join(" ")}>
   <div
     class="calendar-day-text"
     class:muted
     class:today={isToday()}
-    class:active={selectable && active}>
+    class:active={selectable && active}
+  >
     {#if selectable}
       <button
         class="button calendar-day-button"
         type="button"
         tabindex="-1"
         on:click={handleClick}
-        on:keydown>
+        on:keydown
+      >
         <span class="calendar-number">{date.getDate()}</span>
       </button>
     {:else}
@@ -66,3 +62,6 @@
     {/each}
   </ul>
 </div>
+
+<style src="CalendarDay.scss">
+</style>

@@ -1,10 +1,13 @@
 <script>
   import { getContext, setContext, onDestroy } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown";
-  import DropDownMenu from "../../components/DropDownMenu/DropDownMenu";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import DropDownMenu from "../../components/DropDownMenu/DropDownMenu.svelte";
 
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -84,19 +87,14 @@
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
 >
-  <a
-    {href}
-    class="nav-menu-link"
-    aria-haspopup="true"
-    on:click={handleClick}
-  >
+  <a {href} class="nav-menu-link" aria-haspopup="true" on:click={handleClick}>
     <slot />
     <slot name="button">
       <ChevronDown />
     </slot>
   </a>
   {#if expanded}
-    <DropDownMenu on:change={() => expanded = false}>
+    <DropDownMenu on:change={() => (expanded = false)}>
       <slot name="menu" />
     </DropDownMenu>
   {/if}

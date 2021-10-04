@@ -2,7 +2,7 @@
   import { onMount, createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
 
-  import DialogButton from "../DialogButton/DialogButton";
+  import DialogButton from "../DialogButton/DialogButton.svelte";
 
   export let id = null;
   let className = null;
@@ -38,16 +38,13 @@
   }
 </script>
 
-<style src="../Dialog.scss">
-
-</style>
-
 {#if visible}
   <div class="dialog-background" class:visible tabindex="-1">
     <div
       {id}
-      class={['dialog', className].filter(Boolean).join(' ')}
-      transition:fade={{ duration: 200 }}>
+      class={["dialog", className].filter(Boolean).join(" ")}
+      transition:fade={{ duration: 200 }}
+    >
       <div class="dialog-header">
         <slot name="header">{header}</slot>
       </div>
@@ -57,10 +54,13 @@
       <div class="dialog-footer" bind:this={footer}>
         <slot name="footer">
           <DialogButton confirm={true} on:click={handleClick}>
-             {buttonContent}
+            {buttonContent}
           </DialogButton>
         </slot>
       </div>
     </div>
   </div>
 {/if}
+
+<style src="../Dialog.scss">
+</style>

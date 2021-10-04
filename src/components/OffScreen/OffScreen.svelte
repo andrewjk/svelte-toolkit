@@ -24,14 +24,14 @@
         return {
           x: window.innerWidth,
           duration: 600,
-          opacity: 1
+          opacity: 1,
         };
       }
       case "bottom": {
         return {
           y: window.innerHeight,
           duration: 600,
-          opacity: 1
+          opacity: 1,
         };
       }
     }
@@ -43,18 +43,18 @@
   }
 </script>
 
-<style src="OffScreen.scss">
-
-</style>
-
 {#if visible}
   <div class="off-screen-background" on:click={close}>
     <div
       {id}
-      class={['off-screen', position, className].filter(Boolean).join(' ')}
+      class={["off-screen", position, className].filter(Boolean).join(" ")}
       transition:fly={transitionArgs()}
-      bind:this={offscreen}>
+      bind:this={offscreen}
+    >
       <slot />
     </div>
   </div>
 {/if}
+
+<style src="OffScreen.scss">
+</style>

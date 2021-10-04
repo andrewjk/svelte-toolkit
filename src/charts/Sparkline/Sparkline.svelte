@@ -2,7 +2,7 @@
   import {
     calculateMaxValue,
     calculateItemWidth,
-    calculateValueHeight
+    calculateValueHeight,
   } from "../../utils/chart-utils";
   import { chartColors } from "../../utils/chart-colors";
 
@@ -33,19 +33,19 @@
   }
 </script>
 
-<style src="Sparkline.scss">
-
-</style>
-
-<div {id} class={['chart', className].filter(Boolean).join(' ')}>
+<div {id} class={["chart", className].filter(Boolean).join(" ")}>
   <svg version="1.1" width={calculatedWidth} {height}>
     <g>
       <polyline
         class="chart-line"
-        points={pointSeries.map(p => `${p.x},${p.y}`).join(' ')}
+        points={pointSeries.map((p) => `${p.x},${p.y}`).join(" ")}
         stroke={color || chartColors[0]}
         stroke-width="2"
-        fill="none" />
+        fill="none"
+      />
     </g>
   </svg>
 </div>
+
+<style src="Sparkline.scss">
+</style>

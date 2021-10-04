@@ -47,25 +47,22 @@
   }
 </script>
 
-<style src="AccordionItem.scss">
-
-</style>
-
-<div
-  class={['accordion-item', className].filter(Boolean).join(' ')}>
+<div class={["accordion-item", className].filter(Boolean).join(" ")}>
   <div
     id={`${id}-header`}
     class="accordion-header"
     class:expanded
     aria-expanded={expanded}
-    aria-controls={id}>
+    aria-controls={id}
+  >
     <button
       bind:this={headerButton}
       class="button accordion-header-button"
       type="button"
       tabindex="-1"
       on:click={handleClick}
-      on:keydown={handleKey}>
+      on:keydown={handleKey}
+    >
       <slot name="header">{header}</slot>
     </button>
   </div>
@@ -76,8 +73,12 @@
       class:expanded
       role="region"
       aria-labelledby={`${id}-header`}
-      transition:slide>
+      transition:slide
+    >
       <slot />
     </div>
   {/if}
 </div>
+
+<style src="AccordionItem.scss">
+</style>

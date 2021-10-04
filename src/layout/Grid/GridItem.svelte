@@ -19,28 +19,28 @@
   //export let xlorder = null;
 </script>
 
-<!-- HACK: global because we're putting classes together with strings -->
-<style src="GridItem.scss" global>
-
-</style>
-
 <div
   {id}
   class={[
-      'grid-item',
-      span ? 'span-' + span : null,
-      smspan ? 'sm-span-' + smspan : null,
-      mdspan ? 'md-span-' + mdspan : null,
-      lgspan ? 'lg-span-' + lgspan : null,
-      xlspan ? 'xl-span-' + xlspan : null,
-      //order ? 'order-' + order : null,
-      //smorder ? 'sm-order-' + smorder : null,
-      //mdorder ? 'md-order-' + mdorder : null,
-      //lgorder ? 'lg-order-' + lgorder : null,
-      //xlorder ? 'xl-order-' + xlorder : null,
-      className
-    ]
+    "grid-item",
+    span ? "span-" + span : null,
+    smspan ? "sm-span-" + smspan : null,
+    mdspan ? "md-span-" + mdspan : null,
+    lgspan ? "lg-span-" + lgspan : null,
+    xlspan ? "xl-span-" + xlspan : null,
+    //order ? 'order-' + order : null,
+    //smorder ? 'sm-order-' + smorder : null,
+    //mdorder ? 'md-order-' + mdorder : null,
+    //lgorder ? 'lg-order-' + lgorder : null,
+    //xlorder ? 'xl-order-' + xlorder : null,
+    className,
+  ]
     .filter(Boolean)
-    .join(' ')}>
+    .join(" ")}
+>
   <slot />
 </div>
+
+<!-- HACK: global because we're putting classes together with strings -->
+<style src="GridItem.scss" global>
+</style>

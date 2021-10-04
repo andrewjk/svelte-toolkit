@@ -2,7 +2,7 @@
   import { createEventDispatcher, getContext } from "svelte";
   import { keyCodes } from "../../utils/key-codes";
 
-  import Tag from "../Tag/Tag";
+  import Tag from "../Tag/Tag.svelte";
 
   export let id = null;
   let className = null;
@@ -18,15 +18,15 @@
   }
 </script>
 
-<style src="TagInputValue.scss">
-
-</style>
-
 <Tag
   {id}
-  class={['tag-input-value', className].filter(Boolean).join(' ')}
+  class={["tag-input-value", className].filter(Boolean).join(" ")}
   {type}
   closable={true}
-  on:close={handleClose}>
+  on:close={handleClose}
+>
   <slot />
 </Tag>
+
+<style src="TagInputValue.scss">
+</style>

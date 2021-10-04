@@ -11,18 +11,18 @@
 
   setContext("stack", {
     direction,
-    spaced
+    spaced,
   });
 </script>
 
-<style src="Stack.scss">
-
-</style>
-
 <div
   {id}
-  class={['stack', direction, nowrap ? 'nowrap' : null, className]
+  class={["stack", direction, nowrap ? "nowrap" : null, className]
     .filter(Boolean)
-    .join(' ')}>
+    .join(" ")}
+>
   <slot />
 </div>
+
+<style src="Stack.scss">
+</style>

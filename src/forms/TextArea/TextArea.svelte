@@ -69,7 +69,7 @@
 
 <textarea
   {id}
-  class={[type, className].filter(Boolean).join(' ')}
+  class={[type, className].filter(Boolean).join(" ")}
   {name}
   bind:this={input}
   bind:value
@@ -82,4 +82,5 @@
   on:keypress
   on:input={handleInput}
   on:focus
-  on:blur={handleBlur} />
+  on:blur={handleBlur}
+/>

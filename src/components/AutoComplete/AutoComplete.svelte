@@ -1,10 +1,13 @@
 <script>
   import { createEventDispatcher, setContext, tick } from "svelte";
-  
-  import AutoCompleteItem from "./AutoCompleteItem";
+
+  import AutoCompleteItem from "./AutoCompleteItem.svelte";
 
   import { keyCodes } from "../../utils/key-codes";
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -44,11 +47,11 @@
           ...itemStates,
           {
             active: itemStates.length === 0,
-            setActive
-          }
+            setActive,
+          },
         ];
       }
-    }
+    },
   });
 
   function buildItemStates(newItems) {
@@ -56,7 +59,7 @@
     const newItemStates = newItems.map((item, index) => {
       return {
         active: index === 0,
-        text: typeof item === "object" ? item.text : item
+        text: typeof item === "object" ? item.text : item,
       };
     });
     if (newItemStates.length && !expanded) {
@@ -169,7 +172,7 @@
         text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"),
         "i"
       );
-      items = source.filter(item => {
+      items = source.filter((item) => {
         return isObject ? search.test(item.text) : search.test(item);
       });
       if (!expanded && items.length) {
@@ -222,15 +225,12 @@
   }
 </script>
 
-<style src="AutoComplete.scss">
-
-</style>
-
 <div
   {id}
-  class={['auto-complete', 'drop-down', className].filter(Boolean).join(' ')}
+  class={["auto-complete", "drop-down", className].filter(Boolean).join(" ")}
   bind:this={container}
-  role="combobox">
+  role="combobox"
+>
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <input
       class="drop-down-input"
@@ -240,7 +240,8 @@
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur}
-      on:input={handleInput} />
+      on:input={handleInput}
+    />
   </div>
   {#if expanded}
     <div bind:this={list} class="drop-down-list">
@@ -249,7 +250,8 @@
           <AutoCompleteItem
             active={item.active}
             {index}
-            on:select={handleSelect}>
+            on:select={handleSelect}
+          >
             {item.text}
           </AutoCompleteItem>
         {/each}
@@ -257,3 +259,6 @@
     </div>
   {/if}
 </div>
+
+<style src="AutoComplete.scss">
+</style>

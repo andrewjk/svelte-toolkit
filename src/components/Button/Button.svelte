@@ -1,5 +1,5 @@
 <script>
-  import Loading from "../../icons/Loading";
+  import Loading from "../../icons/Loading.svelte";
 
   export let id = null;
   let className = null;
@@ -18,17 +18,13 @@
   export let hasPopup = null;
 </script>
 
-<style src="Button.scss">
-
-</style>
-
 <button
   {id}
-  class={['button', type, size, className].filter(Boolean).join(' ')}
+  class={["button", type, size, className].filter(Boolean).join(" ")}
   class:loading
   class:rounded
   class:outlined
-  type={submit ? 'submit' : reset ? 'reset' : 'button'}
+  type={submit ? "submit" : reset ? "reset" : "button"}
   {title}
   {disabled}
   aria-haspopup={hasPopup}
@@ -37,7 +33,8 @@
   on:keypress
   on:keyup
   on:mousedown
-  on:mouseup>
+  on:mouseup
+>
   {#if loading}
     <span class="loading-background">
       <Loading rotate />
@@ -45,3 +42,6 @@
   {/if}
   <slot>{content}</slot>
 </button>
+
+<style src="Button.scss">
+</style>

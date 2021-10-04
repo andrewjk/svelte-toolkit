@@ -1,11 +1,14 @@
 <script>
   import { createEventDispatcher, setContext, tick } from "svelte";
-  
-  import TagInputItem from "./TagInputItem";
-  import TagInputValue from "./TagInputValue";
-  
+
+  import TagInputItem from "./TagInputItem.svelte";
+  import TagInputValue from "./TagInputValue.svelte";
+
   import { keyCodes } from "../../utils/key-codes";
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
@@ -50,11 +53,11 @@
           ...itemStates,
           {
             active: itemStates.length === 0,
-            setActive
-          }
+            setActive,
+          },
         ];
       }
-    }
+    },
   });
 
   function buildItemStates(newItems) {
@@ -63,7 +66,7 @@
       return {
         active: index === 0,
         text: typeof item === "object" ? item.text : item,
-        value: item
+        value: item,
       };
     });
     if (newItemStates.length && !expanded) {
@@ -200,7 +203,7 @@
         text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"),
         "i"
       );
-      items = source.filter(item => {
+      items = source.filter((item) => {
         return isObject ? search.test(item.text) : search.test(item);
       });
       if (!expanded && items.length) {
@@ -272,15 +275,12 @@
   }
 </script>
 
-<style src="TagInput.scss">
-
-</style>
-
 <div
   {id}
-  class={['tag-input', 'drop-down', className].filter(Boolean).join(' ')}
+  class={["tag-input", "drop-down", className].filter(Boolean).join(" ")}
   bind:this={container}
-  role="combobox">
+  role="combobox"
+>
   <div bind:this={inputContainer} class="drop-down-input-container" class:focus>
     <div class="tag-input-value-list">
       {#each values as value, index (value)}
@@ -288,8 +288,9 @@
           {index}
           class={tagClass}
           type={tagType}
-          on:close={handleRemove}>
-          {typeof value === 'object' ? value.text : value}
+          on:close={handleRemove}
+        >
+          {typeof value === "object" ? value.text : value}
         </TagInputValue>
       {/each}
     </div>
@@ -301,7 +302,8 @@
       on:keydown={handleInputKey}
       on:focus={handleInputFocus}
       on:blur={handleInputBlur}
-      on:input={handleInput} />
+      on:input={handleInput}
+    />
   </div>
   {#if expanded}
     <div bind:this={list} class="drop-down-list">
@@ -315,3 +317,6 @@
     </div>
   {/if}
 </div>
+
+<style src="TagInput.scss">
+</style>

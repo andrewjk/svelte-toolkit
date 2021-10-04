@@ -1,10 +1,13 @@
 <script>
   import { onDestroy, tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown";
-  import DropDownMenu from "../DropDownMenu/DropDownMenu";
+  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import DropDownMenu from "../DropDownMenu/DropDownMenu.svelte";
 
-  import { addDocumentEvent, removeDocumentEvent } from "../../utils/document-events";
+  import {
+    addDocumentEvent,
+    removeDocumentEvent,
+  } from "../../utils/document-events";
 
   export let id = null;
   let className = null;
