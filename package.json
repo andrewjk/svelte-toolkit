@@ -12,24 +12,25 @@
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/svelte": "^3.0.3",
-    "babel-jest": "^27.0.6",
+    "babel-jest": "^27.2.4",
     "browser-env": "^3.3.0",
-    "jest": "^26.6.3",
+    "jest": "^27.2.4",
     "jest-canvas-mock": "^2.3.1",
     "node-sass": "^6.0.1",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.8",
     "postcss-load-config": "^3.1.0",
     "raf": "^3.4.1",
-    "rollup": "^2.56.1",
+    "rollup": "^2.58.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-svelte": "^7.1.0",
-    "svelte": "^3.42.1",
-    "svelte-jester": "^1.8.2",
-    "svelte-preprocess": "^4.7.4"
+    "svelte": "^3.43.1",
+    "svelte-jester": "^2.1.5",
+    "svelte-preprocess": "^4.9.8"
   },
   "keywords": [
     "svelte"
