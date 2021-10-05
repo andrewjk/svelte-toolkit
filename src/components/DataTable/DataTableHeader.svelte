@@ -2,8 +2,8 @@
   import { getContext, createEventDispatcher } from "svelte";
 
   import TableHeaderCell from "../../layout/Table/TableHeaderCell.svelte";
-  import ArrowDown from "../../icons/ArrowDown.svelte";
-  import ArrowUp from "../../icons/ArrowUp.svelte";
+  import ArrowDown from "../../icons/ArrowDown/ArrowDown.svelte";
+  import ArrowUp from "../../icons/ArrowUp/ArrowUp.svelte";
 
   export let id = null;
   let className = null;

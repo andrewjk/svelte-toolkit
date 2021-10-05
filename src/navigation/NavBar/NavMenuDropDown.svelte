@@ -1,7 +1,7 @@
 <script>
   import { getContext, setContext, onDestroy } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown/ChevronDown.svelte";
   import DropDownMenu from "../../components/DropDownMenu/DropDownMenu.svelte";
 
   import {

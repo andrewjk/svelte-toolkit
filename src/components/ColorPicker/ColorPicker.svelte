@@ -1,7 +1,7 @@
 <script>
   import { tick } from "svelte";
 
-  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown/ChevronDown.svelte";
   import Palette from "../Palette/Palette.svelte";
 
   import { keyCodes } from "../../utils/key-codes";

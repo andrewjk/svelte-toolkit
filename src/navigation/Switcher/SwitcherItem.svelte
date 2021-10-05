@@ -41,12 +41,5 @@
   <slot />
 </div>
 
-<style>
-  .switcher-item {
-    display: none;
-  }
-
-  .switcher-item.active {
-    display: block;
-  }
+<style src="SwitcherItem.scss">
 </style>

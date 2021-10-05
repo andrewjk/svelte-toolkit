@@ -28,5 +28,5 @@
   </div>
 </div>
 
-<style src="../Dialog.scss">
+<style src="Modal.scss">
 </style>

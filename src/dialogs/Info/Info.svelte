@@ -62,5 +62,5 @@
   </div>
 {/if}
 
-<style src="../Dialog.scss">
+<style src="Info.scss">
 </style>

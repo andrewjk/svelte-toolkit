@@ -120,20 +120,20 @@ import ScatterChart from "./src/charts/ScatterChart/ScatterChart.svelte";
 import Sparkline from "./src/charts/Sparkline/Sparkline.svelte";
 
 // Icons
-import ArrowUp from "./src/icons/ArrowUp.svelte";
-import ArrowDown from "./src/icons/ArrowDown.svelte";
-import ArrowLeft from "./src/icons/ArrowLeft.svelte";
-import ArrowRight from "./src/icons/ArrowRight.svelte";
-import Bars from "./src/icons/Bars.svelte";
-import ChevronUp from "./src/icons/ChevronUp.svelte";
-import ChevronDown from "./src/icons/ChevronDown.svelte";
-import ChevronLeft from "./src/icons/ChevronLeft.svelte";
-import ChevronRight from "./src/icons/ChevronRight.svelte";
-import Cross from "./src/icons/Cross.svelte";
-import Check from "./src/icons/Check.svelte";
-import Plus from "./src/icons/Plus.svelte";
-import Minus from "./src/icons/Minus.svelte";
-import Loading from "./src/icons/Loading.svelte";
+import ArrowUp from "./src/icons/ArrowUp/ArrowUp.svelte";
+import ArrowDown from "./src/icons/ArrowDown/ArrowDown.svelte";
+import ArrowLeft from "./src/icons/ArrowLeft/ArrowLeft.svelte";
+import ArrowRight from "./src/icons/ArrowRight/ArrowRight.svelte";
+import Bars from "./src/icons/Bars/Bars.svelte";
+import ChevronUp from "./src/icons/ChevronUp/ChevronUp.svelte";
+import ChevronDown from "./src/icons/ChevronDown/ChevronDown.svelte";
+import ChevronLeft from "./src/icons/ChevronLeft/ChevronLeft.svelte";
+import ChevronRight from "./src/icons/ChevronRight/ChevronRight.svelte";
+import Cross from "./src/icons/Cross/Cross.svelte";
+import Check from "./src/icons/Check/Check.svelte";
+import Plus from "./src/icons/Plus/Plus.svelte";
+import Minus from "./src/icons/Minus/Minus.svelte";
+import Loading from "./src/icons/Loading/Loading.svelte";
 
 export {
   // Base

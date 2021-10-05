@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import ChevronLeft from "../../icons/ChevronLeft.svelte";
-  import ChevronRight from "../../icons/ChevronRight.svelte";
+  import ChevronLeft from "../../icons/ChevronLeft/ChevronLeft.svelte";
+  import ChevronRight from "../../icons/ChevronRight/ChevronRight.svelte";
 
   export let id = null;
   let className = null;

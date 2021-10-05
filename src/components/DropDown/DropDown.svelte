@@ -2,7 +2,7 @@
   import { onDestroy, tick } from "svelte";
 
   import Button from "../Button/Button.svelte";
-  import ChevronDown from "../../icons/ChevronDown.svelte";
+  import ChevronDown from "../../icons/ChevronDown/ChevronDown.svelte";
   import DropDownMenu from "../DropDownMenu/DropDownMenu.svelte";
 
   import {

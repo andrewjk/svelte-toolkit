@@ -106,5 +106,5 @@
   </div>
 {/if}
 
-<style src="../Dialog.scss">
+<style src="Confirm.scss">
 </style>

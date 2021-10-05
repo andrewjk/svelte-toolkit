@@ -4,16 +4,16 @@
   export { className as class };
 </script>
 
-<style src="Icon.scss">
-
-</style>
-
 <svg
   {id}
-  class={['icon', className].filter(Boolean).join(' ')}
+  class={["icon", className].filter(Boolean).join(" ")}
   viewBox="0 0 100 100"
-  stroke-width="12">
+  stroke-width="12"
+>
   <g>
     <path d="M30,10 L70,50 L30,90" fill="none" />
   </g>
 </svg>
+
+<style src="ChevronRight.scss">
+</style>

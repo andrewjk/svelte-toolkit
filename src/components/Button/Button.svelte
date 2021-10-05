@@ -1,5 +1,5 @@
 <script>
-  import Loading from "../../icons/Loading.svelte";
+  import Loading from "../../icons/Loading/Loading.svelte";
 
   export let id = null;
   let className = null;

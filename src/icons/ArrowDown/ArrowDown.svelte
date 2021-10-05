@@ -4,17 +4,17 @@
   export { className as class };
 </script>
 
-<style src="Icon.scss">
-
-</style>
-
 <svg
   {id}
-  class={['icon', className].filter(Boolean).join(' ')}
+  class={["icon", className].filter(Boolean).join(" ")}
   viewBox="0 0 100 100"
   stroke-linejoin="round"
-  stroke-width="12">
+  stroke-width="12"
+>
   <g>
-    <polygon points="60,25 30,50 60,75" />
+    <polygon points="25,40 50,70 75,40" />
   </g>
 </svg>
+
+<style src="ArrowDown.scss">
+</style>

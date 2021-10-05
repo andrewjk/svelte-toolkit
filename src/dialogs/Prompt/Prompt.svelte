@@ -120,5 +120,5 @@
   </div>
 {/if}
 
-<style src="../Dialog.scss">
+<style src="Prompt.scss">
 </style>

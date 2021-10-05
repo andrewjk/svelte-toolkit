@@ -3,7 +3,7 @@
   import { fly, fade } from "svelte/transition";
 
   import ImageButton from "../ImageButton/ImageButton.svelte";
-  import Cross from "../../icons/Cross.svelte";
+  import Cross from "../../icons/Cross/Cross.svelte";
 
   export let id = null;
   let className = null;
