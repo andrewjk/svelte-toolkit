@@ -1,9 +1,9 @@
-import { render } from '@testing-library/svelte';
+import { render } from "@testing-library/svelte";
 
-import ArrowDown from '../../src/icons/ArrowDown.svelte';
+import ArrowDown from "../../src/icons/ArrowDown/ArrowDown.svelte";
 
-test('icon: arrow down creation', () => {
-    const { container, getByText } = render(ArrowDown, { id: 'arrow-down' });
+test("icon: arrow down creation", () => {
+  const { container, getByText } = render(ArrowDown, { id: "arrow-down" });
 
-    expect(container.querySelector('#arrow-down')).toBeInTheDocument();
+  expect(container.querySelector("#arrow-down")).toBeInTheDocument();
 });
