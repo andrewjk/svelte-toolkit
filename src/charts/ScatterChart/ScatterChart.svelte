@@ -177,5 +177,14 @@
   </svg>
 </div>
 
-<style src="ScatterChart.scss">
+<style>
+  /* These styles were automatically generated from ScatterChart.scss */
+  .chart {
+    font-size: 1.2rem;
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .chart:last-child {
+    margin: 0;
+  }
 </style>

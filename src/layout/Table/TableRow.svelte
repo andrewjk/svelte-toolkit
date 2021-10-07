@@ -5,8 +5,9 @@
   export let type = "";
 </script>
 
-<style src="TableRow.scss">
-
+<style>
+  /* These styles were automatically generated from TableRow.scss */
+  
 </style>
 
 <tr

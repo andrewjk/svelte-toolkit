@@ -18,8 +18,12 @@
   export let type = "bar";
 </script>
 
-<style src="ChartGridLines.scss">
-
+<style>
+  /* These styles were automatically generated from ChartGridLines.scss */
+  .chart-gridline {
+    stroke: var(--light-border-color, #aaa);
+    stroke-width: 1px;
+  }
 </style>
 
 {#if showHLines}

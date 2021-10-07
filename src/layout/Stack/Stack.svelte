@@ -24,5 +24,27 @@
   <slot />
 </div>
 
-<style src="Stack.scss">
+<style>
+  /* These styles were automatically generated from Stack.scss */
+  .stack {
+    display: flex;
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .stack:last-child {
+    margin-bottom: 0;
+  }
+
+  .stack.vertical {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .stack.horizontal {
+    flex-direction: row;
+  }
+
+  .stack.nowrap {
+    flex-wrap: nowrap;
+  }
 </style>

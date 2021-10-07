@@ -4,56 +4,56 @@
 // ========================================================
 
 .grid {
-    display: grid;
-    margin: 0 0 var(--element-padding, $element-padding);
+  display: grid;
+  margin: 0 0 var(--element-padding, $element-padding);
 
-    // Default to 12 columns
-    grid-template-columns: repeat(12, 1fr);
+  // Default to 12 columns
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .grid:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .grid.spaced {
-    row-gap: var(--element-padding, $element-padding);
-    column-gap: var(--element-padding, $element-padding);
+  row-gap: var(--element-padding, $element-padding);
+  column-gap: var(--element-padding, $element-padding);
 }
 
 @for $i from 1 through 12 {
-    .grid.cols-#{$i} {
-        grid-template-columns: repeat(#{$i}, 1fr);
-    }
+  :global(.grid.cols-#{$i}) {
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
 }
 
 @media (min-width: $small-screen) {
-    @for $i from 1 through 12 {
-        .grid.sm-cols-#{$i} {
-            grid-template-columns: repeat(#{$i}, 1fr);
-        }
+  @for $i from 1 through 12 {
+    :global(.grid.sm-cols-#{$i}) {
+      grid-template-columns: repeat(#{$i}, 1fr);
     }
+  }
 }
 
 @media (min-width: $medium-screen) {
-    @for $i from 1 through 12 {
-        .grid.md-cols-#{$i} {
-            grid-template-columns: repeat(#{$i}, 1fr);
-        }
+  @for $i from 1 through 12 {
+    :global(.grid.md-cols-#{$i}) {
+      grid-template-columns: repeat(#{$i}, 1fr);
     }
+  }
 }
 
 @media (min-width: $large-screen) {
-    @for $i from 1 through 12 {
-        .grid.lg-cols-#{$i} {
-            grid-template-columns: repeat(#{$i}, 1fr);
-        }
+  @for $i from 1 through 12 {
+    :global(.grid.lg-cols-#{$i}) {
+      grid-template-columns: repeat(#{$i}, 1fr);
     }
+  }
 }
 
 @media (min-width: $xlarge-screen) {
-    @for $i from 1 through 12 {
-        .grid.xl-cols-#{$i} {
-            grid-template-columns: repeat(#{$i}, 1fr);
-        }
+  @for $i from 1 through 12 {
+    :global(.grid.xl-cols-#{$i}) {
+      grid-template-columns: repeat(#{$i}, 1fr);
     }
+  }
 }

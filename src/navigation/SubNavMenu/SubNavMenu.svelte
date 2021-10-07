@@ -22,5 +22,19 @@
   </ul>
 </nav>
 
-<style src="SubNavMenu.scss">
+<style>
+  /* These styles were automatically generated from SubNavMenu.scss */
+  .sub-nav-menu {
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .sub-nav-menu ul {
+    list-style: outside none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sub-nav-menu:last-child {
+    margin: 0;
+  }
 </style>

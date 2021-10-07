@@ -379,5 +379,70 @@
   <canvas class="palette-preview" bind:this={previewCanvas} />
 </div>
 
-<style src="Palette.scss">
+<style>
+  /* These styles were automatically generated from Palette.scss */
+  .palette {
+    display: inline-block;
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .palette:last-child {
+    margin: 0;
+  }
+
+  .palette-colors {
+    display: flex;
+  }
+
+  .palette-hs {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin-right: calc(var(--element-margin, 1.5rem) / 2);
+  }
+
+  .palette-l {
+    display: inline-block;
+    height: 200px;
+    width: 25px;
+    margin-right: calc(var(--element-margin, 1.5rem) / 2);
+  }
+
+  .palette-standard-colors {
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 40px;
+    vertical-align: top;
+  }
+
+  .palette-color {
+    flex: 0 0 50%;
+    max-width: 50%;
+    border: 1px solid #FFFFFF;
+  }
+
+  .palette-spacer {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .palette-preview {
+    height: 25px;
+    width: 100%;
+    margin: calc(var(--element-margin, 1.5rem) / 2) 0 0 0;
+  }
+
+  .palette-canvas-container {
+    position: relative;
+  }
+
+  .palette-selector {
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    pointer-events: none;
+    position: absolute;
+  }
 </style>

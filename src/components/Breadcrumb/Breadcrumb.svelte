@@ -15,5 +15,11 @@
   </ol>
 </nav>
 
-<style src="Breadcrumb.scss">
+<style>
+  /* These styles were automatically generated from Breadcrumb.scss */
+  .breadcrumb ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 </style>

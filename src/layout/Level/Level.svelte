@@ -17,5 +17,17 @@
   <slot />
 </div>
 
-<style src="Level.scss">
+<style>
+  /* These styles were automatically generated from Level.scss */
+  .level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    .level.collapse {
+      flex-direction: column;
+    }
+  }
 </style>

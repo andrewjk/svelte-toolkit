@@ -151,5 +151,18 @@
   <slot />
 </div>
 
-<style src="TabGroup.scss">
+<style>
+  /* These styles were automatically generated from TabGroup.scss */
+  .tab-group {
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .tab-group:last-child {
+    margin: 0;
+  }
+
+  .tab-list {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
 </style>

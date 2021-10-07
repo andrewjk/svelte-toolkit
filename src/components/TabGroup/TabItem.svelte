@@ -32,5 +32,14 @@
   <slot />
 </div>
 
-<style src="TabItem.scss">
+<style>
+  /* These styles were automatically generated from TabItem.scss */
+  .tab-item {
+    display: none;
+    padding: var(--element-padding, 2rem) 0;
+  }
+
+  .tab-item.active {
+    display: block;
+  }
 </style>

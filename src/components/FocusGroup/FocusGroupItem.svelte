@@ -40,5 +40,12 @@
   <slot />
 </div>
 
-<style src="FocusGroupItem.scss">
+<style>
+  /* These styles were automatically generated from FocusGroupItem.scss */
+  .focus-group-item {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

@@ -151,5 +151,13 @@
   <slot />
 </div>
 
-<style src="Accordion.scss">
+<style>
+  /* These styles were automatically generated from Accordion.scss */
+  .accordion {
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .accordion:last-child {
+    margin: 0;
+  }
 </style>

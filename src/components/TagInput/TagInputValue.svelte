@@ -28,5 +28,10 @@
   <slot />
 </Tag>
 
-<style src="TagInputValue.scss">
+<style>
+  /* These styles were automatically generated from TagInputValue.scss */
+  :global(.tag-input-value) {
+    line-height: calc(var(--input-height, 3.2rem) - 12px) !important;
+    margin: 4px 0 4px 4px;
+  }
 </style>

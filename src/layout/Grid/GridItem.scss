@@ -1,43 +1,43 @@
 @import "../../styles/_variables";
 
 .grid-item {
-    overflow: auto;
+  overflow: auto;
 }
 
 @for $i from 1 through 12 {
-    .grid-item.span-#{$i} {
-        grid-column: span #{$i};
-    }
+  :global(.grid-item.span-#{$i}) {
+    grid-column: span #{$i};
+  }
 }
 
 @media (min-width: $small-screen) {
-    @for $i from 0 through 12 {
-        .grid-item.sm-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 0 through 12 {
+    :global(.grid-item.sm-span-#{$i}) {
+      grid-column: span #{$i};
     }
+  }
 }
 
 @media (min-width: $medium-screen) {
-    @for $i from 0 through 12 {
-        .grid-item.md-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 0 through 12 {
+    :global(.grid-item.md-span-#{$i}) {
+      grid-column: span #{$i};
     }
+  }
 }
 
 @media (min-width: $large-screen) {
-    @for $i from 0 through 12 {
-        .grid-item.lg-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 0 through 12 {
+    :global(.grid-item.lg-span-#{$i}) {
+      grid-column: span #{$i};
     }
+  }
 }
 
 @media (min-width: $xlarge-screen) {
-    @for $i from 0 through 12 {
-        .grid-item.xl-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 0 through 12 {
+    :global(.grid-item.xl-span-#{$i}) {
+      grid-column: span #{$i};
     }
+  }
 }

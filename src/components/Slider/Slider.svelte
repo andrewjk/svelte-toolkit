@@ -91,5 +91,35 @@
   />
 </div>
 
-<style src="Slider.scss">
+<style>
+  /* These styles were automatically generated from Slider.scss */
+  .slider {
+    height: var(--input-height, 3.2rem);
+    position: relative;
+  }
+
+  .slider-background {
+    background-color: var(--light-back-color, #fafafa);
+    border: 1px solid var(--border-color, #d2d2d2);
+    border-radius: var(--border-radius, 2px);
+    height: 4px;
+    position: absolute;
+    top: 14px;
+    width: 100%;
+  }
+
+  .slider-handle {
+    background-color: white;
+    border: 1px solid var(--border-color, #d2d2d2);
+    border-radius: 50%;
+    height: 1.6rem;
+    width: 1.6rem;
+    position: absolute;
+    top: calc(var(--input-height, 3.2rem) / 2 - 1.6rem / 2);
+  }
+
+  .slider-handle:hover,
+  .slider-handle:focus {
+    border: 1px solid var(--select-color, #3396ff);
+  }
 </style>

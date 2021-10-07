@@ -123,5 +123,15 @@
   on:blur={handleBlur}
 />
 
-<style src="Currency.scss">
+<style>
+  /* These styles were automatically generated from Currency.scss */
+  input.currency-input {
+    -moz-appearance: textfield;
+  }
+
+  input.currency-input::-webkit-inner-spin-button,
+  input.currency-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 </style>

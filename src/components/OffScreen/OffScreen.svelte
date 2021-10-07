@@ -56,5 +56,47 @@
   </div>
 {/if}
 
-<style src="OffScreen.scss">
+<style>
+  /* These styles were automatically generated from OffScreen.scss */
+  .off-screen {
+    background-color: white;
+    overflow: auto;
+    position: fixed;
+    z-index: 9900;
+  }
+
+  .off-screen-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: default;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9000;
+  }
+
+  .off-screen.left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .off-screen.right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .off-screen.top {
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .off-screen.bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 </style>

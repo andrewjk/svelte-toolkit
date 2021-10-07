@@ -100,5 +100,29 @@
   {/if}
 </li>
 
-<style src="NavMenuDropDown.scss">
+<style>
+  /* These styles were automatically generated from NavMenuDropDown.scss */
+  .nav-menu-drop-down {
+    display: inline-block;
+    font-size: var(--font-size-title, 1.6rem);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .nav-menu-link {
+    background-color: var(--nav-bar-item-back-color, transparent);
+    color: var(--nav-bar-item-text-color, #222);
+    padding: calc(var(--element-padding, 2rem) / 4) var(--element-padding, 2rem);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link:focus {
+    background-color: var(--nav-bar-item-hover-back-color, rgba(0, 0, 0, 0.1));
+    color: var(--nav-bar-item-hover-text-color, #222);
+  }
 </style>

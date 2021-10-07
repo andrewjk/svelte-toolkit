@@ -15,5 +15,27 @@
   </div>
 {/if}
 
-<style src="FieldMessage.scss">
+<style>
+  /* These styles were automatically generated from FieldMessage.scss */
+  .field-message {
+    color: var(--label-text-color, #777);
+    font-size: 1.3rem;
+    margin: calc(var(--element-margin, 1.5rem) / 4) 0 0;
+  }
+
+  .field-message.info {
+    color: var(--info-color, #4d90fe);
+  }
+
+  .field-message.success {
+    color: var(--success-color, #00a852);
+  }
+
+  .field-message.warning {
+    color: var(--warning-color, #f3c42e);
+  }
+
+  .field-message.danger {
+    color: var(--danger-color, #ee2e24);
+  }
 </style>

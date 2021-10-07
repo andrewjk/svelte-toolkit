@@ -41,5 +41,13 @@
   <slot />
 </div>
 
-<style src="SwitcherItem.scss">
+<style>
+  /* These styles were automatically generated from SwitcherItem.scss */
+  .switcher-item {
+    display: none;
+  }
+
+  .switcher-item.active {
+    display: block;
+  }
 </style>

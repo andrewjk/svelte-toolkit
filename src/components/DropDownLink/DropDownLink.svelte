@@ -113,5 +113,55 @@
   {/if}
 </div>
 
-<style src="DropDownLink.scss">
+<style>
+  /* These styles were automatically generated from DropDownLink.scss */
+  .drop-down-list {
+    background-color: var(--list-back-color, #fff);
+    border: 1px solid var(--border-color, #d2d2d2);
+    color: var(--list-text-color, rgba(0, 0, 0, 0.7));
+    max-height: 24.4rem;
+    overflow: auto;
+    position: absolute;
+    z-index: 10000;
+  }
+
+  .drop-down-link {
+    display: inline-block;
+    position: relative;
+  }
+
+  .drop-down-link-container {
+    display: inline-block;
+  }
+
+  .drop-down-menu-container {
+    display: inline-block;
+    position: absolute;
+  }
+
+  .drop-down-menu-container.start {
+    text-align: start;
+  }
+
+  .drop-down-menu-container.center {
+    text-align: center;
+  }
+
+  .drop-down-menu-container.end {
+    text-align: end;
+  }
+
+  .drop-down-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :global(* + .drop-down-icon-container) {
+    margin-left: calc(var(--element-margin, 1.5rem) / 2);
+  }
+
+  :global(.drop-down-icon-container + *) {
+    margin-left: calc(var(--element-margin, 1.5rem) / 2);
+  }
 </style>

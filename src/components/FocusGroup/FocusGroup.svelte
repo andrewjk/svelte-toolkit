@@ -84,5 +84,11 @@
   <slot />
 </div>
 
-<style src="FocusGroup.scss">
+<style>
+  /* These styles were automatically generated from FocusGroup.scss */
+  .focus-group {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>

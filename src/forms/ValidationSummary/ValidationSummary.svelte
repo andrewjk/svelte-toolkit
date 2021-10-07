@@ -36,5 +36,22 @@
   </div>
 {/if}
 
-<style src="ValidationSummary.scss">
+<style>
+  /* These styles were automatically generated from ValidationSummary.scss */
+  .validation-summary {
+    background-color: var(--light-danger-color, #fef5f4);
+    border: 1px solid var(--danger-color, #ee2e24);
+    border-radius: var(--border-radius, 2px);
+    color: var(--danger-color, #ee2e24);
+    margin: 0 0 var(--element-margin, 1.5rem);
+    padding: calc(var(--element-padding, 2rem) / 2);
+  }
+
+  .validation-summary ul {
+    margin: 0;
+  }
+
+  .validation-summary:last-child {
+    margin: 0;
+  }
 </style>

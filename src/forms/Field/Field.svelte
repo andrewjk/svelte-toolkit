@@ -144,5 +144,13 @@
   {/if}
 </div>
 
-<style src="Field.scss">
+<style>
+  /* These styles were automatically generated from Field.scss */
+  .field {
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .field:last-child {
+    margin: 0;
+  }
 </style>

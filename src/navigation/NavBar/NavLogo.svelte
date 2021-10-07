@@ -10,8 +10,15 @@
   export let width = undefined;
 </script>
 
-<style src="NavLogo.scss">
+<style>
+  /* These styles were automatically generated from NavLogo.scss */
+  .nav-logo {
+    margin-right: calc(var(--element-margin, 1.5rem) / 2);
+  }
 
+  .nav-logo img {
+    vertical-align: middle;
+  }
 </style>
 
 <a

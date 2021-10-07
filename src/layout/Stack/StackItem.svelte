@@ -31,5 +31,29 @@
   <slot />
 </div>
 
-<style src="StackItem.scss">
+<style>
+  /* These styles were automatically generated from StackItem.scss */
+  .stack-item.v-spaced {
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .stack-item.v-spaced:last-child {
+    margin-bottom: 0;
+  }
+
+  .stack-item.h-spaced {
+    margin: 0 var(--element-margin, 1.5rem) 0 0;
+  }
+
+  .stack-item.h-spaced:last-child {
+    margin-right: 0;
+  }
+
+  .stack-item.auto {
+    flex: 0 0 auto;
+  }
+
+  .stack-item.grow {
+    flex: 1 1 auto;
+  }
 </style>

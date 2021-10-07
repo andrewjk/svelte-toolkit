@@ -68,5 +68,7 @@
   {/each}
 </select>
 
-<style src="TimePicker.scss">
+<style>
+  /* These styles were automatically generated from TimePicker.scss */
+  
 </style>

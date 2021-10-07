@@ -20,8 +20,12 @@
   $: chartLabelBottom = xLabel ? height - textHeight : height;
 </script>
 
-<style src="XAxis.scss">
-
+<style>
+  /* These styles were automatically generated from XAxis.scss */
+  .chart-axis {
+    stroke: var(--border-color, #d2d2d2);
+    stroke-width: 1px;
+  }
 </style>
 
 {#if showAxis}

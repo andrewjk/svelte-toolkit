@@ -16,5 +16,26 @@
   </g>
 </svg>
 
-<style src="Plus.scss">
+<style>
+  /* These styles were automatically generated from Plus.scss */
+  .icon {
+    display: inline-block;
+    max-width: 1em;
+    width: 100%;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  .icon.rotate {
+    animation: rotation .6s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 </style>

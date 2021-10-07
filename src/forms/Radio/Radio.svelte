@@ -80,5 +80,127 @@
   </span>
 </label>
 
-<style src="Radio.scss">
+<style>
+  /* These styles were automatically generated from Radio.scss */
+  .radio:hover .radio-input + span:before {
+    border-color: var(--select-color, #3396ff);
+  }
+
+  .radio-input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .radio-input + span:before {
+    background-color: white;
+    border: 1px solid var(--light-border-color, #aaa);
+    border-radius: 50%;
+    content: "\00a0";
+    display: inline-block;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-right: 0.6rem;
+    padding: 0 1px;
+    width: 1.5rem;
+  }
+
+  .radio-input:checked + span:before {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="30" fill="%23222" /></g></svg>');
+  }
+
+  .radio-input:focus + span:before {
+    border-color: var(--focus-color, #8fc5ff);
+    box-shadow: 0px 0px 1px var(--select-color, #3396ff);
+  }
+
+  .radio.primary .radio-input:checked + span:before,
+  .radio.info .radio-input:checked + span:before,
+  .radio.success .radio-input:checked + span:before,
+  .radio.warning .radio-input:checked + span:before,
+  .radio.danger .radio-input:checked + span:before {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="30" fill="white" /></g></svg>');
+  }
+
+  .radio.primary {
+    color: var(--primary-color, #fd3f92);
+  }
+
+  .radio.primary .radio-input + span:before {
+    border-color: var(--primary-color, #fd3f92);
+  }
+
+  .radio.primary .radio-input:checked + span:before {
+    background-color: var(--primary-color, #fd3f92);
+  }
+
+  .radio.primary .radio-input:focus + span:before {
+    box-shadow: 0px 0px 2px var(--primary-color, #fd3f92);
+  }
+
+  .radio.info {
+    color: var(--info-color, #4d90fe);
+  }
+
+  .radio.info .radio-input + span:before {
+    border-color: var(--info-color, #4d90fe);
+  }
+
+  .radio.info .radio-input:checked + span:before {
+    background-color: var(--info-color, #4d90fe);
+  }
+
+  .radio.info .radio-input:focus + span:before {
+    box-shadow: 0px 0px 2px var(--info-color, #4d90fe);
+  }
+
+  .radio.success {
+    color: var(--success-color, #00a852);
+  }
+
+  .radio.success .radio-input + span:before {
+    border-color: var(--success-color, #00a852);
+  }
+
+  .radio.success .radio-input:checked + span:before {
+    background-color: var(--success-color, #00a852);
+  }
+
+  .radio.success .radio-input:focus + span:before {
+    box-shadow: 0px 0px 2px var(--success-color, #00a852);
+  }
+
+  .radio.warning {
+    color: var(--warning-color, #f3c42e);
+  }
+
+  .radio.warning .radio-input + span:before {
+    border-color: var(--warning-color, #f3c42e);
+  }
+
+  .radio.warning .radio-input:checked + span:before {
+    background-color: var(--warning-color, #f3c42e);
+  }
+
+  .radio.warning .radio-input:focus + span:before {
+    box-shadow: 0px 0px 2px var(--warning-color, #f3c42e);
+  }
+
+  .radio.danger {
+    color: var(--danger-color, #ee2e24);
+  }
+
+  .radio.danger .radio-input + span:before {
+    border-color: var(--danger-color, #ee2e24);
+  }
+
+  .radio.danger .radio-input:checked + span:before {
+    background-color: var(--danger-color, #ee2e24);
+  }
+
+  .radio.danger .radio-input:focus + span:before {
+    box-shadow: 0px 0px 2px var(--danger-color, #ee2e24);
+  }
 </style>

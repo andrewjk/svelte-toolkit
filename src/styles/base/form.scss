@@ -3,109 +3,109 @@
 // LABELS
 // ========================================================
 
-label {
-    color: var(--label-text-color, $label-text-color);
-    display: block;
-    line-height: var(--input-height, $input-height);
-    padding-left: 1px;
+:global(label) {
+  color: var(--label-text-color, $label-text-color);
+  display: block;
+  line-height: var(--input-height, $input-height);
+  padding-left: 1px;
 }
 
-label.inline {
-    line-height: var(--input-height, $input-height);
-    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
+:global(label.inline) {
+  line-height: var(--input-height, $input-height);
+  margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
 }
 
 // INPUTS
 // ========================================================
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="datetime"],
-input[type="file"],
-input[type="url"] {
-    -webkit-appearance: none;
-    background-color: var(--input-back-color, $input-back-color);
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    color: var(--input-text-color, $input-text-color);
-    height: var(--input-height, $input-height);
-    padding: 0 4px;
-    width: 100%;
+:global(input[type="text"]),
+:global(input[type="password"]),
+:global(input[type="email"]),
+:global(input[type="number"]),
+:global(input[type="datetime"]),
+:global(input[type="file"]),
+:global(input[type="url"]) {
+  -webkit-appearance: none;
+  background-color: var(--input-back-color, $input-back-color);
+  border: 1px solid var(--border-color, $border-color);
+  border-radius: var(--border-radius, $border-radius);
+  color: var(--input-text-color, $input-text-color);
+  height: var(--input-height, $input-height);
+  padding: 0 4px;
+  width: 100%;
 }
 
-input[type="file"] {
-    padding: 0;
+:global(input[type="file"]) {
+  padding: 0;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    line-height: var(--input-height, $input-height);
-    margin: 0 5px;
+:global(input[type="checkbox"]),
+:global(input[type="radio"]) {
+  line-height: var(--input-height, $input-height);
+  margin: 0 5px;
 }
 
-input[type="submit"]::-moz-focus-inner {
-    border: none;
+:global(input[type="submit"]::-moz-focus-inner) {
+  border: none;
 }
 
-input[readonly],
-input:disabled,
-textarea[readonly],
-textarea:disabled,
-input[type="submit"]:disabled,
-input[type="submit"]:disabled:hover,
-input[type="submit"]:disabled:focus {
-    background-color: var(--disabled-color, $disabled-color);
-    color: var(--disabled-text-color, $disabled-text-color);
+:global(input[readonly]),
+:global(input:disabled),
+:global(textarea[readonly]),
+:global(textarea:disabled),
+:global(input[type="submit"]:disabled),
+:global(input[type="submit"]:disabled:hover),
+:global(input[type="submit"]:disabled:focus) {
+  background-color: var(--disabled-color, $disabled-color);
+  color: var(--disabled-text-color, $disabled-text-color);
 }
 
-input[type="range"] {
-    height: var(--input-height, $input-height);
-    width: 100%;
+:global(input[type="range"]) {
+  height: var(--input-height, $input-height);
+  width: 100%;
 }
 
-input.small {
-    width: 100px;
+:global(input.small) {
+  width: 100px;
 }
 
-input.medium {
-    width: 200px;
+:global(input.medium) {
+  width: 200px;
 }
 
-input.large {
-    width: 280px;
-    max-width: 100%;
+:global(input.large) {
+  width: 280px;
+  max-width: 100%;
 }
 
-input.inline {
-    line-height: var(--input-height, $input-height);
-    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
-    width: auto;
+:global(input.inline) {
+  line-height: var(--input-height, $input-height);
+  margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
+  width: auto;
 }
 
 // SELECTS
 // ========================================================
 
-select {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background-color: var(--input-back-color, $input-back-color);
-    background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,30 L50,70 L90,30" fill="none" stroke="%23777" stroke-width="15" /></g></svg>');
-    background-repeat: no-repeat, repeat;
-    background-position: right 0.6rem top 50%, 0 0;
-    background-size: 1.1rem auto, 100%;
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    color: var(--input-text-color, $input-text-color);
-    height: var(--input-height, $input-height);
-    padding: 0 4px;
-    width: 100%;
+:global(select) {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--input-back-color, $input-back-color);
+  background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M10,30 L50,70 L90,30" fill="none" stroke="%23777" stroke-width="15" /></g></svg>');
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.6rem top 50%, 0 0;
+  background-size: 1.1rem auto, 100%;
+  border: 1px solid var(--border-color, $border-color);
+  border-radius: var(--border-radius, $border-radius);
+  color: var(--input-text-color, $input-text-color);
+  height: var(--input-height, $input-height);
+  padding: 0 4px;
+  width: 100%;
 }
 
-select:not([multiple]) {
-    height: var(--input-height, $input-height);
+:global(select:not([multiple])) {
+  height: var(--input-height, $input-height);
 }
 
 // NOTE: This might be needed - test on IE
@@ -115,134 +115,133 @@ select:not([multiple]) {
 
 /* Remove the black dotted focus border in Firefox
    per https://stackoverflow.com/a/27510551 */
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 var(--body-text-color, $body-text-color);
+:global(select:-moz-focusring) {
+  color: transparent;
+  text-shadow: 0 0 0 var(--body-text-color, $body-text-color);
 }
-select:-moz-focusring * {
-    color: var(--body-text-color, $body-text-color);
-    text-shadow: none;
+:global(select:-moz-focusring *) {
+  color: var(--body-text-color, $body-text-color);
+  text-shadow: none;
 }
 
-select.inline {
-    line-height: var(--input-height, $input-height);
-    margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
-    width: auto;
+:global(select.inline) {
+  line-height: var(--input-height, $input-height);
+  margin-right: calc(var(--element-margin, #{$element-margin}) / 2);
+  width: auto;
 }
 
 // TEXTAREA
 // ========================================================
 
-textarea {
-    background-color: var(--input-back-color, $input-back-color);
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    color: var(--input-text-color, $input-text-color);
-    font-size: inherit;
-    margin: 0;
-    /* Roughly enough for two rows at default sizing: */
-    min-height: 56px;
-    padding: 4px;
-    width: 100%;
+:global(textarea) {
+  background-color: var(--input-back-color, $input-back-color);
+  border: 1px solid var(--border-color, $border-color);
+  border-radius: var(--border-radius, $border-radius);
+  color: var(--input-text-color, $input-text-color);
+  font-size: inherit;
+  margin: 0;
+  /* Roughly enough for two rows at default sizing: */
+  min-height: 56px;
+  padding: 4px;
+  width: 100%;
 }
 
-textarea[readonly]
-textarea:disabled {
-    background-color: var(--disabled-color, $disabled-color);
+:global(textarea[readonly]) :global(textarea:disabled) {
+  background-color: var(--disabled-color, $disabled-color);
 }
 
 // OTHER ELEMENTS
 // ========================================================
 
-fieldset {
-    border: 1px solid var(--border-color, $border-color);
-    border-radius: var(--border-radius, $border-radius);
-    padding: var(--element-padding, $element-padding);
+:global(fieldset) {
+  border: 1px solid var(--border-color, $border-color);
+  border-radius: var(--border-radius, $border-radius);
+  padding: var(--element-padding, $element-padding);
 }
 
-legend {
-    color: var(--label-text-color, $label-text-color);
-    padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
+:global(legend) {
+  color: var(--label-text-color, $label-text-color);
+  padding: 0 calc(var(--element-padding, #{$element-padding}) / 4);
 }
 
 // FOCUS
 // ========================================================
 
-input:focus,
-select:focus,
-textarea:focus {
-    border: 1px solid var(--focus-color, $focus-color);
-    box-shadow: 0px 0px 1px var(--select-color, $select-color);
-    outline: none;
+:global(input:focus),
+:global(select:focus),
+:global(textarea:focus) {
+  border: 1px solid var(--focus-color, $focus-color);
+  box-shadow: 0px 0px 1px var(--select-color, $select-color);
+  outline: none;
 }
 
-input[readonly]:focus,
-input:disabled:focus,
-textarea[readonly]:focus,
-textarea:disabled:focus {
-    border: 1px solid var(--border-color, $border-color);
-    box-shadow: 0px 0px 1px var(--border-color, $border-color);
+:global(input[readonly]:focus),
+:global(input:disabled:focus),
+:global(textarea[readonly]:focus),
+:global(textarea:disabled:focus) {
+  border: 1px solid var(--border-color, $border-color);
+  box-shadow: 0px 0px 1px var(--border-color, $border-color);
 }
 
 // TYPES
 // ========================================================
 
-input.primary,
-select.primary,
-textarea.primary {
-    border-color: var(--primary-color, $primary-color);
+:global(input.primary),
+:global(select.primary),
+:global(textarea.primary) {
+  border-color: var(--primary-color, $primary-color);
 }
 
-input.primary:focus,
-select.primary:focus,
-textarea.primary:focus {
-    box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
+:global(input.primary:focus),
+:global(select.primary:focus),
+:global(textarea.primary:focus) {
+  box-shadow: 0px 0px 2px var(--primary-color, $primary-color);
 }
 
-input.info,
-select.info,
-textarea.info {
-    border-color: var(--info-color, $info-color);
+:global(input.info),
+:global(select.info),
+:global(textarea.info) {
+  border-color: var(--info-color, $info-color);
 }
 
-input.info:focus,
-select.info:focus,
-textarea.info:focus {
-    box-shadow: 0px 0px 2px var(--info-color, $info-color);
+:global(input.info:focus),
+:global(select.info:focus),
+:global(textarea.info:focus) {
+  box-shadow: 0px 0px 2px var(--info-color, $info-color);
 }
 
-input.success,
-select.success,
-textarea.success {
-    border-color: var(--success-color, $success-color);
+:global(input.success),
+:global(select.success),
+:global(textarea.success) {
+  border-color: var(--success-color, $success-color);
 }
 
-input.success:focus,
-select.success:focus,
-textarea.success:focus {
-    box-shadow: 0px 0px 2px var(--success-color, $success-color);
+:global(input.success:focus),
+:global(select.success:focus),
+:global(textarea.success:focus) {
+  box-shadow: 0px 0px 2px var(--success-color, $success-color);
 }
 
-input.warning,
-select.warning,
-textarea.warning {
-    border-color: var(--warning-color, $warning-color);
+:global(input.warning),
+:global(select.warning),
+:global(textarea.warning) {
+  border-color: var(--warning-color, $warning-color);
 }
 
-input.warning:focus,
-select.warning:focus,
-textarea.warning:focus {
-    box-shadow: 0px 0px 2px var(--warning-color, $warning-color);
+:global(input.warning:focus),
+:global(select.warning:focus),
+:global(textarea.warning:focus) {
+  box-shadow: 0px 0px 2px var(--warning-color, $warning-color);
 }
 
-input.danger,
-select.danger,
-textarea.danger {
-    border-color: var(--danger-color, $danger-color);
+:global(input.danger),
+:global(select.danger),
+:global(textarea.danger) {
+  border-color: var(--danger-color, $danger-color);
 }
 
-input.danger:focus,
-select.danger:focus,
-textarea.danger:focus {
-    box-shadow: 0px 0px 2px var(--danger-color, $danger-color);
+:global(input.danger:focus),
+:global(select.danger:focus),
+:global(textarea.danger:focus) {
+  box-shadow: 0px 0px 2px var(--danger-color, $danger-color);
 }

@@ -1,189 +1,186 @@
 @import "../../styles/_variables";
 
-.block {
-    margin: 0 0 var(--element-margin, $element-margin);
+:global(.block) {
+  margin: 0 0 var(--element-margin, $element-margin);
 }
 
-.block:last-child {
-    margin-bottom: 0;
+:global(.block:last-child) {
+  margin-bottom: 0;
 }
 
 // GENERAL UTILS
 // ========================================================
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
+:global(.center) {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.full-width {
-    width: 100%;
+:global(.full-width) {
+  width: 100%;
 }
 
-.clearfix {
-    overflow: auto;
+:global(.clearfix) {
+  overflow: auto;
 }
 
 // TEXT AND ELEMENT ALIGNMENT
 // ========================================================
 
-.text-left {
-    text-align: left !important;
+:global(.text-left) {
+  text-align: left !important;
 }
 
-.text-center {
-    text-align: center !important;
+:global(.text-center) {
+  text-align: center !important;
 }
 
-.text-right {
-    text-align: right !important;
+:global(.text-right) {
+  text-align: right !important;
 }
 
-.align-left {
-    display: block !important;
-    float: left !important;
-    margin-right: var(--element-margin, $element-margin) !important;
+:global(.align-left) {
+  display: block !important;
+  float: left !important;
+  margin-right: var(--element-margin, $element-margin) !important;
 }
 
-.align-right {
-    display: block !important;
-    float: right !important;
-    margin-left: var(--element-margin, $element-margin) !important;
+:global(.align-right) {
+  display: block !important;
+  float: right !important;
+  margin-left: var(--element-margin, $element-margin) !important;
 }
 
-.align-center {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+:global(.align-center) {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.vertical-align-top {
-    display: flex !important;
-    align-items: top;
+:global(.vertical-align-top) {
+  display: flex !important;
+  align-items: top;
 }
 
-.vertical-align-middle {
-    display: flex !important;
-    align-items: center;
+:global(.vertical-align-middle) {
+  display: flex !important;
+  align-items: center;
 }
 
-.vertical-align-bottom {
-    display: flex !important;
-    align-items: bottom;
+:global(.vertical-align-bottom) {
+  display: flex !important;
+  align-items: bottom;
 }
 
 // TEXT SIZES AND COLORS
 // ========================================================
 
-small {
-    font-size: var(--font-size-small, $font-size-small) !important;
+:global(small),
+:global(.text-small) {
+  font-size: var(--font-size-small, $font-size-small) !important;
 }
 
-.text-small {
-    font-size: var(--font-size-small, $font-size-small) !important;
-}
-
-.text-large {
-    font-size: var(--font-size-large, $font-size-large) !important;
+:global(.text-large) {
+  font-size: var(--font-size-large, $font-size-large) !important;
 }
 
 // MARGIN AND PADDING
 // ========================================================
 
-.no-margin {
-    margin: 0 !important;
+:global(.no-margin) {
+  margin: 0 !important;
 }
 
-.no-margin-top {
-    margin-top: 0 !important;
+:global(.no-margin-top) {
+  margin-top: 0 !important;
 }
 
-.no-margin-right {
-    margin-right: 0 !important;
+:global(.no-margin-right) {
+  margin-right: 0 !important;
 }
 
-.no-margin-bottom {
-    margin-bottom: 0 !important;
+:global(.no-margin-bottom) {
+  margin-bottom: 0 !important;
 }
 
-.no-margin-left {
-    margin-left: 0 !important;
+:global(.no-margin-left) {
+  margin-left: 0 !important;
 }
 
-.margin {
-    margin: var(--element-margin, $element-margin) !important;
+:global(.margin) {
+  margin: var(--element-margin, $element-margin) !important;
 }
 
-.margin-h {
-    margin: 0 var(--element-margin, $element-margin) !important;
+:global(.margin-h) {
+  margin: 0 var(--element-margin, $element-margin) !important;
 }
 
-.margin-v {
-    margin: var(--element-margin, $element-margin) 0 !important;
+:global(.margin-v) {
+  margin: var(--element-margin, $element-margin) 0 !important;
 }
 
-.margin-top {
-    margin-top: var(--element-margin, $element-margin) !important;
+:global(.margin-top) {
+  margin-top: var(--element-margin, $element-margin) !important;
 }
 
-.margin-right {
-    margin-right: var(--element-margin, $element-margin) !important;
+:global(.margin-right) {
+  margin-right: var(--element-margin, $element-margin) !important;
 }
 
-.margin-bottom {
-    margin-bottom: var(--element-margin, $element-margin) !important;
+:global(.margin-bottom) {
+  margin-bottom: var(--element-margin, $element-margin) !important;
 }
 
-.margin-left {
-    margin-left: var(--element-margin, $element-margin) !important;
+:global(.margin-left) {
+  margin-left: var(--element-margin, $element-margin) !important;
 }
 
-.no-padding {
-    padding: 0 !important;
+:global(.no-padding) {
+  padding: 0 !important;
 }
 
-.no-padding-top {
-    padding-top: 0 !important;
+:global(.no-padding-top) {
+  padding-top: 0 !important;
 }
 
-.no-padding-right {
-    padding-right: 0 !important;
+:global(.no-padding-right) {
+  padding-right: 0 !important;
 }
 
-.no-padding-bottom {
-    padding-bottom: 0 !important;
+:global(.no-padding-bottom) {
+  padding-bottom: 0 !important;
 }
 
-.no-padding-left {
-    padding-left: 0 !important;
+:global(.no-padding-left) {
+  padding-left: 0 !important;
 }
 
-.padding {
-    padding: var(--element-padding, $element-padding) !important;
+:global(.padding) {
+  padding: var(--element-padding, $element-padding) !important;
 }
 
-.padding-h {
-    padding: 0 var(--element-padding, $element-padding) !important;
+:global(.padding-h) {
+  padding: 0 var(--element-padding, $element-padding) !important;
 }
 
-.padding-v {
-    padding: var(--element-padding, $element-padding) 0 !important;
+:global(.padding-v) {
+  padding: var(--element-padding, $element-padding) 0 !important;
 }
 
-.padding-top {
-    padding-top: var(--element-padding, $element-padding) !important;
+:global(.padding-top) {
+  padding-top: var(--element-padding, $element-padding) !important;
 }
 
-.padding-right {
-    padding-right: var(--element-padding, $element-padding) !important;
+:global(.padding-right) {
+  padding-right: var(--element-padding, $element-padding) !important;
 }
 
-.padding-bottom {
-    padding-bottom: var(--element-padding, $element-padding) !important;
+:global(.padding-bottom) {
+  padding-bottom: var(--element-padding, $element-padding) !important;
 }
 
-.padding-left {
-    padding-left: var(--element-padding, $element-padding) !important;
+:global(.padding-left) {
+  padding-left: var(--element-padding, $element-padding) !important;
 }
 
 // HIDDEN AND VISIBLE
@@ -194,107 +191,107 @@ small {
 // that 'display: none' only gets set when the conditions are right and not set in other cases
 
 @media (max-width: $small-screen - 1) {
-    .visible-small,
-    .visible-medium,
-    .visible-large,
-    .visible-xlarge {
-        display: none !important;
-    }
+  :global(.visible-small),
+  :global(.visible-medium),
+  :global(.visible-large),
+  :global(.visible-xlarge) {
+    display: none !important;
+  }
 }
 
 @media (min-width: $small-screen) and (max-width: $medium-screen - 1) {
-    .hidden-small {
-        display: none !important;
-    }
+  :global(.hidden-small) {
+    display: none !important;
+  }
 
-    .visible-medium:not(.visible-small),
-    .visible-large:not(.visible-small),
-    .visible-xlarge:not(.visible-small) {
-        display: none !important;
-    }
+  :global(.visible-medium:not(.visible-small)),
+  :global(.visible-large:not(.visible-small)),
+  :global(.visible-xlarge:not(.visible-small)) {
+    display: none !important;
+  }
 
-    .visible-small {
-        //display: block !important;
-        visibility: visible !important;
-    }
+  :global(.visible-small) {
+    //display: block !important;
+    visibility: visible !important;
+  }
 }
 
 @media (min-width: $medium-screen) and (max-width: $large-screen - 1) {
-    .hidden-small:not(.visible-medium) {
-        display: none !important;
-    }
+  :global(.hidden-small:not(.visible-medium)) {
+    display: none !important;
+  }
 
-    .hidden-medium {
-        display: none !important;
-    }
+  :global(.hidden-medium) {
+    display: none !important;
+  }
 
-    .visible-large:not(.visible-medium),
-    .visible-xlarge:not(.visible-medium) {
-        display: none !important;
-    }
+  :global(.visible-large:not(.visible-medium)),
+  :global(.visible-xlarge:not(.visible-medium)) {
+    display: none !important;
+  }
 
-    .visible-medium,
-    .visible-large,
-    .visible-xlarge {
-        //display: block !important;
-        visibility: visible !important;
-    }
+  :global(.visible-medium),
+  :global(.visible-large),
+  :global(.visible-xlarge) {
+    //display: block !important;
+    visibility: visible !important;
+  }
 }
 
 @media (min-width: $large-screen) and (max-width: $xlarge-screen - 1) {
-    .hidden-small:not(.visible-large),
-    .hidden-medium:not(.visible-large) {
-        display: none !important;
-    }
+  :global(.hidden-small:not(.visible-large)),
+  :global(.hidden-medium:not(.visible-large)) {
+    display: none !important;
+  }
 
-    .hidden-large {
-        display: none !important;
-    }
+  :global(.hidden-large) {
+    display: none !important;
+  }
 
-    .visible-xlarge:not(.visible-large) {
-        display: none !important;
-    }
+  :global(.visible-xlarge:not(.visible-large)) {
+    display: none !important;
+  }
 
-    .visible-large,
-    .visible-xlarge {
-        //display: block !important;
-        visibility: visible !important;
-    }
+  :global(.visible-large),
+  :global(.visible-xlarge) {
+    //display: block !important;
+    visibility: visible !important;
+  }
 }
 
 @media (min-width: $xlarge-screen) {
-    .hidden-small:not(.visible-xlarge),
-    .hidden-medium:not(.visible-xlarge),
-    .hidden-large:not(.visible-xlarge) {
-        display: none !important;
-    }
-
-    .hidden-xlarge {
-        display: none !important;
-    }
-
-    .visible-xlarge {
-        //display: block !important;
-        visibility: visible !important;
-    }
-}
-
-.hidden {
+  :global(.hidden-small:not(.visible-xlarge)),
+  :global(.hidden-medium:not(.visible-xlarge)),
+  :global(.hidden-large:not(.visible-xlarge)) {
     display: none !important;
-    visibility: hidden !important;
+  }
+
+  :global(.hidden-xlarge) {
+    display: none !important;
+  }
+
+  :global(.visible-xlarge) {
+    //display: block !important;
+    visibility: visible !important;
+  }
 }
 
-.visible {
-    display: block !important;
-    visibility: visible !important;
+:global(.hidden) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+:global(.visible) {
+  display: block !important;
+  visibility: visible !important;
 }
 
 // MISC
 // ========================================================
 
-@media print {    
-    .no-print,
-    .no-print * {
-        display: none !important;
-    }
+@media print {
+  :global(.no-print),
+  :global(.no-print *) {
+    display: none !important;
+  }
 }

@@ -33,5 +33,28 @@
   <slot />
 </div>
 
-<style src="DropDownMenu.scss">
+<style>
+  /* These styles were automatically generated from DropDownMenu.scss */
+  .drop-down-menu {
+    background-color: var(--list-back-color, #fff);
+    border: 1px solid var(--border-color, #d2d2d2);
+    color: var(--list-text-color, rgba(0, 0, 0, 0.7));
+    list-style: none;
+    margin: 0;
+    padding: calc(var(--element-padding, 2rem) / 2) 0;
+    position: absolute;
+    width: 20rem;
+    z-index: 10000;
+  }
+
+  .drop-down-menu.start {
+    left: 0;
+    right: auto;
+  }
+
+  .drop-down-menu.end {
+    left: auto;
+    right: 0;
+    text-align: right;
+  }
 </style>

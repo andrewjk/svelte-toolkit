@@ -63,5 +63,66 @@
   </ul>
 </div>
 
-<style src="CalendarDay.scss">
+<style>
+  /* These styles were automatically generated from CalendarDay.scss */
+  .calendar-day {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 14.2857%;
+  }
+
+  .calendar-day-text {
+    border-radius: var(--border-radius, 2px);
+  }
+
+  .calendar-day-text.muted {
+    color: #CCCCCC;
+  }
+
+  .calendar-day-text.today {
+    background-color: #0077DD;
+    color: white;
+  }
+
+  .calendar-day-text.active {
+    background-color: var(--select-color, #3396ff);
+    color: var(--select-text-color, #fff);
+  }
+
+  .calendar-number {
+    display: inline-block;
+    padding: 0.8rem 0;
+  }
+
+  .calendar-day-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .calendar-day-button:focus {
+    background-color: transparent;
+  }
+
+  ul.calendar-event-list {
+    line-height: 0.6rem;
+    min-height: 0.6rem;
+    margin: -4px 0 2px;
+    padding: 0;
+  }
+
+  li.calendar-event {
+    background-color: var(--select-color, #3396ff);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+    height: 0.6rem;
+    width: 0.6rem;
+  }
 </style>

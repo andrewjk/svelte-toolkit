@@ -4,8 +4,13 @@
   export { className as class };
 </script>
 
-<style src="Page.scss">
-
+<style>
+  /* These styles were automatically generated from Page.scss */
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 </style>
 
 <div

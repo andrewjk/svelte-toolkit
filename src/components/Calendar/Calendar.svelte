@@ -279,5 +279,59 @@
   </div>
 </div>
 
-<style src="Calendar.scss">
+<style>
+  /* These styles were automatically generated from Calendar.scss */
+  .calendar {
+    display: inline-block;
+    margin: 0 0 var(--element-margin, 1.5rem);
+  }
+
+  .calendar:last-child {
+    margin: 0;
+  }
+
+  .calendar-header {
+    padding: 0.8rem 0;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar-body {
+    margin: 0 0 var(--element-margin, 1.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
+  }
+
+  .calendar-body:last-child {
+    margin: 0;
+  }
+
+  .calendar-nav {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    text-align: center;
+    width: 14.2857%;
+  }
+
+  .calendar-title {
+    display: inline-block;
+    font-size: var(--font-size-title, 1.6rem);
+    text-align: center;
+    width: 71.4285%;
+  }
+
+  .calendar-day-header {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.8rem 0;
+    text-align: center;
+    vertical-align: top;
+    width: 14.2857%;
+  }
 </style>

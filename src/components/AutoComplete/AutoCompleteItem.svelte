@@ -54,5 +54,22 @@
   <slot />
 </div>
 
-<style src="AutoCompleteItem.scss">
+<style>
+  /* These styles were automatically generated from AutoCompleteItem.scss */
+  .drop-down-item {
+    cursor: default;
+    margin: 0;
+    padding: 2px 6px;
+    width: 100%;
+  }
+
+  .drop-down-item:hover {
+    background-color: var(--select-color, #3396ff);
+    color: var(--select-text-color, #fff);
+  }
+
+  .drop-down-item.active {
+    background-color: var(--select-color, #3396ff);
+    color: var(--select-text-color, #fff);
+  }
 </style>

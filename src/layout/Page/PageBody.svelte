@@ -4,8 +4,13 @@
   export { className as class };
 </script>
 
-<style src="PageBody.scss">
-
+<style>
+  /* These styles were automatically generated from PageBody.scss */
+  .page-body {
+    flex: 1 0 auto;
+    overflow: hidden;
+    width: 100%;
+  }
 </style>
 
 <main

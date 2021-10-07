@@ -34,8 +34,14 @@
   }
 </script>
 
-<style src="CoverImage.scss">
-
+<style>
+  /* These styles were automatically generated from CoverImage.scss */
+  .cover-image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: top;
+  }
 </style>
 
 <div

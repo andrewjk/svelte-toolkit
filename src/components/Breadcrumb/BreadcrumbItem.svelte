@@ -18,5 +18,13 @@
   {/if}
 </li>
 
-<style src="BreadcrumbItem.scss">
+<style>
+  /* These styles were automatically generated from BreadcrumbItem.scss */
+  li {
+    display: inline;
+  }
+
+  :global(.breadcrumb-item + .breadcrumb-item:before) {
+    content: " / ";
+  }
 </style>

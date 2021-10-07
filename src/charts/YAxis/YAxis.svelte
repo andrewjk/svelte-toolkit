@@ -12,8 +12,12 @@
   export let chartBottom = 0;
 </script>
 
-<style src="YAxis.scss">
-
+<style>
+  /* These styles were automatically generated from YAxis.scss */
+  .chart-axis {
+    stroke: var(--border-color, #d2d2d2);
+    stroke-width: 1px;
+  }
 </style>
 
 {#if showAxis}
