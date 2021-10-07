@@ -7,7 +7,7 @@
   "module": "build/index.mjs",
   "main": "build/index.js",
   "scripts": {
-    "prebuild": "node ./compile.js",
+    "prebuild": "node ./cli.js theme -f -s ./src",
     "build": "rollup -c",
     "test": "jest test",
     "test:watch": "npm run test -- --watch"
@@ -39,7 +39,6 @@
   "files": [
     "build",
     "src",
-    "main.js",
-    "main.scss"
+    "main.js"
   ]
 }

@@ -4,10 +4,10 @@
 // ========================================================
 
 //$xsmall-screen: 0px;      // And up - the default
-$small-screen: 480px;       // And up
-$medium-screen: 760px;      // And up
-$large-screen: 1040px;      // And up
-$xlarge-screen: 1320px;     // And up
+$small-screen: 480px; // And up
+$medium-screen: 760px; // And up
+$large-screen: 1040px; // And up
+$xlarge-screen: 1320px; // And up
 
 // SPACING AND BORDERS
 // ========================================================
@@ -146,3 +146,7 @@ $input-width: 32rem;
 
 $label-text-color: #777;
 $label-width: 16rem;
+
+// OVERRIDE VARIABLES FROM svelte-toolkit.config.json
+// ========================================================
+@import "_theme";
