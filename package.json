@@ -12,6 +12,9 @@
     "test": "jest test",
     "test:watch": "npm run test -- --watch"
   },
+  "bin": {
+    "stk": "./cli.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
