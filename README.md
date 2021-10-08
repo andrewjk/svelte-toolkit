@@ -12,12 +12,30 @@ The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** reco
 yarn add -D svelte-toolkit
 ```
 
-## Consuming from Sapper
+## Consuming from SvelteKit
 
-Import the SCSS styles in client.js:
+Import and add the Toolkit component in \_\_layout.svelte to provide shared styles:
 
 ```javascript
-import 'svelte-toolkit/main.scss';
+import { Toolkit } from "svelte-toolkit";
+...
+<Toolkit />
+```
+
+Import toolkit components in your svelte component:
+
+```javascript
+import { Button } from "svelte-toolkit";
+```
+
+## Consuming from Sapper
+
+Import and add the Toolkit component in \_layout.svelte to provide shared styles:
+
+```javascript
+import { Toolkit } from "svelte-toolkit";
+...
+<Toolkit />
 ```
 
 Import toolkit components in your svelte component:
@@ -39,7 +57,7 @@ import { Button } from "svelte-toolkit/main.js";
 Import the SCSS styles in your renderer.js or renderer/index.js:
 
 ```javascript
-require('svelte-toolkit/main.scss')
+require("svelte-toolkit/main.scss");
 ```
 
 Import toolkit components in your svelte component:
