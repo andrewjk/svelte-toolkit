@@ -33,10 +33,8 @@ function parseArgs(array) {
   let key = "";
   for (let i = 0; i < array.length; i++) {
     if (array[i].startsWith("-")) {
-      if (key && !args[key]) {
-        args[key] = true;
-      }
       key = array[i].substring(1);
+      args[key] = true;
     } else {
       args[key] = array[i];
     }
